@@ -1,20 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>My English Notebook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دفتر الإنجليزية</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #2563eb;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            font-size: 40px;
+        }
+
+        .card h2 {
+            color: #2563eb;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 18px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #777;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>My English Notebook</h1>
+<header>
+    <h1>📘 دفتر الإنجليزية</h1>
+    <p>موقع أحمد لتعلّم ومراجعة اللغة الإنجليزية</p>
+</header>
 
-    <h2>📚 Lessons</h2>
-    <h2>🧠 Vocabulary</h2>
-    <h2>🗣️ Expressions</h2>
-    <h2>✍️ Grammar</h2>
-    <h2>❌ My Mistakes</h2>
-    <h2>🔄 Review</h2>
+<div class="container">
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">📚</div>
+            <h2>الدروس</h2>
+            <p>الدروس والقواعد التي أتعلمها في الإنجليزية.</p>
+            <a class="button" href="#">الدخول</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🧠</div>
+            <h2>المفردات</h2>
+            <p>كلمات إنجليزية جديدة مع معانيها.</p>
+            <a class="button" href="#">الدخول</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">💬</div>
+            <h2>التعبيرات</h2>
+            <p>عبارات وتعبيرات مفيدة للمحادثة.</p>
+            <a class="button" href="#">الدخول</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">✍️</div>
+            <h2>القواعد</h2>
+            <p>مراجعة قواعد اللغة الإنجليزية بطريقة سهلة.</p>
+            <a class="button" href="#">الدخول</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">❌</div>
+            <h2>أخطائي</h2>
+            <p>الأخطاء التي أرتكبها وما تعلمته منها.</p>
+            <a class="button" href="#">الدخول</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔄</div>
+            <h2>المراجعة</h2>
+            <p>مراجعة الكلمات والقواعد والتعبيرات.</p>
+            <a class="button" href="#">الدخول</a>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    My English Notebook © 2026
+</footer>
 
 </body>
 </html>
