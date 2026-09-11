@@ -8,7 +8,6 @@
 <title>دروس الإنجليزية</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -97,8 +96,8 @@ header h1 {
     cursor: pointer;
 }
 
-.listen:hover {
-    background: #1d4ed8;
+.listen:active {
+    transform: scale(0.97);
 }
 
 .words {
@@ -132,7 +131,13 @@ header h1 {
 
 .navigation button:disabled {
     background: #b7c1d1;
-    cursor: not-allowed;
+}
+
+#status {
+    text-align: center;
+    min-height: 22px;
+    color: #2563eb;
+    font-size: 14px;
 }
 
 footer {
@@ -140,18 +145,14 @@ footer {
     padding: 30px;
     color: #667085;
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
 <h1>📚 دروس الإنجليزية</h1>
-
 <p>My English Lessons</p>
-
 </header>
 
 <div class="container">
@@ -174,16 +175,15 @@ footer {
 <span id="arabic"></span>
 </div>
 
-<button class="listen" onclick="listenLesson()">
+<button class="listen" id="listenButton" onclick="listenLesson()">
 🔊 استمع
 </button>
 
+<div id="status"></div>
+
 <div class="words">
-
 <h3>🧠 كلمات الدرس</h3>
-
 <div id="wordsList"></div>
-
 </div>
 
 </div>
@@ -203,28 +203,17 @@ footer {
 </div>
 
 <footer>
-
 My English Notebook © 2026
-
 </footer>
 
 <script>
-
-/*
-====================================
-الدروس
-====================================
-*/
 
 const lessons = [
 
 {
 title: "Lesson 1 — Daily Routine",
-
 english: "I wake up at 8.",
-
 arabic: "أستيقظ في الساعة الثامنة.",
-
 words: [
 "wake up = يستيقظ",
 "at = في / عند",
@@ -234,11 +223,8 @@ words: [
 
 {
 title: "Lesson 2 — Breakfast",
-
 english: "I have breakfast in the morning.",
-
 arabic: "أتناول الإفطار في الصباح.",
-
 words: [
 "have = يتناول / لديه",
 "breakfast = الإفطار",
@@ -248,11 +234,8 @@ words: [
 
 {
 title: "Lesson 3 — School",
-
 english: "I go to school every day.",
-
 arabic: "أذهب إلى المدرسة كل يوم.",
-
 words: [
 "go = يذهب",
 "school = المدرسة",
@@ -262,11 +245,8 @@ words: [
 
 {
 title: "Lesson 4 — Family",
-
 english: "I have a big family.",
-
 arabic: "لدي عائلة كبيرة.",
-
 words: [
 "family = العائلة",
 "big = كبير",
@@ -276,11 +256,8 @@ words: [
 
 {
 title: "Lesson 5 — Weather",
-
 english: "It is raining today.",
-
 arabic: "إنها تمطر اليوم.",
-
 words: [
 "raining = تمطر",
 "today = اليوم",
@@ -290,24 +267,7 @@ words: [
 
 ];
 
-
-/*
-====================================
-عدد الدروس
-====================================
-
-سنضيف بقية الدروس لاحقًا
-بنفس النظام حتى نصل إلى 100 درس.
-*/
-
 let currentLesson = 0;
-
-
-/*
-====================================
-عرض الدرس
-====================================
-*/
 
 function showLesson() {
 
@@ -341,95 +301,87 @@ list.appendChild(div);
 
 });
 
-
 document.getElementById("previous").disabled =
 currentLesson === 0;
 
 document.getElementById("next").disabled =
 currentLesson === lessons.length - 1;
 
+document.getElementById("status").textContent = "";
+
 }
-
-
-/*
-====================================
-التالي
-====================================
-*/
 
 function nextLesson() {
 
 if (currentLesson < lessons.length - 1) {
-
 currentLesson++;
-
 showLesson();
-
 window.scrollTo(0, 0);
-
 }
 
 }
-
-
-/*
-====================================
-السابق
-====================================
-*/
 
 function previousLesson() {
 
 if (currentLesson > 0) {
-
 currentLesson--;
-
 showLesson();
-
 window.scrollTo(0, 0);
-
 }
 
 }
-
-
-/*
-====================================
-الاستماع
-====================================
-*/
 
 function listenLesson() {
 
 const text =
 document.getElementById("english").textContent;
 
+const status =
+document.getElementById("status");
+
+const button =
+document.getElementById("listenButton");
+
+if (!("speechSynthesis" in window)) {
+
+status.textContent =
+"⚠️ المتصفح لا يدعم الاستماع الصوتي.";
+
+return;
+}
+
+window.speechSynthesis.cancel();
+
 const speech =
 new SpeechSynthesisUtterance(text);
 
 speech.lang = "en-US";
-
 speech.rate = 0.8;
-
 speech.pitch = 1;
 
-window.speechSynthesis.cancel();
+speech.onstart = function() {
+button.textContent = "🔊 جاري الاستماع...";
+status.textContent = "استمع إلى الجملة الإنجليزية";
+};
+
+speech.onend = function() {
+button.textContent = "🔊 استمع";
+status.textContent = "انتهى الاستماع";
+};
+
+speech.onerror = function() {
+button.textContent = "🔊 استمع";
+status.textContent =
+"⚠️ تعذر تشغيل الصوت على هذا المتصفح.";
+};
 
 window.speechSynthesis.speak(speech);
 
 }
-
-
-/*
-====================================
-تشغيل الدرس الأول
-====================================
-*/
 
 showLesson();
 
 </script>
 
 </body>
-
 </html>
