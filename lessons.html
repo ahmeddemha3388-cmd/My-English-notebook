@@ -2,138 +2,434 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>دروسي - My English Notebook</title>
+<title>دروس الإنجليزية</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f7fb;
-            color: #172033;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        header {
-            background: linear-gradient(135deg, #2563eb, #4f46e5);
-            color: white;
-            text-align: center;
-            padding: 35px 20px;
-            border-radius: 0 0 30px 30px;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eef4ff, #f8fbff);
+    color: #172033;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 30px;
-        }
+header {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: white;
+    text-align: center;
+    padding: 30px 18px;
+    border-radius: 0 0 28px 28px;
+}
 
-        header p {
-            margin-top: 10px;
-        }
+header h1 {
+    margin: 0;
+    font-size: 29px;
+}
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 25px 18px;
-        }
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 22px 16px;
+}
 
-        .back {
-            display: inline-block;
-            background: white;
-            color: #2563eb;
-            text-decoration: none;
-            padding: 11px 18px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
+.back {
+    display: inline-block;
+    background: white;
+    color: #2563eb;
+    text-decoration: none;
+    padding: 10px 17px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
 
-        .lesson {
-            background: white;
-            padding: 24px;
-            margin-bottom: 20px;
-            border-radius: 20px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        }
+.lesson-number {
+    text-align: center;
+    color: #667085;
+    margin-bottom: 12px;
+}
 
-        .lesson h2 {
-            color: #2563eb;
-            margin-top: 0;
-        }
+.lesson {
+    background: white;
+    border-radius: 22px;
+    padding: 25px 20px;
+    box-shadow: 0 8px 25px rgba(30,60,100,0.10);
+}
 
-        .lesson p {
-            line-height: 1.9;
-        }
+.lesson h2 {
+    color: #2563eb;
+    margin-top: 0;
+}
 
-        .english {
-            direction: ltr;
-            text-align: left;
-            background: #f1f5ff;
-            padding: 15px;
-            border-radius: 12px;
-            margin-top: 15px;
-        }
+.english {
+    direction: ltr;
+    text-align: left;
+    background: #eef4ff;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 20px;
+    line-height: 1.8;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #667085;
-        }
-    </style>
+.translation {
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 15px;
+    margin-top: 15px;
+    line-height: 1.8;
+}
+
+.listen {
+    display: block;
+    margin: 18px auto;
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 13px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.listen:hover {
+    background: #1d4ed8;
+}
+
+.words {
+    margin-top: 25px;
+}
+
+.word {
+    background: #f8fafc;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.navigation button {
+    flex: 1;
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.navigation button:disabled {
+    background: #b7c1d1;
+    cursor: not-allowed;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #667085;
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>📚 دروسي</h1>
-    <p>My English Lessons</p>
+
+<h1>📚 دروس الإنجليزية</h1>
+
+<p>My English Lessons</p>
+
 </header>
 
 <div class="container">
 
-    <a class="back" href="index.html">
-        ← العودة إلى الرئيسية
-    </a>
+<a class="back" href="index.html">
+← العودة إلى الرئيسية
+</a>
 
-    <div class="lesson">
-        <h2>الدرس 1: الروتين اليومي</h2>
+<div class="lesson-number" id="lessonNumber"></div>
 
-        <p>
-            في هذا الدرس نتعلم بعض الجمل المستخدمة للتحدث عن الروتين اليومي.
-        </p>
+<div class="lesson">
 
-        <div class="english">
-            I wake up at 8.<br><br>
-            I wash my face and brush my teeth.<br><br>
-            I have breakfast.<br><br>
-            I go to school.
-        </div>
-    </div>
+<h2 id="title"></h2>
 
-    <div class="lesson">
-        <h2>الدرس 2: التعبيرات اليومية</h2>
+<div class="english" id="english"></div>
 
-        <p>
-            تعبيرات مفيدة في المحادثة اليومية.
-        </p>
+<div class="translation">
+<strong>🇦🇪 الترجمة:</strong>
+<br>
+<span id="arabic"></span>
+</div>
 
-        <div class="english">
-            Never mind.<br><br>
-            Give me a second.<br><br>
-            Sounds good!
-        </div>
-    </div>
+<button class="listen" onclick="listenLesson()">
+🔊 استمع
+</button>
+
+<div class="words">
+
+<h3>🧠 كلمات الدرس</h3>
+
+<div id="wordsList"></div>
+
+</div>
+
+</div>
+
+<div class="navigation">
+
+<button id="previous" onclick="previousLesson()">
+⬅️ السابق
+</button>
+
+<button id="next" onclick="nextLesson()">
+التالي ➡️
+</button>
+
+</div>
 
 </div>
 
 <footer>
-    My English Notebook © 2026
+
+My English Notebook © 2026
+
 </footer>
 
+<script>
+
+/*
+====================================
+الدروس
+====================================
+*/
+
+const lessons = [
+
+{
+title: "Lesson 1 — Daily Routine",
+
+english: "I wake up at 8.",
+
+arabic: "أستيقظ في الساعة الثامنة.",
+
+words: [
+"wake up = يستيقظ",
+"at = في / عند",
+"eight = ثمانية"
+]
+},
+
+{
+title: "Lesson 2 — Breakfast",
+
+english: "I have breakfast in the morning.",
+
+arabic: "أتناول الإفطار في الصباح.",
+
+words: [
+"have = يتناول / لديه",
+"breakfast = الإفطار",
+"morning = الصباح"
+]
+},
+
+{
+title: "Lesson 3 — School",
+
+english: "I go to school every day.",
+
+arabic: "أذهب إلى المدرسة كل يوم.",
+
+words: [
+"go = يذهب",
+"school = المدرسة",
+"every day = كل يوم"
+]
+},
+
+{
+title: "Lesson 4 — Family",
+
+english: "I have a big family.",
+
+arabic: "لدي عائلة كبيرة.",
+
+words: [
+"family = العائلة",
+"big = كبير",
+"have = لديه"
+]
+},
+
+{
+title: "Lesson 5 — Weather",
+
+english: "It is raining today.",
+
+arabic: "إنها تمطر اليوم.",
+
+words: [
+"raining = تمطر",
+"today = اليوم",
+"weather = الطقس"
+]
+}
+
+];
+
+
+/*
+====================================
+عدد الدروس
+====================================
+
+سنضيف بقية الدروس لاحقًا
+بنفس النظام حتى نصل إلى 100 درس.
+*/
+
+let currentLesson = 0;
+
+
+/*
+====================================
+عرض الدرس
+====================================
+*/
+
+function showLesson() {
+
+const lesson = lessons[currentLesson];
+
+document.getElementById("lessonNumber").textContent =
+"الدرس " + (currentLesson + 1) + " من 100";
+
+document.getElementById("title").textContent =
+lesson.title;
+
+document.getElementById("english").textContent =
+lesson.english;
+
+document.getElementById("arabic").textContent =
+lesson.arabic;
+
+const list = document.getElementById("wordsList");
+
+list.innerHTML = "";
+
+lesson.words.forEach(function(word) {
+
+const div = document.createElement("div");
+
+div.className = "word";
+
+div.textContent = word;
+
+list.appendChild(div);
+
+});
+
+
+document.getElementById("previous").disabled =
+currentLesson === 0;
+
+document.getElementById("next").disabled =
+currentLesson === lessons.length - 1;
+
+}
+
+
+/*
+====================================
+التالي
+====================================
+*/
+
+function nextLesson() {
+
+if (currentLesson < lessons.length - 1) {
+
+currentLesson++;
+
+showLesson();
+
+window.scrollTo(0, 0);
+
+}
+
+}
+
+
+/*
+====================================
+السابق
+====================================
+*/
+
+function previousLesson() {
+
+if (currentLesson > 0) {
+
+currentLesson--;
+
+showLesson();
+
+window.scrollTo(0, 0);
+
+}
+
+}
+
+
+/*
+====================================
+الاستماع
+====================================
+*/
+
+function listenLesson() {
+
+const text =
+document.getElementById("english").textContent;
+
+const speech =
+new SpeechSynthesisUtterance(text);
+
+speech.lang = "en-US";
+
+speech.rate = 0.8;
+
+speech.pitch = 1;
+
+window.speechSynthesis.cancel();
+
+window.speechSynthesis.speak(speech);
+
+}
+
+
+/*
+====================================
+تشغيل الدرس الأول
+====================================
+*/
+
+showLesson();
+
+</script>
+
 </body>
-  </html>
+
+</html>
