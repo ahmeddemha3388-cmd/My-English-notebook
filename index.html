@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
 <title>My English Notebook</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -32,8 +34,7 @@ header h1 {
 }
 
 header p {
-    margin: 10px 0 0;
-    opacity: 0.9;
+    margin-top: 10px;
 }
 
 .language {
@@ -42,7 +43,7 @@ header p {
 
 .language button {
     border: none;
-    padding: 9px 16px;
+    padding: 10px 18px;
     border-radius: 20px;
     cursor: pointer;
     background: white;
@@ -116,6 +117,7 @@ footer {
     padding: 30px;
     color: #667085;
 }
+
 </style>
 </head>
 
@@ -145,46 +147,117 @@ footer {
 
 <div class="cards">
 
+<!-- الدروس -->
+
 <div class="card">
+
 <div class="icon">📚</div>
+
 <h3>الدروس</h3>
-<p>احفظ دروس الإنجليزية وشروحاتها وأمثلتها.</p>
-<button onclick="openSection('Lessons')">الدخول</button>
+
+<p>
+احفظ دروس الإنجليزية وشروحاتها وأمثلتها.
+</p>
+
+<a href="lessons.html">
+<button>الدخول</button>
+</a>
+
 </div>
 
+
+<!-- المفردات -->
+
 <div class="card">
+
 <div class="icon">🧠</div>
+
 <h3>المفردات</h3>
-<p>احفظ الكلمات الجديدة ومعانيها وأمثلتها.</p>
-<button onclick="openSection('Vocabulary')">الدخول</button>
+
+<p>
+احفظ الكلمات الجديدة ومعانيها وأمثلتها.
+</p>
+
+<button onclick="comingSoon('المفردات')">
+الدخول
+</button>
+
 </div>
 
+
+<!-- التعبيرات -->
+
 <div class="card">
+
 <div class="icon">🗣️</div>
+
 <h3>التعبيرات</h3>
-<p>احفظ العبارات والتعبيرات المفيدة للمحادثة.</p>
-<button onclick="openSection('Expressions')">الدخول</button>
+
+<p>
+احفظ العبارات والتعبيرات المفيدة للمحادثة.
+</p>
+
+<button onclick="comingSoon('التعبيرات')">
+الدخول
+</button>
+
 </div>
 
+
+<!-- القواعد -->
+
 <div class="card">
+
 <div class="icon">✍️</div>
+
 <h3>القواعد</h3>
-<p>نظم قواعد اللغة الإنجليزية بطريقة سهلة.</p>
-<button onclick="openSection('Grammar')">الدخول</button>
+
+<p>
+نظم قواعد اللغة الإنجليزية بطريقة سهلة.
+</p>
+
+<button onclick="comingSoon('القواعد')">
+الدخول
+</button>
+
 </div>
 
+
+<!-- الأخطاء -->
+
 <div class="card">
+
 <div class="icon">❌</div>
+
 <h3>أخطائي</h3>
-<p>سجل أخطاءك وتعلم منها.</p>
-<button onclick="openSection('Mistakes')">الدخول</button>
+
+<p>
+سجل أخطاءك وتعلم منها.
+</p>
+
+<button onclick="comingSoon('أخطائي')">
+الدخول
+</button>
+
 </div>
 
+
+<!-- المراجعة -->
+
 <div class="card">
+
 <div class="icon">🔄</div>
+
 <h3>المراجعة</h3>
-<p>راجع ما تعلمته بطريقة منظمة.</p>
-<button onclick="openSection('Review')">الدخول</button>
+
+<p>
+راجع ما تعلمته بطريقة منظمة.
+</p>
+
+<button onclick="comingSoon('المراجعة')">
+الدخول
+</button>
+
 </div>
 
 </div>
@@ -192,20 +265,33 @@ footer {
 </div>
 
 <footer>
+
 My English Notebook © 2026
+
 </footer>
+
 
 <script>
 
-function openSection(section) {
-    alert("قسم " + section + " سيتم تجهيزه في الخطوة القادمة.");
+function comingSoon(section) {
+
+    alert(
+        "قسم " + section +
+        " سنبنيه في الخطوات القادمة."
+    );
+
 }
 
 function changeLanguage() {
-    alert("سنضيف نظام العربية / English الحقيقي في الخطوة القادمة.");
+
+    alert(
+        "نظام تغيير اللغة سنضيفه بعد تجهيز الأقسام."
+    );
+
 }
 
 </script>
 
 </body>
+
 </html>
