@@ -33,7 +33,7 @@ header h1 {
 }
 
 .container {
-    max-width: 850px;
+    max-width: 900px;
     margin: auto;
     padding: 22px 16px;
 }
@@ -52,6 +52,7 @@ header h1 {
     text-align: center;
     color: #667085;
     margin-bottom: 12px;
+    font-weight: bold;
 }
 
 .lesson {
@@ -66,22 +67,46 @@ header h1 {
     margin-top: 0;
 }
 
+.goal {
+    background: #eef4ff;
+    padding: 15px;
+    border-radius: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-top: 25px;
+}
+
+.section h3 {
+    color: #2563eb;
+}
+
+.explanation {
+    line-height: 1.9;
+    background: #f8fafc;
+    padding: 16px;
+    border-radius: 14px;
+}
+
+.example {
+    background: #eef4ff;
+    padding: 15px;
+    border-radius: 14px;
+    margin: 12px 0;
+    line-height: 1.9;
+}
+
 .english {
     direction: ltr;
     text-align: left;
-    background: #eef4ff;
-    padding: 20px;
-    border-radius: 15px;
-    font-size: 20px;
-    line-height: 1.8;
+    font-size: 19px;
+    font-weight: bold;
 }
 
-.translation {
-    background: #f8fafc;
-    padding: 18px;
-    border-radius: 15px;
-    margin-top: 15px;
-    line-height: 1.8;
+.arabic {
+    margin-top: 7px;
 }
 
 .listen {
@@ -90,8 +115,8 @@ header h1 {
     border: none;
     background: #2563eb;
     color: white;
-    padding: 12px 25px;
-    border-radius: 13px;
+    padding: 12px 24px;
+    border-radius: 12px;
     font-size: 16px;
     cursor: pointer;
 }
@@ -109,6 +134,14 @@ header h1 {
     padding: 12px;
     margin: 8px 0;
     border-radius: 10px;
+    line-height: 1.7;
+}
+
+.practice {
+    background: #fff7ed;
+    padding: 16px;
+    border-radius: 14px;
+    line-height: 2;
 }
 
 .navigation {
@@ -146,6 +179,7 @@ footer {
     color: #667085;
 }
 </style>
+
 </head>
 
 <body>
@@ -167,23 +201,35 @@ footer {
 
 <h2 id="title"></h2>
 
-<div class="english" id="english"></div>
-
-<div class="translation">
-<strong>🇦🇪 الترجمة:</strong>
-<br>
-<span id="arabic"></span>
+<div class="goal">
+<strong>🎯 هدف الدرس:</strong>
+<div id="goal"></div>
 </div>
 
-<button class="listen" id="listenButton" onclick="listenLesson()">
-🔊 استمع
+<div class="section">
+<h3>📖 شرح الدرس</h3>
+<div class="explanation" id="explanation"></div>
+</div>
+
+<div class="section">
+<h3>💬 أمثلة</h3>
+<div id="examples"></div>
+</div>
+
+<button class="listen" onclick="listenLesson()">
+🔊 استمع إلى أمثلة الدرس
 </button>
 
 <div id="status"></div>
 
 <div class="words">
-<h3>🧠 كلمات الدرس</h3>
+<h3>🧠 كلمات مهمة</h3>
 <div id="wordsList"></div>
+</div>
+
+<div class="section">
+<h3>✏️ تدريب</h3>
+<div class="practice" id="practice"></div>
 </div>
 
 </div>
@@ -211,83 +257,921 @@ My English Notebook © 2026
 const lessons = [
 
 {
-title: "Lesson 1 — Daily Routine",
-english: "I wake up at 8.",
-arabic: "أستيقظ في الساعة الثامنة.",
-words: [
-"wake up = يستيقظ",
-"at = في / عند",
-"eight = ثمانية"
-]
+title: "Lesson 1 — Personal Pronouns",
+
+goal: "تعلم جميع الضمائر الشخصية في الإنجليزية ومعرفة معناها واستخدامها الأساسي.",
+
+explanation: `
+الضمير هو كلمة نستخدمها بدل الاسم.
+
+I = أنا<br>
+You = أنت / أنتم<br>
+He = هو<br>
+She = هي<br>
+It = هو / هي لغير العاقل<br>
+We = نحن<br>
+They = هم / هن
+
+هذه الضمائر أساسية جدًا، وسنستخدمها في الدروس القادمة.
+`,
+
+examples: [
+
+{
+english: "I am a student.",
+arabic: "أنا طالب."
 },
 
 {
-title: "Lesson 2 — Breakfast",
-english: "I have breakfast in the morning.",
-arabic: "أتناول الإفطار في الصباح.",
-words: [
-"have = يتناول / لديه",
-"breakfast = الإفطار",
-"morning = الصباح"
-]
+english: "You are my friend.",
+arabic: "أنت صديقي."
 },
 
 {
-title: "Lesson 3 — School",
-english: "I go to school every day.",
-arabic: "أذهب إلى المدرسة كل يوم.",
-words: [
-"go = يذهب",
-"school = المدرسة",
-"every day = كل يوم"
-]
+english: "He is Ahmed.",
+arabic: "هو أحمد."
 },
 
 {
-title: "Lesson 4 — Family",
+english: "She is a student.",
+arabic: "هي طالبة."
+},
+
+{
+english: "It is a book.",
+arabic: "إنه كتاب."
+},
+
+{
+english: "We are students.",
+arabic: "نحن طلاب."
+},
+
+{
+english: "They are friends.",
+arabic: "هم أصدقاء."
+}
+
+],
+
+words: [
+
+"I = أنا",
+"You = أنت / أنتم",
+"He = هو",
+"She = هي",
+"It = لغير العاقل",
+"We = نحن",
+"They = هم / هن"
+
+],
+
+practice: `
+قل الضمائر السبعة بالترتيب، ثم كوّن جملة بسيطة باستخدام I و You و He و She.
+`
+
+},
+
+
+{
+title: "Lesson 2 — Verb To Be: am / is / are",
+
+goal: "تعلم استخدام am و is و are مع جميع الضمائر.",
+
+explanation: `
+الفعل To Be من أهم الأفعال في الإنجليزية.
+
+مع I نستخدم am.
+
+مع He و She و It نستخدم is.
+
+مع You و We و They نستخدم are.
+
+إذن:
+
+I → am
+
+He / She / It → is
+
+You / We / They → are
+`,
+
+examples: [
+
+{
+english: "I am a student.",
+arabic: "أنا طالب."
+},
+
+{
+english: "He is happy.",
+arabic: "هو سعيد."
+},
+
+{
+english: "She is tired.",
+arabic: "هي متعبة."
+},
+
+{
+english: "It is cold.",
+arabic: "الجو بارد."
+},
+
+{
+english: "You are ready.",
+arabic: "أنت مستعد."
+},
+
+{
+english: "We are friends.",
+arabic: "نحن أصدقاء."
+},
+
+{
+english: "They are students.",
+arabic: "هم طلاب."
+}
+
+],
+
+words: [
+
+"am = أكون",
+"is = يكون",
+"are = يكون / يكونون",
+"student = طالب",
+"happy = سعيد",
+"tired = متعب",
+"ready = مستعد"
+
+],
+
+practice: `
+أكمل:
+
+I ___ a student.
+
+She ___ happy.
+
+They ___ friends.
+
+We ___ ready.
+`
+
+},
+
+
+{
+title: "Lesson 3 — Sentences with To Be",
+
+goal: "تعلم الجملة المثبتة والمنفية والسؤال باستخدام am / is / are.",
+
+explanation: `
+يمكننا استخدام am و is و are في ثلاثة أنواع أساسية من الجمل.
+
+الإثبات:
+
+I am a student.
+
+النفي:
+
+I am not a student.
+
+السؤال:
+
+Are you a student?
+
+في السؤال نضع am أو is أو are في بداية الجملة.
+`,
+
+examples: [
+
+{
+english: "I am a student.",
+arabic: "أنا طالب."
+},
+
+{
+english: "I am not tired.",
+arabic: "أنا لست متعبًا."
+},
+
+{
+english: "She is happy.",
+arabic: "هي سعيدة."
+},
+
+{
+english: "She is not tired.",
+arabic: "هي ليست متعبة."
+},
+
+{
+english: "Are you a student?",
+arabic: "هل أنت طالب؟"
+},
+
+{
+english: "Is he your friend?",
+arabic: "هل هو صديقك؟"
+},
+
+{
+english: "Are they students?",
+arabic: "هل هم طلاب؟"
+}
+
+],
+
+words: [
+
+"not = ليس / لا",
+"tired = متعب",
+"happy = سعيد",
+"friend = صديق",
+"question = سؤال",
+"answer = إجابة"
+
+],
+
+practice: `
+حوّل هذه الجمل إلى النفي:
+
+I am happy.
+
+She is ready.
+
+They are students.
+
+ثم حاول تحويلها إلى أسئلة.
+`
+
+},
+
+
+{
+title: "Lesson 4 — Possessive Adjectives",
+
+goal: "تعلم my و your و his و her و its و our و their.",
+
+explanation: `
+نستخدم صفات الملكية لمعرفة صاحب الشيء.
+
+I → my
+
+You → your
+
+He → his
+
+She → her
+
+It → its
+
+We → our
+
+They → their
+
+تأتي صفة الملكية قبل الاسم.
+`,
+
+examples: [
+
+{
+english: "My name is Ahmed.",
+arabic: "اسمي أحمد."
+},
+
+{
+english: "What is your name?",
+arabic: "ما اسمك؟"
+},
+
+{
+english: "His name is Ali.",
+arabic: "اسمه علي."
+},
+
+{
+english: "Her book is new.",
+arabic: "كتابها جديد."
+},
+
+{
+english: "Our school is big.",
+arabic: "مدرستنا كبيرة."
+},
+
+{
+english: "Their house is beautiful.",
+arabic: "منزلهم جميل."
+}
+
+],
+
+words: [
+
+"my = ـي / لي",
+"your = ـك / ـكم",
+"his = ـه",
+"her = ـها",
+"our = ـنا",
+"their = ـهم",
+"name = اسم",
+"house = منزل"
+
+],
+
+practice: `
+أكمل:
+
+I have a book. It is ___ book.
+
+You have a phone. It is ___ phone.
+
+We have a school. It is ___ school.
+
+They have a house. It is ___ house.
+`
+
+},
+
+
+{
+title: "Lesson 5 — Singular, Plural and Articles",
+
+goal: "تعلم المفرد والجمع واستخدام a و an و the بشكل أساسي.",
+
+explanation: `
+الاسم المفرد يدل على شيء واحد.
+
+a book = كتاب واحد
+
+أما الجمع فعادة نضيف s.
+
+books = كتب
+
+نستخدم a قبل الاسم المفرد عندما يبدأ بصوت ساكن.
+
+ونستخدم an عندما يبدأ بصوت علّة.
+
+the تستخدم عندما يكون الشيء محددًا أو معروفًا في السياق.
+`,
+
+examples: [
+
+{
+english: "This is a book.",
+arabic: "هذا كتاب."
+},
+
+{
+english: "This is an apple.",
+arabic: "هذه تفاحة."
+},
+
+{
+english: "I have two books.",
+arabic: "لدي كتابان."
+},
+
+{
+english: "The book is new.",
+arabic: "الكتاب جديد."
+},
+
+{
+english: "I have an English book.",
+arabic: "لدي كتاب إنجليزي."
+}
+
+],
+
+words: [
+
+"book = كتاب",
+"books = كتب",
+"apple = تفاحة",
+"two = اثنان",
+"new = جديد",
+"English = إنجليزي"
+
+],
+
+practice: `
+اختر a أو an:
+
+___ book
+
+___ apple
+
+___ student
+
+___ English book
+
+ثم حوّل:
+
+book → ?
+
+student → ?
+`
+
+},
+
+
+{
+title: "Lesson 6 — Have and Has",
+
+goal: "تعلم استخدام have و has للتعبير عن الملكية.",
+
+explanation: `
+نستخدم have و has عندما نقول إن شخصًا لديه شيء.
+
+I / You / We / They → have
+
+He / She / It → has
+
+مثال:
+
+I have a book.
+
+He has a car.
+
+لاحظ أن He و She و It تستخدم has.
+`,
+
+examples: [
+
+{
+english: "I have a book.",
+arabic: "لدي كتاب."
+},
+
+{
+english: "You have a phone.",
+arabic: "لديك هاتف."
+},
+
+{
+english: "He has a car.",
+arabic: "لديه سيارة."
+},
+
+{
+english: "She has a bag.",
+arabic: "لديها حقيبة."
+},
+
+{
+english: "We have a house.",
+arabic: "لدينا منزل."
+},
+
+{
+english: "They have a big family.",
+arabic: "لديهم عائلة كبيرة."
+}
+
+],
+
+words: [
+
+"have = لديه / يملك",
+"has = لديه / يملك",
+"phone = هاتف",
+"car = سيارة",
+"bag = حقيبة",
+"family = عائلة"
+
+],
+
+practice: `
+اختر have أو has:
+
+I ___ a book.
+
+She ___ a phone.
+
+They ___ a car.
+
+He ___ a big family.
+
+We ___ a house.
+`
+
+},
+
+
+{
+title: "Lesson 7 — Present Simple",
+
+goal: "التعرف على المضارع البسيط واستخدامه للعادات والروتين.",
+
+explanation: `
+نستخدم Present Simple للحديث عن العادات والروتين والأشياء المتكررة.
+
+مع I و You و We و They نستخدم الفعل الأساسي.
+
+I study.
+
+They work.
+
+مع He و She و It نضيف غالبًا s إلى الفعل.
+
+He works.
+
+She studies.
+`,
+
+examples: [
+
+{
+english: "I study English.",
+arabic: "أدرس الإنجليزية."
+},
+
+{
+english: "You speak English.",
+arabic: "أنت تتحدث الإنجليزية."
+},
+
+{
+english: "We study every day.",
+arabic: "نحن ندرس كل يوم."
+},
+
+{
+english: "They work every day.",
+arabic: "هم يعملون كل يوم."
+},
+
+{
+english: "He works every day.",
+arabic: "هو يعمل كل يوم."
+},
+
+{
+english: "She studies English.",
+arabic: "هي تدرس الإنجليزية."
+}
+
+],
+
+words: [
+
+"study = يدرس",
+"speak = يتحدث",
+"work = يعمل",
+"every day = كل يوم",
+"English = الإنجليزية",
+"daily = يومي"
+
+],
+
+practice: `
+كوّن جملًا عن نفسك:
+
+I study...
+
+I speak...
+
+I work...
+
+I have...
+
+ثم كوّن جملة عن شخص آخر باستخدام He أو She.
+`
+
+},
+
+
+{
+title: "Lesson 8 — Present Simple Negative",
+
+goal: "تعلم النفي في المضارع البسيط باستخدام don't و doesn't.",
+
+explanation: `
+مع I و You و We و They نستخدم don't.
+
+مع He و She و It نستخدم doesn't.
+
+مثال:
+
+I don't work.
+
+He doesn't work.
+
+بعد doesn't يعود الفعل إلى شكله الأساسي.
+
+He doesn't work.
+
+وليس:
+
+He doesn't works.
+`,
+
+examples: [
+
+{
+english: "I don't speak French.",
+arabic: "أنا لا أتحدث الفرنسية."
+},
+
+{
+english: "You don't work here.",
+arabic: "أنت لا تعمل هنا."
+},
+
+{
+english: "We don't study at night.",
+arabic: "نحن لا ندرس في الليل."
+},
+
+{
+english: "They don't live here.",
+arabic: "هم لا يعيشون هنا."
+},
+
+{
+english: "He doesn't speak English.",
+arabic: "هو لا يتحدث الإنجليزية."
+},
+
+{
+english: "She doesn't work here.",
+arabic: "هي لا تعمل هنا."
+}
+
+],
+
+words: [
+
+"don't = لا",
+"doesn't = لا",
+"speak = يتحدث",
+"work = يعمل",
+"live = يعيش",
+"night = الليل"
+
+],
+
+practice: `
+حوّل إلى النفي:
+
+I speak English.
+
+He works here.
+
+She studies English.
+
+They live here.
+`
+
+},
+
+
+{
+title: "Lesson 9 — Present Simple Questions",
+
+goal: "تعلم تكوين الأسئلة باستخدام Do و Does.",
+
+explanation: `
+نستخدم Do مع:
+
+I / You / We / They
+
+ونستخدم Does مع:
+
+He / She / It
+
+مثال:
+
+Do you speak English?
+
+Does he work here?
+
+بعد Does نستخدم الفعل الأساسي.
+`,
+
+examples: [
+
+{
+english: "Do you speak English?",
+arabic: "هل تتحدث الإنجليزية؟"
+},
+
+{
+english: "Do you study every day?",
+arabic: "هل تدرس كل يوم؟"
+},
+
+{
+english: "Do they work here?",
+arabic: "هل هم يعملون هنا؟"
+},
+
+{
+english: "Does he speak English?",
+arabic: "هل هو يتحدث الإنجليزية؟"
+},
+
+{
+english: "Does she study every day?",
+arabic: "هل هي تدرس كل يوم؟"
+},
+
+{
+english: "Does he live here?",
+arabic: "هل هو يعيش هنا؟"
+}
+
+],
+
+words: [
+
+"do = أداة سؤال",
+"does = أداة سؤال",
+"speak = يتحدث",
+"study = يدرس",
+"live = يعيش",
+"here = هنا"
+
+],
+
+practice: `
+حوّل إلى سؤال:
+
+You speak English.
+
+He works here.
+
+She studies English.
+
+They live here.
+`
+
+},
+
+
+{
+title: "Lesson 10 — My Daily Life",
+
+goal: "تطبيق القواعد التي تعلمناها في وصف الحياة اليومية.",
+
+explanation: `
+في هذا الدرس نجمع ما تعلمناه:
+
+الضمائر.
+
+To Be.
+
+صفات الملكية.
+
+Have و Has.
+
+Present Simple.
+
+النفي.
+
+الأسئلة.
+
+الهدف هو استعمال القواعد في كلام حقيقي عن حياتك اليومية.
+`,
+
+examples: [
+
+{
+english: "My name is Ahmed.",
+arabic: "اسمي أحمد."
+},
+
+{
+english: "I am a student.",
+arabic: "أنا طالب."
+},
+
+{
 english: "I have a big family.",
-arabic: "لدي عائلة كبيرة.",
-words: [
-"family = العائلة",
-"big = كبير",
-"have = لديه"
-]
+arabic: "لدي عائلة كبيرة."
 },
 
 {
-title: "Lesson 5 — Weather",
-english: "It is raining today.",
-arabic: "إنها تمطر اليوم.",
+english: "I study English every day.",
+arabic: "أدرس الإنجليزية كل يوم."
+},
+
+{
+english: "I study in the morning.",
+arabic: "أدرس في الصباح."
+},
+
+{
+english: "I don't study at night.",
+arabic: "لا أدرس في الليل."
+},
+
+{
+english: "I speak Arabic.",
+arabic: "أتحدث العربية."
+},
+
+{
+english: "I am learning English.",
+arabic: "أنا أتعلم الإنجليزية."
+},
+
+{
+english: "Do you study English every day?",
+arabic: "هل تدرس الإنجليزية كل يوم؟"
+}
+
+],
+
 words: [
-"raining = تمطر",
-"today = اليوم",
-"weather = الطقس"
-]
+
+"daily life = الحياة اليومية",
+"morning = الصباح",
+"night = الليل",
+"student = طالب",
+"learn = يتعلم",
+"study = يدرس",
+"speak = يتحدث",
+"family = عائلة"
+
+],
+
+practice: `
+اكتب أو قل عن نفسك من 5 إلى 8 جمل.
+
+استخدم:
+
+My name is...
+
+I am...
+
+I have...
+
+I study...
+
+I speak...
+
+I don't...
+
+ثم حاول أن تسأل شخصًا آخر سؤالين باستخدام Do أو Does.
+`
+
 }
 
 ];
 
+
 let currentLesson = 0;
+
 
 function showLesson() {
 
 const lesson = lessons[currentLesson];
 
 document.getElementById("lessonNumber").textContent =
-"الدرس " + (currentLesson + 1) + " من 100";
+"الدرس " + (currentLesson + 1) + " من " + lessons.length;
 
 document.getElementById("title").textContent =
 lesson.title;
 
-document.getElementById("english").textContent =
-lesson.english;
+document.getElementById("goal").textContent =
+lesson.goal;
 
-document.getElementById("arabic").textContent =
-lesson.arabic;
+document.getElementById("explanation").innerHTML =
+lesson.explanation;
 
-const list = document.getElementById("wordsList");
+
+const examples =
+document.getElementById("examples");
+
+examples.innerHTML = "";
+
+
+lesson.examples.forEach(function(example) {
+
+const div = document.createElement("div");
+
+div.className = "example";
+
+div.innerHTML = `
+<div class="english">${example.english}</div>
+<div class="arabic">${example.arabic}</div>
+`;
+
+examples.appendChild(div);
+
+});
+
+
+const list =
+document.getElementById("wordsList");
 
 list.innerHTML = "";
+
 
 lesson.words.forEach(function(word) {
 
@@ -301,6 +1185,11 @@ list.appendChild(div);
 
 });
 
+
+document.getElementById("practice").innerHTML =
+lesson.practice;
+
+
 document.getElementById("previous").disabled =
 currentLesson === 0;
 
@@ -311,36 +1200,49 @@ document.getElementById("status").textContent = "";
 
 }
 
+
 function nextLesson() {
 
 if (currentLesson < lessons.length - 1) {
+
 currentLesson++;
+
 showLesson();
+
 window.scrollTo(0, 0);
+
 }
 
 }
+
 
 function previousLesson() {
 
 if (currentLesson > 0) {
+
 currentLesson--;
+
 showLesson();
+
 window.scrollTo(0, 0);
+
 }
 
 }
+
 
 function listenLesson() {
 
-const text =
-document.getElementById("english").textContent;
+const lesson = lessons[currentLesson];
+
+const text = lesson.examples
+.map(example => example.english)
+.join(". ");
+
 
 const status =
 document.getElementById("status");
 
-const button =
-document.getElementById("listenButton");
 
 if (!("speechSynthesis" in window)) {
 
@@ -348,36 +1250,51 @@ status.textContent =
 "⚠️ المتصفح لا يدعم الاستماع الصوتي.";
 
 return;
+
 }
 
+
 window.speechSynthesis.cancel();
+
 
 const speech =
 new SpeechSynthesisUtterance(text);
 
 speech.lang = "en-US";
+
 speech.rate = 0.8;
+
 speech.pitch = 1;
 
+
 speech.onstart = function() {
-button.textContent = "🔊 جاري الاستماع...";
-status.textContent = "استمع إلى الجملة الإنجليزية";
+
+status.textContent =
+"🔊 جاري الاستماع إلى أمثلة الدرس...";
+
 };
+
 
 speech.onend = function() {
-button.textContent = "🔊 استمع";
-status.textContent = "انتهى الاستماع";
+
+status.textContent =
+"✅ انتهى الاستماع.";
+
 };
 
+
 speech.onerror = function() {
-button.textContent = "🔊 استمع";
+
 status.textContent =
-"⚠️ تعذر تشغيل الصوت على هذا المتصفح.";
+"⚠️ تعذر تشغيل الصوت.";
+
 };
+
 
 window.speechSynthesis.speak(speech);
 
 }
+
 
 showLesson();
 
