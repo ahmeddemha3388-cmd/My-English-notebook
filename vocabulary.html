@@ -1,259 +1,255 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>المفردات الإنجليزية</title><style>
-* {
-    box-sizing: border-box;
-}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المفردات الإنجليزية</title>
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #eef4ff, #f8fbff);
-    color: #172033;
-}
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#eef4ff,#f8fbff);color:#172033}
+header{background:linear-gradient(135deg,#2563eb,#4f46e5);color:white;text-align:center;padding:30px 18px;border-radius:0 0 28px 28px}
+header h1{margin:0;font-size:29px}
+.container{max-width:900px;margin:auto;padding:22px 16px}
+.back{display:inline-block;background:white;color:#2563eb;text-decoration:none;padding:10px 17px;border-radius:12px;margin-bottom:20px}
+.intro{background:white;border-radius:20px;padding:20px;margin-bottom:20px;box-shadow:0 8px 25px rgba(30,60,100,.1);line-height:1.9}
+.levels{display:flex;gap:10px;margin-bottom:20px}
+.level{flex:1;border:none;padding:13px 8px;border-radius:12px;background:white;color:#2563eb;font-size:15px;cursor:pointer}
+.level.active{background:#2563eb;color:white}
+.vocabulary{display:grid;gap:15px}
+.word-card{background:white;border-radius:18px;padding:18px;box-shadow:0 6px 20px rgba(30,60,100,.08)}
+.word{direction:ltr;text-align:left;font-size:23px;font-weight:bold;color:#2563eb}
+.meaning{margin-top:8px;font-size:17px}
+.example{background:#f8fafc;margin-top:12px;padding:12px;border-radius:12px;line-height:1.8}
+.example-en{direction:ltr;text-align:left;font-weight:bold}
+.sound{margin-top:12px;border:none;background:#2563eb;color:white;padding:9px 16px;border-radius:10px;cursor:pointer}
+footer{text-align:center;padding:30px;color:#667085}
+</style>
+</head>
 
-header {
-    background: linear-gradient(135deg, #2563eb, #4f46e5);
-    color: white;
-    text-align: center;
-    padding: 30px 18px;
-    border-radius: 0 0 28px 28px;
-}
+<body>
 
-header h1 {
-    margin: 0;
-    font-size: 29px;
-}
-
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 22px 16px;
-}
-
-.back {
-    display: inline-block;
-    background: white;
-    color: #2563eb;
-    text-decoration: none;
-    padding: 10px 17px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-}
-
-.intro {
-    background: white;
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 8px 25px rgba(30,60,100,0.10);
-    line-height: 1.9;
-}
-
-.levels {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.level {
-    flex: 1;
-    border: none;
-    padding: 13px 8px;
-    border-radius: 12px;
-    background: white;
-    color: #2563eb;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-.level.active {
-    background: #2563eb;
-    color: white;
-}
-
-.vocabulary {
-    display: grid;
-    gap: 15px;
-}
-
-.word-card {
-    background: white;
-    border-radius: 18px;
-    padding: 18px;
-    box-shadow: 0 6px 20px rgba(30,60,100,0.08);
-}
-
-.word {
-    direction: ltr;
-    text-align: left;
-    font-size: 23px;
-    font-weight: bold;
-    color: #2563eb;
-}
-
-.meaning {
-    margin-top: 8px;
-    font-size: 17px;
-}
-
-.example {
-    background: #f8fafc;
-    margin-top: 12px;
-    padding: 12px;
-    border-radius: 12px;
-    line-height: 1.8;
-}
-
-.example-en {
-    direction: ltr;
-    text-align: left;
-    font-weight: bold;
-}
-
-.sound {
-    margin-top: 12px;
-    border: none;
-    background: #2563eb;
-    color: white;
-    padding: 9px 16px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #667085;
-}
-</style></head><body><header>
+<header>
 <h1>📚 المفردات الإنجليزية</h1>
 <p>English Vocabulary</p>
-</header><div class="container"><a class="back" href="index.html">
-← العودة إلى الرئيسية
-</a><div class="intro">
+</header>
+
+<div class="container">
+
+<a class="back" href="index.html">← العودة إلى الرئيسية</a>
+
+<div class="intro">
 <strong>🧠 تعلم المفردات بطريقة صحيحة</strong>
 <br>
-تعلم الكلمة مع معناها ومثال عليها، ثم استمع إلى نطقها.
-سننتقل تدريجيًا من المستوى المبتدئ إلى المستوى المتقدم.
-</div><div class="levels"><button class="level active" onclick="showLevel('beginner')">
-🟢 مبتدئ
-</button><button class="level" onclick="showLevel('intermediate')">
-🔵 متوسط
-</button><button class="level" onclick="showLevel('advanced')">
-🟣 متقدم
-</button></div><div id="vocabulary" class="vocabulary"></div></div><footer>
-My English Notebook © 2026
-</footer><script>
+50 كلمة في كل مستوى، مع المعنى والجملة والنطق الصوتي.
+</div>
 
-const vocabulary = {
+<div class="levels">
+<button class="level active" onclick="showLevel('beginner',this)">🟢 مبتدئ</button>
+<button class="level" onclick="showLevel('intermediate',this)">🔵 متوسط</button>
+<button class="level" onclick="showLevel('advanced',this)">🟣 متقدم</button>
+</div>
 
-beginner: [
+<div id="vocabulary" class="vocabulary"></div>
 
-{
-word: "book",
-meaning: "كتاب",
-example: "I have a book.",
-translation: "لدي كتاب."
-},
+</div>
 
-{
-word: "school",
-meaning: "مدرسة",
-example: "I go to school.",
-translation: "أذهب إلى المدرسة."
-},
+<footer>My English Notebook © 2026</footer>
 
-{
-word: "student",
-meaning: "طالب",
-example: "I am a student.",
-translation: "أنا طالب."
-},
+<script>
 
-{
-word: "teacher",
-meaning: "معلّم",
-example: "My teacher is kind.",
-translation: "معلمي لطيف."
-},
+const vocabulary={
 
-{
-word: "friend",
-meaning: "صديق",
-example: "He is my friend.",
-translation: "هو صديقي."
-}
+beginner:[
+
+["water","ماء","I drink water every day.","أشرب الماء كل يوم."],
+["food","طعام","The food is good.","الطعام جيد."],
+["house","منزل","My house is near the school.","منزلي قريب من المدرسة."],
+["family","عائلة","I love my family.","أحب عائلتي."],
+["mother","أم","My mother is at home.","أمي في المنزل."],
+["father","أب","My father works every day.","أبي يعمل كل يوم."],
+["brother","أخ","My brother is young.","أخي صغير."],
+["sister","أخت","My sister is a student.","أختي طالبة."],
+["school","مدرسة","I go to school every morning.","أذهب إلى المدرسة كل صباح."],
+["class","فصل / حصة","The class starts at eight.","تبدأ الحصة في الثامنة."],
+["book","كتاب","I read a book.","أقرأ كتابًا."],
+["pen","قلم","I have a blue pen.","لدي قلم أزرق."],
+["table","طاولة","The book is on the table.","الكتاب على الطاولة."],
+["chair","كرسي","Please sit on the chair.","من فضلك اجلس على الكرسي."],
+["door","باب","Open the door.","افتح الباب."],
+["window","نافذة","The window is open.","النافذة مفتوحة."],
+["room","غرفة","My room is clean.","غرفتي نظيفة."],
+["phone","هاتف","My phone is new.","هاتفي جديد."],
+["computer","حاسوب","I use a computer.","أستخدم حاسوبًا."],
+["car","سيارة","He has a car.","لديه سيارة."],
+["city","مدينة","I live in a city.","أعيش في مدينة."],
+["street","شارع","The street is busy.","الشارع مزدحم."],
+["shop","متجر","I go to the shop.","أذهب إلى المتجر."],
+["money","مال","I need some money.","أحتاج إلى بعض المال."],
+["water","ماء","The water is cold.","الماء بارد."],
+["day","يوم","Today is a good day.","اليوم يوم جيد."],
+["night","ليل","I sleep at night.","أنام في الليل."],
+["morning","صباح","I study in the morning.","أدرس في الصباح."],
+["evening","مساء","I walk in the evening.","أمشي في المساء."],
+["time","وقت","I don't have much time.","ليس لدي وقت كثير."],
+["happy","سعيد","I am happy today.","أنا سعيد اليوم."],
+["sad","حزين","He looks sad.","يبدو حزينًا."],
+["good","جيد","This book is good.","هذا الكتاب جيد."],
+["bad","سيئ","The weather is bad.","الطقس سيئ."],
+["big","كبير","The house is big.","المنزل كبير."],
+["small","صغير","The room is small.","الغرفة صغيرة."],
+["new","جديد","I have a new phone.","لدي هاتف جديد."],
+["old","قديم","This building is old.","هذا المبنى قديم."],
+["hot","حار","The tea is hot.","الشاي ساخن."],
+["cold","بارد","The water is cold.","الماء بارد."],
+["eat","يأكل","I eat breakfast at seven.","أتناول الفطور في السابعة."],
+["drink","يشرب","I drink tea.","أشرب الشاي."],
+["go","يذهب","I go to school.","أذهب إلى المدرسة."],
+["come","يأتي","Come here, please.","تعال إلى هنا من فضلك."],
+["read","يقرأ","I read English books.","أقرأ كتبًا إنجليزية."],
+["write","يكتب","I write every day.","أكتب كل يوم."],
+["speak","يتحدث","I speak Arabic.","أتحدث العربية."],
+["listen","يستمع","I listen to English.","أستمع إلى الإنجليزية."],
+["learn","يتعلم","I learn English.","أتعلم الإنجليزية."],
+["work","يعمل","I work every day.","أعمل كل يوم."]
 
 ],
 
-intermediate: [
+intermediate:[
 
-{
-word: "improve",
-meaning: "يحسّن / يطوّر",
-example: "I want to improve my English.",
-translation: "أريد تحسين لغتي الإنجليزية."
-}
+["achieve","يحقق","I want to achieve my goals.","أريد تحقيق أهدافي."],
+["improve","يحسن / يطور","I want to improve my English.","أريد تحسين الإنجليزية."],
+["develop","يطور","We need to develop our skills.","نحتاج إلى تطوير مهاراتنا."],
+["decide","يقرر","I decided to study today.","قررت أن أدرس اليوم."],
+["explain","يشرح","Can you explain this lesson?","هل يمكنك شرح هذا الدرس؟"],
+["understand","يفهم","I understand the question.","أفهم السؤال."],
+["remember","يتذكر","I remember his name.","أتذكر اسمه."],
+["forget","ينسى","I sometimes forget new words.","أنسى الكلمات الجديدة أحيانًا."],
+["practice","يتدرب","I practice English every day.","أتدرب على الإنجليزية كل يوم."],
+["prepare","يستعد","I prepare for my exam.","أستعد لامتحاني."],
+["continue","يواصل","I will continue learning.","سأواصل التعلم."],
+["choose","يختار","You can choose one answer.","يمكنك اختيار إجابة واحدة."],
+["change","يغير","I want to change my routine.","أريد تغيير روتيني."],
+["create","ينشئ","We can create a new project.","يمكننا إنشاء مشروع جديد."],
+["solve","يحل","I can solve this problem.","أستطيع حل هذه المشكلة."],
+["answer","يجيب","Please answer the question.","من فضلك أجب عن السؤال."],
+["question","سؤال","I have a question.","لدي سؤال."],
+["reason","سبب","What is the reason?","ما السبب؟"],
+["example","مثال","Give me an example.","أعطني مثالًا."],
+["important","مهم","English is important for my future.","الإنجليزية مهمة لمستقبلي."],
+["different","مختلف","Everyone has a different opinion.","لكل شخص رأي مختلف."],
+["possible","ممكن","Anything is possible with practice.","كل شيء ممكن مع التدريب."],
+["necessary","ضروري","Practice is necessary.","التدريب ضروري."],
+["difficult","صعب","This exercise is difficult.","هذا التمرين صعب."],
+["easy","سهل","The question is easy.","السؤال سهل."],
+["careful","حذر","Be careful with this machine.","كن حذرًا مع هذه الآلة."],
+["useful","مفيد","This book is useful.","هذا الكتاب مفيد."],
+["successful","ناجح","She is a successful student.","هي طالبة ناجحة."],
+["ready","مستعد","I am ready for class.","أنا مستعد للحصة."],
+["busy","مشغول","I am busy today.","أنا مشغول اليوم."],
+["available","متاح","The teacher is available now.","المعلم متاح الآن."],
+["experience","خبرة / تجربة","Experience is important for work.","الخبرة مهمة للعمل."],
+["skill","مهارة","Speaking is an important skill.","التحدث مهارة مهمة."],
+["knowledge","معرفة","Knowledge helps us learn.","المعرفة تساعدنا على التعلم."],
+["project","مشروع","I am working on a project.","أعمل على مشروع."],
+["language","لغة","English is an international language.","الإنجليزية لغة عالمية."],
+["conversation","محادثة","We had a short conversation.","أجرينا محادثة قصيرة."],
+["information","معلومات","I need more information.","أحتاج إلى مزيد من المعلومات."],
+["future","مستقبل","I am thinking about my future.","أفكر في مستقبلي."],
+["goal","هدف","My goal is to speak English well.","هدفي أن أتحدث الإنجليزية جيدًا."],
+["habit","عادة","Reading is a good habit.","القراءة عادة جيدة."],
+["usually","عادةً","I usually wake up early.","عادةً أستيقظ مبكرًا."],
+["already","بالفعل","I have already finished.","لقد انتهيت بالفعل."],
+["although","رغم أن","Although it was difficult, I continued.","رغم أنه كان صعبًا، واصلت."],
+["however","لكن / مع ذلك","However, I decided to continue.","مع ذلك، قررت الاستمرار."],
+["instead","بدلًا من ذلك","I walked instead of taking the bus.","مشيت بدلًا من ركوب الحافلة."],
+["perhaps","ربما","Perhaps we can meet tomorrow.","ربما يمكننا اللقاء غدًا."],
+["probably","على الأرجح","He will probably come later.","على الأرجح سيأتي لاحقًا."],
+["opportunity","فرصة","This is a great opportunity.","هذه فرصة رائعة."]
 
 ],
 
-advanced: [
+advanced:[
 
-{
-word: "opportunity",
-meaning: "فرصة",
-example: "This is a great opportunity.",
-translation: "هذه فرصة رائعة."
-}
-
+["significant","مهم / ذو أهمية","This is a significant change.","هذا تغيير مهم."],
+["essential","أساسي / ضروري","Practice is essential for progress.","التدريب ضروري للتقدم."],
+["efficient","فعّال","We need an efficient system.","نحتاج إلى نظام فعال."],
+["complex","معقد","This is a complex problem.","هذه مشكلة معقدة."],
+["accurate","دقيق","The information must be accurate.","يجب أن تكون المعلومات دقيقة."],
+["relevant","ذو صلة","Please provide relevant information.","يرجى تقديم معلومات ذات صلة."],
+["reliable","موثوق","We need a reliable source.","نحتاج إلى مصدر موثوق."],
+["flexible","مرن","A flexible plan is useful.","الخطة المرنة مفيدة."],
+["independent","مستقل","He became an independent learner.","أصبح متعلمًا مستقلًا."],
+["confident","واثق","She is confident when speaking.","هي واثقة عند التحدث."],
+["communicate","يتواصل","Good students communicate clearly.","الطلاب الجيدون يتواصلون بوضوح."],
+["analyze","يحلل","We need to analyze the data.","نحتاج إلى تحليل البيانات."],
+["evaluate","يقيّم","We should evaluate the results.","يجب أن نقيم النتائج."],
+["identify","يحدد / يتعرف على","Can you identify the problem?","هل يمكنك تحديد المشكلة؟"],
+["require","يتطلب","This job requires experience.","هذه الوظيفة تتطلب خبرة."],
+["consider","يأخذ بعين الاعتبار","We should consider all options.","يجب أن نأخذ كل الخيارات بعين الاعتبار."],
+["influence","يؤثر","Technology influences our lives.","التكنولوجيا تؤثر في حياتنا."],
+["increase","يزيد","Practice can increase your confidence.","التدريب يمكن أن يزيد ثقتك."],
+["reduce","يقلل","We should reduce unnecessary work.","يجب أن نقلل العمل غير الضروري."],
+["maintain","يحافظ على","It is important to maintain good habits.","من المهم الحفاظ على العادات الجيدة."],
+["achieve","يحقق","Hard work helps you achieve success.","العمل الجاد يساعدك على تحقيق النجاح."],
+["approach","نهج / طريقة","We need a different approach.","نحتاج إلى نهج مختلف."],
+["strategy","استراتيجية","We need a clear strategy.","نحتاج إلى استراتيجية واضحة."],
+["solution","حل","We found a good solution.","وجدنا حلًا جيدًا."],
+["challenge","تحدٍ","Learning a language is a challenge.","تعلم لغة تحدٍ."],
+["benefit","فائدة","Reading has many benefits.","للقراءة فوائد كثيرة."],
+["advantage","ميزة","Experience gives you an advantage.","الخبرة تمنحك ميزة."],
+["consequence","نتيجة / عاقبة","Every decision has a consequence.","لكل قرار نتيجة."],
+["environment","بيئة","We should protect the environment.","يجب أن نحمي البيئة."],
+["society","مجتمع","Technology changes society.","التكنولوجيا تغير المجتمع."],
+["education","تعليم","Education can change lives.","التعليم يمكن أن يغير حياة الناس."],
+["research","بحث","The students are doing research.","الطلاب يقومون ببحث."],
+["evidence","دليل","We need evidence before making a decision.","نحتاج إلى دليل قبل اتخاذ القرار."],
+["source","مصدر","Use a reliable source.","استخدم مصدرًا موثوقًا."],
+["issue","قضية / مشكلة","This is an important issue.","هذه قضية مهمة."],
+["process","عملية","Learning is a long process.","التعلم عملية طويلة."],
+["method","طريقة","This method is effective.","هذه الطريقة فعالة."],
+["specific","محدد","I need a specific answer.","أحتاج إلى إجابة محددة."],
+["appropriate","مناسب","Choose an appropriate example.","اختر مثالًا مناسبًا."],
+["particularly","خصوصًا","I particularly enjoy reading.","أستمتع بالقراءة خصوصًا."],
+["eventually","في النهاية","Eventually, he reached his goal.","في النهاية وصل إلى هدفه."],
+["therefore","لذلك","It was late; therefore, we left.","كان الوقت متأخرًا، لذلك غادرنا."],
+["nevertheless","مع ذلك","It was difficult; nevertheless, we continued.","كان الأمر صعبًا، ومع ذلك واصلنا."],
+["furthermore","علاوة على ذلك","Furthermore, the plan is affordable.","علاوة على ذلك، الخطة ميسورة التكلفة."],
+["however","ومع ذلك","However, we need more time.","ومع ذلك، نحتاج إلى مزيد من الوقت."],
+["opportunity","فرصة","Education creates new opportunities.","التعليم يخلق فرصًا جديدة."],
+["responsibility","مسؤولية","Learning is your responsibility.","التعلم مسؤوليتك."],
+["achievement","إنجاز","Finishing the project was a great achievement.","إنهاء المشروع كان إنجازًا رائعًا."],
+["determination","عزيمة / إصرار","Determination helps people overcome difficulties.","الإصرار يساعد الناس على تجاوز الصعوبات."],
+["perspective","وجهة نظر","Try to understand his perspective.","حاول أن تفهم وجهة نظره."]
 ]
 
 };
 
+function showLevel(level,button){
 
-function showLevel(level) {
+document.querySelectorAll(".level").forEach(function(b){
+b.classList.remove("active");
+});
 
-const container =
-document.getElementById("vocabulary");
+button.classList.add("active");
 
-container.innerHTML = "";
+const container=document.getElementById("vocabulary");
+container.innerHTML="";
 
-vocabulary[level].forEach(function(item) {
+vocabulary[level].forEach(function(item){
 
-const card =
-document.createElement("div");
+const card=document.createElement("div");
+card.className="word-card";
 
-card.className = "word-card";
-
-card.innerHTML = `
-
-<div class="word">
-${item.word}
-</div>
-
-<div class="meaning">
-<strong>المعنى:</strong>
-${item.meaning}
-</div>
-
+card.innerHTML=`
+<div class="word">${item[0]}</div>
+<div class="meaning"><strong>المعنى:</strong> ${item[1]}</div>
 <div class="example">
-
-<div class="example-en">
-${item.example}
+<div class="example-en">${item[2]}</div>
+<div>${item[3]}</div>
 </div>
-
-<div>
-${item.translation}
-</div>
-
-</div>
-
-<button class="sound"
-onclick="speak('${item.example.replace(/'/g, "\\'")}')">
-🔊 استمع
-</button>
-
+<button class="sound" onclick="speak(${JSON.stringify(item[2])})">🔊 استمع</button>
 `;
 
 container.appendChild(card);
@@ -262,32 +258,26 @@ container.appendChild(card);
 
 }
 
+function speak(text){
 
-function speak(text) {
-
-if (!("speechSynthesis" in window)) {
-
+if(!("speechSynthesis" in window)){
 alert("المتصفح لا يدعم النطق الصوتي.");
-
 return;
-
 }
 
 window.speechSynthesis.cancel();
 
-const speech =
-new SpeechSynthesisUtterance(text);
-
-speech.lang = "en-US";
-
-speech.rate = 0.8;
+const speech=new SpeechSynthesisUtterance(text);
+speech.lang="en-US";
+speech.rate=.8;
 
 window.speechSynthesis.speak(speech);
 
 }
 
+showLevel("beginner",document.querySelector(".level"));
 
-showLevel("beginner");
+</script>
 
-</script></body>
-  </html>
+</body>
+</html>
