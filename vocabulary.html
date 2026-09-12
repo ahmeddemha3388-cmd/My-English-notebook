@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>المفردات الإنجليزية</title><style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eef4ff, #f8fbff);
+    color: #172033;
+}
+
+header {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: white;
+    text-align: center;
+    padding: 30px 18px;
+    border-radius: 0 0 28px 28px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 29px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 22px 16px;
+}
+
+.back {
+    display: inline-block;
+    background: white;
+    color: #2563eb;
+    text-decoration: none;
+    padding: 10px 17px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.intro {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(30,60,100,0.10);
+    line-height: 1.9;
+}
+
+.levels {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.level {
+    flex: 1;
+    border: none;
+    padding: 13px 8px;
+    border-radius: 12px;
+    background: white;
+    color: #2563eb;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.level.active {
+    background: #2563eb;
+    color: white;
+}
+
+.vocabulary {
+    display: grid;
+    gap: 15px;
+}
+
+.word-card {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 6px 20px rgba(30,60,100,0.08);
+}
+
+.word {
+    direction: ltr;
+    text-align: left;
+    font-size: 23px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.meaning {
+    margin-top: 8px;
+    font-size: 17px;
+}
+
+.example {
+    background: #f8fafc;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    line-height: 1.8;
+}
+
+.example-en {
+    direction: ltr;
+    text-align: left;
+    font-weight: bold;
+}
+
+.sound {
+    margin-top: 12px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 9px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #667085;
+}
+</style></head><body><header>
+<h1>📚 المفردات الإنجليزية</h1>
+<p>English Vocabulary</p>
+</header><div class="container"><a class="back" href="index.html">
+← العودة إلى الرئيسية
+</a><div class="intro">
+<strong>🧠 تعلم المفردات بطريقة صحيحة</strong>
+<br>
+تعلم الكلمة مع معناها ومثال عليها، ثم استمع إلى نطقها.
+سننتقل تدريجيًا من المستوى المبتدئ إلى المستوى المتقدم.
+</div><div class="levels"><button class="level active" onclick="showLevel('beginner')">
+🟢 مبتدئ
+</button><button class="level" onclick="showLevel('intermediate')">
+🔵 متوسط
+</button><button class="level" onclick="showLevel('advanced')">
+🟣 متقدم
+</button></div><div id="vocabulary" class="vocabulary"></div></div><footer>
+My English Notebook © 2026
+</footer><script>
+
+const vocabulary = {
+
+beginner: [
+
+{
+word: "book",
+meaning: "كتاب",
+example: "I have a book.",
+translation: "لدي كتاب."
+},
+
+{
+word: "school",
+meaning: "مدرسة",
+example: "I go to school.",
+translation: "أذهب إلى المدرسة."
+},
+
+{
+word: "student",
+meaning: "طالب",
+example: "I am a student.",
+translation: "أنا طالب."
+},
+
+{
+word: "teacher",
+meaning: "معلّم",
+example: "My teacher is kind.",
+translation: "معلمي لطيف."
+},
+
+{
+word: "friend",
+meaning: "صديق",
+example: "He is my friend.",
+translation: "هو صديقي."
+}
+
+],
+
+intermediate: [
+
+{
+word: "improve",
+meaning: "يحسّن / يطوّر",
+example: "I want to improve my English.",
+translation: "أريد تحسين لغتي الإنجليزية."
+}
+
+],
+
+advanced: [
+
+{
+word: "opportunity",
+meaning: "فرصة",
+example: "This is a great opportunity.",
+translation: "هذه فرصة رائعة."
+}
+
+]
+
+};
+
+
+function showLevel(level) {
+
+const container =
+document.getElementById("vocabulary");
+
+container.innerHTML = "";
+
+vocabulary[level].forEach(function(item) {
+
+const card =
+document.createElement("div");
+
+card.className = "word-card";
+
+card.innerHTML = `
+
+<div class="word">
+${item.word}
+</div>
+
+<div class="meaning">
+<strong>المعنى:</strong>
+${item.meaning}
+</div>
+
+<div class="example">
+
+<div class="example-en">
+${item.example}
+</div>
+
+<div>
+${item.translation}
+</div>
+
+</div>
+
+<button class="sound"
+onclick="speak('${item.example.replace(/'/g, "\\'")}')">
+🔊 استمع
+</button>
+
+`;
+
+container.appendChild(card);
+
+});
+
+}
+
+
+function speak(text) {
+
+if (!("speechSynthesis" in window)) {
+
+alert("المتصفح لا يدعم النطق الصوتي.");
+
+return;
+
+}
+
+window.speechSynthesis.cancel();
+
+const speech =
+new SpeechSynthesisUtterance(text);
+
+speech.lang = "en-US";
+
+speech.rate = 0.8;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+
+showLevel("beginner");
+
+</script></body>
+  </html>
