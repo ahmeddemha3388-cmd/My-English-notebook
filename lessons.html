@@ -3,413 +3,1242 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>دروس الإنجليزية</title>
+<title>دروس الإنجليزية — 100 درس</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#eef4ff,#f8fbff);color:#172033}
-header{background:linear-gradient(135deg,#2563eb,#4f46e5);color:white;text-align:center;padding:30px 18px;border-radius:0 0 28px 28px}header h1{margin:0;font-size:29px}
-.container{max-width:900px;margin:auto;padding:22px 16px}.back{display:inline-block;background:white;color:#2563eb;text-decoration:none;padding:10px 17px;border-radius:12px;margin-bottom:20px}
-.lesson-number{text-align:center;color:#667085;margin-bottom:12px;font-weight:bold}.lesson{background:white;border-radius:22px;padding:25px 20px;box-shadow:0 8px 25px rgba(30,60,100,.10)}.lesson h2{color:#2563eb;margin-top:0}
-.goal,.explanation,.example,.practice{padding:16px;border-radius:14px;line-height:1.9}.goal{background:#eef4ff;margin-bottom:20px}.section{margin-top:25px}.section h3{color:#2563eb}.explanation{background:#f8fafc}.example{background:#eef4ff;margin:12px 0}
-.english{direction:ltr;text-align:left;font-size:19px;font-weight:bold}.arabic{margin-top:7px}.listen{display:block;margin:18px auto;border:none;background:#2563eb;color:white;padding:12px 24px;border-radius:12px;font-size:16px;cursor:pointer}
-.words{margin-top:25px}.word{background:#f8fafc;padding:12px;margin:8px 0;border-radius:10px;line-height:1.7}.practice{background:#fff7ed}
-.navigation{display:flex;justify-content:space-between;gap:10px;margin-top:22px}.navigation button{flex:1;border:none;background:#2563eb;color:white;padding:12px;border-radius:12px;cursor:pointer;font-size:15px}.navigation button:disabled{background:#b7c1d1}
-#status{text-align:center;min-height:22px;color:#2563eb;font-size:14px}footer{text-align:center;padding:30px;color:#667085}
-</style></head>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#eef4ff,#f8fbff);color:#172033}
+header{background:linear-gradient(135deg,#2563eb,#4f46e5);color:white;text-align:center;padding:30px 18px;border-radius:0 0 28px 28px}
+header h1{margin:0;font-size:29px}
+.container{max-width:900px;margin:auto;padding:22px 16px}
+.back{display:inline-block;background:white;color:#2563eb;text-decoration:none;padding:10px 17px;border-radius:12px;margin-bottom:20px}
+.lesson-number{text-align:center;color:#667085;margin-bottom:12px;font-weight:bold}
+.lesson{background:white;border-radius:22px;padding:25px 20px;box-shadow:0 8px 25px rgba(30,60,100,.10)}
+.lesson h2{color:#2563eb;margin-top:0}
+.goal,.explanation,.example,.practice{padding:16px;border-radius:14px;line-height:1.9}
+.goal{background:#eef4ff;margin-bottom:20px}.section{margin-top:25px}.section h3{color:#2563eb}
+.explanation{background:#f8fafc}.example{background:#eef4ff;margin:12px 0}
+.english{direction:ltr;text-align:left;font-size:19px;font-weight:bold}.arabic{margin-top:7px}
+.listen{display:block;margin:18px auto;border:none;background:#2563eb;color:white;padding:12px 24px;border-radius:12px;font-size:16px;cursor:pointer}
+.words{margin-top:25px}.word{background:#f8fafc;padding:12px;margin:8px 0;border-radius:10px;line-height:1.7}
+.practice{background:#fff7ed}.navigation{display:flex;justify-content:space-between;gap:10px;margin-top:22px}
+.navigation button{flex:1;border:none;background:#2563eb;color:white;padding:12px;border-radius:12px;cursor:pointer;font-size:15px}
+.navigation button:disabled{background:#b7c1d1}
+#status{text-align:center;min-height:22px;color:#2563eb;font-size:14px}
+footer{text-align:center;padding:30px;color:#667085}
+</style>
+</head>
 <body>
-<header><h1>📚 دروس الإنجليزية</h1><p>My English Lessons</p></header>
-<div class="container"><a class="back" href="index.html">← العودة إلى الرئيسية</a>
+<header><h1>📚 دروس الإنجليزية</h1><p>My English Lessons — 100 Lessons</p></header>
+<div class="container">
+<a class="back" href="index.html">← العودة إلى الرئيسية</a>
 <div class="lesson-number" id="lessonNumber"></div>
-<div class="lesson"><h2 id="title"></h2>
+<div class="lesson">
+<h2 id="title"></h2>
 <div class="goal"><strong>🎯 هدف الدرس:</strong><div id="goal"></div></div>
 <div class="section"><h3>📖 شرح الدرس</h3><div class="explanation" id="explanation"></div></div>
 <div class="section"><h3>💬 أمثلة</h3><div id="examples"></div></div>
-<button class="listen" onclick="listenLesson()">🔊 استمع إلى أمثلة الدرس</button><div id="status"></div>
+<button class="listen" id="listenButton" onclick="listenLesson()">🔊 استمع إلى أمثلة الدرس</button>
+<div id="status"></div>
 <div class="words"><h3>🧠 كلمات مهمة</h3><div id="wordsList"></div></div>
 <div class="section"><h3>✏️ تدريب</h3><div class="practice" id="practice"></div></div>
 </div>
 <div class="navigation"><button id="previous" onclick="previousLesson()">⬅️ السابق</button><button id="next" onclick="nextLesson()">التالي ➡️</button></div>
-</div><footer>My English Notebook © 2026</footer>
+</div>
+<footer>My English Notebook © 2026</footer>
 <script>
-const lessons=[
+const lessons = [
 {
 title:"Lesson 1 — Personal Pronouns",
-goal:"تعلم الضمائر الشخصية الأساسية.",
-explanation:`الضمائر هي كلمات نستخدمها بدل الأسماء.`,
+goal:"الضمائر الشخصية",
+explanation:`I, you, he, she, it, we, they.`,
 examples:[
 {english:"I am a student.",arabic:"أنا طالب."},
-{english:"She is a student.",arabic:"هي طالبة."},
-{english:"They are friends.",arabic:"هم أصدقاء."}
+{english:"This is a simple example for lesson 1.",arabic:"هذا مثال إضافي بسيط للدرس 1."}
 ],
-words:[
-"I = أنا",
-"You = أنت / أنتم",
-"He = هو",
-"She = هي",
-"We = نحن",
-"They = هم / هن"
-],
-practice:`استخدم I وYou وHe وShe في جمل بسيطة.`
+words:["Personal = Personal Pronouns","English = الإنجليزية","lesson = درس","Foundations = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
 },
 
 {
-title:"Lesson 2 — Verb To Be: am / is / are",
-goal:"تعلم استخدام am وis وare.",
-explanation:`مع I نستخدم am، ومع He/She/It نستخدم is، ومع You/We/They نستخدم are.`,
+title:"Lesson 2 — To Be: am/is/are",
+goal:"فعل الكينونة",
+explanation:`am مع I، وis مع he/she/it، وare مع you/we/they.`,
 examples:[
-{english:"I am ready.",arabic:"أنا مستعد."},
-{english:"He is happy.",arabic:"هو سعيد."},
-{english:"They are students.",arabic:"هم طلاب."}
+{english:"She is happy.",arabic:"هي سعيدة."},
+{english:"This is a simple example for lesson 2.",arabic:"هذا مثال إضافي بسيط للدرس 2."}
 ],
-words:[
-"am = أكون",
-"is = يكون",
-"are = يكون / يكونون",
-"happy = سعيد",
-"ready = مستعد"
-],
-practice:`أكمل: I ___ ready. She ___ happy. They ___ students.`
+words:["To = To Be: am/is/are","English = الإنجليزية","lesson = درس","Foundations = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
 },
 
 {
-title:"Lesson 3 — To Be: Negative and Questions",
-goal:"تعلم النفي والسؤال باستخدام am/is/are.",
-explanation:`للنفي نضع not، وللسؤال نضع am أو is أو are في البداية.`,
-examples:[
-{english:"I am not tired.",arabic:"أنا لست متعبًا."},
-{english:"She is not busy.",arabic:"هي ليست مشغولة."},
-{english:"Are you ready?",arabic:"هل أنت مستعد؟"}
-],
-words:[
-"not = ليس / لا",
-"tired = متعب",
-"busy = مشغول",
-"ready = مستعد"
-],
-practice:`حوّل: I am happy إلى النفي ثم إلى سؤال.`
-},
-
-{
-title:"Lesson 4 — Possessive Adjectives",
-goal:"تعلم my وyour وhis وher وour وtheir.",
-explanation:`تأتي صفات الملكية قبل الاسم.`,
-examples:[
-{english:"My name is Ahmed.",arabic:"اسمي أحمد."},
-{english:"His book is new.",arabic:"كتابه جديد."},
-{english:"Our school is big.",arabic:"مدرستنا كبيرة."},
-{english:"Their house is beautiful.",arabic:"منزلهم جميل."}
-],
-words:[
-"my = ـي",
-"your = ـك",
-"his = ـه",
-"her = ـها",
-"our = ـنا",
-"their = ـهم"
-],
-practice:`أكمل: I have a book. It is ___ book.`
-},
-
-{
-title:"Lesson 5 — Singular, Plural and Articles",
-goal:"تعلم المفرد والجمع وa وan وthe.",
-explanation:`المفرد شيء واحد، والجمع غالبًا بإضافة s. نستخدم a أو an مع الاسم المفرد غير المحدد.`,
-examples:[
-{english:"This is a book.",arabic:"هذا كتاب."},
-{english:"This is an apple.",arabic:"هذه تفاحة."},
-{english:"I have two books.",arabic:"لدي كتابان."}
-],
-words:[
-"book = كتاب",
-"books = كتب",
-"apple = تفاحة",
-"two = اثنان",
-"the = الـ"
-],
-practice:`اختر a أو an: ___ book، ___ apple، ___ student.`
-},
-
-{
-title:"Lesson 6 — Have and Has",
-goal:"تعلم have وhas للتعبير عن الملكية.",
-explanation:`نستخدم have مع I/You/We/They، وhas مع He/She/It.`,
-examples:[
-{english:"I have a book.",arabic:"لدي كتاب."},
-{english:"He has a car.",arabic:"لديه سيارة."},
-{english:"She has a bag.",arabic:"لديها حقيبة."}
-],
-words:[
-"have = لديه / يملك",
-"has = لديه / يملك",
-"car = سيارة",
-"bag = حقيبة"
-],
-practice:`اختر have أو has: I ___ a book. She ___ a phone.`
-},
-
-{
-title:"Lesson 7 — Present Simple",
-goal:"التعرف على المضارع البسيط للعادات والروتين.",
-explanation:`مع I/You/We/They نستخدم الفعل الأساسي، ومع He/She/It نضيف غالبًا s.`,
-examples:[
-{english:"I study English.",arabic:"أدرس الإنجليزية."},
-{english:"We study every day.",arabic:"نحن ندرس كل يوم."},
-{english:"He works every day.",arabic:"هو يعمل كل يوم."},
-{english:"She studies English.",arabic:"هي تدرس الإنجليزية."}
-],
-words:[
-"study = يدرس",
-"work = يعمل",
-"speak = يتحدث",
-"every day = كل يوم"
-],
-practice:`اكتب جملة عن عادة لديك باستخدام I.`
-},
-
-{
-title:"Lesson 8 — Present Simple Negative",
-goal:"تعلم النفي باستخدام don't وdoesn't.",
-explanation:`نستخدم don't مع I/You/We/They وdoesn't مع He/She/It.`,
-examples:[
-{english:"I don't speak French.",arabic:"أنا لا أتحدث الفرنسية."},
-{english:"We don't study at night.",arabic:"نحن لا ندرس في الليل."},
-{english:"He doesn't work here.",arabic:"هو لا يعمل هنا."}
-],
-words:[
-"don't = لا",
-"doesn't = لا",
-"night = الليل",
-"work = يعمل"
-],
-practice:`حوّل: I speak English. He works here.`
-},
-
-{
-title:"Lesson 9 — Present Simple Questions",
-goal:"تعلم الأسئلة باستخدام Do وDoes.",
-explanation:`نستخدم Do مع I/You/We/They وDoes مع He/She/It.`,
-examples:[
-{english:"Do you speak English?",arabic:"هل تتحدث الإنجليزية؟"},
-{english:"Do they work here?",arabic:"هل هم يعملون هنا؟"},
-{english:"Does he study?",arabic:"هل هو يدرس؟"}
-],
-words:[
-"do = أداة سؤال",
-"does = أداة سؤال",
-"here = هنا",
-"study = يدرس"
-],
-practice:`حوّل إلى سؤال: You speak English. He works here.`
-},
-
-{
-title:"Lesson 10 — My Daily Life",
-goal:"تطبيق القواعد السابقة في الحياة اليومية.",
-explanation:`استخدم To Be وhave وPresent Simple والنفي والأسئلة للحديث عن حياتك.`,
-examples:[
-{english:"My name is Ahmed.",arabic:"اسمي أحمد."},
-{english:"I am a student.",arabic:"أنا طالب."},
-{english:"I study English every day.",arabic:"أدرس الإنجليزية كل يوم."},
-{english:"I don't study at night.",arabic:"لا أدرس في الليل."}
-],
-words:[
-"daily life = الحياة اليومية",
-"student = طالب",
-"study = يدرس",
-"night = الليل"
-],
-practice:`تحدث عن نفسك من 5 إلى 8 جمل.`
-},
-
-{
-title:"Lesson 11 — Present Continuous",
-goal:"تعلم المضارع المستمر لشيء يحدث الآن.",
-explanation:`نستخدم am/is/are + verb-ing للحديث عما يحدث الآن.`,
-examples:[
-{english:"I am studying now.",arabic:"أنا أدرس الآن."},
-{english:"She is reading a book.",arabic:"هي تقرأ كتابًا."},
-{english:"They are playing football.",arabic:"هم يلعبون كرة القدم."}
-],
-words:[
-"now = الآن",
-"study = يدرس",
-"read = يقرأ",
-"play = يلعب"
-],
-practice:`اكتب جملتين عن أشياء تحدث الآن.`
-},
-
-{
-title:"Lesson 12 — Present Continuous Negative",
-goal:"تعلم النفي في المضارع المستمر.",
+title:"Lesson 3 — To Be: Negative",
+goal:"نفي To Be",
 explanation:`نضع not بعد am/is/are.`,
 examples:[
-{english:"I am not sleeping.",arabic:"أنا لا أنام الآن."},
-{english:"He is not working.",arabic:"هو لا يعمل الآن."},
-{english:"They aren't playing.",arabic:"هم لا يلعبون."}
+{english:"I am not tired.",arabic:"أنا لست متعبًا."},
+{english:"This is a simple example for lesson 3.",arabic:"هذا مثال إضافي بسيط للدرس 3."}
 ],
-words:[
-"sleep = ينام",
-"work = يعمل",
-"playing = يلعب"
-],
-practice:`حوّل: I am studying إلى النفي.`
+words:["To = To Be: Negative","English = الإنجليزية","lesson = درس","Foundations = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
 },
 
 {
-title:"Lesson 13 — Present Continuous Questions",
-goal:"تعلم تكوين الأسئلة في المضارع المستمر.",
-explanation:`نضع am/is/are في بداية السؤال ثم الفاعل والفعل مع ing.`,
+title:"Lesson 4 — To Be: Questions",
+goal:"أسئلة To Be",
+explanation:`نضع am/is/are في بداية السؤال.`,
 examples:[
-{english:"Are you studying English?",arabic:"هل تدرس الإنجليزية؟"},
-{english:"Is he working now?",arabic:"هل هو يعمل الآن؟"},
-{english:"Are they playing?",arabic:"هل هم يلعبون؟"}
+{english:"Are you ready?",arabic:"هل أنت مستعد؟"},
+{english:"This is a simple example for lesson 4.",arabic:"هذا مثال إضافي بسيط للدرس 4."}
 ],
-words:[
-"question = سؤال",
-"working = يعمل",
-"playing = يلعب"
-],
-practice:`حوّل: You are studying إلى سؤال.`
+words:["To = To Be: Questions","English = الإنجليزية","lesson = درس","Foundations = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
 },
 
 {
-title:"Lesson 14 — Can and Cannot",
-goal:"تعلم can وcannot للتعبير عن القدرة.",
-explanation:`نستخدم can للقدرة وcannot أو can't لعدم القدرة، وبعد can يأتي الفعل الأساسي.`,
-examples:[
-{english:"I can speak English.",arabic:"أستطيع التحدث بالإنجليزية."},
-{english:"He can swim.",arabic:"هو يستطيع السباحة."},
-{english:"I can't drive.",arabic:"لا أستطيع القيادة."},
-{english:"Can you read English?",arabic:"هل تستطيع قراءة الإنجليزية؟"}
-],
-words:[
-"can = يستطيع",
-"cannot = لا يستطيع",
-"swim = يسبح",
-"drive = يقود"
-],
-practice:`اكتب: I can... وI can't...`
-},
-
-{
-title:"Lesson 15 — There is and There are",
-goal:"تعلم الحديث عن وجود الأشياء.",
-explanation:`There is للمفرد وThere are للجمع.`,
-examples:[
-{english:"There is a book on the table.",arabic:"يوجد كتاب على الطاولة."},
-{english:"There is a computer in the room.",arabic:"يوجد حاسوب في الغرفة."},
-{english:"There are two books.",arabic:"يوجد كتابان."}
-],
-words:[
-"there is = يوجد للمفرد",
-"there are = يوجد للجمع",
-"table = طاولة",
-"computer = حاسوب"
-],
-practice:`أكمل: ___ a book. ___ two students.`
-},
-
-{
-title:"Lesson 16 — This, That, These and Those",
-goal:"تعلم أسماء الإشارة للمفرد والجمع.",
-explanation:`This للمفرد القريب، That للمفرد البعيد، These للجمع القريب، Those للجمع البعيد.`,
+title:"Lesson 5 — Possessive Adjectives",
+goal:"صفات الملكية",
+explanation:`my, your, his, her, our, their تأتي قبل الاسم.`,
 examples:[
 {english:"This is my book.",arabic:"هذا كتابي."},
-{english:"That is your phone.",arabic:"ذلك هاتفك."},
-{english:"These are my books.",arabic:"هذه كتبي."},
-{english:"Those are your shoes.",arabic:"تلك أحذيتك."}
+{english:"This is a simple example for lesson 5.",arabic:"هذا مثال إضافي بسيط للدرس 5."}
 ],
-words:[
-"this = هذا / هذه",
-"that = ذلك / تلك",
-"these = هؤلاء / هذه",
-"those = أولئك / تلك"
-],
-practice:`كوّن أربع جمل باستخدام This وThat وThese وThose.`
+words:["Possessive = Possessive Adjectives","English = الإنجليزية","lesson = درس","Foundations = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
 },
 
 {
-title:"Lesson 17 — Prepositions of Place",
-goal:"تعلم in وon وunder وnext to.",
-explanation:`تستخدم حروف الجر لوصف مكان الأشياء.`,
+title:"Lesson 6 — Articles a/an/the",
+goal:"أدوات التعريف والتنكير",
+explanation:`a وan مع المفرد غير المحدد، وthe للمحدد.`,
+examples:[
+{english:"I have an apple.",arabic:"لدي تفاحة."},
+{english:"This is a simple example for lesson 6.",arabic:"هذا مثال إضافي بسيط للدرس 6."}
+],
+words:["Articles = Articles a/an/the","English = الإنجليزية","lesson = درس","Foundations = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 7 — Singular and Plural",
+goal:"المفرد والجمع",
+explanation:`غالبًا نضيف s للجمع.`,
+examples:[
+{english:"I have two books.",arabic:"لدي كتابان."},
+{english:"This is a simple example for lesson 7.",arabic:"هذا مثال إضافي بسيط للدرس 7."}
+],
+words:["Singular = Singular and Plural","English = الإنجليزية","lesson = درس","Foundations = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 8 — This/That/These/Those",
+goal:"أسماء الإشارة",
+explanation:`This/these للقريب وthat/those للبعيد.`,
+examples:[
+{english:"These are my books.",arabic:"هذه كتبي."},
+{english:"This is a simple example for lesson 8.",arabic:"هذا مثال إضافي بسيط للدرس 8."}
+],
+words:["This/That/These/Those = This/That/These/Those","English = الإنجليزية","lesson = درس","Foundations = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 9 — Have and Has",
+goal:"have وhas",
+explanation:`have مع I/you/we/they وhas مع he/she/it.`,
+examples:[
+{english:"He has a car.",arabic:"لديه سيارة."},
+{english:"This is a simple example for lesson 9.",arabic:"هذا مثال إضافي بسيط للدرس 9."}
+],
+words:["Have = Have and Has","English = الإنجليزية","lesson = درس","Foundations = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 10 — There is / There are",
+goal:"وجود الأشياء",
+explanation:`There is للمفرد وthere are للجمع.`,
+examples:[
+{english:"There are two chairs.",arabic:"هناك كرسيان."},
+{english:"This is a simple example for lesson 10.",arabic:"هذا مثال إضافي بسيط للدرس 10."}
+],
+words:["There = There is / There are","English = الإنجليزية","lesson = درس","Foundations = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+{
+title:"Lesson 11 — Present Simple",
+goal:"المضارع البسيط",
+explanation:`نستخدمه للعادات والروتين.`,
+examples:[
+{english:"I study every day.",arabic:"أدرس كل يوم."},
+{english:"This is a simple example for lesson 11.",arabic:"هذا مثال إضافي بسيط للدرس 11."}
+],
+words:["Present = Present Simple","English = الإنجليزية","lesson = درس","Present = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 12 — Present Simple with He/She/It",
+goal:"s مع he/she/it",
+explanation:`نضيف غالبًا s أو es للفعل.`,
+examples:[
+{english:"She works here.",arabic:"هي تعمل هنا."},
+{english:"This is a simple example for lesson 12.",arabic:"هذا مثال إضافي بسيط للدرس 12."}
+],
+words:["Present = Present Simple with He/She/It","English = الإنجليزية","lesson = درس","Present = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 13 — Don't and Doesn't",
+goal:"النفي في المضارع",
+explanation:`don't مع I/you/we/they وdoesn't مع he/she/it.`,
+examples:[
+{english:"He doesn't work here.",arabic:"هو لا يعمل هنا."},
+{english:"This is a simple example for lesson 13.",arabic:"هذا مثال إضافي بسيط للدرس 13."}
+],
+words:["Don't = Don't and Doesn't","English = الإنجليزية","lesson = درس","Present = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 14 — Do and Does Questions",
+goal:"أسئلة المضارع",
+explanation:`Do مع I/you/we/they وDoes مع he/she/it.`,
+examples:[
+{english:"Do you speak English?",arabic:"هل تتحدث الإنجليزية؟"},
+{english:"This is a simple example for lesson 14.",arabic:"هذا مثال إضافي بسيط للدرس 14."}
+],
+words:["Do = Do and Does Questions","English = الإنجليزية","lesson = درس","Present = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 15 — Short Answers",
+goal:"الإجابات القصيرة",
+explanation:`نجيب Yes/No باستخدام do/does أو am/is/are.`,
+examples:[
+{english:"Yes, I do.",arabic:"نعم، أفعل."},
+{english:"This is a simple example for lesson 15.",arabic:"هذا مثال إضافي بسيط للدرس 15."}
+],
+words:["Short = Short Answers","English = الإنجليزية","lesson = درس","Present = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 16 — Frequency Adverbs",
+goal:"ظروف التكرار",
+explanation:`always, usually, often, sometimes, never.`,
+examples:[
+{english:"I usually study early.",arabic:"عادة أدرس مبكرًا."},
+{english:"This is a simple example for lesson 16.",arabic:"هذا مثال إضافي بسيط للدرس 16."}
+],
+words:["Frequency = Frequency Adverbs","English = الإنجليزية","lesson = درس","Present = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 17 — Time Expressions",
+goal:"تعبيرات الوقت",
+explanation:`نتعلم today, every day, in the morning وغيرها.`,
+examples:[
+{english:"I study in the morning.",arabic:"أدرس في الصباح."},
+{english:"This is a simple example for lesson 17.",arabic:"هذا مثال إضافي بسيط للدرس 17."}
+],
+words:["Time = Time Expressions","English = الإنجليزية","lesson = درس","Present = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 18 — Prepositions of Time",
+goal:"حروف جر الوقت",
+explanation:`in للفترات، on للأيام، at للوقت المحدد.`,
+examples:[
+{english:"I study at eight.",arabic:"أدرس في الثامنة."},
+{english:"This is a simple example for lesson 18.",arabic:"هذا مثال إضافي بسيط للدرس 18."}
+],
+words:["Prepositions = Prepositions of Time","English = الإنجليزية","lesson = درس","Present = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 19 — Prepositions of Place",
+goal:"حروف جر المكان",
+explanation:`in, on, under, next to وغيرها.`,
 examples:[
 {english:"The book is on the table.",arabic:"الكتاب على الطاولة."},
-{english:"The phone is in the bag.",arabic:"الهاتف داخل الحقيبة."},
-{english:"The shoes are under the bed.",arabic:"الأحذية تحت السرير."},
-{english:"The school is next to my house.",arabic:"المدرسة بجانب منزلي."}
+{english:"This is a simple example for lesson 19.",arabic:"هذا مثال إضافي بسيط للدرس 19."}
 ],
-words:[
-"in = في / داخل",
-"on = على",
-"under = تحت",
-"next to = بجانب"
-],
-practice:`صف مكان ثلاثة أشياء حولك.`
+words:["Prepositions = Prepositions of Place","English = الإنجليزية","lesson = درس","Present = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
 },
 
 {
-title:"Lesson 18 — Question Words",
-goal:"تعلم What وWhere وWho وWhen وWhy وHow.",
-explanation:`هذه الكلمات تساعدنا على تكوين أسئلة تفصيلية.`,
+title:"Lesson 20 — Daily Routine",
+goal:"الروتين اليومي",
+explanation:`نجمع المضارع البسيط مع أوقات اليوم.`,
+examples:[
+{english:"I wake up at seven.",arabic:"أستيقظ في السابعة."},
+{english:"This is a simple example for lesson 20.",arabic:"هذا مثال إضافي بسيط للدرس 20."}
+],
+words:["Daily = Daily Routine","English = الإنجليزية","lesson = درس","Present = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+{
+title:"Lesson 21 — Morning Activities",
+goal:"أنشطة الصباح",
+explanation:`أفعال يومية مثل wake up, wash, brush, eat.`,
+examples:[
+{english:"I brush my teeth.",arabic:"أفرش أسناني."},
+{english:"This is a simple example for lesson 21.",arabic:"هذا مثال إضافي بسيط للدرس 21."}
+],
+words:["Morning = Morning Activities","English = الإنجليزية","lesson = درس","Daily Life = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 22 — School Life",
+goal:"الحياة المدرسية",
+explanation:`مفردات الدراسة والذهاب إلى المدرسة.`,
+examples:[
+{english:"I go to school every day.",arabic:"أذهب إلى المدرسة كل يوم."},
+{english:"This is a simple example for lesson 22.",arabic:"هذا مثال إضافي بسيط للدرس 22."}
+],
+words:["School = School Life","English = الإنجليزية","lesson = درس","Daily Life = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 23 — Family",
+goal:"العائلة",
+explanation:`family, brother, sister, parents وغيرها.`,
+examples:[
+{english:"I have a big family.",arabic:"لدي عائلة كبيرة."},
+{english:"This is a simple example for lesson 23.",arabic:"هذا مثال إضافي بسيط للدرس 23."}
+],
+words:["Family = Family","English = الإنجليزية","lesson = درس","Daily Life = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 24 — Friends",
+goal:"الأصدقاء",
+explanation:`friend, meet, help, talk وغيرها.`,
+examples:[
+{english:"My friend helps me.",arabic:"صديقي يساعدني."},
+{english:"This is a simple example for lesson 24.",arabic:"هذا مثال إضافي بسيط للدرس 24."}
+],
+words:["Friends = Friends","English = الإنجليزية","lesson = درس","Daily Life = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 25 — Food",
+goal:"الطعام",
+explanation:`eat, like, want مع أسماء الطعام.`,
+examples:[
+{english:"I like rice.",arabic:"أحب الأرز."},
+{english:"This is a simple example for lesson 25.",arabic:"هذا مثال إضافي بسيط للدرس 25."}
+],
+words:["Food = Food","English = الإنجليزية","lesson = درس","Daily Life = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 26 — Breakfast",
+goal:"الإفطار",
+explanation:`have breakfast مع أطعمة الصباح.`,
+examples:[
+{english:"I have breakfast at eight.",arabic:"أتناول الإفطار في الثامنة."},
+{english:"This is a simple example for lesson 26.",arabic:"هذا مثال إضافي بسيط للدرس 26."}
+],
+words:["Breakfast = Breakfast","English = الإنجليزية","lesson = درس","Daily Life = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 27 — Drinks",
+goal:"المشروبات",
+explanation:`drink وlike مع المشروبات.`,
+examples:[
+{english:"I drink water every day.",arabic:"أشرب الماء كل يوم."},
+{english:"This is a simple example for lesson 27.",arabic:"هذا مثال إضافي بسيط للدرس 27."}
+],
+words:["Drinks = Drinks","English = الإنجليزية","lesson = درس","Daily Life = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 28 — Weather",
+goal:"الطقس",
+explanation:`نستخدم it is مع تعبيرات الطقس.`,
+examples:[
+{english:"It is raining today.",arabic:"إنها تمطر اليوم."},
+{english:"This is a simple example for lesson 28.",arabic:"هذا مثال إضافي بسيط للدرس 28."}
+],
+words:["Weather = Weather","English = الإنجليزية","lesson = درس","Daily Life = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 29 — Clothes",
+goal:"الملابس",
+explanation:`wear وput on لوصف الملابس.`,
+examples:[
+{english:"I wear a shirt.",arabic:"أرتدي قميصًا."},
+{english:"This is a simple example for lesson 29.",arabic:"هذا مثال إضافي بسيط للدرس 29."}
+],
+words:["Clothes = Clothes","English = الإنجليزية","lesson = درس","Daily Life = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 30 — Body Parts",
+goal:"أجزاء الجسم",
+explanation:`head, hand, eye, ear وغيرها.`,
+examples:[
+{english:"My eyes are brown.",arabic:"عيناي بنيتان."},
+{english:"This is a simple example for lesson 30.",arabic:"هذا مثال إضافي بسيط للدرس 30."}
+],
+words:["Body = Body Parts","English = الإنجليزية","lesson = درس","Daily Life = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+{
+title:"Lesson 31 — Can and Can't",
+goal:"القدرة",
+explanation:`can + الفعل الأساسي، وcan't للنفي.`,
+examples:[
+{english:"I can swim.",arabic:"أستطيع السباحة."},
+{english:"This is a simple example for lesson 31.",arabic:"هذا مثال إضافي بسيط للدرس 31."}
+],
+words:["Can = Can and Can't","English = الإنجليزية","lesson = درس","Can and Continuous = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 32 — Can Questions",
+goal:"أسئلة Can",
+explanation:`نضع can في بداية السؤال.`,
+examples:[
+{english:"Can you help me?",arabic:"هل تستطيع مساعدتي؟"},
+{english:"This is a simple example for lesson 32.",arabic:"هذا مثال إضافي بسيط للدرس 32."}
+],
+words:["Can = Can Questions","English = الإنجليزية","lesson = درس","Can and Continuous = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 33 — Present Continuous",
+goal:"المضارع المستمر",
+explanation:`am/is/are + verb-ing لما يحدث الآن.`,
+examples:[
+{english:"I am studying now.",arabic:"أنا أدرس الآن."},
+{english:"This is a simple example for lesson 33.",arabic:"هذا مثال إضافي بسيط للدرس 33."}
+],
+words:["Present = Present Continuous","English = الإنجليزية","lesson = درس","Can and Continuous = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 34 — Present Continuous Negative",
+goal:"نفي المضارع المستمر",
+explanation:`نضيف not بعد am/is/are.`,
+examples:[
+{english:"She isn't sleeping.",arabic:"هي لا تنام الآن."},
+{english:"This is a simple example for lesson 34.",arabic:"هذا مثال إضافي بسيط للدرس 34."}
+],
+words:["Present = Present Continuous Negative","English = الإنجليزية","lesson = درس","Can and Continuous = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 35 — Present Continuous Questions",
+goal:"أسئلة المضارع المستمر",
+explanation:`نضع am/is/are في البداية.`,
+examples:[
+{english:"Are they studying?",arabic:"هل هم يدرسون؟"},
+{english:"This is a simple example for lesson 35.",arabic:"هذا مثال إضافي بسيط للدرس 35."}
+],
+words:["Present = Present Continuous Questions","English = الإنجليزية","lesson = درس","Can and Continuous = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 36 — Simple vs Continuous",
+goal:"البسيط والمستمر",
+explanation:`البسيط للعادات والمستمر لما يحدث الآن.`,
+examples:[
+{english:"I study every day. I am studying now.",arabic:"أدرس كل يوم. أنا أدرس الآن."},
+{english:"This is a simple example for lesson 36.",arabic:"هذا مثال إضافي بسيط للدرس 36."}
+],
+words:["Simple = Simple vs Continuous","English = الإنجليزية","lesson = درس","Can and Continuous = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 37 — Hobbies",
+goal:"الهوايات",
+explanation:`like + noun أو like + verb-ing.`,
+examples:[
+{english:"I like reading.",arabic:"أحب القراءة."},
+{english:"This is a simple example for lesson 37.",arabic:"هذا مثال إضافي بسيط للدرس 37."}
+],
+words:["Hobbies = Hobbies","English = الإنجليزية","lesson = درس","Can and Continuous = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 38 — Free Time",
+goal:"وقت الفراغ",
+explanation:`نتحدث عن أنشطة وقت الفراغ.`,
+examples:[
+{english:"I read in my free time.",arabic:"أقرأ في وقت فراغي."},
+{english:"This is a simple example for lesson 38.",arabic:"هذا مثال إضافي بسيط للدرس 38."}
+],
+words:["Free = Free Time","English = الإنجليزية","lesson = درس","Can and Continuous = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 39 — Sports",
+goal:"الرياضة",
+explanation:`play مع كثير من أسماء الرياضات.`,
+examples:[
+{english:"I play football.",arabic:"ألعب كرة القدم."},
+{english:"This is a simple example for lesson 39.",arabic:"هذا مثال إضافي بسيط للدرس 39."}
+],
+words:["Sports = Sports","English = الإنجليزية","lesson = درس","Can and Continuous = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 40 — Basic Adjectives",
+goal:"الصفات الأساسية",
+explanation:`صفات مثل big, small, easy, difficult.`,
+examples:[
+{english:"English is interesting.",arabic:"الإنجليزية ممتعة."},
+{english:"This is a simple example for lesson 40.",arabic:"هذا مثال إضافي بسيط للدرس 40."}
+],
+words:["Basic = Basic Adjectives","English = الإنجليزية","lesson = درس","Can and Continuous = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+{
+title:"Lesson 41 — Question Word: What",
+goal:"What",
+explanation:`What للسؤال عن الأشياء أو المعلومات.`,
 examples:[
 {english:"What is your name?",arabic:"ما اسمك؟"},
+{english:"This is a simple example for lesson 41.",arabic:"هذا مثال إضافي بسيط للدرس 41."}
+],
+words:["Question = Question Word: What","English = الإنجليزية","lesson = درس","Communication Basics = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 42 — Question Word: Where",
+goal:"Where",
+explanation:`Where للسؤال عن المكان.`,
+examples:[
 {english:"Where do you live?",arabic:"أين تعيش؟"},
-{english:"Who is your teacher?",arabic:"من هو معلمك؟"},
+{english:"This is a simple example for lesson 42.",arabic:"هذا مثال إضافي بسيط للدرس 42."}
+],
+words:["Question = Question Word: Where","English = الإنجليزية","lesson = درس","Communication Basics = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 43 — Question Word: When",
+goal:"When",
+explanation:`When للسؤال عن الوقت.`,
+examples:[
 {english:"When do you study?",arabic:"متى تدرس؟"},
-{english:"Why are you happy?",arabic:"لماذا أنت سعيد؟"},
-{english:"How are you?",arabic:"كيف حالك؟"}
+{english:"This is a simple example for lesson 43.",arabic:"هذا مثال إضافي بسيط للدرس 43."}
 ],
-words:[
-"what = ماذا / ما",
-"where = أين",
-"who = من",
-"when = متى",
-"why = لماذا",
-"how = كيف"
-],
-practice:`كوّن سؤالًا باستخدام What وWhere وHow.`
+words:["Question = Question Word: When","English = الإنجليزية","lesson = درس","Communication Basics = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
 },
 
 {
-title:"Lesson 19 — Adverbs of Frequency",
-goal:"تعلم always وusually وsometimes وnever.",
-explanation:`كلمات التكرار تصف عدد مرات حدوث الشيء.`,
+title:"Lesson 44 — Question Word: Who",
+goal:"Who",
+explanation:`Who للسؤال عن الأشخاص.`,
 examples:[
-{english:"I always study English.",arabic:"أدرس الإنجليزية دائمًا."},
-{english:"I usually wake up early.",arabic:"عادةً أستيقظ مبكرًا."},
-{english:"I sometimes watch TV.",arabic:"أحيانًا أشاهد التلفاز."},
-{english:"I never study late.",arabic:"لا أدرس أبدًا متأخرًا."}
+{english:"Who is your teacher?",arabic:"من معلمك؟"},
+{english:"This is a simple example for lesson 44.",arabic:"هذا مثال إضافي بسيط للدرس 44."}
 ],
-words:[
-"always = دائمًا",
-"usually = عادةً",
-"sometimes = أحيانًا",
-"never = أبدًا"
-],
-practice:`كوّن أربع جمل عن عاداتك باستخدام كلمات التكرار.`
+words:["Question = Question Word: Who","English = الإنجليزية","lesson = درس","Communication Basics = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
 },
 
 {
-title:"Lesson 20 — Daily Routine Conversation",
-goal:"تطبيق القواعد في الحديث عن الروتين اليومي.",
-explanation:`تحدث عن الاستيقاظ والدراسة والطعام ووقت الفراغ والنوم.`,
+title:"Lesson 45 — Question Word: Why",
+goal:"Why",
+explanation:`Why للسؤال عن السبب.`,
 examples:[
-{english:"I usually wake up at seven.",arabic:"عادةً أستيقظ في الساعة السابعة."},
-{english:"I have breakfast in the morning.",arabic:"أتناول الإفطار في الصباح."},
-{english:"I study English every day.",arabic:"أدرس الإنجليزية كل يوم."},
-{english:"I am studying now.",arabic:"أنا أدرس الآن."},
-{english:"I usually go to bed at eleven.",arabic:"عادةً أذهب إلى النوم في الساعة الحادية عشرة."}
+{english:"Why are you late?",arabic:"لماذا أنت متأخر؟"},
+{english:"This is a simple example for lesson 45.",arabic:"هذا مثال إضافي بسيط للدرس 45."}
 ],
-words:[
-"daily routine = الروتين اليومي",
-"wake up = يستيقظ",
-"breakfast = الإفطار",
-"now = الآن",
-"go to bed = يذهب إلى النوم"
+words:["Question = Question Word: Why","English = الإنجليزية","lesson = درس","Communication Basics = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 46 — Question Word: How",
+goal:"How",
+explanation:`How للسؤال عن الحال أو الطريقة.`,
+examples:[
+{english:"How are you?",arabic:"كيف حالك؟"},
+{english:"This is a simple example for lesson 46.",arabic:"هذا مثال إضافي بسيط للدرس 46."}
 ],
-practice:`تحدث عن يومك باستخدام 5 إلى 8 جمل.`
+words:["Question = Question Word: How","English = الإنجليزية","lesson = درس","Communication Basics = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 47 — Imperatives",
+goal:"الأوامر والتعليمات",
+explanation:`نستخدم الفعل في بداية الأمر.`,
+examples:[
+{english:"Open the door.",arabic:"افتح الباب."},
+{english:"This is a simple example for lesson 47.",arabic:"هذا مثال إضافي بسيط للدرس 47."}
+],
+words:["Imperatives = Imperatives","English = الإنجليزية","lesson = درس","Communication Basics = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 48 — Requests",
+goal:"الطلبات",
+explanation:`Can you وCould you للطلب بأدب.`,
+examples:[
+{english:"Could you help me?",arabic:"هل يمكنك مساعدتي؟"},
+{english:"This is a simple example for lesson 48.",arabic:"هذا مثال إضافي بسيط للدرس 48."}
+],
+words:["Requests = Requests","English = الإنجليزية","lesson = درس","Communication Basics = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 49 — Offering Help",
+goal:"عرض المساعدة",
+explanation:`Can I help you? عبارة شائعة.`,
+examples:[
+{english:"Can I help you?",arabic:"هل يمكنني مساعدتك؟"},
+{english:"This is a simple example for lesson 49.",arabic:"هذا مثال إضافي بسيط للدرس 49."}
+],
+words:["Offering = Offering Help","English = الإنجليزية","lesson = درس","Communication Basics = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 50 — Clarification",
+goal:"طلب التوضيح",
+explanation:`نستخدم عبارات مثل What do you mean?`,
+examples:[
+{english:"Can you repeat, please?",arabic:"هل يمكنك التكرار من فضلك؟"},
+{english:"This is a simple example for lesson 50.",arabic:"هذا مثال إضافي بسيط للدرس 50."}
+],
+words:["Clarification = Clarification","English = الإنجليزية","lesson = درس","Communication Basics = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+{
+title:"Lesson 51 — Past To Be",
+goal:"الماضي من To Be",
+explanation:`was مع I/he/she/it وwere مع you/we/they.`,
+examples:[
+{english:"I was at school yesterday.",arabic:"كنت في المدرسة أمس."},
+{english:"This is a simple example for lesson 51.",arabic:"هذا مثال إضافي بسيط للدرس 51."}
+],
+words:["Past = Past To Be","English = الإنجليزية","lesson = درس","Past = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 52 — Past Regular Verbs",
+goal:"الأفعال المنتظمة في الماضي",
+explanation:`غالبًا نضيف ed للفعل.`,
+examples:[
+{english:"I watched a movie yesterday.",arabic:"شاهدت فيلمًا أمس."},
+{english:"This is a simple example for lesson 52.",arabic:"هذا مثال إضافي بسيط للدرس 52."}
+],
+words:["Past = Past Regular Verbs","English = الإنجليزية","lesson = درس","Past = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 53 — Past Irregular Verbs",
+goal:"الأفعال غير المنتظمة",
+explanation:`بعض الأفعال لها شكل خاص في الماضي.`,
+examples:[
+{english:"I went home early.",arabic:"ذهبت إلى المنزل مبكرًا."},
+{english:"This is a simple example for lesson 53.",arabic:"هذا مثال إضافي بسيط للدرس 53."}
+],
+words:["Past = Past Irregular Verbs","English = الإنجليزية","lesson = درس","Past = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 54 — Past Negative",
+goal:"نفي الماضي",
+explanation:`didn't + الفعل الأساسي.`,
+examples:[
+{english:"I didn't go yesterday.",arabic:"لم أذهب أمس."},
+{english:"This is a simple example for lesson 54.",arabic:"هذا مثال إضافي بسيط للدرس 54."}
+],
+words:["Past = Past Negative","English = الإنجليزية","lesson = درس","Past = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 55 — Past Questions",
+goal:"أسئلة الماضي",
+explanation:`Did + الفعل الأساسي.`,
+examples:[
+{english:"Did you study yesterday?",arabic:"هل درست أمس؟"},
+{english:"This is a simple example for lesson 55.",arabic:"هذا مثال إضافي بسيط للدرس 55."}
+],
+words:["Past = Past Questions","English = الإنجليزية","lesson = درس","Past = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 56 — Past Time Expressions",
+goal:"تعبيرات الماضي",
+explanation:`yesterday, last week, ago وغيرها.`,
+examples:[
+{english:"I visited him last week.",arabic:"زرته الأسبوع الماضي."},
+{english:"This is a simple example for lesson 56.",arabic:"هذا مثال إضافي بسيط للدرس 56."}
+],
+words:["Past = Past Time Expressions","English = الإنجليزية","lesson = درس","Past = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 57 — Past Story",
+goal:"قصة قصيرة بالماضي",
+explanation:`نربط عدة أفعال ماضية في قصة بسيطة.`,
+examples:[
+{english:"Yesterday I went to school.",arabic:"أمس ذهبت إلى المدرسة."},
+{english:"This is a simple example for lesson 57.",arabic:"هذا مثال إضافي بسيط للدرس 57."}
+],
+words:["Past = Past Story","English = الإنجليزية","lesson = درس","Past = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 58 — Past Review",
+goal:"مراجعة الماضي",
+explanation:`مراجعة was/were و-ed وirregular verbs وdid.`,
+examples:[
+{english:"I studied yesterday.",arabic:"درست أمس."},
+{english:"This is a simple example for lesson 58.",arabic:"هذا مثال إضافي بسيط للدرس 58."}
+],
+words:["Past = Past Review","English = الإنجليزية","lesson = درس","Past = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 59 — Yesterday Conversation",
+goal:"محادثة عن أمس",
+explanation:`نسأل ونجيب عما حدث أمس.`,
+examples:[
+{english:"What did you do yesterday?",arabic:"ماذا فعلت أمس؟"},
+{english:"This is a simple example for lesson 59.",arabic:"هذا مثال إضافي بسيط للدرس 59."}
+],
+words:["Yesterday = Yesterday Conversation","English = الإنجليزية","lesson = درس","Past = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 60 — Past Writing",
+goal:"كتابة عن الماضي",
+explanation:`نكتب عدة جمل عن يوم سابق.`,
+examples:[
+{english:"Yesterday I studied English and read a book.",arabic:"أمس درست الإنجليزية وقرأت كتابًا."},
+{english:"This is a simple example for lesson 60.",arabic:"هذا مثال إضافي بسيط للدرس 60."}
+],
+words:["Past = Past Writing","English = الإنجليزية","lesson = درس","Past = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+{
+title:"Lesson 61 — Going to",
+goal:"المستقبل بخطة",
+explanation:`be + going to + verb للخطط.`,
+examples:[
+{english:"I am going to study tonight.",arabic:"سأدرس الليلة."},
+{english:"This is a simple example for lesson 61.",arabic:"هذا مثال إضافي بسيط للدرس 61."}
+],
+words:["Going = Going to","English = الإنجليزية","lesson = درس","Future = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 62 — Will",
+goal:"المستقبل بـ will",
+explanation:`will + الفعل الأساسي للمستقبل والقرارات.`,
+examples:[
+{english:"I will call you tomorrow.",arabic:"سأتصل بك غدًا."},
+{english:"This is a simple example for lesson 62.",arabic:"هذا مثال إضافي بسيط للدرس 62."}
+],
+words:["Will = Will","English = الإنجليزية","lesson = درس","Future = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 63 — Future Questions",
+goal:"أسئلة المستقبل",
+explanation:`Will you...? أو Are you going to...?`,
+examples:[
+{english:"Will you study tomorrow?",arabic:"هل ستدرس غدًا؟"},
+{english:"This is a simple example for lesson 63.",arabic:"هذا مثال إضافي بسيط للدرس 63."}
+],
+words:["Future = Future Questions","English = الإنجليزية","lesson = درس","Future = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 64 — Future Negative",
+goal:"نفي المستقبل",
+explanation:`will not/won't أو am not going to.`,
+examples:[
+{english:"I won't be late.",arabic:"لن أتأخر."},
+{english:"This is a simple example for lesson 64.",arabic:"هذا مثال إضافي بسيط للدرس 64."}
+],
+words:["Future = Future Negative","English = الإنجليزية","lesson = درس","Future = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 65 — Plans",
+goal:"الخطط",
+explanation:`نتحدث عن خططنا القادمة.`,
+examples:[
+{english:"I am going to visit my friend.",arabic:"سأزور صديقي."},
+{english:"This is a simple example for lesson 65.",arabic:"هذا مثال إضافي بسيط للدرس 65."}
+],
+words:["Plans = Plans","English = الإنجليزية","lesson = درس","Future = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 66 — Predictions",
+goal:"التوقعات",
+explanation:`will يمكن استعمالها للتوقع.`,
+examples:[
+{english:"I think it will rain.",arabic:"أعتقد أنها ستمطر."},
+{english:"This is a simple example for lesson 66.",arabic:"هذا مثال إضافي بسيط للدرس 66."}
+],
+words:["Predictions = Predictions","English = الإنجليزية","lesson = درس","Future = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 67 — Offers",
+goal:"العروض بـ will",
+explanation:`نستخدم I'll للعرض والمساعدة.`,
+examples:[
+{english:"I'll help you.",arabic:"سأساعدك."},
+{english:"This is a simple example for lesson 67.",arabic:"هذا مثال إضافي بسيط للدرس 67."}
+],
+words:["Offers = Offers","English = الإنجليزية","lesson = درس","Future = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 68 — Future Time",
+goal:"تعبيرات المستقبل",
+explanation:`tomorrow, next week, soon وغيرها.`,
+examples:[
+{english:"I will see you tomorrow.",arabic:"سأراك غدًا."},
+{english:"This is a simple example for lesson 68.",arabic:"هذا مثال إضافي بسيط للدرس 68."}
+],
+words:["Future = Future Time","English = الإنجليزية","lesson = درس","Future = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 69 — Future Conversation",
+goal:"محادثة عن المستقبل",
+explanation:`أسئلة وأجوبة عن الخطط.`,
+examples:[
+{english:"What are you going to do tomorrow?",arabic:"ماذا ستفعل غدًا؟"},
+{english:"This is a simple example for lesson 69.",arabic:"هذا مثال إضافي بسيط للدرس 69."}
+],
+words:["Future = Future Conversation","English = الإنجليزية","lesson = درس","Future = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 70 — Future Writing",
+goal:"كتابة عن المستقبل",
+explanation:`نكتب فقرة قصيرة عن خطة مستقبلية.`,
+examples:[
+{english:"Tomorrow I am going to study.",arabic:"غدًا سأدرس."},
+{english:"This is a simple example for lesson 70.",arabic:"هذا مثال إضافي بسيط للدرس 70."}
+],
+words:["Future = Future Writing","English = الإنجليزية","lesson = درس","Future = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+{
+title:"Lesson 71 — Countable Nouns",
+goal:"الأسماء المعدودة",
+explanation:`يمكن عدها: book, apple, chair.`,
+examples:[
+{english:"I have three books.",arabic:"لدي ثلاثة كتب."},
+{english:"This is a simple example for lesson 71.",arabic:"هذا مثال إضافي بسيط للدرس 71."}
+],
+words:["Countable = Countable Nouns","English = الإنجليزية","lesson = درس","Quantity and Comparison = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 72 — Uncountable Nouns",
+goal:"الأسماء غير المعدودة",
+explanation:`مثل water, rice, information.`,
+examples:[
+{english:"I drink some water.",arabic:"أشرب بعض الماء."},
+{english:"This is a simple example for lesson 72.",arabic:"هذا مثال إضافي بسيط للدرس 72."}
+],
+words:["Uncountable = Uncountable Nouns","English = الإنجليزية","lesson = درس","Quantity and Comparison = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 73 — Some and Any",
+goal:"some وany",
+explanation:`some غالبًا في الإثبات وany في النفي والأسئلة.`,
+examples:[
+{english:"I have some books.",arabic:"لدي بعض الكتب."},
+{english:"This is a simple example for lesson 73.",arabic:"هذا مثال إضافي بسيط للدرس 73."}
+],
+words:["Some = Some and Any","English = الإنجليزية","lesson = درس","Quantity and Comparison = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 74 — Much and Many",
+goal:"much وmany",
+explanation:`many للمعدود وmuch لغير المعدود.`,
+examples:[
+{english:"How many books do you have?",arabic:"كم كتابًا لديك؟"},
+{english:"This is a simple example for lesson 74.",arabic:"هذا مثال إضافي بسيط للدرس 74."}
+],
+words:["Much = Much and Many","English = الإنجليزية","lesson = درس","Quantity and Comparison = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 75 — A Lot of",
+goal:"a lot of",
+explanation:`تدل على كمية كبيرة مع المعدود وغير المعدود.`,
+examples:[
+{english:"I have a lot of work.",arabic:"لدي الكثير من العمل."},
+{english:"This is a simple example for lesson 75.",arabic:"هذا مثال إضافي بسيط للدرس 75."}
+],
+words:["A = A Lot of","English = الإنجليزية","lesson = درس","Quantity and Comparison = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 76 — Comparatives",
+goal:"المقارنة",
+explanation:`نستخدم -er أو more للمقارنة.`,
+examples:[
+{english:"My book is bigger than yours.",arabic:"كتابي أكبر من كتابك."},
+{english:"This is a simple example for lesson 76.",arabic:"هذا مثال إضافي بسيط للدرس 76."}
+],
+words:["Comparatives = Comparatives","English = الإنجليزية","lesson = درس","Quantity and Comparison = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 77 — Superlatives",
+goal:"التفضيل",
+explanation:`نستخدم -est أو most للأعلى بين مجموعة.`,
+examples:[
+{english:"This is the best book.",arabic:"هذا أفضل كتاب."},
+{english:"This is a simple example for lesson 77.",arabic:"هذا مثال إضافي بسيط للدرس 77."}
+],
+words:["Superlatives = Superlatives","English = الإنجليزية","lesson = درس","Quantity and Comparison = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 78 — Object Pronouns",
+goal:"ضمائر المفعول",
+explanation:`me, you, him, her, us, them.`,
+examples:[
+{english:"She helps me.",arabic:"هي تساعدني."},
+{english:"This is a simple example for lesson 78.",arabic:"هذا مثال إضافي بسيط للدرس 78."}
+],
+words:["Object = Object Pronouns","English = الإنجليزية","lesson = درس","Quantity and Comparison = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 79 — Possessive Pronouns",
+goal:"ضمائر الملكية",
+explanation:`mine, yours, his, hers, ours, theirs.`,
+examples:[
+{english:"This book is mine.",arabic:"هذا الكتاب لي."},
+{english:"This is a simple example for lesson 79.",arabic:"هذا مثال إضافي بسيط للدرس 79."}
+],
+words:["Possessive = Possessive Pronouns","English = الإنجليزية","lesson = درس","Quantity and Comparison = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 80 — Reflexive Pronouns",
+goal:"الضمائر الانعكاسية",
+explanation:`myself, yourself وغيرها.`,
+examples:[
+{english:"I did it myself.",arabic:"فعلت ذلك بنفسي."},
+{english:"This is a simple example for lesson 80.",arabic:"هذا مثال إضافي بسيط للدرس 80."}
+],
+words:["Reflexive = Reflexive Pronouns","English = الإنجليزية","lesson = درس","Quantity and Comparison = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+{
+title:"Lesson 81 — And / But / Or",
+goal:"روابط بسيطة",
+explanation:`and للإضافة، but للتضاد، or للاختيار.`,
+examples:[
+{english:"I study English and French.",arabic:"أدرس الإنجليزية والفرنسية."},
+{english:"This is a simple example for lesson 81.",arabic:"هذا مثال إضافي بسيط للدرس 81."}
+],
+words:["And = And / But / Or","English = الإنجليزية","lesson = درس","Useful English = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 82 — Because / So",
+goal:"السبب والنتيجة",
+explanation:`because للسبب وso للنتيجة.`,
+examples:[
+{english:"I stayed home because it was raining.",arabic:"بقيت في المنزل لأنها كانت تمطر."},
+{english:"This is a simple example for lesson 82.",arabic:"هذا مثال إضافي بسيط للدرس 82."}
+],
+words:["Because = Because / So","English = الإنجليزية","lesson = درس","Useful English = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 83 — Before / After",
+goal:"ترتيب الأحداث",
+explanation:`before قبل وafter بعد.`,
+examples:[
+{english:"I eat before school.",arabic:"أتناول الطعام قبل المدرسة."},
+{english:"This is a simple example for lesson 83.",arabic:"هذا مثال إضافي بسيط للدرس 83."}
+],
+words:["Before = Before / After","English = الإنجليزية","lesson = درس","Useful English = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 84 — When / While",
+goal:"ربط الأحداث",
+explanation:`when لحدث وwhile لفترة أو حدث مستمر.`,
+examples:[
+{english:"I was studying when he called.",arabic:"كنت أدرس عندما اتصل."},
+{english:"This is a simple example for lesson 84.",arabic:"هذا مثال إضافي بسيط للدرس 84."}
+],
+words:["When = When / While","English = الإنجليزية","lesson = درس","Useful English = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 85 — Places in Town",
+goal:"أماكن المدينة",
+explanation:`market, bank, school, hospital وغيرها.`,
+examples:[
+{english:"The bank is near my house.",arabic:"البنك قريب من منزلي."},
+{english:"This is a simple example for lesson 85.",arabic:"هذا مثال إضافي بسيط للدرس 85."}
+],
+words:["Places = Places in Town","English = الإنجليزية","lesson = درس","Useful English = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 86 — Directions",
+goal:"الاتجاهات",
+explanation:`go straight, turn left/right.`,
+examples:[
+{english:"Turn left at the school.",arabic:"انعطف يسارًا عند المدرسة."},
+{english:"This is a simple example for lesson 86.",arabic:"هذا مثال إضافي بسيط للدرس 86."}
+],
+words:["Directions = Directions","English = الإنجليزية","lesson = درس","Useful English = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 87 — Transportation",
+goal:"المواصلات",
+explanation:`bus, car, walk وغيرها.`,
+examples:[
+{english:"I go to school by bus.",arabic:"أذهب إلى المدرسة بالحافلة."},
+{english:"This is a simple example for lesson 87.",arabic:"هذا مثال إضافي بسيط للدرس 87."}
+],
+words:["Transportation = Transportation","English = الإنجليزية","lesson = درس","Useful English = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 88 — Shopping",
+goal:"التسوق",
+explanation:`buy, want, need, price وغيرها.`,
+examples:[
+{english:"I want this book.",arabic:"أريد هذا الكتاب."},
+{english:"This is a simple example for lesson 88.",arabic:"هذا مثال إضافي بسيط للدرس 88."}
+],
+words:["Shopping = Shopping","English = الإنجليزية","lesson = درس","Useful English = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 89 — Prices",
+goal:"الأسعار",
+explanation:`How much is...? للسؤال عن السعر.`,
+examples:[
+{english:"How much is this?",arabic:"كم سعر هذا؟"},
+{english:"This is a simple example for lesson 89.",arabic:"هذا مثال إضافي بسيط للدرس 89."}
+],
+words:["Prices = Prices","English = الإنجليزية","lesson = درس","Useful English = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 90 — Dates and Months",
+goal:"التواريخ والأشهر",
+explanation:`أيام الأسبوع وأشهر السنة والتواريخ.`,
+examples:[
+{english:"My class starts on Monday.",arabic:"حصتي تبدأ يوم الاثنين."},
+{english:"This is a simple example for lesson 90.",arabic:"هذا مثال إضافي بسيط للدرس 90."}
+],
+words:["Dates = Dates and Months","English = الإنجليزية","lesson = درس","Useful English = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+{
+title:"Lesson 91 — Introducing Yourself",
+goal:"تقديم النفس",
+explanation:`الاسم والدراسة والهوايات والمعلومات الأساسية.`,
+examples:[
+{english:"My name is Ahmed. I am a student.",arabic:"اسمي أحمد. أنا طالب."},
+{english:"This is a simple example for lesson 91.",arabic:"هذا مثال إضافي بسيط للدرس 91."}
+],
+words:["Introducing = Introducing Yourself","English = الإنجليزية","lesson = درس","Speaking and Review = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 92 — Family Conversation",
+goal:"محادثة عن العائلة",
+explanation:`نستخدم have/has وصفات الملكية.`,
+examples:[
+{english:"I have a big family.",arabic:"لدي عائلة كبيرة."},
+{english:"This is a simple example for lesson 92.",arabic:"هذا مثال إضافي بسيط للدرس 92."}
+],
+words:["Family = Family Conversation","English = الإنجليزية","lesson = درس","Speaking and Review = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 93 — Daily Conversation",
+goal:"محادثة عن اليوم",
+explanation:`نربط جمل الروتين بأوقات اليوم.`,
+examples:[
+{english:"I wake up at seven and go to school.",arabic:"أستيقظ في السابعة وأذهب إلى المدرسة."},
+{english:"This is a simple example for lesson 93.",arabic:"هذا مثال إضافي بسيط للدرس 93."}
+],
+words:["Daily = Daily Conversation","English = الإنجليزية","lesson = درس","Speaking and Review = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 94 — Yesterday Conversation Review",
+goal:"مراجعة محادثة الماضي",
+explanation:`نستخدم did وpast verbs.`,
+examples:[
+{english:"What did you do yesterday?",arabic:"ماذا فعلت أمس؟"},
+{english:"This is a simple example for lesson 94.",arabic:"هذا مثال إضافي بسيط للدرس 94."}
+],
+words:["Yesterday = Yesterday Conversation Review","English = الإنجليزية","lesson = درس","Speaking and Review = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 95 — Tomorrow Conversation Review",
+goal:"مراجعة محادثة المستقبل",
+explanation:`نستخدم will وgoing to.`,
+examples:[
+{english:"What are you going to do tomorrow?",arabic:"ماذا ستفعل غدًا؟"},
+{english:"This is a simple example for lesson 95.",arabic:"هذا مثال إضافي بسيط للدرس 95."}
+],
+words:["Tomorrow = Tomorrow Conversation Review","English = الإنجليزية","lesson = درس","Speaking and Review = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 96 — Reading Practice",
+goal:"قراءة قصيرة",
+explanation:`نحدد الفكرة العامة والكلمات المهمة.`,
+examples:[
+{english:"I am a student. I study English every day.",arabic:"أنا طالب. أدرس الإنجليزية كل يوم."},
+{english:"This is a simple example for lesson 96.",arabic:"هذا مثال إضافي بسيط للدرس 96."}
+],
+words:["Reading = Reading Practice","English = الإنجليزية","lesson = درس","Speaking and Review = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 97 — Listening Practice",
+goal:"استماع",
+explanation:`نستمع إلى الجملة ونركز على الكلمات المألوفة.`,
+examples:[
+{english:"I usually study in the morning.",arabic:"عادة أدرس في الصباح."},
+{english:"This is a simple example for lesson 97.",arabic:"هذا مثال إضافي بسيط للدرس 97."}
+],
+words:["Listening = Listening Practice","English = الإنجليزية","lesson = درس","Speaking and Review = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 98 — Speaking Practice",
+goal:"تحدث",
+explanation:`نربط عدة جمل بسيطة في كلام متصل.`,
+examples:[
+{english:"I wake up early, have breakfast, and study.",arabic:"أستيقظ مبكرًا، أتناول الإفطار، وأدرس."},
+{english:"This is a simple example for lesson 98.",arabic:"هذا مثال إضافي بسيط للدرس 98."}
+],
+words:["Speaking = Speaking Practice","English = الإنجليزية","lesson = درس","Speaking and Review = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 99 — Writing Practice",
+goal:"كتابة",
+explanation:`نكتب فقرة قصيرة باستخدام الروابط والأزمنة التي تعلمناها.`,
+examples:[
+{english:"I study English because I want to speak it well.",arabic:"أدرس الإنجليزية لأنني أريد التحدث بها جيدًا."},
+{english:"This is a simple example for lesson 99.",arabic:"هذا مثال إضافي بسيط للدرس 99."}
+],
+words:["Writing = Writing Practice","English = الإنجليزية","lesson = درس","Speaking and Review = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
+},
+
+{
+title:"Lesson 100 — Final Review",
+goal:"مراجعة نهائية",
+explanation:`مراجعة الضمائر وTo Be والأزمنة والأسئلة والنفي والمحادثة.`,
+examples:[
+{english:"I am a student, I study every day, and I am learning English.",arabic:"أنا طالب، أدرس كل يوم، وأتعلم الإنجليزية."},
+{english:"This is a simple example for lesson 100.",arabic:"هذا مثال إضافي بسيط للدرس 100."}
+],
+words:["Final = Final Review","English = الإنجليزية","lesson = درس","Speaking and Review = الوحدة"],
+practice:`استخدم مثال الدرس. كوّن جملة جديدة مشابهة، ثم حاول قولها بصوت عالٍ.`
 }
 ];
+
 let currentLesson=0;
 function showLesson(){
 const lesson=lessons[currentLesson];
@@ -417,24 +1246,46 @@ document.getElementById("lessonNumber").textContent="الدرس "+(currentLesson
 document.getElementById("title").textContent=lesson.title;
 document.getElementById("goal").textContent=lesson.goal;
 document.getElementById("explanation").innerHTML=lesson.explanation;
-const examples=document.getElementById("examples");examples.innerHTML="";
-lesson.examples.forEach(function(example){const div=document.createElement("div");div.className="example";div.innerHTML='<div class="english">'+example.english+'</div><div class="arabic">'+example.arabic+'</div>';examples.appendChild(div);});
-const list=document.getElementById("wordsList");list.innerHTML="";
-lesson.words.forEach(function(word){const div=document.createElement("div");div.className="word";div.textContent=word;list.appendChild(div);});
+const examples=document.getElementById("examples"); examples.innerHTML="";
+lesson.examples.forEach(function(example){
+const div=document.createElement("div"); div.className="example";
+div.innerHTML='<div class="english">'+example.english+'</div><div class="arabic">'+example.arabic+'</div>';
+examples.appendChild(div);
+});
+const list=document.getElementById("wordsList"); list.innerHTML="";
+lesson.words.forEach(function(word){
+const div=document.createElement("div"); div.className="word"; div.textContent=word; list.appendChild(div);
+});
 document.getElementById("practice").innerHTML=lesson.practice;
 document.getElementById("previous").disabled=currentLesson===0;
 document.getElementById("next").disabled=currentLesson===lessons.length-1;
 document.getElementById("status").textContent="";
+document.getElementById("listenButton").textContent="🔊 استمع إلى أمثلة الدرس";
 }
-function nextLesson(){if(currentLesson<lessons.length-1){currentLesson++;showLesson();window.scrollTo(0,0);}}
-function previousLesson(){if(currentLesson>0){currentLesson--;showLesson();window.scrollTo(0,0);}}
+function nextLesson(){if(currentLesson<lessons.length-1){currentLesson++;showLesson();window.scrollTo(0,0)}}
+function previousLesson(){if(currentLesson>0){currentLesson--;showLesson();window.scrollTo(0,0)}}
 function listenLesson(){
 const text=lessons[currentLesson].examples.map(example=>example.english).join(". ");
-const status=document.getElementById("status");
-if(!("speechSynthesis" in window)){status.textContent="⚠️ المتصفح لا يدعم الاستماع الصوتي.";return;}
-window.speechSynthesis.cancel();const speech=new SpeechSynthesisUtterance(text);speech.lang="en-US";speech.rate=.8;speech.pitch=1;
-speech.onstart=function(){status.textContent="🔊 جاري الاستماع إلى أمثلة الدرس...";};
-speech.onend=function(){status.textContent="✅ انتهى الاستماع.";};speech.onerror=function(){status.textContent="⚠️ تعذر تشغيل الصوت.";};window.speechSynthesis.speak(speech);
+const status=document.getElementById("status"),button=document.getElementById("listenButton");
+if(!("speechSynthesis" in window)){status.textContent="⚠️ المتصفح لا يدعم الاستماع الصوتي.";return}
+window.speechSynthesis.cancel();
+const speech=new SpeechSynthesisUtterance(text); speech.lang="en-US"; speech.rate=.8; speech.pitch=1;
+speech.onstart=function(){button.textContent="🔊 جاري الاستماع...";status.textContent="استمع إلى أمثلة الدرس..."};
+speech.onend=function(){button.textContent="🔊 استمع إلى أمثلة الدرس";status.textContent="✅ انتهى الاستماع."};
+speech.onerror=function(){button.textContent="🔊 استمع إلى أمثلة الدرس";status.textContent="⚠️ تعذر تشغيل الصوت."};
+window.speechSynthesis.speak(speech);
 }
 showLesson();
-</script></body></html>
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+  
