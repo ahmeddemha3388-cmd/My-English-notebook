@@ -4,146 +4,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>قواعد اللغة الإنجليزية</title>
 
 <style>
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#eef4ff,#f8fbff);
-    color:#172033;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eef4ff, #f8fbff);
+    color: #172033;
 }
 
-header{
-    background:linear-gradient(135deg,#2563eb,#4f46e5);
-    color:white;
-    text-align:center;
-    padding:34px 18px;
-    border-radius:0 0 30px 30px;
+header {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: white;
+    text-align: center;
+    padding: 32px 18px;
+    border-radius: 0 0 30px 30px;
 }
 
-header h1{
-    margin:0;
-    font-size:31px;
+header h1 {
+    margin: 0;
+    font-size: 31px;
 }
 
-header p{
-    margin:10px 0 0;
-    font-size:17px;
+header p {
+    margin: 12px 0 0;
+    font-size: 17px;
 }
 
-.container{
-    max-width:950px;
-    margin:auto;
-    padding:22px 16px;
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 22px 16px;
 }
 
-.back{
-    display:inline-block;
-    background:white;
-    color:#2563eb;
-    text-decoration:none;
-    padding:11px 18px;
-    border-radius:13px;
-    margin-bottom:20px;
-    box-shadow:0 5px 18px rgba(30,60,100,.08);
+.back {
+    display: inline-block;
+    background: white;
+    color: #2563eb;
+    text-decoration: none;
+    padding: 11px 18px;
+    border-radius: 13px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
-.intro{
-    background:white;
-    padding:22px;
-    border-radius:22px;
-    margin-bottom:22px;
-    line-height:1.9;
-    box-shadow:0 8px 25px rgba(30,60,100,.10);
+.intro {
+    background: white;
+    padding: 22px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+    line-height: 1.9;
+    box-shadow: 0 8px 25px rgba(30,60,100,0.10);
 }
 
-.rule{
-    background:white;
-    border-radius:22px;
-    padding:22px;
-    margin-bottom:18px;
-    box-shadow:0 7px 22px rgba(30,60,100,.09);
+.rule {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 17px;
+    box-shadow: 0 7px 22px rgba(30,60,100,0.08);
 }
 
-.number{
-    color:#667085;
-    font-size:14px;
-    margin-bottom:7px;
+.number {
+    color: #667085;
+    font-size: 14px;
+    margin-bottom: 7px;
 }
 
-.level{
-    display:inline-block;
-    background:#eef4ff;
-    color:#2563eb;
-    padding:6px 12px;
-    border-radius:20px;
-    font-size:13px;
-    margin-bottom:10px;
+.rule h2 {
+    margin: 5px 0 13px;
+    font-size: 22px;
+    color: #2563eb;
 }
 
-.title{
-    color:#1d4ed8;
-    font-size:21px;
-    margin:5px 0 14px;
+.explanation {
+    line-height: 1.9;
+    font-size: 16px;
+    white-space: pre-line;
 }
 
-.explanation{
-    line-height:1.9;
-    margin-bottom:14px;
+.example {
+    direction: ltr;
+    text-align: left;
+    background: #f5f8ff;
+    border-radius: 14px;
+    padding: 13px;
+    margin-top: 13px;
+    line-height: 1.7;
 }
 
-.rulebox{
-    background:#f4f7ff;
-    border-right:4px solid #2563eb;
-    padding:13px;
-    border-radius:10px;
-    line-height:1.9;
-    margin-bottom:16px;
+.example strong {
+    color: #2563eb;
 }
 
-.example{
-    border-top:1px solid #e6eaf0;
-    padding-top:13px;
-    margin-top:13px;
+.translation {
+    direction: rtl;
+    text-align: right;
+    margin-top: 5px;
+    color: #475467;
 }
 
-.english{
-    direction:ltr;
-    text-align:left;
-    font-size:19px;
-    font-weight:bold;
-    color:#2563eb;
-    margin-bottom:7px;
+.buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
-.arabic{
-    font-size:16px;
-    margin-bottom:9px;
+.listen,
+.translate {
+    border: none;
+    padding: 10px 17px;
+    border-radius: 11px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
 }
 
-.listen{
-    border:none;
-    background:#2563eb;
-    color:white;
-    padding:9px 15px;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:14px;
+.listen {
+    background: #2563eb;
+    color: white;
 }
 
-.listen:hover{
-    background:#1d4ed8;
+.translate {
+    background: #eef2ff;
+    color: #3730a3;
 }
 
-footer{
-    text-align:center;
-    padding:30px;
-    color:#667085;
+.listen:active,
+.translate:active {
+    transform: scale(0.97);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #667085;
 }
 </style>
 </head>
@@ -151,8 +153,8 @@ footer{
 <body>
 
 <header>
-<h1>✍️ قواعد اللغة الإنجليزية</h1>
-<p>English Grammar — من المبتدئ إلى المتقدم</p>
+    <h1>✍️ قواعد اللغة الإنجليزية</h1>
+    <p>English Grammar — من المبتدئ إلى المتقدم</p>
 </header>
 
 <div class="container">
@@ -160,12 +162,13 @@ footer{
 <a class="back" href="index.html">← العودة إلى الرئيسية</a>
 
 <div class="intro">
-<strong>📚 مسار القواعد</strong>
-<br>
-50 قاعدة مختارة بعناية من أساسيات النطق والقواعد إلى القواعد المتقدمة، مع شرح عربي وأمثلة مترجمة وزر استماع لكل مثال.
+    <strong>📚 مسار القواعد</strong>
+    <br>
+    50 قاعدة مرتبة تدريجيًا من الأساسيات إلى القواعد المتقدمة،
+    مع شرح عربي، أمثلة إنجليزية، ترجمة، وزر استماع للنطق.
 </div>
 
-<div id="grammarList"></div>
+<div id="rules"></div>
 
 </div>
 
@@ -175,747 +178,486 @@ My English Notebook © 2026
 
 <script>
 
-const grammar = [
+const rules = [
 
 {
-title:"نطق TH — /θ/ و /ð/",
-level:"مبتدئ",
-explanation:"حرفا TH لهما صوتان أساسيان. الصوت /θ/ مثل think، والصوت /ð/ مثل this. الفرق بينهما مهم جدًا لتحسين النطق.",
-rule:"think → /θ/  |  this → /ð/  |  يجب وضع اللسان بين الأسنان بشكل خفيف.",
-examples:[
-["Think about it.","فكر في الأمر."],
-["This is my book.","هذا كتابي."]
-]
+title:"Subject and Verb",
+explanation:"في الجملة الإنجليزية نحتاج غالبًا إلى فاعل وفعل. ترتيب الجملة الأساسي هو: Subject + Verb.",
+example:"I study English.",
+translation:"أنا أدرس الإنجليزية."
 },
 
 {
-title:"الفرق بين P و B",
-level:"مبتدئ",
-explanation:"الصوت P أقوى وفيه هواء أكثر، بينما B صوت مجهور. الخلط بينهما قد يغير معنى الكلمة.",
-rule:"P: pen / B: ben — ركز على كمية الهواء عند نطق P.",
-examples:[
-["Please open the paper.","من فضلك افتح الورقة."],
-["I bought a blue bag.","اشتريت حقيبة زرقاء."]
-]
+title:"Object in the Sentence",
+explanation:"المفعول به يأتي غالبًا بعد الفعل ليبين الشيء أو الشخص الذي يقع عليه الفعل.",
+example:"I read a book.",
+translation:"أنا أقرأ كتابًا."
 },
 
 {
-title:"الفرق بين F و V",
-level:"مبتدئ",
-explanation:"في F تخرج النفخة من بين الشفة والأسنان دون اهتزاز واضح، أما V ففيه اهتزاز للصوت.",
-rule:"F = fan | V = van",
-examples:[
-["My family is here.","عائلتي هنا."],
-["The van is outside.","الشاحنة الصغيرة في الخارج."]
-]
+title:"Word Order",
+explanation:"الترتيب الأساسي للجملة الإنجليزية هو: Subject + Verb + Object.",
+example:"She learns English.",
+translation:"هي تتعلم الإنجليزية."
 },
 
 {
-title:"نطق R الإنجليزية",
-level:"مبتدئ",
-explanation:"صوت R الإنجليزية يختلف عن الراء العربية. لا نكرر اهتزاز اللسان كما في بعض طرق نطق الراء العربية.",
-rule:"ضع اللسان دون ضرب سقف الفم وحافظ على الصوت متصلًا.",
-examples:[
-["I read every day.","أقرأ كل يوم."],
-["The red car is fast.","السيارة الحمراء سريعة."]
-]
+title:"Capital Letters",
+explanation:"نستخدم الحرف الكبير في بداية الجملة، ومع I، وأسماء الأشخاص والأماكن وغيرها من الأسماء الخاصة.",
+example:"Ahmed lives in Nouakchott.",
+translation:"أحمد يعيش في نواكشوط."
 },
 
 {
-title:"نطق S و Z",
-level:"مبتدئ",
-explanation:"S صوت مهم في الإنجليزية، بينما Z يشبه S مع اهتزاز الأحبال الصوتية.",
-rule:"S: see | Z: zoo",
-examples:[
-["I see the school.","أرى المدرسة."],
-["The zoo is big.","حديقة الحيوانات كبيرة."]
-]
+title:"Full Stop and Question Mark",
+explanation:"نستخدم النقطة في نهاية الجملة الخبرية، وعلامة الاستفهام في نهاية السؤال.",
+example:"You are ready. Are you ready?",
+translation:"أنت مستعد. هل أنت مستعد؟"
 },
 
 {
-title:"نطق ED في نهاية الأفعال",
-level:"مبتدئ",
-explanation:"نهاية ED لها ثلاثة أصوات شائعة: /t/ و /d/ و /ɪd/. لا تُنطق دائمًا بالطريقة نفسها.",
-rule:"watched → /t/ | played → /d/ | wanted → /ɪd/",
-examples:[
-["I watched a movie.","شاهدت فيلمًا."],
-["She played football.","لعبت كرة القدم."],
-["He wanted some water.","أراد بعض الماء."]
-]
+title:"Countable Nouns",
+explanation:"الأسماء المعدودة يمكن أن يكون لها مفرد وجمع، مثل book و books.",
+example:"I have two books.",
+translation:"لدي كتابان."
 },
 
 {
-title:"نطق S و ES في الجمع",
-level:"مبتدئ",
-explanation:"نهاية الجمع s قد تكون /s/ أو /z/، وقد تصبح /ɪz/ في بعض الكلمات.",
-rule:"books → /s/ | bags → /z/ | buses → /ɪz/",
-examples:[
-["I have two books.","لدي كتابان."],
-["She has three bags.","لديها ثلاث حقائب."],
-["The buses are late.","الحافلات متأخرة."]
-]
+title:"Uncountable Nouns",
+explanation:"بعض الأسماء لا نستخدمها عادةً بصيغة الجمع عندما نتحدث عن المادة أو الكمية بشكل عام، مثل water و information.",
+example:"I need some water.",
+translation:"أحتاج إلى بعض الماء."
 },
 
 {
-title:"A و AN",
-level:"مبتدئ",
-explanation:"نستخدم a قبل صوت ساكن، وan قبل صوت حرف علة. المهم هو الصوت وليس الحرف المكتوب فقط.",
-rule:"a book | a university | an apple | an hour",
-examples:[
-["I have a book.","لدي كتاب."],
-["She ate an apple.","أكلت تفاحة."]
-]
+title:"Plural with S",
+explanation:"غالبًا نضيف s إلى الاسم لصنع الجمع.",
+example:"One car. Two cars.",
+translation:"سيارة واحدة. سيارتان."
 },
 
 {
-title:"استخدام THE",
-level:"مبتدئ",
+title:"Plural with ES",
+explanation:"بعض الأسماء التي تنتهي بأصوات معينة مثل s أو sh أو ch تحتاج غالبًا إلى es في الجمع.",
+example:"One watch. Two watches.",
+translation:"ساعة واحدة. ساعتان."
+},
+
+{
+title:"Plural with IES",
+explanation:"إذا انتهى الاسم بحرف ساكن ثم y، تتحول y غالبًا إلى ies عند الجمع.",
+example:"One city. Two cities.",
+translation:"مدينة واحدة. مدينتان."
+},
+
+{
+title:"A",
+explanation:"نستخدم a مع الاسم المفرد المعدود عندما يكون غير محدد ويبدأ بصوت ساكن.",
+example:"I have a book.",
+translation:"لدي كتاب."
+},
+
+{
+title:"AN",
+explanation:"نستخدم an مع الاسم المفرد المعدود عندما يبدأ بصوت علّة.",
+example:"She has an apple.",
+translation:"لديها تفاحة."
+},
+
+{
+title:"THE",
 explanation:"نستخدم the عندما يكون الاسم محددًا أو معروفًا للمتحدث والمستمع.",
-rule:"a book = كتاب غير محدد | the book = الكتاب المحدد",
-examples:[
-["I bought a book.","اشتريت كتابًا."],
-["The book is interesting.","الكتاب ممتع."]
-]
+example:"The book is on the table.",
+translation:"الكتاب على الطاولة."
 },
 
 {
-title:"المفرد والجمع",
-level:"مبتدئ",
-explanation:"الأسماء الإنجليزية قد تكون مفردة أو جمعًا. غالبًا نضيف s، لكن بعض الكلمات لها قواعد أخرى.",
-rule:"book → books | box → boxes | city → cities",
-examples:[
-["This book is new.","هذا الكتاب جديد."],
-["These boxes are heavy.","هذه الصناديق ثقيلة."]
-]
+title:"Possessive 's",
+explanation:"نستخدم 's للتعبير عن الملكية، خاصةً مع الأشخاص.",
+example:"This is Ahmed's book.",
+translation:"هذا كتاب أحمد."
 },
 
 {
-title:"الأسماء المعدودة وغير المعدودة",
-level:"مبتدئ",
-explanation:"الاسم المعدود يمكن عده مثل books، أما غير المعدود فلا نستخدمه عادة مع رقم مباشر مثل water.",
-rule:"three books ✔ | three waters ✘ | some water ✔",
-examples:[
-["I have three books.","لدي ثلاثة كتب."],
-["I need some water.","أحتاج إلى بعض الماء."]
-]
+title:"Possessive Adjectives",
+explanation:"صفات الملكية هي my, your, his, her, its, our, their، وتأتي قبل الاسم.",
+example:"This is my phone.",
+translation:"هذا هاتفي."
 },
 
 {
-title:"SOME و ANY",
-level:"مبتدئ",
-explanation:"some تستخدم كثيرًا في الجمل المثبتة، وany تستخدم كثيرًا في النفي والأسئلة.",
-rule:"some books | any books",
-examples:[
-["I have some money.","لدي بعض المال."],
-["Do you have any money?","هل لديك أي مال؟"],
-["I don't have any money.","ليس لدي أي مال."]
-]
+title:"To Be: AM",
+explanation:"نستخدم am مع الضمير I.",
+example:"I am a student.",
+translation:"أنا طالب."
 },
 
 {
-title:"MUCH و MANY",
-level:"مبتدئ",
-explanation:"many تستخدم مع الأسماء المعدودة، وmuch تستخدم غالبًا مع الأسماء غير المعدودة.",
-rule:"many books | much water",
-examples:[
-["How many books do you have?","كم كتابًا لديك؟"],
-["How much water do you drink?","كم من الماء تشرب؟"]
-]
+title:"To Be: IS",
+explanation:"نستخدم is مع he و she و it ومع الاسم المفرد.",
+example:"She is happy.",
+translation:"هي سعيدة."
 },
 
 {
-title:"FEW و LITTLE",
-level:"مبتدئ",
-explanation:"few تستخدم مع الأسماء المعدودة، وlittle مع الأسماء غير المعدودة.",
-rule:"a few students | a little water",
-examples:[
-["I have a few questions.","لدي بضعة أسئلة."],
-["I need a little time.","أحتاج إلى قليل من الوقت."]
-]
+title:"To Be: ARE",
+explanation:"نستخدم are مع you و we و they ومع الجمع.",
+example:"They are ready.",
+translation:"هم مستعدون."
 },
 
 {
-title:"IN و ON و AT للمكان",
-level:"مبتدئ",
-explanation:"تستخدم هذه الكلمات للتعبير عن المكان بطريقة مختلفة حسب السياق.",
-rule:"in the room | on the table | at the door",
-examples:[
-["She is in the room.","هي في الغرفة."],
-["The phone is on the table.","الهاتف على الطاولة."],
-["He is at the door.","هو عند الباب."]
-]
+title:"Present Simple",
+explanation:"نستخدم المضارع البسيط للعادات والروتين والحقائق العامة.",
+example:"I study every day.",
+translation:"أدرس كل يوم."
 },
 
 {
-title:"IN و ON و AT للوقت",
-level:"مبتدئ",
-explanation:"نستخدم in مع فترات طويلة، on مع الأيام والتواريخ، وat مع أوقات محددة.",
-rule:"in 2026 | on Monday | at 8 o'clock",
-examples:[
-["I was born in 2005.","وُلدت في عام 2005."],
-["We study on Monday.","ندرس يوم الاثنين."],
-["I wake up at eight.","أستيقظ في الثامنة."]
-]
+title:"Third Person S",
+explanation:"مع he و she و it نضيف s أو صيغة مناسبة للفعل في المضارع البسيط.",
+example:"He works every day.",
+translation:"هو يعمل كل يوم."
 },
 
 {
-title:"ترتيب الكلمات في الجملة",
-level:"مبتدئ",
-explanation:"الترتيب الأساسي في الجملة الإنجليزية هو الفاعل ثم الفعل ثم المفعول به.",
-rule:"Subject + Verb + Object",
-examples:[
-["I read books.","أنا أقرأ الكتب."],
-["She speaks English.","هي تتحدث الإنجليزية."]
-]
+title:"Present Simple: ES",
+explanation:"بعض الأفعال تأخذ es مع he و she و it، مثل go → goes و watch → watches.",
+example:"She watches TV.",
+translation:"هي تشاهد التلفاز."
 },
 
 {
-title:"الصفة قبل الاسم",
-level:"مبتدئ",
-explanation:"في الإنجليزية تأتي الصفة عادة قبل الاسم الذي تصفه.",
-rule:"a beautiful house وليس a house beautiful",
-examples:[
-["She has a beautiful house.","لديها منزل جميل."],
-["He bought a new phone.","اشترى هاتفًا جديدًا."]
-]
+title:"Present Simple: IES",
+explanation:"إذا انتهى الفعل بحرف ساكن ثم y، تتحول y إلى ies مع he و she و it.",
+example:"He studies English.",
+translation:"هو يدرس الإنجليزية."
 },
 
 {
-title:"الصفات لا تأخذ جمعًا",
-level:"مبتدئ",
-explanation:"الصفة الإنجليزية لا تتغير عادة عندما يكون الاسم جمعًا.",
-rule:"a red car | two red cars",
-examples:[
-["It is a small room.","إنها غرفة صغيرة."],
-["They are small rooms.","إنها غرف صغيرة."]
-]
+title:"DO in Questions",
+explanation:"نستخدم do لتكوين أسئلة المضارع البسيط مع I و you و we و they.",
+example:"Do you speak English?",
+translation:"هل تتحدث الإنجليزية؟"
 },
 
 {
-title:"المقارنة باستخدام ER و MORE",
-level:"مبتدئ",
-explanation:"نستخدم -er مع كثير من الصفات القصيرة، وmore مع كثير من الصفات الطويلة للمقارنة بين شيئين.",
-rule:"small → smaller | beautiful → more beautiful",
-examples:[
-["Ali is taller than Omar.","علي أطول من عمر."],
-["This book is more interesting.","هذا الكتاب أكثر إثارة للاهتمام."]
-]
+title:"DOES in Questions",
+explanation:"نستخدم does مع he و she و it. وبعد does يعود الفعل إلى شكله الأساسي.",
+example:"Does he work here?",
+translation:"هل يعمل هنا؟"
 },
 
 {
-title:"صيغة التفضيل EST و MOST",
-level:"مبتدئ",
-explanation:"نستخدم -est أو most عندما نقارن شيئًا بمجموعة كاملة.",
-rule:"small → smallest | beautiful → most beautiful",
-examples:[
-["He is the tallest student.","هو أطول طالب."],
-["This is the most useful book.","هذا أكثر كتاب مفيد."]
-]
+title:"DON'T",
+explanation:"نستخدم don't لنفي المضارع البسيط مع I و you و we و they.",
+example:"I don't understand.",
+translation:"أنا لا أفهم."
 },
 
 {
-title:"DO و DOES في الأسئلة",
-level:"متوسط",
-explanation:"نستخدم do مع I وyou وwe وthey، وdoes مع he وshe وit.",
-rule:"Do you work? | Does he work?",
-examples:[
-["Do you speak English?","هل تتحدث الإنجليزية؟"],
-["Does she work here?","هل تعمل هنا؟"]
-]
+title:"DOESN'T",
+explanation:"نستخدم doesn't مع he و she و it، ويأتي بعدها الفعل الأساسي دون s.",
+example:"She doesn't work here.",
+translation:"هي لا تعمل هنا."
 },
 
 {
-title:"DID في الماضي",
-level:"متوسط",
-explanation:"نستخدم did لتكوين الأسئلة في الماضي، وبعده يعود الفعل إلى صورته الأساسية.",
-rule:"Did + subject + base verb",
-examples:[
-["Did you see him?","هل رأيته؟"],
-["Did she go to school?","هل ذهبت إلى المدرسة؟"]
-]
+title:"Present Continuous",
+explanation:"المضارع المستمر يتكون من am أو is أو are + verb-ing، ويستخدم غالبًا لما يحدث الآن.",
+example:"I am studying now.",
+translation:"أنا أدرس الآن."
 },
 
 {
-title:"النفي باستخدام DON'T و DOESN'T",
-level:"متوسط",
-explanation:"بعد doesn't نستخدم الفعل الأساسي دون s.",
-rule:"He works → He doesn't work.",
-examples:[
-["I don't understand.","أنا لا أفهم."],
-["He doesn't speak French.","هو لا يتحدث الفرنسية."]
-]
+title:"ING Form",
+explanation:"عند تكوين المضارع المستمر نضيف ing إلى الفعل، مع وجود بعض قواعد الإملاء الخاصة.",
+example:"She is reading a book.",
+translation:"هي تقرأ كتابًا."
 },
 
 {
-title:"النفي باستخدام DIDN'T",
-level:"متوسط",
-explanation:"في النفي بالماضي نستخدم didn't وبعدها الفعل الأساسي.",
-rule:"didn't + base verb",
-examples:[
-["I didn't go yesterday.","لم أذهب أمس."],
-["She didn't understand.","هي لم تفهم."]
-]
+title:"Present Simple vs Continuous",
+explanation:"المضارع البسيط للعادات، والمضارع المستمر لما يحدث الآن أو حول وقت الكلام.",
+example:"I study every day. I am studying now.",
+translation:"أدرس كل يوم. أنا أدرس الآن."
 },
 
 {
-title:"MUST و HAVE TO",
-level:"متوسط",
-explanation:"كلاهما يستخدم للتعبير عن الضرورة، لكن have to ترتبط كثيرًا بضرورة أو قاعدة مفروضة من الخارج.",
-rule:"must = يجب | have to = يتعين عليه",
-examples:[
-["You must be careful.","يجب أن تكون حذرًا."],
-["I have to study today.","يجب علي أن أدرس اليوم."]
-]
+title:"Past Simple with WAS",
+explanation:"نستخدم was مع I و he و she و it في الماضي.",
+example:"I was tired yesterday.",
+translation:"كنت متعبًا أمس."
 },
 
 {
-title:"SHOULD للنصيحة",
-level:"متوسط",
-explanation:"نستخدم should لإعطاء النصيحة أو التوصية.",
-rule:"should + base verb",
-examples:[
-["You should study more.","ينبغي أن تدرس أكثر."],
-["You should get some rest.","ينبغي أن تحصل على بعض الراحة."]
-]
+title:"Past Simple with WERE",
+explanation:"نستخدم were مع you و we و they في الماضي.",
+example:"They were at home.",
+translation:"كانوا في المنزل."
 },
 
 {
-title:"MAY و MIGHT",
-level:"متوسط",
-explanation:"نستخدم may وmight للتعبير عن الاحتمال. غالبًا يكون might أكثر تحفظًا في التعبير عن الاحتمال.",
-rule:"may/might + base verb",
-examples:[
-["It may rain today.","قد تمطر اليوم."],
-["He might come later.","قد يأتي لاحقًا."]
-]
+title:"Regular Past Verbs",
+explanation:"الأفعال المنتظمة تأخذ ed غالبًا في الماضي البسيط.",
+example:"I worked yesterday.",
+translation:"عملت أمس."
 },
 
 {
-title:"COULD للقدرة والاحتمال والطلب",
-level:"متوسط",
-explanation:"يمكن أن تستخدم could للقدرة في الماضي، أو لطلب مهذب، أو لاحتمال.",
-rule:"could + base verb",
-examples:[
-["I could swim when I was young.","كنت أستطيع السباحة عندما كنت صغيرًا."],
-["Could you help me?","هل يمكنك مساعدتي؟"]
-]
+title:"Irregular Past Verbs",
+explanation:"بعض الأفعال لها شكل خاص في الماضي ولا تتبع قاعدة ed، مثل go → went.",
+example:"She went to school.",
+translation:"ذهبت إلى المدرسة."
 },
 
 {
-title:"GERUND — الفعل مع ING",
-level:"متوسط",
-explanation:"يمكن أن يعمل الفعل المنتهي بـ ing كاسم في الجملة، ويأتي أيضًا بعد أفعال معينة.",
-rule:"Reading is useful. | I enjoy reading.",
-examples:[
-["Reading is useful.","القراءة مفيدة."],
-["I enjoy learning English.","أستمتع بتعلم الإنجليزية."]
-]
+title:"Past Simple Questions",
+explanation:"نستخدم did لتكوين أسئلة الماضي البسيط، وبعد did يعود الفعل إلى شكله الأساسي.",
+example:"Did you study yesterday?",
+translation:"هل درست أمس؟"
 },
 
 {
-title:"INFINITIVE — TO + VERB",
-level:"متوسط",
-explanation:"يأتي to قبل الفعل الأساسي في تراكيب كثيرة للتعبير عن الغرض أو بعد أفعال معينة.",
-rule:"to + base verb",
-examples:[
-["I want to learn English.","أريد أن أتعلم الإنجليزية."],
-["She decided to study.","قررت أن تدرس."]
-]
+title:"Past Simple Negative",
+explanation:"نستخدم did not أو didn't للنفي في الماضي، وبعدها يأتي الفعل الأساسي.",
+example:"I didn't go to school.",
+translation:"لم أذهب إلى المدرسة."
 },
 
 {
-title:"SAY و TELL",
-level:"متوسط",
-explanation:"say تركز على الكلام نفسه، بينما tell تستخدم كثيرًا مع الشخص الذي نوجه إليه الكلام.",
-rule:"say something | tell someone something",
-examples:[
-["He said hello.","قال مرحبًا."],
-["She told me the truth.","أخبرتني الحقيقة."]
-]
+title:"Going To Future",
+explanation:"نستخدم be going to للتعبير عن خطة أو نية مستقبلية.",
+example:"I am going to study tonight.",
+translation:"سأدرس الليلة."
 },
 
 {
-title:"MAKE و DO",
-level:"متوسط",
-explanation:"make تستخدم كثيرًا عند إنشاء أو إنتاج شيء، بينما do تستخدم مع الأعمال والمهام والأنشطة.",
-rule:"make a cake | do homework",
-examples:[
-["I made a cake.","صنعت كعكة."],
-["I do my homework.","أقوم بواجبي المنزلي."]
-]
+title:"WILL Future",
+explanation:"نستخدم will للتحدث عن المستقبل، مثل التوقعات والقرارات التي نتخذها أثناء الكلام.",
+example:"I will help you.",
+translation:"سأساعدك."
 },
 
 {
-title:"USED TO",
-level:"متوسط",
-explanation:"نستخدم used to للحديث عن عادة أو حالة كانت موجودة في الماضي ولم تعد موجودة الآن.",
-rule:"used to + base verb",
-examples:[
-["I used to play football.","كنت ألعب كرة القدم."],
-["She used to live here.","كانت تعيش هنا."]
-]
+title:"CAN",
+explanation:"نستخدم can للتعبير عن القدرة أو الإمكانية أو طلب الإذن في بعض السياقات.",
+example:"I can speak English.",
+translation:"أستطيع التحدث بالإنجليزية."
 },
 
 {
-title:"FOR و SINCE",
-level:"متوسط",
-explanation:"for تستخدم مع مدة زمنية، وsince تستخدم مع نقطة بداية زمنية.",
-rule:"for two years | since 2024",
-examples:[
-["I have lived here for two years.","عشت هنا لمدة سنتين."],
-["I have studied English since 2024.","أدرس الإنجليزية منذ عام 2024."]
-]
+title:"CAN'T",
+explanation:"نستخدم can't للتعبير عن عدم القدرة أو عدم الإمكانية.",
+example:"I can't swim.",
+translation:"لا أستطيع السباحة."
 },
 
 {
-title:"ALREADY و YET و STILL",
-level:"متوسط",
-explanation:"already تعني أن شيئًا حدث قبل المتوقع، yet تستخدم كثيرًا في الأسئلة والنفي، وstill تعني أن الحالة مستمرة.",
-rule:"already = بالفعل | yet = بعد/حتى الآن | still = ما زال",
-examples:[
-["I have already eaten.","لقد أكلت بالفعل."],
-["Have you finished yet?","هل انتهيت بعد؟"],
-["I still need help.","ما زلت أحتاج إلى المساعدة."]
-]
+title:"SHOULD",
+explanation:"نستخدم should لإعطاء النصيحة أو التعبير عما هو مناسب.",
+example:"You should study more.",
+translation:"ينبغي أن تدرس أكثر."
 },
 
 {
-title:"TOO و ENOUGH",
-level:"متوسط",
-explanation:"too تعني أكثر من اللازم، وenough تعني بالقدر الكافي.",
-rule:"too + adjective | adjective + enough",
-examples:[
-["The bag is too heavy.","الحقيبة ثقيلة جدًا."],
-["The room is big enough.","الغرفة كبيرة بما يكفي."]
-]
+title:"MUST",
+explanation:"نستخدم must للتعبير عن ضرورة قوية أو التزام.",
+example:"You must be careful.",
+translation:"يجب أن تكون حذرًا."
 },
 
 {
-title:"SO و SUCH",
-level:"متوسط",
-explanation:"so تأتي غالبًا قبل الصفة أو الحال، بينما such تأتي قبل اسم أو مجموعة اسمية.",
-rule:"so + adjective | such + noun",
-examples:[
-["It is so beautiful.","إنه جميل جدًا."],
-["It is such a beautiful day.","إنه يوم جميل جدًا."]
-]
+title:"MUST NOT",
+explanation:"must not أو mustn't تعني أن الشيء ممنوع أو غير مسموح به.",
+example:"You mustn't touch this.",
+translation:"يجب ألا تلمس هذا."
 },
 
 {
-title:"WHO و WHICH و THAT",
-level:"متوسط",
-explanation:"تستخدم هذه الكلمات لربط جملة باسم سبق ذكره. who للأشخاص وwhich للأشياء، وthat يمكن أن تستخدم في حالات كثيرة.",
-rule:"person → who | thing → which/that",
-examples:[
-["The man who called me is my teacher.","الرجل الذي اتصل بي هو معلمي."],
-["The book that I bought is useful.","الكتاب الذي اشتريته مفيد."]
-]
+title:"Comparatives",
+explanation:"نستخدم صيغة المقارنة لمقارنة شخصين أو شيئين. غالبًا نستخدم -er مع الصفات القصيرة أو more مع بعض الصفات الطويلة.",
+example:"This book is better than that one.",
+translation:"هذا الكتاب أفضل من ذلك."
 },
 
 {
-title:"الشرط الأول — First Conditional",
-level:"متوسط",
-explanation:"نستخدم الشرط الأول لنتيجة مستقبلية محتملة إذا تحقق الشرط.",
-rule:"If + Present Simple, will + base verb",
-examples:[
-["If it rains, I will stay home.","إذا أمطرت، سأبقى في المنزل."],
-["If I study, I will pass.","إذا درست، سأنجح."]
-]
+title:"Superlatives",
+explanation:"نستخدم صيغة التفضيل للحديث عن أعلى درجة بين مجموعة.",
+example:"He is the tallest student.",
+translation:"هو أطول طالب."
 },
 
 {
-title:"الشرط الثاني — Second Conditional",
-level:"متقدم",
-explanation:"نستخدم الشرط الثاني للمواقف الافتراضية أو غير المحتملة في الحاضر أو المستقبل.",
-rule:"If + Past Simple, would + base verb",
-examples:[
-["If I had more time, I would travel.","لو كان لدي وقت أكثر، لسافرت."],
-["If I were you, I would study.","لو كنت مكانك، لدرست."]
-]
+title:"Adverbs of Frequency",
+explanation:"كلمات مثل always و usually و often و sometimes و never توضح مدى تكرار الفعل.",
+example:"I usually study at night.",
+translation:"عادةً أدرس في الليل."
 },
 
 {
-title:"الشرط الثالث — Third Conditional",
-level:"متقدم",
-explanation:"نستخدم الشرط الثالث للحديث عن موقف ماضٍ لم يحدث ونتيجة افتراضية له.",
-rule:"If + Past Perfect, would have + past participle",
-examples:[
-["If I had studied, I would have passed.","لو كنت درست، لكنت نجحت."],
-["If she had called, I would have answered.","لو كانت قد اتصلت، لكنت أجبت."]
-]
+title:"Prepositions of Time",
+explanation:"نستخدم at مع أوقات محددة، on مع الأيام والتواريخ، و in مع الأشهر والسنوات والفترات.",
+example:"I study at night. I study on Monday. I study in July.",
+translation:"أدرس في الليل. أدرس يوم الاثنين. أدرس في يوليو."
 },
 
 {
-title:"المبني للمجهول — Passive Voice",
-level:"متقدم",
-explanation:"نستخدم المبني للمجهول عندما يكون الفعل أو نتيجته أهم من الشخص الذي قام بالفعل.",
-rule:"be + past participle",
-examples:[
-["The book was written in 2020.","كُتب الكتاب في عام 2020."],
-["English is spoken worldwide.","يتم التحدث بالإنجليزية في جميع أنحاء العالم."]
-]
+title:"Prepositions of Place",
+explanation:"من حروف الجر المهمة للمكان: in و on و under و behind و next to.",
+example:"The phone is on the table.",
+translation:"الهاتف على الطاولة."
 },
 
 {
-title:"Reported Speech — الكلام المنقول",
-level:"متقدم",
-explanation:"نستخدم الكلام المنقول لنقل ما قاله شخص آخر دون تكرار كلامه حرفيًا.",
-rule:"He said that he was tired.",
-examples:[
-["He said that he was tired.","قال إنه كان متعبًا."],
-["She told me that she was busy.","أخبرتني أنها كانت مشغولة."]
-]
+title:"First Conditional",
+explanation:"نستخدم الشرط الأول للحديث عن احتمال حقيقي في المستقبل. التركيب الأساسي: If + present simple, will + verb.",
+example:"If I study, I will pass.",
+translation:"إذا درست، فسأنجح."
 },
 
 {
-title:"Modal Perfect — should have / could have",
-level:"متقدم",
-explanation:"نستخدم modal perfect للحديث عن أشياء كان من الممكن أو ينبغي أن تحدث في الماضي.",
-rule:"modal + have + past participle",
-examples:[
-["You should have called me.","كان ينبغي أن تتصل بي."],
-["I could have helped you.","كان بإمكاني مساعدتك."]
-]
+title:"Second Conditional",
+explanation:"نستخدم الشرط الثاني للحديث عن مواقف افتراضية أو غير محتملة في الحاضر أو المستقبل.",
+example:"If I had more time, I would travel.",
+translation:"لو كان لدي وقت أكثر، لسافرت."
 },
 
 {
-title:"INVERSION — قلب ترتيب الجملة",
-level:"متقدم",
-explanation:"في بعض التراكيب الرسمية والمتقدمة نقلب ترتيب الفعل والفاعل للتأكيد.",
-rule:"Never have I seen such a thing.",
-examples:[
-["Never have I seen such a thing.","لم أرَ شيئًا كهذا قط."],
-["Rarely do we get this opportunity.","نادرًا ما نحصل على هذه الفرصة."]
-]
+title:"Present Perfect",
+explanation:"يتكون المضارع التام من have أو has + التصريف الثالث. يستخدم لأحداث مرتبطة بالحاضر.",
+example:"I have finished my work.",
+translation:"لقد أنهيت عملي."
 },
 
 {
-title:"PARTICIPLE CLAUSES",
-level:"متقدم",
-explanation:"تستخدم تراكيب participle clauses لاختصار بعض الجمل وجعل الأسلوب أكثر سلاسة ورسمية.",
-rule:"Having + past participle يمكن أن تشير إلى فعل سبق فعلًا آخر.",
-examples:[
-["Having finished his work, he went home.","بعد أن أنهى عمله، ذهب إلى المنزل."],
-["Walking home, I saw my friend.","وأنا أمشي إلى المنزل، رأيت صديقي."]
-]
+title:"Present Perfect with FOR",
+explanation:"نستخدم for مع مدة زمنية مثل two years أو three days.",
+example:"I have lived here for two years.",
+translation:"أعيش هنا منذ سنتين."
 },
 
 {
-title:"MIXED CONDITIONALS",
-level:"متقدم",
-explanation:"تجمع mixed conditionals بين أزمنة مختلفة عندما يكون الشرط في زمن والنتيجة في زمن آخر.",
-rule:"شرط ماضٍ قد يؤدي إلى نتيجة في الحاضر.",
-examples:[
-["If I had studied harder, I would have a better job now.","لو كنت درست بجدية أكبر، لكان لدي عمل أفضل الآن."],
-["If she were more careful, she wouldn't have made that mistake.","لو كانت أكثر حذرًا، لما ارتكبت ذلك الخطأ."]
-]
+title:"Present Perfect with SINCE",
+explanation:"نستخدم since مع نقطة بداية زمنية محددة.",
+example:"I have lived here since 2024.",
+translation:"أعيش هنا منذ عام 2024."
 },
 
 {
-title:"الأزمنة مع BY و BY THE TIME",
-level:"متقدم",
-explanation:"تستخدم by وby the time للتعبير عن أن شيئًا سيكون قد اكتمل قبل وقت محدد.",
-rule:"By + time | By the time + clause",
-examples:[
-["I will have finished by Friday.","سأكون قد انتهيت بحلول الجمعة."],
-["By the time you arrive, I will have finished.","بحلول وقت وصولك، سأكون قد انتهيت."]
-]
+title:"Passive Voice",
+explanation:"في المبني للمجهول نركز على الفعل أو الشيء الذي وقع عليه الفعل بدل التركيز على الفاعل.",
+example:"The book was written in English.",
+translation:"كُتب الكتاب باللغة الإنجليزية."
 },
 
 {
-title:"FUTURE PERFECT",
-level:"متقدم",
-explanation:"نستخدم Future Perfect للحديث عن فعل سيكون قد اكتمل قبل نقطة معينة في المستقبل.",
-rule:"will have + past participle",
-examples:[
-["I will have finished the work by tomorrow.","سأكون قد أنهيت العمل بحلول الغد."],
-["She will have arrived by eight.","ستكون قد وصلت بحلول الثامنة."]
-]
+title:"Reported Speech",
+explanation:"نستخدم الكلام المنقول لنقل ما قاله شخص آخر، وقد تتغير بعض الأزمنة والضمائر حسب السياق.",
+example:"He said that he was tired.",
+translation:"قال إنه كان متعبًا."
 },
 
 {
-title:"FUTURE CONTINUOUS",
-level:"متقدم",
-explanation:"نستخدم Future Continuous للحديث عن فعل سيكون مستمرًا في وقت محدد في المستقبل.",
-rule:"will be + verb-ing",
-examples:[
-["I will be studying at eight.","سأكون أدرس في الثامنة."],
-["They will be traveling tomorrow.","سيكونون مسافرين غدًا."]
-]
-},
-
-{
-title:"PAST PERFECT",
-level:"متقدم",
-explanation:"نستخدم Past Perfect للحديث عن فعل حدث قبل فعل آخر في الماضي.",
-rule:"had + past participle",
-examples:[
-["I had eaten before he arrived.","كنت قد أكلت قبل أن يصل."],
-["She had left when I called.","كانت قد غادرت عندما اتصلت."]
-]
-},
-
-{
-title:"الفرق بين BEEN و GONE",
-level:"متقدم",
-explanation:"been تعني أن الشخص ذهب إلى مكان وعاد أو لديه تجربة الذهاب إليه، بينما gone تعني أنه ذهب وما زال هناك عادة في ذلك السياق.",
-rule:"have been to = ذهب وعاد | have gone to = ذهب وما زال هناك",
-examples:[
-["I have been to France.","لقد ذهبت إلى فرنسا من قبل."],
-["She has gone to the store.","لقد ذهبت إلى المتجر."]
-]
-},
-
-{
-title:"PRESENT PERFECT مع JUST",
-level:"متقدم",
-explanation:"نستخدم just مع Present Perfect للتعبير عن فعل حدث منذ وقت قصير جدًا.",
-rule:"have/has + just + past participle",
-examples:[
-["I have just arrived.","لقد وصلت للتو."],
-["She has just finished.","لقد انتهت للتو."]
-]
-},
-
-{
-title:"صياغة الأسئلة غير المباشرة",
-level:"متقدم",
-explanation:"الأسئلة غير المباشرة أكثر تهذيبًا ورسمية، وبعد مقدمة مثل Could you tell me لا نستخدم ترتيب السؤال المباشر.",
-rule:"Could you tell me where he is? وليس where is he?",
-examples:[
-["Could you tell me where the station is?","هل يمكنك أن تخبرني أين تقع المحطة؟"],
-["Do you know what time it is?","هل تعرف كم الساعة؟"]
-]
-},
-
-{
-title:"التوافق بين الفاعل والفعل",
-level:"متقدم",
-explanation:"يجب أن يتوافق الفعل مع الفاعل في العدد، خصوصًا في الجمل التي تحتوي على أسماء طويلة أو تراكيب فاصلة.",
-rule:"The student is ready. | The students are ready.",
-examples:[
-["The student is ready.","الطالب مستعد."],
-["The students are ready.","الطلاب مستعدون."]
-]
-},
-
-{
-title:"ترتيب الظروف في الجملة",
-level:"متقدم",
-explanation:"مكان الظرف يعتمد على نوعه. ظروف التكرار لها موضع شائع، بينما ظروف المكان والزمان قد تأتي في نهاية الجملة.",
-rule:"Subject + adverb + verb غالبًا مع ظروف التكرار.",
-examples:[
-["I usually study at night.","عادةً أدرس في الليل."],
-["She speaks English fluently.","هي تتحدث الإنجليزية بطلاقة."]
-]
-},
-
-{
-title:"الجمل المتوازية — Parallel Structure",
-level:"متقدم",
-explanation:"عند ربط عناصر متشابهة باستخدام and أو or، من الأفضل الحفاظ على الشكل النحوي نفسه.",
-rule:"I like reading, writing, and speaking.",
-examples:[
-["I like reading, writing, and speaking.","أحب القراءة والكتابة والتحدث."],
-["She wants to study and work.","تريد أن تدرس وتعمل."]
-]
-},
-
-{
-title:"الفرق بين ADVICE و ADVISE",
-level:"متقدم",
-explanation:"advice اسم يعني نصيحة، أما advise فهو فعل يعني ينصح. يختلف نطقهما أيضًا.",
-rule:"advice = noun | advise = verb",
-examples:[
-["Thank you for your advice.","شكرًا على نصيحتك."],
-["I advise you to study.","أنصحك بالدراسة."]
-]
-},
-
-{
-title:"الفرق بين THEIR و THERE و THEY'RE",
-level:"متقدم",
-explanation:"هذه الكلمات متشابهة في النطق لكنها مختلفة في المعنى والاستخدام.",
-rule:"their = ملكية | there = هناك | they're = they are",
-examples:[
-["Their house is big.","منزلهم كبير."],
-["The books are there.","الكتب هناك."],
-["They're ready.","هم مستعدون."]
-]
+title:"Relative Clauses",
+explanation:"نستخدم who و which و that لإضافة معلومات عن شخص أو شيء داخل الجملة.",
+example:"The man who lives here is my teacher.",
+translation:"الرجل الذي يعيش هنا هو معلمي."
 }
 
 ];
 
-const list = document.getElementById("grammarList");
+const container = document.getElementById("rules");
 
-grammar.forEach(function(item,index){
+rules.forEach(function(rule, index) {
 
     const card = document.createElement("div");
     card.className = "rule";
 
-    let examplesHTML = "";
+    card.innerHTML = `
+        <div class="number">القاعدة ${index + 1} من 50</div>
 
-    item.examples.forEach(function(example){
+        <h2>${rule.title}</h2>
 
-        const english = example[0];
-        const arabic = example[1];
+        <div class="explanation">
+            ${rule.explanation}
+        </div>
 
-        examplesHTML += `
         <div class="example">
+            <strong>Example:</strong><br>
+            ${rule.example}
 
-            <div class="english">${english}</div>
+            <div class="translation">
+                ${rule.translation}
+            </div>
+        </div>
 
-            <div class="arabic">${arabic}</div>
+        <div class="buttons">
 
-            <button class="listen" onclick="speak(${JSON.stringify(english)})">
+            <button class="listen" type="button">
                 🔊 استماع
             </button>
 
+            <button class="translate" type="button">
+                🌐 الترجمة
+            </button>
+
         </div>
-        `;
-    });
-
-    card.innerHTML = `
-        <div class="number">القاعدة ${index + 1}</div>
-
-        <div class="level">${item.level}</div>
-
-        <h2 class="title">${item.title}</h2>
-
-        <div class="explanation">
-            ${item.explanation}
-        </div>
-
-        <div class="rulebox">
-            <strong>📌 القاعدة:</strong><br>
-            ${item.rule}
-        </div>
-
-        <strong>📝 أمثلة:</strong>
-
-        ${examplesHTML}
     `;
 
-    list.appendChild(card);
+    const listenButton = card.querySelector(".listen");
+    const translateButton = card.querySelector(".translate");
+    const translationBox = card.querySelector(".translation");
 
+    listenButton.addEventListener("click", function() {
+        speakEnglish(rule.example);
+    });
+
+    translateButton.addEventListener("click", function() {
+        if (translationBox.style.display === "none") {
+            translationBox.style.display = "block";
+        } else {
+            translationBox.style.display = "none";
+        }
+    });
+
+    container.appendChild(card);
 });
 
-function speak(text){
+function speakEnglish(text) {
 
-    if(!("speechSynthesis" in window)){
-        alert("المتصفح لا يدعم النطق الصوتي.");
+    if (!window.speechSynthesis) {
+        alert("ميزة النطق الصوتي غير متاحة في هذا المتصفح. جرّب فتح الموقع في Chrome.");
         return;
     }
 
     window.speechSynthesis.cancel();
 
-    const voice = new SpeechSynthesisUtterance(text);
+    const utterance = new SpeechSynthesisUtterance(text);
 
-    voice.lang = "en-US";
-    voice.rate = 0.8;
-    voice.pitch = 1;
+    utterance.lang = "en-US";
+    utterance.rate = 0.82;
+    utterance.pitch = 1;
+    utterance.volume = 1;
 
-    window.speechSynthesis.speak(voice);
+    const voices = window.speechSynthesis.getVoices();
+
+    const englishVoice = voices.find(function(voice) {
+        return voice.lang &&
+        voice.lang.toLowerCase().startsWith("en");
+    });
+
+    if (englishVoice) {
+        utterance.voice = englishVoice;
+    }
+
+    window.speechSynthesis.speak(utterance);
+}
+
+if (window.speechSynthesis) {
+    window.speechSynthesis.onvoiceschanged = function() {
+        window.speechSynthesis.getVoices();
+    };
 }
 
 </script>
