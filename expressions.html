@@ -31,6 +31,10 @@ header h1 {
     font-size: 29px;
 }
 
+header p {
+    margin: 10px 0 0;
+}
+
 .container {
     max-width: 900px;
     margin: auto;
@@ -81,6 +85,7 @@ header h1 {
 
 .arabic {
     font-size: 17px;
+    line-height: 1.7;
     margin-bottom: 12px;
 }
 
@@ -88,7 +93,7 @@ header h1 {
     border: none;
     background: #2563eb;
     color: white;
-    padding: 9px 16px;
+    padding: 10px 18px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 15px;
@@ -109,8 +114,8 @@ footer {
 <body>
 
 <header>
-<h1>🗣️ التعبيرات الإنجليزية</h1>
-<p>English Expressions</p>
+    <h1>🗣️ التعبيرات الإنجليزية</h1>
+    <p>English Expressions</p>
 </header>
 
 <div class="container">
@@ -118,9 +123,9 @@ footer {
 <a class="back" href="index.html">← العودة إلى الرئيسية</a>
 
 <div class="intro">
-<strong>🧠 التعبيرات من المبتدئ إلى المتقدم</strong>
-<br>
-تعلم التعبير، افهم معناه بالعربية، ثم استمع إلى النطق الإنجليزي.
+    <strong>🧠 50 تعبيرًا من المبتدئ إلى المتقدم</strong>
+    <br>
+    تعلّم التعبير، اقرأ معناه بالعربية، ثم استمع إلى النطق الإنجليزي.
 </div>
 
 <div id="expressions"></div>
@@ -128,67 +133,71 @@ footer {
 </div>
 
 <footer>
-My English Notebook © 2026
+    My English Notebook © 2026
 </footer>
 
 <script>
 
 const expressions = [
 
-{en:"Hello!",ar:"مرحبًا!"},
-{en:"How are you?",ar:"كيف حالك؟"},
-{en:"I'm fine, thank you.",ar:"أنا بخير، شكرًا لك."},
-{en:"Nice to meet you.",ar:"سعيد بلقائك."},
-{en:"See you later.",ar:"أراك لاحقًا."},
-{en:"Thank you very much.",ar:"شكرًا جزيلًا."},
-{en:"You're welcome.",ar:"على الرحب والسعة."},
-{en:"Excuse me.",ar:"عذرًا."},
-{en:"I'm sorry.",ar:"أنا آسف."},
-{en:"No problem.",ar:"لا مشكلة."},
+{en:"Hello!", ar:"مرحبًا!"},
+{en:"How are you?", ar:"كيف حالك؟"},
+{en:"I'm fine, thank you.", ar:"أنا بخير، شكرًا لك."},
+{en:"Nice to meet you.", ar:"سعيد بلقائك."},
+{en:"See you later.", ar:"أراك لاحقًا."},
 
-{en:"What do you mean?",ar:"ماذا تقصد؟"},
-{en:"I don't understand.",ar:"أنا لا أفهم."},
-{en:"Could you repeat that?",ar:"هل يمكنك تكرار ذلك؟"},
-{en:"Please speak slowly.",ar:"من فضلك تحدث ببطء."},
-{en:"Give me a second.",ar:"أعطني لحظة."},
-{en:"Never mind.",ar:"لا بأس / انسَ الأمر."},
-{en:"Sounds good!",ar:"يبدو جيدًا!"},
-{en:"That's great!",ar:"هذا رائع!"},
-{en:"I agree.",ar:"أنا أوافق."},
-{en:"I don't agree.",ar:"أنا لا أوافق."},
+{en:"Thank you very much.", ar:"شكرًا جزيلًا."},
+{en:"You're welcome.", ar:"على الرحب والسعة."},
+{en:"Excuse me.", ar:"عذرًا."},
+{en:"I'm sorry.", ar:"أنا آسف."},
+{en:"No problem.", ar:"لا مشكلة."},
 
-{en:"What are you doing?",ar:"ماذا تفعل؟"},
-{en:"What are you talking about?",ar:"عمّ تتحدث؟"},
-{en:"Are you serious?",ar:"هل أنت جاد؟"},
-{en:"Of course!",ar:"بالطبع!"},
-{en:"Not really.",ar:"ليس تمامًا."},
-{en:"I think so.",ar:"أعتقد ذلك."},
-{en:"I don't think so.",ar:"لا أعتقد ذلك."},
-{en:"It depends.",ar:"هذا يعتمد."},
-{en:"I'm not sure.",ar:"لست متأكدًا."},
-{en:"Let me think.",ar:"دعني أفكر."},
+{en:"What do you mean?", ar:"ماذا تقصد؟"},
+{en:"I don't understand.", ar:"أنا لا أفهم."},
+{en:"Could you repeat that?", ar:"هل يمكنك تكرار ذلك؟"},
+{en:"Please speak slowly.", ar:"من فضلك تحدث ببطء."},
+{en:"Give me a second.", ar:"أعطني لحظة."},
 
-{en:"I'm on my way.",ar:"أنا في طريقي."},
-{en:"I'll be back soon.",ar:"سأعود قريبًا."},
-{en:"Take your time.",ar:"خذ وقتك."},
-{en:"Hurry up!",ar:"أسرع!"},
-{en:"Wait a minute.",ar:"انتظر دقيقة."},
-{en:"What's going on?",ar:"ماذا يحدث؟"},
-{en:"That's a good idea.",ar:"هذه فكرة جيدة."},
-{en:"It doesn't matter.",ar:"لا يهم."},
-{en:"I have no idea.",ar:"ليس لدي أي فكرة."},
-{en:"That's exactly what I mean.",ar:"هذا بالضبط ما أقصده."},
+{en:"Never mind.", ar:"لا بأس / انسَ الأمر."},
+{en:"Sounds good!", ar:"يبدو جيدًا!"},
+{en:"That's great!", ar:"هذا رائع!"},
+{en:"I agree.", ar:"أنا أوافق."},
+{en:"I don't agree.", ar:"أنا لا أوافق."},
 
-{en:"As far as I know.",ar:"على حد علمي."},
-{en:"To be honest.",ar:"بصراحة."},
-{en:"In my opinion.",ar:"في رأيي."},
-{en:"As a matter of fact.",ar:"في الواقع."},
-{en:"On the other hand.",ar:"من ناحية أخرى."},
-{en:"That makes sense.",ar:"هذا منطقي."},
-{en:"I see your point.",ar:"أفهم وجهة نظرك."},
-{en:"It depends on the situation.",ar:"هذا يعتمد على الموقف."},
-{en:"I couldn't agree more.",ar:"لا يمكنني أن أوافق أكثر من ذلك."},
-{en:"That's not necessarily true.",ar:"هذا ليس صحيحًا بالضرورة."}
+{en:"What are you doing?", ar:"ماذا تفعل؟"},
+{en:"What are you talking about?", ar:"عمّ تتحدث؟"},
+{en:"Are you serious?", ar:"هل أنت جاد؟"},
+{en:"Of course!", ar:"بالطبع!"},
+{en:"Not really.", ar:"ليس تمامًا."},
+
+{en:"I think so.", ar:"أعتقد ذلك."},
+{en:"I don't think so.", ar:"لا أعتقد ذلك."},
+{en:"It depends.", ar:"هذا يعتمد."},
+{en:"I'm not sure.", ar:"لست متأكدًا."},
+{en:"Let me think.", ar:"دعني أفكر."},
+
+{en:"I'm on my way.", ar:"أنا في طريقي."},
+{en:"I'll be back soon.", ar:"سأعود قريبًا."},
+{en:"Take your time.", ar:"خذ وقتك."},
+{en:"Hurry up!", ar:"أسرع!"},
+{en:"Wait a minute.", ar:"انتظر دقيقة."},
+
+{en:"What's going on?", ar:"ماذا يحدث؟"},
+{en:"That's a good idea.", ar:"هذه فكرة جيدة."},
+{en:"It doesn't matter.", ar:"لا يهم."},
+{en:"I have no idea.", ar:"ليس لدي أي فكرة."},
+{en:"That's exactly what I mean.", ar:"هذا بالضبط ما أقصده."},
+
+{en:"As far as I know.", ar:"على حد علمي."},
+{en:"To be honest.", ar:"بصراحة."},
+{en:"In my opinion.", ar:"في رأيي."},
+{en:"As a matter of fact.", ar:"في الواقع."},
+{en:"On the other hand.", ar:"من ناحية أخرى."},
+
+{en:"That makes sense.", ar:"هذا منطقي."},
+{en:"I see your point.", ar:"أفهم وجهة نظرك."},
+{en:"I couldn't agree more.", ar:"لا يمكنني أن أوافق أكثر من ذلك."},
+{en:"That's not necessarily true.", ar:"هذا ليس صحيحًا بالضرورة."}
 
 ];
 
@@ -199,37 +208,53 @@ expressions.forEach(function(item, index) {
     const card = document.createElement("div");
     card.className = "expression";
 
-    card.innerHTML = `
-        <div class="number">التعبير ${index + 1}</div>
+    const number = document.createElement("div");
+    number.className = "number";
+    number.textContent = "التعبير " + (index + 1);
 
-        <div class="english">${item.en}</div>
+    const english = document.createElement("div");
+    english.className = "english";
+    english.textContent = item.en;
 
-        <div class="arabic">${item.ar}</div>
+    const arabic = document.createElement("div");
+    arabic.className = "arabic";
+    arabic.textContent = item.ar;
 
-        <button class="listen" onclick="speak(${JSON.stringify(item.en)})">
-            🔊 استماع
-        </button>
-    `;
+    const button = document.createElement("button");
+    button.className = "listen";
+    button.type = "button";
+    button.textContent = "🔊 استماع";
+
+    button.addEventListener("click", function() {
+        speak(item.en);
+    });
+
+    card.appendChild(number);
+    card.appendChild(english);
+    card.appendChild(arabic);
+    card.appendChild(button);
 
     container.appendChild(card);
 });
 
+
 function speak(text) {
 
-    if (!("speechSynthesis" in window)) {
-        alert("المتصفح لا يدعم النطق الصوتي.");
+    if (!window.speechSynthesis) {
+        alert("النطق الصوتي غير متاح في هذا المتصفح.");
         return;
     }
 
     window.speechSynthesis.cancel();
 
-    const voice = new SpeechSynthesisUtterance(text);
+    const utterance = new SpeechSynthesisUtterance(text);
 
-    voice.lang = "en-US";
-    voice.rate = 0.8;
-    voice.pitch = 1;
+    utterance.lang = "en-US";
+    utterance.rate = 0.85;
+    utterance.pitch = 1;
+    utterance.volume = 1;
 
-    window.speechSynthesis.speak(voice);
+    window.speechSynthesis.speak(utterance);
 }
 
 </script>
