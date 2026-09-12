@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>قواعد اللغة الإنجليزية</title>
 
 <style>
@@ -22,8 +22,8 @@ header {
     background: linear-gradient(135deg, #2563eb, #4f46e5);
     color: white;
     text-align: center;
-    padding: 30px 18px;
-    border-radius: 0 0 28px 28px;
+    padding: 35px 18px;
+    border-radius: 0 0 30px 30px;
 }
 
 header h1 {
@@ -31,94 +31,98 @@ header h1 {
     font-size: 30px;
 }
 
+header p {
+    margin-top: 12px;
+    font-size: 18px;
+}
+
 .container {
     max-width: 950px;
     margin: auto;
-    padding: 22px 16px;
+    padding: 25px 16px;
 }
 
 .back {
-    display: inline-block;
+    display: block;
+    width: fit-content;
     background: white;
     color: #2563eb;
     text-decoration: none;
-    padding: 10px 17px;
-    border-radius: 12px;
-    margin-bottom: 20px;
+    padding: 12px 20px;
+    border-radius: 14px;
+    margin-bottom: 22px;
+    box-shadow: 0 5px 18px rgba(30,60,100,0.08);
 }
 
 .intro {
     background: white;
-    padding: 20px;
-    border-radius: 20px;
-    margin-bottom: 20px;
+    padding: 22px;
+    border-radius: 22px;
+    margin-bottom: 25px;
     line-height: 1.9;
     box-shadow: 0 8px 25px rgba(30,60,100,0.10);
 }
 
-.rule {
-    background: white;
-    border-radius: 18px;
-    padding: 20px;
-    margin-bottom: 16px;
-    box-shadow: 0 6px 20px rgba(30,60,100,0.08);
+.intro h2 {
+    margin-top: 0;
+    color: #2563eb;
 }
 
-.number {
+.rule {
+    background: white;
+    border-radius: 22px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 7px 23px rgba(30,60,100,0.09);
+}
+
+.rule-number {
     color: #667085;
     font-size: 14px;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
 .rule h2 {
-    margin: 5px 0 14px;
+    margin: 5px 0 15px;
     color: #2563eb;
-    font-size: 21px;
+    font-size: 22px;
 }
 
 .explanation {
     line-height: 1.9;
+    font-size: 17px;
     white-space: pre-line;
 }
 
-.examples {
-    margin-top: 15px;
-}
-
 .example {
-    background: #f4f7ff;
-    padding: 12px;
-    border-radius: 12px;
-    margin-top: 9px;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 17px;
+    padding-top: 17px;
 }
 
 .english {
     direction: ltr;
     text-align: left;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     color: #1d4ed8;
+    margin-bottom: 7px;
 }
 
 .arabic {
-    margin-top: 5px;
     font-size: 16px;
-}
-
-.words {
-    margin-top: 15px;
-    line-height: 1.9;
+    margin-bottom: 10px;
+    line-height: 1.7;
 }
 
 .listen {
     border: none;
     background: #2563eb;
     color: white;
-    padding: 10px 17px;
-    border-radius: 10px;
+    padding: 9px 16px;
+    border-radius: 11px;
     cursor: pointer;
     font-size: 15px;
-    margin-top: 14px;
 }
 
 .listen:hover {
@@ -126,12 +130,15 @@ header h1 {
 }
 
 .practice {
-    margin-top: 15px;
-    padding: 13px;
-    background: #f8fafc;
-    border-right: 4px solid #4f46e5;
-    border-radius: 10px;
+    margin-top: 20px;
+    padding: 16px;
+    background: #f1f5ff;
+    border-radius: 15px;
     line-height: 1.8;
+}
+
+.practice strong {
+    color: #2563eb;
 }
 
 footer {
@@ -145,8 +152,8 @@ footer {
 <body>
 
 <header>
-<h1>✍️ قواعد اللغة الإنجليزية</h1>
-<p>English Grammar — من المبتدئ إلى المتقدم</p>
+    <h1>✍️ قواعد اللغة الإنجليزية</h1>
+    <p>English Grammar — من المبتدئ إلى المتقدم</p>
 </header>
 
 <div class="container">
@@ -154,648 +161,813 @@ footer {
 <a class="back" href="index.html">← العودة إلى الرئيسية</a>
 
 <div class="intro">
-<strong>📚 مسار القواعد</strong>
-<br>
-50 قاعدة مرتبة تدريجيًا من الأساسيات إلى القواعد المتقدمة، مع شرح عربي، أمثلة إنجليزية، ترجمة، وتدريب صوتي.
+    <h2>📚 مسار القواعد</h2>
+    <div>
+        50 قاعدة مرتبة تدريجيًا من الأساسيات إلى القواعد المتقدمة،
+        مع شرح عربي، أمثلة إنجليزية، ترجمة، وتدريب صوتي.
+    </div>
 </div>
 
 <div id="rules"></div>
+
+</div>
+
+<footer>
+    My English Notebook © 2026
+</footer>
 
 <script>
 
 const rules = [
 
 {
-title:"الضمائر الشخصية — Personal Pronouns",
-explanation:"الضمير يحل محل الاسم. أهم الضمائر في الإنجليزية هي: I = أنا، you = أنت/أنتم، he = هو، she = هي، it = لغير العاقل، we = نحن، they = هم/هن. يجب اختيار الضمير المناسب للشخص أو الشيء الذي نتحدث عنه.",
-examples:[
-{en:"I am a student.",ar:"أنا طالب."},
-{en:"She is my sister.",ar:"هي أختي."},
-{en:"They are my friends.",ar:"هم أصدقائي."}
+title: "Rule 1 — Personal Pronouns",
+explanation: `ضمائر الفاعل تحل محل الأسماء وتأتي غالبًا قبل الفعل.
+
+I = أنا
+You = أنت / أنتم
+He = هو
+She = هي
+It = لغير العاقل
+We = نحن
+They = هم / هن`,
+examples: [
+["I am a student.", "أنا طالب."],
+["She is my sister.", "هي أختي."],
+["They are my friends.", "هم أصدقائي."]
 ],
-words:"I = أنا | you = أنت / أنتم | he = هو | she = هي | it = لغير العاقل | we = نحن | they = هم / هن",
-practice:"كوّن جملة باستخدام I و he و she و we و they."
+practice: "اكتب جملة باستخدام I و He و They."
 },
 
 {
-title:"الفعل To Be — am, is, are",
-explanation:"نستخدم am مع I، وis مع he وshe وit، وare مع you وwe وthey. يستخدم To Be للتعريف والوصف والتعبير عن الحالة.",
-examples:[
-{en:"I am ready.",ar:"أنا مستعد."},
-{en:"He is happy.",ar:"هو سعيد."},
-{en:"We are students.",ar:"نحن طلاب."}
+title: "Rule 2 — Verb To Be",
+explanation: `نستخدم am مع I.
+نستخدم is مع He و She و It.
+نستخدم are مع You و We و They.
+
+يستخدم To Be للتعريف والوصف والحالة.`,
+examples: [
+["I am ready.", "أنا مستعد."],
+["He is happy.", "هو سعيد."],
+["We are students.", "نحن طلاب."]
 ],
-words:"am = أكون | is = يكون | are = يكونون / تكون | ready = مستعد | happy = سعيد",
-practice:"أكمل: I __ ready. She __ happy. They __ students."
+practice: "أكمل: I __ ready. She __ happy. They __ students."
 },
 
 {
-title:"النفي والسؤال مع To Be",
-explanation:"للنفي نضع not بعد am أو is أو are. وللسؤال نقدم am أو is أو are على الفاعل.",
-examples:[
-{en:"I am not tired.",ar:"أنا لست متعبًا."},
-{en:"She is not busy.",ar:"هي ليست مشغولة."},
-{en:"Are you ready?",ar:"هل أنت مستعد؟"},
-{en:"Is he a student?",ar:"هل هو طالب؟"}
+title: "Rule 3 — To Be: Negative",
+explanation: `للنفي مع To Be نضع not بعد am أو is أو are.
+
+am not
+is not
+are not
+
+يمكن أيضًا استخدام الاختصارات:
+isn't = is not
+aren't = are not`,
+examples: [
+["I am not tired.", "أنا لست متعبًا."],
+["She isn't busy.", "هي ليست مشغولة."],
+["They aren't ready.", "هم ليسوا مستعدين."]
 ],
-words:"not = ليس / لا | tired = متعب | busy = مشغول | ready = مستعد",
-practice:"حوّل جملة مثبتة إلى نفي ثم إلى سؤال."
+practice: "حوّل ثلاث جمل مثبتة إلى النفي."
 },
 
 {
-title:"ضمائر المفعول — Object Pronouns",
-explanation:"ضمائر المفعول تأتي غالبًا بعد الفعل. وهي: me, you, him, her, it, us, them. يجب عدم الخلط بينها وبين ضمائر الفاعل.",
-examples:[
-{en:"He helps me.",ar:"هو يساعدني."},
-{en:"I know him.",ar:"أنا أعرفه."},
-{en:"They help us.",ar:"هم يساعدوننا."},
-{en:"We know them.",ar:"نحن نعرفهم."}
+title: "Rule 4 — To Be: Questions",
+explanation: `لتكوين سؤال باستخدام To Be نضع am أو is أو are قبل الفاعل.
+
+Statement:
+You are ready.
+
+Question:
+Are you ready?`,
+examples: [
+["Are you ready?", "هل أنت مستعد؟"],
+["Is he your brother?", "هل هو أخوك؟"],
+["Are they students?", "هل هم طلاب؟"]
 ],
-words:"me = إياي / لي | him = إياه | her = إياها | us = إيانا | them = إياهم",
-practice:"اكتب خمس جمل باستخدام me و him و her و us و them."
+practice: "حوّل ثلاث جمل إلى أسئلة."
 },
 
 {
-title:"صفات الملكية — Possessive Adjectives",
-explanation:"صفات الملكية تأتي قبل الاسم لتوضح لمن ينتمي الشيء. I تصبح my، وyou تصبح your، وhe تصبح his، وshe تصبح her، وwe تصبح our، وthey تصبح their.",
-examples:[
-{en:"My name is Ahmed.",ar:"اسمي أحمد."},
-{en:"What is your name?",ar:"ما اسمك؟"},
-{en:"His car is new.",ar:"سيارته جديدة."},
-{en:"Our school is big.",ar:"مدرستنا كبيرة."}
+title: "Rule 5 — Object Pronouns",
+explanation: `ضمائر المفعول تأتي غالبًا بعد الفعل.
+
+me = إياي / ني
+you = إياك
+him = إياه
+her = إياها
+us = إيانا
+them = إياهم`,
+examples: [
+["He helps me.", "هو يساعدني."],
+["I know him.", "أنا أعرفه."],
+["They help us.", "هم يساعدوننا."]
 ],
-words:"my = ـي | your = ـك | his = ـه | her = ـها | our = ـنا | their = ـهم",
-practice:"أكمل: This is __ book. He has a car. It is __ car."
+practice: "اكتب جملة باستخدام me و him و them."
 },
 
 {
-title:"This, That, These, Those",
-explanation:"This للمفرد القريب، that للمفرد البعيد، these للجمع القريب، those للجمع البعيد.",
-examples:[
-{en:"This is my book.",ar:"هذا كتابي."},
-{en:"That is your phone.",ar:"ذلك هاتفك."},
-{en:"These are my friends.",ar:"هؤلاء أصدقائي."},
-{en:"Those are old houses.",ar:"تلك منازل قديمة."}
+title: "Rule 6 — Possessive Adjectives",
+explanation: `صفات الملكية تأتي قبل الاسم.
+
+my = ـي
+your = ـك
+his = ـه
+her = ـها
+our = ـنا
+their = ـهم`,
+examples: [
+["This is my book.", "هذا كتابي."],
+["Where is your phone?", "أين هاتفك؟"],
+["Their house is big.", "منزلهم كبير."]
 ],
-words:"this = هذا / هذه | that = ذلك / تلك | these = هؤلاء | those = أولئك / تلك",
-practice:"صف أربعة أشياء باستخدام this وthat وthese وthose."
+practice: "استخدم my و your و their في جمل."
 },
 
 {
-title:"المفرد والجمع — Singular and Plural",
-explanation:"الاسم المفرد يدل على شيء واحد، أما الجمع فيدل على أكثر من واحد. غالبًا نضيف s لصنع الجمع، وأحيانًا نضيف es حسب نهاية الكلمة.",
-examples:[
-{en:"I have one book.",ar:"لدي كتاب واحد."},
-{en:"I have two books.",ar:"لدي كتابان."},
-{en:"The box is here.",ar:"الصندوق هنا."},
-{en:"The boxes are here.",ar:"الصناديق هنا."}
+title: "Rule 7 — This, That, These, Those",
+explanation: `This للمفرد القريب.
+That للمفرد البعيد.
+These للجمع القريب.
+Those للجمع البعيد.`,
+examples: [
+["This is my book.", "هذا كتابي."],
+["That is your car.", "تلك سيارتك."],
+["These are my friends.", "هؤلاء أصدقائي."],
+["Those are old houses.", "تلك منازل قديمة."]
 ],
-words:"book → books | car → cars | box → boxes | watch → watches",
-practice:"حوّل book وcar وbox وwatch إلى الجمع."
+practice: "صف أربعة أشياء باستخدام الكلمات الأربع."
 },
 
 {
-title:"A, An, The",
-explanation:"نستخدم a مع الاسم المفرد عندما لا يكون محددًا ويبدأ بصوت ساكن، وan عندما يبدأ بصوت علّة. أما the فنستخدمها عندما يكون الاسم محددًا أو معروفًا في السياق.",
-examples:[
-{en:"I have a book.",ar:"لدي كتاب."},
-{en:"She has an apple.",ar:"لديها تفاحة."},
-{en:"The book is new.",ar:"الكتاب جديد."}
+title: "Rule 8 — Singular and Plural",
+explanation: `الاسم المفرد يدل على شيء واحد.
+الجمع يدل على أكثر من شيء.
+
+غالبًا نضيف s للجمع، وأحيانًا es.`,
+examples: [
+["I have one book.", "لدي كتاب واحد."],
+["I have two books.", "لدي كتابان."],
+["There are three boxes.", "هناك ثلاثة صناديق."]
 ],
-words:"a = أداة للمفرد | an = أداة للمفرد | the = الـ | apple = تفاحة",
-practice:"اختر a أو an: __ apple, __ book, __ student, __ English lesson."
+practice: "حوّل book و car و box إلى الجمع."
 },
 
 {
-title:"Have و Has",
-explanation:"نستخدم have مع I وyou وwe وthey، ونستخدم has مع he وshe وit. يستخدمان كثيرًا للتعبير عن الملكية.",
-examples:[
-{en:"I have a book.",ar:"لدي كتاب."},
-{en:"You have a phone.",ar:"لديك هاتف."},
-{en:"He has a car.",ar:"لديه سيارة."},
-{en:"She has a bag.",ar:"لديها حقيبة."}
+title: "Rule 9 — A and An",
+explanation: `نستخدم a قبل اسم مفرد يبدأ بصوت ساكن.
+ونستخدم an قبل اسم مفرد يبدأ بصوت علّة.
+
+المهم هو الصوت وليس الحرف فقط.`,
+examples: [
+["I have a book.", "لدي كتاب."],
+["She has an apple.", "لديها تفاحة."],
+["He is an engineer.", "هو مهندس."]
 ],
-words:"have = لديه / يملك | has = لديه / يملك | phone = هاتف | bag = حقيبة",
-practice:"أكمل: I __ a book. He __ a car. They __ a house."
+practice: "اختر a أو an: apple, book, engineer, student."
 },
 
 {
-title:"There Is و There Are",
-explanation:"نستخدم There is مع المفرد، وThere are مع الجمع. نستخدمهما للقول إن شيئًا موجود في مكان ما.",
-examples:[
-{en:"There is a book on the table.",ar:"يوجد كتاب على الطاولة."},
-{en:"There is a student in the room.",ar:"يوجد طالب في الغرفة."},
-{en:"There are two chairs.",ar:"يوجد كرسيان."}
+title: "Rule 10 — The",
+explanation: `نستخدم the عندما يكون الاسم محددًا أو معروفًا للمتحدث والمستمع.`,
+examples: [
+["The book is on the table.", "الكتاب على الطاولة."],
+["Open the door.", "افتح الباب."],
+["The sun is bright.", "الشمس ساطعة."]
 ],
-words:"there is = يوجد للمفرد | there are = توجد للجمع | table = طاولة | chair = كرسي",
-practice:"اكتب جملتين باستخدام There is وجملتين باستخدام There are."
+practice: "اكتب ثلاث جمل باستخدام the."
 },
 
 {
-title:"حروف الجر للمكان — Prepositions of Place",
-explanation:"من أهم حروف الجر للمكان: in = في، on = على، under = تحت، behind = خلف، next to = بجانب، in front of = أمام.",
-examples:[
-{en:"The book is on the table.",ar:"الكتاب على الطاولة."},
-{en:"The phone is in the bag.",ar:"الهاتف داخل الحقيبة."},
-{en:"The cat is under the chair.",ar:"القطة تحت الكرسي."}
+title: "Rule 11 — Have and Has",
+explanation: `نستخدم have مع I و You و We و They.
+ونستخدم has مع He و She و It.`,
+examples: [
+["I have a phone.", "لدي هاتف."],
+["She has a car.", "لديها سيارة."],
+["They have a house.", "لديهم منزل."]
 ],
-words:"in = في | on = على | under = تحت | behind = خلف | next to = بجانب",
-practice:"صف مكان كتاب وهاتف وحقيبة."
+practice: "أكمل: I __ a book. He __ a car."
 },
 
 {
-title:"المضارع البسيط — Present Simple",
-explanation:"نستخدم Present Simple للعادات والروتين والحقائق العامة. مع I وyou وwe وthey نستخدم الفعل الأساسي، ومع he وshe وit يتغير الفعل غالبًا بإضافة s أو es.",
-examples:[
-{en:"I study English every day.",ar:"أدرس الإنجليزية كل يوم."},
-{en:"They work together.",ar:"هم يعملون معًا."},
-{en:"He works every day.",ar:"هو يعمل كل يوم."}
+title: "Rule 12 — There Is and There Are",
+explanation: `There is تستخدم مع المفرد.
+There are تستخدم مع الجمع.
+
+نستخدمهما للتعبير عن وجود شيء.`,
+examples: [
+["There is a book on the table.", "يوجد كتاب على الطاولة."],
+["There are two chairs.", "يوجد كرسيان."],
+["There are many students.", "يوجد طلاب كثيرون."]
 ],
-words:"study = يدرس | work = يعمل | every day = كل يوم | usually = عادةً",
-practice:"اكتب خمس جمل عن روتينك اليومي."
+practice: "اكتب جملتين باستخدام There is و There are."
 },
 
 {
-title:"إضافة S و ES و IES",
-explanation:"مع he وshe وit يتغير الفعل في المضارع البسيط. غالبًا نضيف s، وبعض الأفعال تأخذ es، وإذا انتهى الفعل بحرف ساكن ثم y تتحول y إلى ies.",
-examples:[
-{en:"He works at home.",ar:"هو يعمل في المنزل."},
-{en:"She watches TV.",ar:"هي تشاهد التلفاز."},
-{en:"He studies English.",ar:"هو يدرس الإنجليزية."}
+title: "Rule 13 — Prepositions of Place",
+explanation: `أهم حروف الجر للمكان:
+
+in = في / داخل
+on = على
+under = تحت
+behind = خلف
+next to = بجانب
+in front of = أمام`,
+examples: [
+["The phone is in the bag.", "الهاتف داخل الحقيبة."],
+["The book is on the table.", "الكتاب على الطاولة."],
+["The cat is under the chair.", "القطة تحت الكرسي."]
 ],
-words:"work → works | watch → watches | go → goes | study → studies",
-practice:"حوّل work وwatch وgo وstudy إلى صيغة he/she."
+practice: "صف مكان ثلاثة أشياء."
 },
 
 {
-title:"النفي في المضارع البسيط — Don't و Doesn't",
-explanation:"نستخدم don't مع I وyou وwe وthey، ونستخدم doesn't مع he وshe وit. بعد doesn't يعود الفعل إلى شكله الأساسي.",
-examples:[
-{en:"I don't speak French.",ar:"أنا لا أتحدث الفرنسية."},
-{en:"We don't study at night.",ar:"نحن لا ندرس في الليل."},
-{en:"He doesn't speak English.",ar:"هو لا يتحدث الإنجليزية."}
+title: "Rule 14 — Present Simple",
+explanation: `نستخدم المضارع البسيط للعادات والروتين والحقائق العامة.
+
+مع I و You و We و They نستخدم الفعل الأساسي.`,
+examples: [
+["I study English every day.", "أدرس الإنجليزية كل يوم."],
+["We work together.", "نحن نعمل معًا."],
+["They play football.", "هم يلعبون كرة القدم."]
 ],
-words:"don't = لا | doesn't = لا | speak = يتحدث | night = الليل",
-practice:"حوّل أربع جمل مثبتة إلى النفي."
+practice: "اكتب خمس جمل عن روتينك."
 },
 
 {
-title:"الأسئلة في المضارع البسيط — Do و Does",
-explanation:"نستخدم Do مع I وyou وwe وthey، وDoes مع he وshe وit. بعد Does نستخدم الفعل الأساسي دون s.",
-examples:[
-{en:"Do you speak English?",ar:"هل تتحدث الإنجليزية؟"},
-{en:"Do they study here?",ar:"هل يدرسون هنا؟"},
-{en:"Does he work here?",ar:"هل يعمل هنا؟"}
+title: "Rule 15 — Third Person S",
+explanation: `مع He و She و It نضيف s أو es غالبًا إلى الفعل.
+
+work → works
+watch → watches
+go → goes`,
+examples: [
+["He works every day.", "هو يعمل كل يوم."],
+["She watches TV.", "هي تشاهد التلفاز."],
+["He goes to school.", "هو يذهب إلى المدرسة."]
 ],
-words:"do = أداة سؤال | does = أداة سؤال | speak = يتحدث | work = يعمل",
-practice:"حوّل: You speak English. He works here. إلى سؤال."
+practice: "حوّل work و watch و go إلى صيغة He."
 },
 
 {
-title:"كلمات السؤال — Question Words",
-explanation:"What للسؤال عن الشيء، Where للمكان، When للوقت، Who للشخص، Why للسبب، How للطريقة أو الكيفية.",
-examples:[
-{en:"What is your name?",ar:"ما اسمك؟"},
-{en:"Where do you live?",ar:"أين تعيش؟"},
-{en:"When do you study?",ar:"متى تدرس؟"},
-{en:"Why are you tired?",ar:"لماذا أنت متعب؟"},
-{en:"How do you learn English?",ar:"كيف تتعلم الإنجليزية؟"}
+title: "Rule 16 — Present Simple Negative",
+explanation: `نستخدم don't مع I و You و We و They.
+ونستخدم doesn't مع He و She و It.
+
+بعد doesn't يعود الفعل إلى صورته الأساسية.`,
+examples: [
+["I don't speak French.", "أنا لا أتحدث الفرنسية."],
+["They don't work here.", "هم لا يعملون هنا."],
+["He doesn't speak English.", "هو لا يتحدث الإنجليزية."]
 ],
-words:"what = ماذا / ما | where = أين | when = متى | who = من | why = لماذا | how = كيف",
-practice:"اكتب سؤالًا باستخدام كل كلمة من كلمات السؤال."
+practice: "اكتب ثلاث جمل منفية."
 },
 
 {
-title:"ظروف التكرار — Adverbs of Frequency",
-explanation:"تستخدم كلمات التكرار لوصف مدى حدوث الفعل. من أهمها always وusually وoften وsometimes وrarely وnever. غالبًا تأتي قبل الفعل الأساسي، لكنها تأتي بعد To Be.",
-examples:[
-{en:"I always study English.",ar:"أدرس الإنجليزية دائمًا."},
-{en:"I usually wake up early.",ar:"عادةً أستيقظ مبكرًا."},
-{en:"I sometimes read books.",ar:"أحيانًا أقرأ الكتب."},
-{en:"I am always ready.",ar:"أنا مستعد دائمًا."}
+title: "Rule 17 — Present Simple Questions",
+explanation: `نستخدم Do مع I و You و We و They.
+ونستخدم Does مع He و She و It.
+
+بعد Does نستخدم الفعل الأساسي.`,
+examples: [
+["Do you speak English?", "هل تتحدث الإنجليزية؟"],
+["Do they study here?", "هل يدرسون هنا؟"],
+["Does she work here?", "هل تعمل هنا؟"]
 ],
-words:"always = دائمًا | usually = عادةً | often = غالبًا | sometimes = أحيانًا | never = أبدًا",
-practice:"اكتب خمس عادات باستخدام ظروف التكرار."
+practice: "حوّل ثلاث جمل إلى أسئلة."
 },
 
 {
-title:"Can و Can't",
-explanation:"Can تستخدم للتعبير عن القدرة أو الإمكانية أو طلب الإذن في بعض السياقات. لا تتغير مع الضمائر، وبعدها يأتي الفعل الأساسي. للنفي نستخدم can't.",
-examples:[
-{en:"I can speak English.",ar:"أستطيع التحدث بالإنجليزية."},
-{en:"She can drive.",ar:"هي تستطيع القيادة."},
-{en:"He can't swim.",ar:"هو لا يستطيع السباحة."},
-{en:"Can you help me?",ar:"هل تستطيع مساعدتي؟"}
+title: "Rule 18 — Question Words",
+explanation: `What = ماذا / ما
+Where = أين
+When = متى
+Who = من
+Why = لماذا
+How = كيف`,
+examples: [
+["What is your name?", "ما اسمك؟"],
+["Where do you live?", "أين تعيش؟"],
+["Why are you tired?", "لماذا أنت متعب؟"],
+["How do you learn?", "كيف تتعلم؟"]
 ],
-words:"can = يستطيع / يمكن | can't = لا يستطيع | drive = يقود | swim = يسبح",
-practice:"اكتب ثلاث جمل عن الأشياء التي تستطيع فعلها."
+practice: "اكتب سؤالًا بكل كلمة."
 },
 
 {
-title:"صيغة الأمر — Imperatives",
-explanation:"في الأمر نستخدم الفعل مباشرة دون فاعل. للنهي نستخدم Don't قبل الفعل. ويمكن استخدام please لجعل الطلب أكثر لطفًا.",
-examples:[
-{en:"Open the door, please.",ar:"افتح الباب من فضلك."},
-{en:"Listen carefully.",ar:"استمع بعناية."},
-{en:"Don't touch that.",ar:"لا تلمس ذلك."}
+title: "Rule 19 — Adverbs of Frequency",
+explanation: `تستخدم كلمات التكرار لوصف العادات.
+
+always = دائمًا
+usually = عادةً
+often = غالبًا
+sometimes = أحيانًا
+rarely = نادرًا
+never = أبدًا`,
+examples: [
+["I always study English.", "أدرس الإنجليزية دائمًا."],
+["I usually wake up early.", "عادةً أستيقظ مبكرًا."],
+["I sometimes watch TV.", "أحيانًا أشاهد التلفاز."]
 ],
-words:"open = افتح | listen = استمع | carefully = بعناية | touch = يلمس",
-practice:"اكتب خمس تعليمات بسيطة بالإنجليزية."
+practice: "استخدم always و usually و never."
 },
 
 {
-title:"المضارع المستمر — Present Continuous",
-explanation:"نستخدم Present Continuous لما يحدث الآن أو حول وقت الكلام. التركيب هو am/is/are + verb-ing.",
-examples:[
-{en:"I am studying English.",ar:"أنا أدرس الإنجليزية الآن."},
-{en:"She is reading a book.",ar:"هي تقرأ كتابًا الآن."},
-{en:"They are playing football.",ar:"هم يلعبون كرة القدم الآن."}
+title: "Rule 20 — Can and Can't",
+explanation: `Can تعبر عن القدرة أو إمكانية الفعل.
+Can't تعبر عن عدم القدرة.
+
+بعد can يأتي الفعل الأساسي.`,
+examples: [
+["I can swim.", "أستطيع السباحة."],
+["She can drive.", "تستطيع القيادة."],
+["He can't swim.", "هو لا يستطيع السباحة."]
 ],
-words:"now = الآن | reading = يقرأ | studying = يدرس | playing = يلعب",
-practice:"صف ما يفعله ثلاثة أشخاص الآن باستخدام am/is/are + ing."
+practice: "اكتب ثلاث قدرات وثلاثة أشياء لا تستطيع فعلها."
 },
 
 {
-title:"Present Simple أم Present Continuous؟",
-explanation:"Present Simple يستخدم للعادات والأفعال المتكررة، بينما Present Continuous يستخدم لما يحدث الآن. كلمات مثل every day وusually ترتبط غالبًا بالمضارع البسيط، وnow وat the moment بالمضارع المستمر.",
-examples:[
-{en:"I study English every day.",ar:"أدرس الإنجليزية كل يوم."},
-{en:"I am studying English now.",ar:"أنا أدرس الإنجليزية الآن."},
-{en:"She usually works at home.",ar:"هي عادةً تعمل في المنزل."},
-{en:"She is working now.",ar:"هي تعمل الآن."}
+title: "Rule 21 — Imperatives",
+explanation: `في صيغة الأمر نستخدم الفعل مباشرة دون فاعل.
+
+للنهي نستخدم Don't.
+ويمكن استخدام Please لجعل الطلب أكثر لطفًا.`,
+examples: [
+["Open the door, please.", "افتح الباب من فضلك."],
+["Listen carefully.", "استمع بعناية."],
+["Don't touch that.", "لا تلمس ذلك."]
 ],
-words:"every day = كل يوم | usually = عادةً | now = الآن | at the moment = في هذه اللحظة",
-practice:"اكتب جملة للعادات وجملة لما يحدث الآن."
+practice: "اكتب خمس تعليمات."
 },
 
 {
-title:"الماضي من To Be — Was و Were",
-explanation:"في الماضي نستخدم was مع I وhe وshe وit، ونستخدم were مع you وwe وthey. للنفي نستخدم wasn't وweren't.",
-examples:[
-{en:"I was tired yesterday.",ar:"كنت متعبًا أمس."},
-{en:"She was at school.",ar:"كانت في المدرسة."},
-{en:"We were busy.",ar:"كنا مشغولين."},
-{en:"They were at home.",ar:"كانوا في المنزل."}
+title: "Rule 22 — Present Continuous",
+explanation: `نستخدم المضارع المستمر لما يحدث الآن.
+
+am / is / are + verb-ing`,
+examples: [
+["I am studying now.", "أنا أدرس الآن."],
+["She is reading a book.", "هي تقرأ كتابًا الآن."],
+["They are playing football.", "هم يلعبون كرة القدم الآن."]
 ],
-words:"was = كان | were = كان/كانوا | yesterday = أمس | busy = مشغول",
-practice:"اكتب خمس جمل عن الماضي باستخدام was وwere."
+practice: "صف ما يحدث حولك الآن."
 },
 
 {
-title:"الماضي البسيط للأفعال المنتظمة — Regular Verbs",
-explanation:"نستخدم Past Simple للأفعال التي حدثت وانتهت في الماضي. في الأفعال المنتظمة نضيف ed غالبًا، مع وجود بعض قواعد الإملاء الخاصة.",
-examples:[
-{en:"I worked yesterday.",ar:"عملت أمس."},
-{en:"She watched a movie.",ar:"شاهدت فيلمًا."},
-{en:"We played football.",ar:"لعبنا كرة القدم."},
-{en:"He cleaned his room.",ar:"نظف غرفته."}
+title: "Rule 23 — Simple vs Continuous",
+explanation: `Present Simple للعادات.
+Present Continuous لما يحدث الآن.
+
+every day غالبًا مع البسيط.
+now و at the moment غالبًا مع المستمر.`,
+examples: [
+["I study English every day.", "أدرس الإنجليزية كل يوم."],
+["I am studying English now.", "أنا أدرس الإنجليزية الآن."]
 ],
-words:"worked = عمل | watched = شاهد | played = لعب | cleaned = نظف | yesterday = أمس",
-practice:"حوّل work وplay وwatch وclean إلى الماضي."
+practice: "اكتب جملة للعادة وجملة لما يحدث الآن."
 },
 
 {
-title:"الأفعال غير المنتظمة في الماضي — Irregular Verbs",
-explanation:"بعض الأفعال لا تأخذ ed في الماضي، بل يتغير شكلها. لذلك يجب تعلم أشهر الأفعال غير المنتظمة وممارستها في جمل.",
-examples:[
-{en:"I went to school yesterday.",ar:"ذهبت إلى المدرسة أمس."},
-{en:"She ate breakfast.",ar:"تناولت الفطور."},
-{en:"He drank water.",ar:"شرب الماء."},
-{en:"We saw a movie.",ar:"شاهدنا فيلمًا."}
+title: "Rule 24 — Past Simple: Was and Were",
+explanation: `نستخدم was مع I و He و She و It.
+ونستخدم were مع You و We و They.`,
+examples: [
+["I was tired yesterday.", "كنت متعبًا أمس."],
+["She was at school.", "كانت في المدرسة."],
+["They were happy.", "كانوا سعداء."]
 ],
-words:"go → went = ذهب | eat → ate = أكل | drink → drank = شرب | see → saw = رأى | have → had = كان لديه",
-practice:"اكتب جملة باستخدام went وate وdrank وsaw."
+practice: "اكتب خمس جمل في الماضي."
 },
 
 {
-title:"المستقبل باستخدام Going To",
-explanation:"نستخدم be going to للحديث عن خطة أو نية مستقبلية. التركيب هو am/is/are + going to + verb.",
-examples:[
-{en:"I am going to study tonight.",ar:"سأدرس الليلة."},
-{en:"She is going to visit her family.",ar:"ستزور عائلتها."},
-{en:"They are going to travel tomorrow.",ar:"سيسافرون غدًا."}
-],
-words:"going to = سوف | tonight = الليلة | visit = يزور | travel = يسافر | tomorrow = غدًا",
-practice:"اكتب خمس خطط مستقبلية باستخدام going to."
-},<script>
+title: "Rule 25 — Past Simple Regular Verbs",
+explanation: `نستخدم الماضي البسيط للأفعال التي حدثت وانتهت.
+في الأفعال المنتظمة نضيف ed غالبًا.
 
-const rules = [
-
-{
-title:"Rule 26 — Past Simple Questions",
-explanation:"لتكوين سؤال في الماضي البسيط نستخدم Did ثم الفاعل ثم الفعل في صورته الأساسية. لا نضع الفعل في الماضي بعد Did.",
-examples:[
-{en:"Did you study yesterday?",ar:"هل درست أمس؟"},
-{en:"Did he go to school?",ar:"هل ذهب إلى المدرسة؟"}
+work → worked
+play → played
+watch → watched`,
+examples: [
+["I worked yesterday.", "عملت أمس."],
+["We played football.", "لعبنا كرة القدم."],
+["She watched a movie.", "شاهدت فيلمًا."]
 ],
-practice:"حوّل: She visited her friend. إلى سؤال."
+practice: "حوّل work و play و watch إلى الماضي."
 },
 
 {
-title:"Rule 27 — Past Simple Negative",
-explanation:"للنفي في الماضي البسيط نستخدم did not أو didn't، وبعدها يعود الفعل إلى صورته الأساسية.",
-examples:[
-{en:"I didn't go.",ar:"أنا لم أذهب."},
-{en:"She didn't study.",ar:"هي لم تدرس."}
+title: "Rule 26 — Past Simple Irregular Verbs",
+explanation: `بعض الأفعال لا تأخذ ed، بل يتغير شكلها.
+
+go → went
+eat → ate
+drink → drank
+see → saw
+have → had`,
+examples: [
+["I went to school.", "ذهبت إلى المدرسة."],
+["She ate breakfast.", "تناولت الفطور."],
+["He drank water.", "شرب الماء."]
 ],
-practice:"اكتب جملتين باستخدام didn't."
+practice: "استخدم went و ate و drank في جمل."
 },
 
 {
-title:"Rule 28 — Future with Will",
-explanation:"نستخدم will للتحدث عن المستقبل والقرارات والتوقعات. بعد will يأتي الفعل في صورته الأساسية.",
-examples:[
-{en:"I will call you tomorrow.",ar:"سأتصل بك غدًا."},
-{en:"She will help us.",ar:"ستساعدنا."}
+title: "Rule 27 — Past Simple Questions",
+explanation: `لتكوين سؤال في الماضي نستخدم Did.
+بعد Did يعود الفعل إلى صورته الأساسية.`,
+examples: [
+["Did you study yesterday?", "هل درست أمس؟"],
+["Did he go to school?", "هل ذهب إلى المدرسة؟"],
+["Did she call you?", "هل اتصلت بك؟"]
 ],
-practice:"اكتب ثلاث جمل باستخدام will."
+practice: "حوّل ثلاث جمل إلى أسئلة باستخدام Did."
 },
 
 {
-title:"Rule 29 — Will Negative",
-explanation:"للنفي مع will نستخدم will not أو الاختصار won't.",
-examples:[
-{en:"I won't forget.",ar:"لن أنسى."},
-{en:"He will not come.",ar:"لن يأتي."}
+title: "Rule 28 — Past Simple Negative",
+explanation: `للنفي في الماضي نستخدم did not أو didn't.
+بعد didn't نستخدم الفعل الأساسي.`,
+examples: [
+["I didn't go.", "أنا لم أذهب."],
+["She didn't study.", "هي لم تدرس."],
+["They didn't come.", "هم لم يأتوا."]
 ],
-practice:"حوّل جملتين إلى النفي باستخدام won't."
+practice: "اكتب ثلاث جمل باستخدام didn't."
 },
 
 {
-title:"Rule 30 — Will Questions",
-explanation:"في السؤال نضع Will في بداية الجملة، ثم الفاعل، ثم الفعل الأساسي.",
-examples:[
-{en:"Will you come tomorrow?",ar:"هل ستأتي غدًا؟"},
-{en:"Will they help us?",ar:"هل سيساعدوننا؟"}
+title: "Rule 29 — Going To",
+explanation: `نستخدم be going to للخطط والنوايا المستقبلية.
+
+am / is / are + going to + verb`,
+examples: [
+["I am going to study tonight.", "سأدرس الليلة."],
+["She is going to travel.", "ستسافر."],
+["They are going to visit us.", "سيزوروننا."]
 ],
-practice:"كوّن سؤالين باستخدام Will."
+practice: "اكتب ثلاث خطط مستقبلية."
 },
 
 {
-title:"Rule 31 — Comparative Adjectives",
-explanation:"نستخدم صيغة المقارنة للمقارنة بين شخصين أو شيئين. غالبًا نضيف er إلى الصفات القصيرة ونستخدم than.",
-examples:[
-{en:"Ali is taller than Omar.",ar:"علي أطول من عمر."},
-{en:"This book is cheaper than that one.",ar:"هذا الكتاب أرخص من ذلك."}
+title: "Rule 30 — Future with Will",
+explanation: `نستخدم will للحديث عن المستقبل والقرارات والتوقعات.
+بعد will يأتي الفعل الأساسي.`,
+examples: [
+["I will call you tomorrow.", "سأتصل بك غدًا."],
+["She will help us.", "ستساعدنا."],
+["They will come soon.", "سيأتون قريبًا."]
 ],
-practice:"قارن بين شيئين باستخدام than."
+practice: "اكتب ثلاث جمل باستخدام will."
 },
 
 {
-title:"Rule 32 — Superlatives",
-explanation:"نستخدم صيغة التفضيل عندما نقارن شيئًا أو شخصًا بمجموعة. غالبًا نستخدم the مع الصفة.",
-examples:[
-{en:"He is the tallest student.",ar:"هو أطول طالب."},
-{en:"This is the best book.",ar:"هذا أفضل كتاب."}
+title: "Rule 31 — Will Negative and Questions",
+explanation: `النفي:
+will not = won't
+
+السؤال:
+Will + subject + verb?`,
+examples: [
+["I won't forget.", "لن أنسى."],
+["He won't come.", "لن يأتي."],
+["Will you help me?", "هل ستساعدني؟"]
 ],
-practice:"اكتب جملتين باستخدام the best و the most."
+practice: "اكتب سؤالًا وجملة منفية باستخدام will."
 },
 
 {
-title:"Rule 33 — Countable Nouns",
-explanation:"الأسماء المعدودة يمكن عدّها ويمكن أن تأتي في المفرد والجمع.",
-examples:[
-{en:"I have two books.",ar:"لدي كتابان."},
-{en:"There are three students.",ar:"يوجد ثلاثة طلاب."}
+title: "Rule 32 — Comparative Adjectives",
+explanation: `نستخدم المقارنة عند مقارنة شيئين.
+غالبًا نضيف er للصفات القصيرة ونستخدم than.
+
+tall → taller
+small → smaller`,
+examples: [
+["Ali is taller than Omar.", "علي أطول من عمر."],
+["This car is faster than that car.", "هذه السيارة أسرع من تلك السيارة."]
 ],
-practice:"اكتب خمسة أسماء معدودة."
+practice: "قارن بين شيئين باستخدام than."
 },
 
 {
-title:"Rule 34 — Uncountable Nouns",
-explanation:"بعض الأسماء لا نعدّها عادةً بشكل منفصل مثل water و rice و information.",
-examples:[
-{en:"I need some water.",ar:"أحتاج إلى بعض الماء."},
-{en:"She gave me some information.",ar:"أعطتني بعض المعلومات."}
+title: "Rule 33 — Superlatives",
+explanation: `نستخدم صيغة التفضيل عندما نقارن شيئًا بمجموعة.
+غالبًا نستخدم the مع صيغة التفضيل.`,
+examples: [
+["He is the tallest student.", "هو أطول طالب."],
+["This is the biggest house.", "هذا أكبر منزل."],
+["She is the best student.", "هي أفضل طالبة."]
 ],
-practice:"اكتب ثلاث جمل باستخدام أسماء غير معدودة."
+practice: "اكتب جملتين باستخدام the best و the most."
 },
 
 {
-title:"Rule 35 — Some and Any",
-explanation:"نستخدم some غالبًا في الجمل المثبتة، وany غالبًا في النفي والأسئلة.",
-examples:[
-{en:"I have some money.",ar:"لدي بعض المال."},
-{en:"I don't have any money.",ar:"ليس لدي أي مال."},
-{en:"Do you have any questions?",ar:"هل لديك أي أسئلة؟"}
+title: "Rule 34 — Countable and Uncountable Nouns",
+explanation: `الأسماء المعدودة يمكن عدها:
+one book, two books
+
+الأسماء غير المعدودة لا نعدها عادةً كأفراد:
+water, rice, information`,
+examples: [
+["I have two books.", "لدي كتابان."],
+["I need some water.", "أحتاج إلى بعض الماء."],
+["She gave me some information.", "أعطتني بعض المعلومات."]
 ],
-practice:"استخدم some و any في ثلاث جمل."
+practice: "اكتب اسمين معدودين واسمين غير معدودين."
 },
 
 {
-title:"Rule 36 — Much and Many",
-explanation:"نستخدم many مع الأسماء المعدودة، وmuch مع الأسماء غير المعدودة.",
-examples:[
-{en:"I have many books.",ar:"لدي كتب كثيرة."},
-{en:"I don't have much time.",ar:"ليس لدي وقت كثير."}
+title: "Rule 35 — Some and Any",
+explanation: `نستخدم some غالبًا في الجمل المثبتة.
+ونستخدم any غالبًا في النفي والأسئلة.`,
+examples: [
+["I have some money.", "لدي بعض المال."],
+["I don't have any money.", "ليس لدي أي مال."],
+["Do you have any questions?", "هل لديك أي أسئلة؟"]
 ],
-practice:"اكتب جملتين باستخدام much وجملتين باستخدام many."
+practice: "استخدم some و any في ثلاث جمل."
 },
 
 {
-title:"Rule 37 — Few and Little",
-explanation:"نستخدم few مع الأسماء المعدودة، وlittle مع الأسماء غير المعدودة.",
-examples:[
-{en:"I have a few friends.",ar:"لدي بضعة أصدقاء."},
-{en:"We have a little time.",ar:"لدينا قليل من الوقت."}
+title: "Rule 36 — Much and Many",
+explanation: `many تستخدم مع الأسماء المعدودة.
+much تستخدم مع الأسماء غير المعدودة.`,
+examples: [
+["I have many books.", "لدي كتب كثيرة."],
+["I don't have much time.", "ليس لدي وقت كثير."],
+["There are many students.", "هناك طلاب كثيرون."]
 ],
-practice:"اكتب جملة باستخدام few وجملة باستخدام little."
+practice: "اكتب جملة باستخدام much وجملة باستخدام many."
 },
 
 {
-title:"Rule 38 — Modal Verb Should",
-explanation:"نستخدم should لتقديم النصيحة أو القول إن شيئًا ما هو الأفضل فعله.",
-examples:[
-{en:"You should study more.",ar:"ينبغي أن تدرس أكثر."},
-{en:"You should get some rest.",ar:"ينبغي أن تحصل على بعض الراحة."}
+title: "Rule 37 — Should and Shouldn't",
+explanation: `نستخدم should لتقديم النصيحة.
+ونستخدم shouldn't للنصيحة بعدم فعل شيء.`,
+examples: [
+["You should study more.", "ينبغي أن تدرس أكثر."],
+["You should get some rest.", "ينبغي أن تحصل على بعض الراحة."],
+["You shouldn't worry.", "لا ينبغي أن تقلق."]
 ],
-practice:"اكتب ثلاث نصائح باستخدام should."
+practice: "اكتب نصيحتين باستخدام should ونصيحة باستخدام shouldn't."
 },
 
 {
-title:"Rule 39 — Shouldn't",
-explanation:"نستخدم shouldn't عندما ننصح شخصًا بعدم فعل شيء.",
-examples:[
-{en:"You shouldn't be late.",ar:"لا ينبغي أن تتأخر."},
-{en:"You shouldn't worry.",ar:"لا ينبغي أن تقلق."}
+title: "Rule 38 — Must and Mustn't",
+explanation: `Must تعبر عن ضرورة قوية.
+Mustn't تعني أن الشيء ممنوع أو يجب عدم فعله.`,
+examples: [
+["You must follow the rules.", "يجب أن تتبع القواعد."],
+["You must be careful.", "يجب أن تكون حذرًا."],
+["You mustn't touch this.", "يجب ألا تلمس هذا."]
 ],
-practice:"اكتب نصيحتين باستخدام shouldn't."
+practice: "اكتب جملة باستخدام must وجملة باستخدام mustn't."
 },
 
 {
-title:"Rule 40 — Must and Mustn't",
-explanation:"Must تعبر عن ضرورة قوية، وmustn't تعني أن الفعل ممنوع أو يجب عدم فعله.",
-examples:[
-{en:"You must follow the rules.",ar:"يجب أن تتبع القواعد."},
-{en:"You mustn't touch this.",ar:"يجب ألا تلمس هذا."}
+title: "Rule 39 — Have To and Has To",
+explanation: `نستخدم have to للتعبير عن الضرورة أو الالتزام.
+مع He و She و It نستخدم has to.`,
+examples: [
+["I have to study.", "يجب عليّ أن أدرس."],
+["We have to leave.", "يجب علينا المغادرة."],
+["She has to work.", "يجب عليها أن تعمل."]
 ],
-practice:"اكتب جملة باستخدام must وجملة باستخدام mustn't."
+practice: "اكتب جملة باستخدام have to وجملة باستخدام has to."
 },
 
 {
-title:"Rule 41 — Have to",
-explanation:"نستخدم have to للتعبير عن ضرورة أو التزام. مع he و she و it نستخدم has to.",
-examples:[
-{en:"I have to study.",ar:"يجب عليّ أن أدرس."},
-{en:"She has to work.",ar:"يجب عليها أن تعمل."}
+title: "Rule 40 — First Conditional",
+explanation: `نستخدم الشرط الأول للاحتمالات الحقيقية في المستقبل.
+
+If + Present Simple, will + verb`,
+examples: [
+["If I study, I will pass.", "إذا درست، سأنجح."],
+["If it rains, we will stay home.", "إذا هطل المطر، فسنبقى في المنزل."]
 ],
-practice:"اكتب جملتين باستخدام have to و has to."
+practice: "اكتب جملتين باستخدام If و will."
 },
 
 {
-title:"Rule 42 — First Conditional",
-explanation:"نستخدم الشرط الأول للحديث عن احتمال حقيقي في المستقبل. التركيب الأساسي: If + Present Simple, will + verb.",
-examples:[
-{en:"If I study, I will pass.",ar:"إذا درست، سأنجح."},
-{en:"If it rains, we will stay home.",ar:"إذا هطل المطر، فسنبقى في المنزل."}
+title: "Rule 41 — Zero Conditional",
+explanation: `نستخدم الشرط الصفري للحقائق العامة والأشياء التي تحدث عادةً.
+
+If + Present Simple, Present Simple`,
+examples: [
+["If you heat water, it boils.", "إذا سخنت الماء، فإنه يغلي."],
+["If you don't eat, you get hungry.", "إذا لم تأكل، تشعر بالجوع."]
 ],
-practice:"اكتب جملتين باستخدام If و will."
+practice: "اكتب حقيقة عامة باستخدام If."
 },
 
 {
-title:"Rule 43 — Zero Conditional",
-explanation:"نستخدم الشرط الصفري للحقائق العامة والأشياء التي تحدث عادةً عندما يتحقق الشرط.",
-examples:[
-{en:"If you heat water, it boils.",ar:"إذا سخنت الماء، فإنه يغلي."},
-{en:"If you don't eat, you get hungry.",ar:"إذا لم تأكل، تشعر بالجوع."}
+title: "Rule 42 — Because and So",
+explanation: `Because تستخدم لذكر السبب.
+So تستخدم لذكر النتيجة.`,
+examples: [
+["I stayed home because I was tired.", "بقيت في المنزل لأنني كنت متعبًا."],
+["I was tired, so I stayed home.", "كنت متعبًا، لذلك بقيت في المنزل."]
 ],
-practice:"اكتب حقيقة عامة باستخدام If."
+practice: "اربط جملتين باستخدام because ثم so."
 },
 
 {
-title:"Rule 44 — Because and So",
-explanation:"Because تستخدم لذكر السبب، وso تستخدم لذكر النتيجة.",
-examples:[
-{en:"I stayed home because I was tired.",ar:"بقيت في المنزل لأنني كنت متعبًا."},
-{en:"I was tired, so I stayed home.",ar:"كنت متعبًا، لذلك بقيت في المنزل."}
+title: "Rule 43 — Although",
+explanation: `Although تعني رغم أن.
+نستخدمها لربط فكرتين بينهما تضاد.`,
+examples: [
+["Although it was raining, we went out.", "رغم أن المطر كان يهطل، خرجنا."],
+["Although he was tired, he continued working.", "رغم أنه كان متعبًا، واصل العمل."]
 ],
-practice:"اربط جملتين باستخدام because ثم so."
+practice: "اكتب جملة باستخدام Although."
 },
 
 {
-title:"Rule 45 — Although",
-explanation:"Although تعني رغم أن، وتستخدم لربط فكرتين بينهما تضاد أو مفارقة.",
-examples:[
-{en:"Although it was raining, we went out.",ar:"رغم أن المطر كان يهطل، خرجنا."},
-{en:"Although he was tired, he continued working.",ar:"رغم أنه كان متعبًا، واصل العمل."}
+title: "Rule 44 — Relative Pronoun Who",
+explanation: `نستخدم who للأشخاص عندما نضيف معلومات عن شخص أو نربط جملتين.`,
+examples: [
+["The man who lives here is a teacher.", "الرجل الذي يعيش هنا معلم."],
+["She is the girl who helped me.", "هي الفتاة التي ساعدتني."]
 ],
-practice:"اكتب جملة باستخدام Although."
+practice: "اكتب جملة باستخدام who."
 },
 
 {
-title:"Rule 46 — Relative Pronoun Who",
-explanation:"نستخدم who للحديث عن الأشخاص وربط جملة تصف شخصًا بجملة أخرى.",
-examples:[
-{en:"The man who lives here is a teacher.",ar:"الرجل الذي يعيش هنا معلم."},
-{en:"She is the girl who helped me.",ar:"هي الفتاة التي ساعدتني."}
+title: "Rule 45 — Relative Pronoun Which",
+explanation: `نستخدم which غالبًا للأشياء والحيوانات لإضافة معلومات عنها.`,
+examples: [
+["This is the book which I bought.", "هذا هو الكتاب الذي اشتريته."],
+["The car which is outside is mine.", "السيارة الموجودة في الخارج لي."]
 ],
-practice:"اكتب جملة باستخدام who."
+practice: "اكتب جملة باستخدام which."
 },
 
 {
-title:"Rule 47 — Relative Pronoun Which",
-explanation:"نستخدم which غالبًا للأشياء والحيوانات عندما نضيف معلومات عنها.",
-examples:[
-{en:"This is the book which I bought.",ar:"هذا هو الكتاب الذي اشتريته."},
-{en:"The car which is outside is mine.",ar:"السيارة الموجودة في الخارج لي."}
+title: "Rule 46 — Present Perfect",
+explanation: `نستخدم Present Perfect للحديث عن أحداث لها علاقة بالحاضر.
+
+التركيب:
+have / has + past participle`,
+examples: [
+["I have finished my work.", "لقد أنهيت عملي."],
+["She has visited France.", "لقد زارت فرنسا."],
+["They have arrived.", "لقد وصلوا."]
 ],
-practice:"اكتب جملة باستخدام which."
+practice: "اكتب ثلاث جمل باستخدام have أو has."
 },
 
 {
-title:"Rule 48 — Pronunciation of TH",
-explanation:"حرفا TH لهما نطقان شائعان في الإنجليزية. في بعض الكلمات يكون الصوت مثل الصوت الموجود في think، وفي كلمات أخرى يكون مثل الصوت الموجود في this. المهم تدريب اللسان والأذن على الفرق.",
-examples:[
-{en:"Think about it.",ar:"فكر في الأمر."},
-{en:"This is my book.",ar:"هذا كتابي."},
-{en:"Thank you.",ar:"شكرًا لك."}
+title: "Rule 47 — Present Perfect with Ever and Never",
+explanation: `Ever تستخدم غالبًا في الأسئلة عن التجارب.
+Never تعني أبدًا وتستخدم للقول إن تجربة ما لم تحدث.`,
+examples: [
+["Have you ever visited Paris?", "هل سبق لك أن زرت باريس؟"],
+["I have never seen snow.", "لم أرَ الثلج قط."],
+["Have you ever tried this food?", "هل سبق لك أن جربت هذا الطعام؟"]
 ],
-practice:"استمع إلى الكلمات وكررها ببطء مع التركيز على صوت TH."
+practice: "اكتب سؤالًا باستخدام ever وجملة باستخدام never."
 },
 
 {
-title:"Rule 49 — Pronunciation of R",
-explanation:"حرف R في الإنجليزية يختلف عن الراء العربية. في النطق الإنجليزي الأمريكي لا يتم عادةً تكرار اللسان كما في الراء العربية. تدرب على إبقاء اللسان دون اهتزاز واضح.",
-examples:[
-{en:"Red.",ar:"أحمر."},
-{en:"Right.",ar:"صحيح / يمين."},
-{en:"Really.",ar:"حقًا."}
+title: "Rule 48 — Pronunciation: TH",
+explanation: `للـ TH نطقان شائعان.
+
+في كلمات مثل think يكون الصوت مختلفًا عن كلمات مثل this.
+
+لا تنطق TH مثل ت أو د بشكل مباشر؛ تدرب على الصوت الصحيح بالاستماع والتكرار.`,
+examples: [
+["Think about it.", "فكر في الأمر."],
+["This is my book.", "هذا كتابي."],
+["Thank you.", "شكرًا لك."]
 ],
-practice:"كرر الكلمات ببطء ثم حاول نطقها في جملة."
+practice: "استمع إلى الجمل وكررها ببطء مع التركيز على TH."
 },
 
 {
-title:"Rule 50 — Pronunciation of ED",
-explanation:"نهاية ED في الأفعال الماضية لا تُنطق دائمًا بالطريقة نفسها. قد يكون صوتها /t/ أو /d/ أو /ɪd/ حسب الصوت الأخير في الفعل.",
-examples:[
-{en:"I watched a movie.",ar:"شاهدت فيلمًا."},
-{en:"I played football.",ar:"لعبت كرة القدم."},
-{en:"I wanted to go.",ar:"أردت أن أذهب."}
+title: "Rule 49 — Pronunciation: R",
+explanation: `صوت R في الإنجليزية يختلف عن الراء العربية.
+في النطق الإنجليزي لا ينبغي تكرار اللسان كما يحدث في الراء العربية.`,
+examples: [
+["Red.", "أحمر."],
+["Right.", "صحيح / يمين."],
+["Really?", "حقًا؟"]
 ],
-practice:"استمع إلى الكلمات watched و played و wanted ولاحظ اختلاف نطق ED."
+practice: "كرر الكلمات ببطء وحاول إبقاء اللسان دون اهتزاز."
+},
+
+{
+title: "Rule 50 — Pronunciation of ED",
+explanation: `نهاية ED في الماضي لها ثلاثة نطقات شائعة.
+
+في watched يكون الصوت /t/.
+في played يكون الصوت /d/.
+في wanted يكون الصوت /ɪd/.
+
+لذلك لا ننطق ED بالطريقة نفسها في جميع الأفعال.`,
+examples: [
+["I watched a movie.", "شاهدت فيلمًا."],
+["I played football.", "لعبت كرة القدم."],
+["I wanted to go.", "أردت أن أذهب."]
+],
+practice: "استمع إلى watched و played و wanted ولاحظ اختلاف نطق ED."
 }
 
 ];
 
-const container = document.getElementById("rules");
+const rulesContainer = document.getElementById("rules");
 
-if (container) {
+function createRuleCard(rule, index) {
 
-rules.forEach(function(rule,index){
+    const card = document.createElement("div");
+    card.className = "rule";
 
-const card = document.createElement("div");
-card.className = "rule";
+    const number = document.createElement("div");
+    number.className = "rule-number";
+    number.textContent = "القاعدة " + (index + 1);
 
-card.innerHTML = `
-<div class="rule-number">القاعدة ${index + 1}</div>
+    const title = document.createElement("h2");
+    title.textContent = rule.title;
 
-<h2>${rule.title}</h2>
+    const explanation = document.createElement("div");
+    explanation.className = "explanation";
+    explanation.textContent = rule.explanation;
 
-<p class="rule-explanation">${rule.explanation}</p>
+    card.appendChild(number);
+    card.appendChild(title);
+    card.appendChild(explanation);
 
-<div class="examples">
-${rule.examples.map(function(example){
-return `
-<div class="example">
-<div class="english">${example.en}</div>
-<div class="arabic">${example.ar}</div>
-<button class="listen-btn" onclick="speakRule(${JSON.stringify(example.en)})">
-🔊 استماع
-</button>
-</div>
-`;
-}).join("")}
-</div>
+    rule.examples.forEach(function(example) {
 
-<div class="practice">
-<strong>📝 التدريب:</strong>
-<p>${rule.practice}</p>
-</div>
-`;
+        const exampleBox = document.createElement("div");
+        exampleBox.className = "example";
 
-container.appendChild(card);
+        const english = document.createElement("div");
+        english.className = "english";
+        english.textContent = example[0];
 
+        const arabic = document.createElement("div");
+        arabic.className = "arabic";
+        arabic.textContent = example[1];
+
+        const button = document.createElement("button");
+        button.className = "listen";
+        button.type = "button";
+        button.textContent = "🔊 استماع";
+
+        button.addEventListener("click", function() {
+            speakEnglish(example[0]);
+        });
+
+        exampleBox.appendChild(english);
+        exampleBox.appendChild(arabic);
+        exampleBox.appendChild(button);
+
+        card.appendChild(exampleBox);
+    });
+
+    const practice = document.createElement("div");
+    practice.className = "practice";
+
+    const practiceTitle = document.createElement("strong");
+    practiceTitle.textContent = "📝 التدريب";
+
+    const practiceText = document.createElement("div");
+    practiceText.textContent = rule.practice;
+
+    practice.appendChild(practiceTitle);
+    practice.appendChild(practiceText);
+
+    card.appendChild(practice);
+
+    return card;
+}
+
+rules.forEach(function(rule, index) {
+    rulesContainer.appendChild(createRuleCard(rule, index));
 });
 
-}
 
-function speakRule(text){
+function speakEnglish(text) {
 
-if(!("speechSynthesis" in window)){
-alert("متصفحك لا يدعم تشغيل الصوت.");
-return;
-}
+    if (!("speechSynthesis" in window)) {
+        alert("متصفحك لا يدعم ميزة النطق الصوتي.");
+        return;
+    }
 
-window.speechSynthesis.cancel();
+    window.speechSynthesis.cancel();
 
-const speech = new SpeechSynthesisUtterance(text);
+    const speech = new SpeechSynthesisUtterance(text);
 
-speech.lang = "en-US";
-speech.rate = 0.8;
-speech.pitch = 1;
+    speech.lang = "en-US";
+    speech.rate = 0.8;
+    speech.pitch = 1;
+    speech.volume = 1;
 
-window.speechSynthesis.speak(speech);
-
+    window.speechSynthesis.speak(speech);
 }
 
 </script>
