@@ -1,11 +1,157 @@
-<script> lessons = [
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دروس الإنجليزية</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#eef4ff,#f8fbff);
+color:#172033;
+}
+header{
+background:linear-gradient(135deg,#2563eb,#4f46e5);
+color:white;
+text-align:center;
+padding:30px 15px;
+border-radius:0 0 28px 28px;
+}
+header h1{margin:0;font-size:29px}
+.container{max-width:950px;margin:auto;padding:20px 15px}
+.back{
+display:inline-block;
+background:white;
+color:#2563eb;
+text-decoration:none;
+padding:10px 17px;
+border-radius:12px;
+margin-bottom:18px;
+}
+.intro{
+background:white;
+padding:20px;
+border-radius:20px;
+line-height:1.9;
+box-shadow:0 7px 22px rgba(0,0,0,.08);
+margin-bottom:18px;
+}
+.progress{
+background:white;
+padding:15px;
+border-radius:16px;
+margin-bottom:18px;
+font-weight:bold;
+color:#2563eb;
+}
+.lessons{display:grid;gap:18px}
+.lesson{
+background:white;
+border-radius:20px;
+padding:20px;
+box-shadow:0 7px 22px rgba(0,0,0,.08);
+}
+.lesson h2{
+margin-top:0;
+color:#2563eb;
+font-size:23px;
+}
+.goal{
+background:#eef4ff;
+padding:12px;
+border-radius:12px;
+line-height:1.8;
+}
+.explanation{
+line-height:2;
+white-space:pre-line;
+margin-top:14px;
+}
+.example{
+background:#f8fafc;
+padding:14px;
+border-radius:14px;
+margin-top:10px;
+}
+.example-en{
+direction:ltr;
+text-align:left;
+font-weight:bold;
+font-size:18px;
+color:#172033;
+}
+.example-ar{margin-top:7px}
+.sound{
+border:0;
+background:#2563eb;
+color:white;
+padding:9px 15px;
+border-radius:10px;
+cursor:pointer;
+margin-top:9px;
+}
+.sound:hover{background:#1d4ed8}
+.words{
+background:#f5f3ff;
+padding:14px;
+border-radius:14px;
+margin-top:14px;
+line-height:2;
+}
+.practice{
+background:#ecfdf5;
+padding:14px;
+border-radius:14px;
+margin-top:14px;
+line-height:1.9;
+}
+.practice-title{font-weight:bold;color:#047857}
+footer{
+text-align:center;
+padding:30px;
+color:#667085;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📚 دروس الإنجليزية</h1>
+<p>English Lessons</p>
+</header>
+
+<div class="container">
+
+<a class="back" href="index.html">← العودة إلى الرئيسية</a>
+
+<div class="intro">
+<strong>🎓 منهج الإنجليزية</strong><br>
+دروس متدرجة من الأساسيات إلى المستوى المتقدم.
+كل درس يحتوي على شرح، أمثلة مترجمة، مفردات، تدريب وزر استماع.
+</div>
+
+<div class="progress">
+📖 عدد الدروس: 50 درسًا — القسم الأول: 1 إلى 25
+</div>
+
+<div id="lessons" class="lessons"></div>
+
+</div>
+
+<footer>My English Notebook © 2026</footer>
+
+<script>
+
+const lessons = [
 
 {
 title:"Lesson 1 — Personal Pronouns",
-goal:"تعلم الضمائر الشخصية الأساسية واستخدامها في جمل بسيطة.",
-explanation:`
-الضمير يحل محل الاسم.
-
+goal:"تعلم الضمائر الشخصية واستخدامها في جمل صحيحة.",
+explanation:`الضمير يحل محل الاسم.
 I = أنا
 You = أنت / أنتم
 He = هو
@@ -14,1757 +160,1067 @@ It = هو / هي لغير العاقل
 We = نحن
 They = هم / هن
 
-نستخدم الضمير في بداية الجملة غالبًا عندما نتحدث عن الشخص أو الشيء.
-`,
+تأتي الضمائر غالبًا قبل الفعل.`,
 examples:[
 {english:"I am a student.",arabic:"أنا طالب."},
-{english:"You are my friend.",arabic:"أنت صديقي."},
-{english:"He is my brother.",arabic:"هو أخي."},
-{english:"She is a teacher.",arabic:"هي معلمة."},
-{english:"It is a book.",arabic:"إنه كتاب."},
-{english:"We are students.",arabic:"نحن طلاب."},
-{english:"They are friends.",arabic:"هم أصدقاء."}
+{english:"She is my sister.",arabic:"هي أختي."},
+{english:"They are my friends.",arabic:"هم أصدقائي."}
 ],
-words:[
-"I = أنا",
-"You = أنت / أنتم",
-"He = هو",
-"She = هي",
-"It = لغير العاقل",
-"We = نحن",
-"They = هم / هن"
-],
-practice:"استخدم كل ضمير في جملة إنجليزية قصيرة."
+words:["I = أنا","you = أنت / أنتم","he = هو","she = هي","we = نحن","they = هم / هن"],
+practice:"اكتب جملة واحدة باستخدام كل ضمير."
 },
 
 {
-title:"Lesson 2 — To Be: am, is, are",
-goal:"تعلم استعمال am و is و are مع الضمائر.",
-explanation:`
-الفعل To Be من أهم الأفعال في الإنجليزية.
-
+title:"Lesson 2 — Verb To Be",
+goal:"إتقان am و is و are.",
+explanation:`الفعل To Be من أهم أفعال الإنجليزية.
 I → am
 He / She / It → is
 You / We / They → are
 
-نستخدمه للتعبير عن الهوية أو الحالة أو الوصف.
-
-I am a student.
-She is happy.
-They are ready.
-`,
+نستخدمه للتعريف والوصف والحالة.`,
 examples:[
-{english:"I am a student.",arabic:"أنا طالب."},
+{english:"I am ready.",arabic:"أنا مستعد."},
 {english:"He is happy.",arabic:"هو سعيد."},
-{english:"She is tired.",arabic:"هي متعبة."},
-{english:"It is cold.",arabic:"الجو بارد."},
-{english:"We are ready.",arabic:"نحن مستعدون."},
-{english:"They are students.",arabic:"هم طلاب."}
+{english:"We are students.",arabic:"نحن طلاب."}
 ],
-words:[
-"student = طالب",
-"happy = سعيد",
-"tired = متعب",
-"ready = مستعد",
-"cold = بارد"
-],
+words:["am = أكون","is = يكون","are = يكونون / تكون","ready = مستعد","happy = سعيد"],
 practice:"أكمل: I __ ready. She __ happy. They __ students."
 },
 
 {
 title:"Lesson 3 — To Be: Negative and Questions",
-goal:"تعلم النفي والسؤال باستخدام am, is, are.",
-explanation:`
-للنفي نضع not بعد am أو is أو are.
-
+goal:"تعلم النفي والسؤال باستخدام To Be.",
+explanation:`للنفي نضع not بعد am أو is أو are.
 I am not tired.
-She is not busy.
 
-وللسؤال نضع am أو is أو are في بداية الجملة.
-
+وللسؤال نقدم am أو is أو are على الفاعل.
 Are you ready?
-Is he a student?
-
-هذه القاعدة مهمة جدًا في المحادثة اليومية.
-`,
+Is he a student?`,
 examples:[
 {english:"I am not tired.",arabic:"أنا لست متعبًا."},
 {english:"She is not busy.",arabic:"هي ليست مشغولة."},
-{english:"Are you ready?",arabic:"هل أنت مستعد؟"},
-{english:"Is he your friend?",arabic:"هل هو صديقك؟"},
-{english:"Are they students?",arabic:"هل هم طلاب؟"}
+{english:"Are you ready?",arabic:"هل أنت مستعد؟"}
 ],
-words:[
-"not = ليس / لا",
-"busy = مشغول",
-"ready = مستعد",
-"friend = صديق",
-"question = سؤال"
-],
-practice:"حوّل ثلاث جمل مثبتة إلى النفي ثم إلى أسئلة."
+words:["not = ليس / لا","tired = متعب","busy = مشغول","ready = مستعد","question = سؤال"],
+practice:"حوّل جملة مثبتة إلى نفي ثم إلى سؤال."
 },
 
 {
-title:"Lesson 4 — Subject and Object Pronouns",
+title:"Lesson 4 — Object Pronouns",
 goal:"التمييز بين ضمائر الفاعل وضمائر المفعول.",
-explanation:`
-ضمائر الفاعل:
-I, you, he, she, it, we, they
-
-ضمائر المفعول:
-me = إياي / لي
-you = إياك / لك
-him = إياه / له
-her = إياها / لها
-it = إياه / إياها
-us = إيانا / لنا
-them = إياهم / لهم
-
-مثال:
-He helps me.
-هو يساعدني.
-
-She knows him.
-هي تعرفه.
-`,
+explanation:`ضمائر المفعول تأتي غالبًا بعد الفعل.
+me = إياي
+you = إياك
+him = إياه
+her = إياها
+us = إيانا
+them = إياهم`,
 examples:[
 {english:"He helps me.",arabic:"هو يساعدني."},
 {english:"I know him.",arabic:"أنا أعرفه."},
-{english:"She calls her.",arabic:"هي تتصل بها."},
-{english:"They help us.",arabic:"هم يساعدوننا."},
-{english:"We know them.",arabic:"نحن نعرفهم."}
+{english:"They help us.",arabic:"هم يساعدوننا."}
 ],
-words:[
-"help = يساعد",
-"know = يعرف",
-"call = يتصل",
-"me = إياي",
-"him = إياه",
-"her = إياها",
-"us = إيانا",
-"them = إياهم"
-],
-practice:"اكتب جملًا باستخدام me و him و her و us و them."
+words:["me = إياي","him = إياه","her = إياها","us = إيانا","them = إياهم"],
+practice:"اكتب خمس جمل باستخدام me و him و her و us و them."
 },
 
 {
 title:"Lesson 5 — Possessive Adjectives",
-goal:"تعلم صفات الملكية واستخدامها قبل الأسماء.",
-explanation:`
-صفات الملكية:
+goal:"تعلم صفات الملكية.",
+explanation:`صفات الملكية:
+my = ـي
+your = ـك
+his = ـه
+her = ـها
+its = ـه / ـها لغير العاقل
+our = ـنا
+their = ـهم
 
-I → my
-You → your
-He → his
-She → her
-It → its
-We → our
-They → their
-
-تأتي صفة الملكية قبل الاسم.
-
-my book = كتابي
-your phone = هاتفك
-their house = منزلهم
-`,
+تأتي صفة الملكية قبل الاسم.`,
 examples:[
 {english:"My name is Ahmed.",arabic:"اسمي أحمد."},
-{english:"What is your name?",arabic:"ما اسمك؟"},
-{english:"His car is new.",arabic:"سيارته جديدة."},
-{english:"Her book is interesting.",arabic:"كتابها ممتع."},
-{english:"Our school is big.",arabic:"مدرستنا كبيرة."},
-{english:"Their house is beautiful.",arabic:"منزلهم جميل."}
+{english:"This is her book.",arabic:"هذا كتابها."},
+{english:"Our school is big.",arabic:"مدرستنا كبيرة."}
 ],
-words:[
-"my = ـي",
-"your = ـك / ـكم",
-"his = ـه",
-"her = ـها",
-"our = ـنا",
-"their = ـهم",
-"name = اسم",
-"house = منزل"
-],
-practice:"أكمل: I have a book. It is __ book. They have a car. It is __ car."
+words:["my = ـي","your = ـك","his = ـه","her = ـها","our = ـنا","their = ـهم"],
+practice:"اكتب جملًا باستخدام my و your و his و her و our و their."
 },
 
 {
 title:"Lesson 6 — This, That, These, Those",
-goal:"تعلم الإشارة إلى الأشياء القريبة والبعيدة والمفردة والجمع.",
-explanation:`
-This = هذا / هذه للمفرد القريب.
+goal:"التعبير عن الأشياء القريبة والبعيدة.",
+explanation:`This = هذا / هذه للمفرد القريب.
 That = ذلك / تلك للمفرد البعيد.
-These = هؤلاء / هذه الأشياء للجمع القريب.
-Those = أولئك / تلك الأشياء للجمع البعيد.
-
-This book = هذا الكتاب.
-Those books = تلك الكتب.
-`,
+These = هذه / هؤلاء للجمع القريب.
+Those = تلك / أولئك للجمع البعيد.`,
 examples:[
 {english:"This is my book.",arabic:"هذا كتابي."},
 {english:"That is your phone.",arabic:"ذلك هاتفك."},
-{english:"These are my friends.",arabic:"هؤلاء أصدقائي."},
-{english:"Those are old houses.",arabic:"تلك منازل قديمة."}
+{english:"These are my friends.",arabic:"هؤلاء أصدقائي."}
 ],
-words:[
-"this = هذا / هذه",
-"that = ذلك / تلك",
-"these = هؤلاء / هذه للجمع",
-"those = أولئك / تلك للجمع",
-"near = قريب",
-"far = بعيد"
-],
-practice:"صف أربعة أشياء باستخدام this و that و these و those."
+words:["this = هذا / هذه","that = ذلك / تلك","these = هؤلاء","those = أولئك","near = قريب","far = بعيد"],
+practice:"اكتب أربع جمل باستخدام الكلمات الأربع."
 },
 
 {
-title:"Lesson 7 — Singular and Plural Nouns",
-goal:"تعلم المفرد والجمع وقواعد الجمع الأساسية.",
-explanation:`
-المفرد يدل على شيء واحد.
-
+title:"Lesson 7 — Singular and Plural",
+goal:"تعلم المفرد والجمع.",
+explanation:`الاسم المفرد يدل على شيء واحد.
 book = كتاب
-books = كتب
 
-غالبًا نضيف s إلى الاسم لصنع الجمع.
-
+غالبًا نضيف s لصنع الجمع.
 book → books
-car → cars
 
-بعض الكلمات تحتاج إلى es.
-
-box → boxes
-watch → watches
-
-وهناك جموع غير منتظمة سنتعلمها تدريجيًا.
-`,
+وبعض الكلمات تحتاج es.
+box → boxes`,
 examples:[
 {english:"I have one book.",arabic:"لدي كتاب واحد."},
 {english:"I have two books.",arabic:"لدي كتابان."},
-{english:"The car is new.",arabic:"السيارة جديدة."},
-{english:"The cars are new.",arabic:"السيارات جديدة."}
+{english:"The boxes are big.",arabic:"الصناديق كبيرة."}
 ],
-words:[
-"book = كتاب",
-"books = كتب",
-"car = سيارة",
-"cars = سيارات",
-"box = صندوق",
-"boxes = صناديق"
-],
-practice:"حوّل: book, car, student, box, watch إلى الجمع."
+words:["book = كتاب","books = كتب","box = صندوق","boxes = صناديق","student = طالب"],
+practice:"حوّل book و car و student و box و watch إلى الجمع."
 },
 
 {
 title:"Lesson 8 — A, An and The",
-goal:"تعلم الاستخدام الأساسي لأدوات a و an و the.",
-explanation:`
-نستخدم a مع اسم مفرد يبدأ بصوت ساكن.
-
+goal:"تعلم أدوات التعريف والتنكير الأساسية.",
+explanation:`نستخدم a مع الاسم المفرد الذي يبدأ بصوت ساكن.
 a book
-a student
 
-نستخدم an قبل اسم مفرد يبدأ بصوت علّة.
-
+نستخدم an قبل صوت العلة.
 an apple
-an English book
 
-أما the فنستخدمها عندما يكون الشيء محددًا أو معروفًا في السياق.
-`,
+نستخدم the عندما يكون الشيء محددًا أو معروفًا.`,
 examples:[
 {english:"I have a book.",arabic:"لدي كتاب."},
 {english:"She has an apple.",arabic:"لديها تفاحة."},
-{english:"He is a student.",arabic:"هو طالب."},
 {english:"The book is new.",arabic:"الكتاب جديد."}
 ],
-words:[
-"a = أداة للمفرد",
-"an = أداة للمفرد",
-"the = الـ",
-"apple = تفاحة",
-"student = طالب",
-"new = جديد"
-],
-practice:"اختر a أو an: __ apple, __ book, __ English lesson, __ student."
+words:["a = أداة تنكير","an = أداة تنكير","the = الـ","apple = تفاحة","new = جديد"],
+practice:"اختر a أو an: __ apple, __ book, __ English lesson."
 },
 
 {
 title:"Lesson 9 — Have and Has",
-goal:"تعلم استخدام have و has للتعبير عن الملكية.",
-explanation:`
-نستخدم have مع:
-I, You, We, They
-
-ونستخدم has مع:
-He, She, It
+goal:"استخدام have و has بشكل صحيح.",
+explanation:`نستخدم have مع I و you و we و they.
+نستخدم has مع he و she و it.
 
 I have a phone.
-She has a phone.
-
-بعد has لا نضيف s إلى الاسم بسبب الفعل نفسه؛ المهم هو استعمال has مع الفاعل المناسب.
-`,
+She has a phone.`,
 examples:[
 {english:"I have a book.",arabic:"لدي كتاب."},
-{english:"You have a phone.",arabic:"لديك هاتف."},
 {english:"He has a car.",arabic:"لديه سيارة."},
-{english:"She has a bag.",arabic:"لديها حقيبة."},
 {english:"They have a house.",arabic:"لديهم منزل."}
 ],
-words:[
-"have = لديه / يملك",
-"has = لديه / يملك",
-"phone = هاتف",
-"car = سيارة",
-"bag = حقيبة",
-"house = منزل"
-],
+words:["have = لديه / يملك","has = لديه / يملك","phone = هاتف","car = سيارة","house = منزل"],
 practice:"أكمل: I __ a book. He __ a car. They __ a house."
 },
 
 {
 title:"Lesson 10 — There Is and There Are",
 goal:"التعبير عن وجود شيء أو عدة أشياء.",
-explanation:`
-There is تستخدم مع المفرد.
-
+explanation:`There is تستخدم مع المفرد.
 There is a book.
 
 There are تستخدم مع الجمع.
-
-There are two books.
-
-نستخدم هذه التراكيب عندما نريد القول إن شيئًا موجود في مكان ما.
-`,
+There are two books.`,
 examples:[
 {english:"There is a book on the table.",arabic:"يوجد كتاب على الطاولة."},
-{english:"There is a student in the room.",arabic:"يوجد طالب في الغرفة."},
-{english:"There are two chairs.",arabic:"يوجد كرسيان."},
-{english:"There are many books.",arabic:"توجد كتب كثيرة."}
+{english:"There is a student here.",arabic:"يوجد طالب هنا."},
+{english:"There are two chairs.",arabic:"يوجد كرسيان."}
 ],
-words:[
-"there is = يوجد للمفرد",
-"there are = توجد للجمع",
-"table = طاولة",
-"chair = كرسي",
-"room = غرفة",
-"many = كثير"
-],
+words:["there is = يوجد للمفرد","there are = يوجد للجمع","table = طاولة","chair = كرسي","room = غرفة"],
 practice:"اكتب جملتين باستخدام There is وجملتين باستخدام There are."
 },
 
 {
 title:"Lesson 11 — Prepositions of Place",
 goal:"تعلم أهم حروف الجر للمكان.",
-explanation:`
-أهم حروف الجر:
-
-in = في / داخل
+explanation:`in = في / داخل
 on = على
 under = تحت
-next to = بجانب
 behind = خلف
+next to = بجانب
 in front of = أمام
 
-مثال:
-The book is on the table.
-الكتاب على الطاولة.
-`,
+تساعدنا هذه الكلمات على وصف مكان الأشخاص والأشياء.`,
 examples:[
 {english:"The book is on the table.",arabic:"الكتاب على الطاولة."},
 {english:"The phone is in the bag.",arabic:"الهاتف داخل الحقيبة."},
-{english:"The cat is under the chair.",arabic:"القطة تحت الكرسي."},
-{english:"The school is next to my house.",arabic:"المدرسة بجانب منزلي."},
-{english:"The car is in front of the house.",arabic:"السيارة أمام المنزل."}
+{english:"The cat is under the chair.",arabic:"القطة تحت الكرسي."}
 ],
-words:[
-"in = في",
-"on = على",
-"under = تحت",
-"behind = خلف",
-"next to = بجانب",
-"in front of = أمام"
-],
-practice:"صف مكان كتاب وهاتف وحقيبة باستخدام حروف الجر."
+words:["in = في","on = على","under = تحت","behind = خلف","next to = بجانب","in front of = أمام"],
+practice:"صف مكان كتاب وهاتف وحقيبة."
 },
 
 {
-title:"Lesson 12 — Present Simple: Affirmative",
-goal:"تعلم المضارع البسيط للعادات والحقائق والروتين.",
-explanation:`
-نستخدم Present Simple للحديث عن العادات والروتين والحقائق العامة.
+title:"Lesson 12 — Present Simple",
+goal:"تعلم المضارع البسيط للعادات والروتين.",
+explanation:`نستخدم Present Simple للعادات والحقائق والروتين.
+مع I و you و we و they نستخدم الفعل الأساسي.
+I study.
 
-مع I, You, We, They نستخدم الفعل الأساسي.
-
-I work.
-They study.
-
-مع He, She, It نضيف s أو es غالبًا.
-
-He works.
-She studies.
-`,
+مع he و she و it نضيف غالبًا s أو es.
+He studies.`,
 examples:[
 {english:"I study English every day.",arabic:"أدرس الإنجليزية كل يوم."},
-{english:"You speak Arabic.",arabic:"أنت تتحدث العربية."},
 {english:"We work together.",arabic:"نحن نعمل معًا."},
-{english:"He works every day.",arabic:"هو يعمل كل يوم."},
-{english:"She studies English.",arabic:"هي تدرس الإنجليزية."}
+{english:"He studies English.",arabic:"هو يدرس الإنجليزية."}
 ],
-words:[
-"study = يدرس",
-"speak = يتحدث",
-"work = يعمل",
-"every day = كل يوم",
-"together = معًا",
-"usually = عادةً"
-],
-practice:"اكتب خمس جمل عن روتينك باستخدام Present Simple."
+words:["study = يدرس","work = يعمل","speak = يتحدث","every day = كل يوم","usually = عادةً"],
+practice:"اكتب خمس جمل عن روتينك."
 },
 
 {
-title:"Lesson 13 — Present Simple: Third Person",
-goal:"إتقان إضافة s و es و ies مع He و She و It.",
-explanation:`
-مع He و She و It يتغير الفعل في المضارع البسيط.
-
+title:"Lesson 13 — Third Person Singular",
+goal:"إتقان s و es و ies مع he و she و it.",
+explanation:`في المضارع البسيط:
 work → works
-play → plays
 watch → watches
 go → goes
 study → studies
 
-إذا انتهى الفعل بحرف ساكن ثم y، تتحول y إلى ies.
-
-study → studies
-`,
+إذا انتهى الفعل بحرف ساكن ثم y تتحول y إلى ies.`,
 examples:[
 {english:"He works at home.",arabic:"هو يعمل في المنزل."},
-{english:"She plays football.",arabic:"هي تلعب كرة القدم."},
-{english:"He watches TV.",arabic:"هو يشاهد التلفاز."},
-{english:"She goes to school.",arabic:"هي تذهب إلى المدرسة."},
+{english:"She watches TV.",arabic:"هي تشاهد التلفاز."},
 {english:"He studies English.",arabic:"هو يدرس الإنجليزية."}
 ],
-words:[
-"play = يلعب",
-"watch = يشاهد",
-"go = يذهب",
-"study = يدرس",
-"work = يعمل",
-"football = كرة القدم"
-],
-practice:"حوّل: work, watch, go, study, play إلى صيغة He/She."
+words:["work → works","watch → watches","go → goes","study → studies","play → plays"],
+practice:"حوّل work و watch و go و study و play إلى صيغة he."
 },
 
 {
 title:"Lesson 14 — Present Simple Negative",
-goal:"تعلم النفي في المضارع البسيط باستخدام don't و doesn't.",
-explanation:`
-نستخدم don't مع:
-I, You, We, They
-
-ونستخدم doesn't مع:
-He, She, It
+goal:"تعلم don't و doesn't.",
+explanation:`نستخدم don't مع I و you و we و they.
+نستخدم doesn't مع he و she و it.
 
 بعد doesn't يعود الفعل إلى شكله الأساسي.
-
-He works.
 He doesn't work.
-
-وليس:
-He doesn't works.
-`,
+وليس He doesn't works.`,
 examples:[
 {english:"I don't speak French.",arabic:"أنا لا أتحدث الفرنسية."},
-{english:"You don't work here.",arabic:"أنت لا تعمل هنا."},
-{english:"We don't study at night.",arabic:"نحن لا ندرس في الليل."},
-{english:"He doesn't speak English.",arabic:"هو لا يتحدث الإنجليزية."},
-{english:"She doesn't work here.",arabic:"هي لا تعمل هنا."}
+{english:"We don't study at night.",arabic:"نحن لا ندرس ليلًا."},
+{english:"He doesn't work here.",arabic:"هو لا يعمل هنا."}
 ],
-words:[
-"don't = لا",
-"doesn't = لا",
-"speak = يتحدث",
-"work = يعمل",
-"here = هنا",
-"night = الليل"
-],
-practice:"حوّل أربع جمل مثبتة إلى النفي باستخدام don't و doesn't."
+words:["don't = لا","doesn't = لا","speak = يتحدث","work = يعمل","here = هنا"],
+practice:"حوّل أربع جمل مثبتة إلى النفي."
 },
 
 {
 title:"Lesson 15 — Present Simple Questions",
-goal:"تعلم تكوين الأسئلة باستخدام Do و Does.",
-explanation:`
-نستخدم Do مع:
-I, You, We, They
+goal:"تكوين الأسئلة باستخدام Do و Does.",
+explanation:`Do تستخدم مع I و you و we و they.
+Does تستخدم مع he و she و it.
 
-ونستخدم Does مع:
-He, She, It
-
-بعد Does نستخدم الفعل الأساسي.
-
-Does he work?
-وليس:
-Does he works?
-`,
+بعد Does نستخدم الفعل الأساسي.`,
 examples:[
 {english:"Do you speak English?",arabic:"هل تتحدث الإنجليزية؟"},
 {english:"Do they study here?",arabic:"هل يدرسون هنا؟"},
-{english:"Do you work every day?",arabic:"هل تعمل كل يوم؟"},
-{english:"Does he speak English?",arabic:"هل هو يتحدث الإنجليزية؟"},
-{english:"Does she study every day?",arabic:"هل هي تدرس كل يوم؟"}
+{english:"Does he work here?",arabic:"هل يعمل هنا؟"}
 ],
-words:[
-"do = أداة سؤال",
-"does = أداة سؤال",
-"study = يدرس",
-"work = يعمل",
-"speak = يتحدث",
-"every day = كل يوم"
-],
-practice:"حوّل: You speak English. He works here. She studies English إلى أسئلة."
+words:["do = أداة سؤال","does = أداة سؤال","study = يدرس","work = يعمل","speak = يتحدث"],
+practice:"حوّل ثلاث جمل إلى أسئلة باستخدام Do و Does."
 },
 
 {
 title:"Lesson 16 — Question Words",
-goal:"تعلم كلمات السؤال الأساسية وفهم استخدامها.",
-explanation:`
-أهم كلمات السؤال:
-
-What = ماذا / ما
+goal:"تعلم كلمات السؤال الأساسية.",
+explanation:`What = ماذا / ما
 Where = أين
 When = متى
 Who = من
 Why = لماذا
 How = كيف
 
-كل كلمة تستخدم للحصول على نوع مختلف من المعلومات.
-`,
+كل كلمة تستخدم للحصول على نوع مختلف من المعلومات.`,
 examples:[
 {english:"What is your name?",arabic:"ما اسمك؟"},
 {english:"Where do you live?",arabic:"أين تعيش؟"},
-{english:"When do you study?",arabic:"متى تدرس؟"},
-{english:"Who is your teacher?",arabic:"من معلمك؟"},
-{english:"Why are you tired?",arabic:"لماذا أنت متعب؟"},
-{english:"How do you learn English?",arabic:"كيف تتعلم الإنجليزية؟"}
+{english:"Why are you tired?",arabic:"لماذا أنت متعب؟"}
 ],
-words:[
-"what = ماذا / ما",
-"where = أين",
-"when = متى",
-"who = من",
-"why = لماذا",
-"how = كيف"
-],
-practice:"اكتب سؤالًا واحدًا بكل كلمة من كلمات السؤال الست."
+words:["what = ماذا","where = أين","when = متى","who = من","why = لماذا","how = كيف"],
+practice:"اكتب سؤالًا بكل كلمة من كلمات السؤال."
 },
 
 {
 title:"Lesson 17 — Adverbs of Frequency",
-goal:"التعبير عن مدى تكرار العادات والأفعال.",
-explanation:`
-كلمات التكرار تساعدنا على وصف العادات.
-
-always = دائمًا
+goal:"وصف مدى تكرار العادات.",
+explanation:`always = دائمًا
 usually = عادةً
 often = غالبًا
 sometimes = أحيانًا
 rarely = نادرًا
 never = أبدًا
 
-غالبًا تأتي قبل الفعل الأساسي.
-
-I usually study at night.
-
-لكن مع To Be تأتي بعده.
-
-I am always ready.
-`,
+غالبًا تأتي قبل الفعل الأساسي.`,
 examples:[
 {english:"I always study English.",arabic:"أدرس الإنجليزية دائمًا."},
 {english:"I usually wake up early.",arabic:"عادةً أستيقظ مبكرًا."},
-{english:"I often read books.",arabic:"غالبًا أقرأ الكتب."},
-{english:"I sometimes watch TV.",arabic:"أحيانًا أشاهد التلفاز."},
-{english:"I never smoke.",arabic:"أنا لا أدخن أبدًا."}
+{english:"I sometimes read books.",arabic:"أحيانًا أقرأ الكتب."}
 ],
-words:[
-"always = دائمًا",
-"usually = عادةً",
-"often = غالبًا",
-"sometimes = أحيانًا",
-"rarely = نادرًا",
-"never = أبدًا"
-],
-practice:"صف خمس عادات لديك باستخدام كلمات التكرار."
+words:["always = دائمًا","usually = عادةً","often = غالبًا","sometimes = أحيانًا","rarely = نادرًا","never = أبدًا"],
+practice:"اكتب خمس عادات باستخدام كلمات التكرار."
 },
 
 {
 title:"Lesson 18 — Can and Can't",
-goal:"تعلم التعبير عن القدرة وعدم القدرة والإذن الأساسي.",
-explanation:`
-Can تعني يستطيع أو يمكن.
-
-Can تأتي مع جميع الضمائر ولا تتغير.
-
+goal:"التعبير عن القدرة وعدم القدرة.",
+explanation:`Can تأتي مع جميع الضمائر.
 I can swim.
 He can swim.
-They can swim.
 
 للنفي نستخدم can't.
-
 I can't swim.
 
 وللسؤال:
-
-Can you swim?
-`,
+Can you swim?`,
 examples:[
 {english:"I can speak English.",arabic:"أستطيع التحدث بالإنجليزية."},
 {english:"She can drive.",arabic:"هي تستطيع القيادة."},
-{english:"He can't swim.",arabic:"هو لا يستطيع السباحة."},
-{english:"Can you help me?",arabic:"هل تستطيع مساعدتي؟"},
-{english:"Can I come in?",arabic:"هل يمكنني الدخول؟"}
+{english:"Can you help me?",arabic:"هل تستطيع مساعدتي؟"}
 ],
-words:[
-"can = يستطيع / يمكن",
-"can't = لا يستطيع",
-"swim = يسبح",
-"drive = يقود",
-"help = يساعد",
-"come in = يدخل"
-],
-practice:"اكتب ثلاث جمل عن الأشياء التي تستطيع فعلها وجملتين عن الأشياء التي لا تستطيع."
+words:["can = يستطيع","can't = لا يستطيع","swim = يسبح","drive = يقود","help = يساعد"],
+practice:"اكتب ثلاث قدرات لديك وجملتين عن أشياء لا تستطيع فعلها."
 },
 
 {
 title:"Lesson 19 — Imperatives",
-goal:"تعلم إعطاء التعليمات والأوامر والنصائح البسيطة.",
-explanation:`
-في الأمر نستخدم الفعل مباشرة دون فاعل.
-
+goal:"تعلم الأوامر والتعليمات والطلبات البسيطة.",
+explanation:`في الأمر نستخدم الفعل مباشرة.
 Open the door.
-افتح الباب.
-
-Close the window.
-أغلق النافذة.
 
 للنهي نستخدم Don't.
-
 Don't open the door.
-لا تفتح الباب.
 
-نستخدم Please لجعل الطلب أكثر لطفًا.
-`,
+يمكن استخدام please لجعل الطلب أكثر لطفًا.`,
 examples:[
 {english:"Open the door, please.",arabic:"افتح الباب من فضلك."},
-{english:"Close the window.",arabic:"أغلق النافذة."},
 {english:"Listen carefully.",arabic:"استمع بعناية."},
-{english:"Please sit down.",arabic:"اجلس من فضلك."},
 {english:"Don't touch that.",arabic:"لا تلمس ذلك."}
 ],
-words:[
-"open = افتح",
-"close = أغلق",
-"listen = استمع",
-"carefully = بعناية",
-"sit down = اجلس",
-"touch = يلمس"
-],
-practice:"اكتب خمس تعليمات بسيطة باللغة الإنجليزية."
+words:["open = افتح","close = أغلق","listen = استمع","carefully = بعناية","touch = يلمس"],
+practice:"اكتب خمس تعليمات باللغة الإنجليزية."
 },
 
 {
 title:"Lesson 20 — Present Continuous",
 goal:"تعلم المضارع المستمر للأفعال التي تحدث الآن.",
-explanation:`
-نستخدم Present Continuous عندما يحدث الفعل الآن أو حول وقت الكلام.
-
-التركيب:
-
+explanation:`التركيب:
 am / is / are + verb-ing
 
 I am studying.
-He is working.
+She is reading.
 They are playing.
 
-نضيف ing إلى الفعل الأساسي في أغلب الحالات.
-`,
+نستخدمه غالبًا لما يحدث الآن.`,
 examples:[
 {english:"I am studying English.",arabic:"أنا أدرس الإنجليزية الآن."},
 {english:"She is reading a book.",arabic:"هي تقرأ كتابًا الآن."},
-{english:"He is working.",arabic:"هو يعمل الآن."},
-{english:"They are playing football.",arabic:"هم يلعبون كرة القدم الآن."},
-{english:"We are learning English.",arabic:"نحن نتعلم الإنجليزية الآن."}
+{english:"They are playing football.",arabic:"هم يلعبون كرة القدم الآن."}
 ],
-words:[
-"now = الآن",
-"study = يدرس",
-"read = يقرأ",
-"work = يعمل",
-"play = يلعب",
-"learn = يتعلم"
-],
-practice:"صف ما يفعله خمسة أشخاص الآن باستخدام am/is/are + ing."
+words:["now = الآن","reading = يقرأ","studying = يدرس","playing = يلعب","learning = يتعلم"],
+practice:"اكتب خمس جمل عما يحدث الآن."
 },
 
 {
-title:"Lesson 21 — Present Simple vs Present Continuous",
+title:"Lesson 21 — Simple vs Continuous",
 goal:"التمييز بين العادة والفعل الذي يحدث الآن.",
-explanation:`
-Present Simple نستخدمه للعادات والأشياء المتكررة.
-
+explanation:`Present Simple للعادات:
 I study English every day.
 
-Present Continuous نستخدمه لما يحدث الآن.
-
+Present Continuous لما يحدث الآن:
 I am studying English now.
 
-الكلمات مثل every day و usually تشير غالبًا إلى المضارع البسيط.
-أما now و at the moment فتشير غالبًا إلى المضارع المستمر.
-`,
+every day و usually غالبًا مع Present Simple.
+now و at the moment غالبًا مع Present Continuous.`,
 examples:[
-{english:"I study English every day.",arabic:"أدرس الإنجليزية كل يوم."},
-{english:"I am studying English now.",arabic:"أنا أدرس الإنجليزية الآن."},
-{english:"She usually works at home.",arabic:"هي عادةً تعمل في المنزل."},
-{english:"She is working now.",arabic:"هي تعمل الآن."}
+{english:"I study every day.",arabic:"أدرس كل يوم."},
+{english:"I am studying now.",arabic:"أنا أدرس الآن."},
+{english:"She works every day.",arabic:"هي تعمل كل يوم."}
 ],
-words:[
-"every day = كل يوم",
-"usually = عادةً",
-"now = الآن",
-"at the moment = في هذه اللحظة",
-"every = كل"
-],
-practice:"اكتب جملة للعادات وجملة لما يحدث الآن باستخدام الفعل نفسه."
+words:["every day = كل يوم","usually = عادةً","now = الآن","at the moment = في هذه اللحظة"],
+practice:"اكتب جملة عادة وجملة تحدث الآن باستخدام الفعل نفسه."
 },
 
 {
-title:"Lesson 22 — Past Simple: Be",
-goal:"تعلم was و were في الماضي.",
-explanation:`
-الماضي من To Be:
-
-I / He / She / It → was
-
-You / We / They → were
+title:"Lesson 22 — Past Simple: Was and Were",
+goal:"تعلم الماضي من To Be.",
+explanation:`I / he / she / it → was
+you / we / they → were
 
 I was tired.
 They were happy.
 
 للنفي:
-was not = wasn't
-were not = weren't
-`,
+wasn't = was not
+weren't = were not`,
 examples:[
 {english:"I was tired yesterday.",arabic:"كنت متعبًا أمس."},
 {english:"She was at school.",arabic:"كانت في المدرسة."},
-{english:"He was happy.",arabic:"كان سعيدًا."},
-{english:"We were busy.",arabic:"كنا مشغولين."},
 {english:"They were at home.",arabic:"كانوا في المنزل."}
 ],
-words:[
-"was = كان",
-"were = كانوا / كنا",
-"yesterday = أمس",
-"last night = الليلة الماضية",
-"busy = مشغول",
-"home = المنزل"
-],
-practice:"اكتب خمس جمل عن حالتك أو مكانك في الماضي باستخدام was و were."
+words:["was = كان","were = كانوا / كنا","yesterday = أمس","busy = مشغول","home = المنزل"],
+practice:"اكتب خمس جمل في الماضي باستخدام was و were."
 },
 
 {
 title:"Lesson 23 — Past Simple Regular Verbs",
 goal:"تعلم الماضي البسيط للأفعال المنتظمة.",
-explanation:`
-نستخدم Past Simple للأفعال التي حدثت وانتهت في الماضي.
+explanation:`نستخدم Past Simple للأحداث التي انتهت في الماضي.
 
-في الأفعال المنتظمة نضيف ed غالبًا.
-
+الأفعال المنتظمة تأخذ ed غالبًا:
 work → worked
 play → played
 watch → watched
-clean → cleaned
-
-كلمات مثل yesterday و last week تساعد على تحديد الماضي.
-`,
+clean → cleaned`,
 examples:[
 {english:"I worked yesterday.",arabic:"عملت أمس."},
 {english:"She watched a movie.",arabic:"شاهدت فيلمًا."},
-{english:"We played football.",arabic:"لعبنا كرة القدم."},
-{english:"He cleaned his room.",arabic:"نظف غرفته."}
+{english:"We played football.",arabic:"لعبنا كرة القدم."}
 ],
-words:[
-"worked = عمل",
-"played = لعب",
-"watched = شاهد",
-"cleaned = نظف",
-"yesterday = أمس",
-"last week = الأسبوع الماضي"
-],
-practice:"حوّل work و play و watch و clean إلى الماضي ثم استخدم كل كلمة في جملة."
+words:["worked = عمل","played = لعب","watched = شاهد","cleaned = نظف","yesterday = أمس"],
+practice:"حوّل خمسة أفعال إلى الماضي واستخدمها في جمل."
 },
 
 {
 title:"Lesson 24 — Past Simple Irregular Verbs",
-goal:"التعرف على أشهر الأفعال غير المنتظمة في الماضي.",
-explanation:`
-بعض الأفعال لا تأخذ ed في الماضي، بل يتغير شكلها.
+goal:"تعلم أشهر الأفعال غير المنتظمة في الماضي.",
+explanation:`بعض الأفعال لا تأخذ ed، بل يتغير شكلها.
 
 go → went
-come → came
 eat → ate
 drink → drank
 see → saw
 have → had
-make → made
-take → took
-
-يجب حفظ هذه الأشكال وممارستها في جمل.
-`,
+take → took`,
 examples:[
 {english:"I went to school yesterday.",arabic:"ذهبت إلى المدرسة أمس."},
 {english:"She ate breakfast.",arabic:"تناولت الفطور."},
-{english:"He drank water.",arabic:"شرب الماء."},
-{english:"We saw a movie.",arabic:"شاهدنا فيلمًا."},
-{english:"They had a good day.",arabic:"كان لديهم يوم جيد."}
+{english:"He drank water.",arabic:"شرب الماء."}
 ],
-words:[
-"go → went = يذهب → ذهب",
-"eat → ate = يأكل → أكل",
-"drink → drank = يشرب → شرب",
-"see → saw = يرى → رأى",
-"have → had = يملك / لديه → كان لديه",
-"take → took = يأخذ → أخذ"
-],
-practice:"اكتب جملة في الماضي باستخدام went و ate و drank و saw و had."
+words:["go → went","eat → ate","drink → drank","see → saw","have → had","take → took"],
+practice:"اكتب جملة باستخدام went و ate و drank و saw و had."
 },
 
 {
 title:"Lesson 25 — Future with Going To",
-goal:"تعلم التعبير عن الخطط والنوايا المستقبلية باستخدام going to.",
-explanation:`
-نستخدم be going to للحديث عن خطة أو نية في المستقبل.
+goal:"التعبير عن الخطط والنوايا المستقبلية.",
+explanation:`التركيب:
+Subject + am/is/are + going to + verb
 
-التركيب:
+I am going to study.
+She is going to travel.
+They are going to learn.
 
-I am going to + verb
-He is going to + verb
-They are going to + verb
-
-مثال:
-
-I am going to study tonight.
-سأدرس الليلة.
-
-يمكن استعمالها للخطط التي قررناها مسبقًا.
-`,
+نستخدم going to كثيرًا للخطط والنيات المستقبلية.`,
 examples:[
 {english:"I am going to study tonight.",arabic:"سأدرس الليلة."},
 {english:"She is going to visit her family.",arabic:"ستزور عائلتها."},
-{english:"He is going to buy a new phone.",arabic:"سيشتري هاتفًا جديدًا."},
-{english:"We are going to learn English.",arabic:"سنتعلم الإنجليزية."},
 {english:"They are going to travel tomorrow.",arabic:"سيسافرون غدًا."}
 ],
-words:[
-"going to = سوف / ذاهب إلى أن",
-"tonight = الليلة",
-"visit = يزور",
-"buy = يشتري",
-"travel = يسافر",
-"tomorrow = غدًا"
-],
-practice:"اكتب خمس خطط مستقبلية عن دراستك وحياتك باستخدام going to."
+words:["going to = سوف","tonight = الليلة","visit = يزور","travel = يسافر","tomorrow = غدًا"],
+practice:"اكتب خمس خطط مستقبلية باستخدام going to."
 },{
 title:"Lesson 26 — Will",
-goal:"تعلم استخدام will للتحدث عن المستقبل والقرارات والتوقعات.",
-explanation:`
-نستخدم will للحديث عن المستقبل، خاصةً القرارات التي نتخذها في لحظة الكلام والتوقعات.
-
-التركيب:
-
+goal:"تعلم استخدام will للمستقبل والقرارات والتوقعات.",
+explanation:`التركيب:
 Subject + will + verb
 
 I will study.
 She will come.
 
-النفي:
-will not = won't
-
-I won't be late.
-`,
+نستخدم will للمستقبل، ومن استعمالاته القرارات التي نتخذها لحظة الكلام والتوقعات.`,
 examples:[
-{english:"I will study tomorrow.",arabic:"سأدرس غدًا."},
+{english:"I will call you later.",arabic:"سأتصل بك لاحقًا."},
+{english:"She will help us.",arabic:"ستساعدنا."},
+{english:"I think it will rain.",arabic:"أعتقد أنها ستمطر."}
+],
+words:["will = سوف","later = لاحقًا","call = يتصل","help = يساعد","think = يعتقد"],
+practice:"اكتب خمس جمل عن المستقبل باستخدام will."
+},
+
+{
+title:"Lesson 27 — Future: Will vs Going To",
+goal:"التمييز بين will و going to.",
+explanation:`نستخدم going to غالبًا لخطة موجودة مسبقًا.
+I am going to study tonight.
+
+ونستخدم will كثيرًا لقرار لحظي أو توقع.
+I will help you.
+
+الفهم يعتمد على سياق الكلام.`,
+examples:[
+{english:"I am going to study tonight.",arabic:"سأدرس الليلة."},
 {english:"I will help you.",arabic:"سأساعدك."},
-{english:"She will come later.",arabic:"ستأتي لاحقًا."},
-{english:"They will travel next week.",arabic:"سيسافرون الأسبوع القادم."},
-{english:"I won't be late.",arabic:"لن أتأخر."}
+{english:"I think he will win.",arabic:"أعتقد أنه سيفوز."}
 ],
-words:[
-"will = سوف",
-"won't = لن",
-"tomorrow = غدًا",
-"later = لاحقًا",
-"next week = الأسبوع القادم",
-"late = متأخر"
-],
-practice:"اكتب ثلاث جمل عن أشياء ستفعلها في المستقبل باستخدام will."
+words:["plan = خطة","decision = قرار","future = مستقبل","win = يفوز","help = يساعد"],
+practice:"اكتب جملتين بـ going to وجملتين بـ will."
 },
 
 {
-title:"Lesson 27 — Comparative Adjectives",
-goal:"تعلم مقارنة شيئين باستخدام صفات المقارنة.",
-explanation:`
-نستخدم صيغة المقارنة عندما نقارن بين شخصين أو شيئين.
-
-صفات قصيرة غالبًا نضيف لها er:
-
-small → smaller
-fast → faster
-tall → taller
-
-وغالبًا نستخدم than بعد المقارنة.
-
-Ahmed is taller than Ali.
-أحمد أطول من علي.
-
-بعض الصفات الطويلة تستخدم more:
-
-more beautiful
-more interesting
-`,
-examples:[
-{english:"My car is faster than his car.",arabic:"سيارتي أسرع من سيارته."},
-{english:"Ahmed is taller than Ali.",arabic:"أحمد أطول من علي."},
-{english:"This book is more interesting than that one.",arabic:"هذا الكتاب أكثر إثارة للاهتمام من ذلك."},
-{english:"English is easier than I expected.",arabic:"الإنجليزية أسهل مما توقعت."}
-],
-words:[
-"tall = طويل",
-"taller = أطول",
-"fast = سريع",
-"faster = أسرع",
-"easy = سهل",
-"easier = أسهل",
-"interesting = ممتع / مثير للاهتمام",
-"than = من"
-],
-practice:"قارن بين شيئين باستخدام taller و faster و easier."
-},
-
-{
-title:"Lesson 28 — Superlative Adjectives",
-goal:"تعلم صيغة التفضيل للتعبير عن الأعلى أو الأفضل ضمن مجموعة.",
-explanation:`
-نستخدم صيغة التفضيل عندما نقارن شيئًا بمجموعة ونقول إنه الأعلى أو الأفضل.
-
-الصفات القصيرة غالبًا:
-
-small → the smallest
-fast → the fastest
-tall → the tallest
-
-والصفات الطويلة تستخدم غالبًا:
-
-the most interesting
-the most important
-
-لاحظ استخدام the قبل صيغة التفضيل.
-`,
-examples:[
-{english:"He is the tallest student in the class.",arabic:"هو أطول طالب في الصف."},
-{english:"This is the fastest car.",arabic:"هذه أسرع سيارة."},
-{english:"She is the most intelligent student here.",arabic:"هي أذكى طالبة هنا."},
-{english:"This is the most important lesson.",arabic:"هذا أهم درس."}
-],
-words:[
-"the tallest = الأطول",
-"the fastest = الأسرع",
-"the most important = الأهم",
-"the most interesting = الأكثر إثارة للاهتمام",
-"class = صف",
-"important = مهم"
-],
-practice:"اكتب ثلاث جمل باستخدام the best أو the biggest أو the most important."
-},
-
-{
-title:"Lesson 29 — Countable and Uncountable Nouns",
-goal:"التمييز بين الأسماء المعدودة وغير المعدودة.",
-explanation:`
-الأسماء المعدودة يمكن عدها.
-
-one book
-two books
-three students
-
-أما الأسماء غير المعدودة فلا نستخدم معها الأعداد مباشرة عادةً.
-
-water = ماء
-milk = حليب
-money = مال
-information = معلومات
-
-نستخدم some و any مع الكثير من الأسماء غير المعدودة ومع الجمع.
-`,
-examples:[
-{english:"I have three books.",arabic:"لدي ثلاثة كتب."},
-{english:"There is some water.",arabic:"يوجد بعض الماء."},
-{english:"I need some information.",arabic:"أحتاج إلى بعض المعلومات."},
-{english:"Do you have any money?",arabic:"هل لديك أي مال؟"}
-],
-words:[
-"countable = معدود",
-"uncountable = غير معدود",
-"water = ماء",
-"money = مال",
-"information = معلومات",
-"some = بعض",
-"any = أي / بعض"
-],
-practice:"صنّف: book, water, student, money, apple, information إلى معدود وغير معدود."
-},
-
-{
-title:"Lesson 30 — Much, Many and A Lot Of",
-goal:"تعلم التعبير عن الكمية باستخدام much و many و a lot of.",
-explanation:`
-many تستخدم مع الأسماء المعدودة الجمع.
-
-many books
-many students
-
-much تستخدم غالبًا مع الأسماء غير المعدودة.
-
-much water
-much time
-
-a lot of يمكن استخدامها مع المعدود الجمع وغير المعدود.
-
-a lot of books
-a lot of water
-`,
-examples:[
-{english:"I have many books.",arabic:"لدي كتب كثيرة."},
-{english:"She doesn't have much time.",arabic:"ليس لديها وقت كثير."},
-{english:"We have a lot of work.",arabic:"لدينا الكثير من العمل."},
-{english:"They have a lot of friends.",arabic:"لديهم الكثير من الأصدقاء."}
-],
-words:[
-"much = كثير لغير المعدود",
-"many = كثير للمعدود",
-"a lot of = الكثير من",
-"time = وقت",
-"work = عمل",
-"friends = أصدقاء"
-],
-practice:"اكتب جملتين باستخدام many وجملتين باستخدام much وجملتين باستخدام a lot of."
-},
-
-{
-title:"Lesson 31 — Some and Any",
-goal:"تعلم استخدام some و any في الجمل المثبتة والأسئلة والنفي.",
-explanation:`
-نستخدم some غالبًا في الجمل المثبتة.
-
-I have some books.
-
-ونستخدم any غالبًا في الأسئلة والنفي.
-
-Do you have any books?
-I don't have any books.
-
-يمكن استخدامهما مع الجمع المعدود وغير المعدود حسب السياق.
-`,
-examples:[
-{english:"I have some books.",arabic:"لدي بعض الكتب."},
-{english:"There is some water.",arabic:"يوجد بعض الماء."},
-{english:"Do you have any questions?",arabic:"هل لديك أي أسئلة؟"},
-{english:"I don't have any money.",arabic:"ليس لدي أي مال."}
-],
-words:[
-"some = بعض",
-"any = أي / بعض",
-"question = سؤال",
-"money = مال",
-"water = ماء",
-"book = كتاب"
-],
-practice:"كوّن جملة مثبتة باستخدام some وسؤالًا باستخدام any وجملة منفية باستخدام any."
-},
-
-{
-title:"Lesson 32 — Object Pronouns in Conversation",
-goal:"استخدام ضمائر المفعول بطريقة طبيعية في المحادثة.",
-explanation:`
-ضمائر المفعول تأتي بعد الفعل أو حرف الجر.
-
-me = لي / إياي
-you = لك / إياك
-him = له / إياه
-her = لها / إياها
-us = لنا / إيانا
-them = لهم / إياهم
-
-مثال:
-
-Can you help me?
-هل تستطيع مساعدتي؟
-
-I know them.
-أنا أعرفهم.
-`,
-examples:[
-{english:"Can you help me?",arabic:"هل تستطيع مساعدتي؟"},
-{english:"I can hear you.",arabic:"أستطيع سماعك."},
-{english:"We know him.",arabic:"نحن نعرفه."},
-{english:"She called me yesterday.",arabic:"اتصلت بي أمس."},
-{english:"I invited them.",arabic:"دعوتهم."}
-],
-words:[
-"hear = يسمع",
-"call = يتصل",
-"invite = يدعو",
-"me = إياي",
-"him = إياه",
-"them = إياهم"
-],
-practice:"اكتب خمس جمل باستخدام me و you و him و her و them."
-},
-
-{
-title:"Lesson 33 — Possessive Pronouns",
-goal:"التمييز بين صفات الملكية وضمائر الملكية.",
-explanation:`
-صفات الملكية تأتي قبل الاسم:
-
-my book
-your phone
-his car
-
-أما ضمائر الملكية فتحل محل الاسم:
-
-mine = لي
-yours = لك
-his = له
-hers = لها
-ours = لنا
-theirs = لهم
-
-مثال:
-
-This is my book.
-This book is mine.
-`,
-examples:[
-{english:"This is my book.",arabic:"هذا كتابي."},
-{english:"This book is mine.",arabic:"هذا الكتاب لي."},
-{english:"That phone is yours.",arabic:"ذلك الهاتف لك."},
-{english:"The car is hers.",arabic:"السيارة لها."},
-{english:"The house is theirs.",arabic:"المنزل لهم."}
-],
-words:[
-"mine = لي",
-"yours = لك",
-"his = له",
-"hers = لها",
-"ours = لنا",
-"theirs = لهم"
-],
-practice:"حوّل: This is my bag إلى جملة تستخدم mine."
-},
-
-{
-title:"Lesson 34 — Present Perfect",
-goal:"التعرف على المضارع التام واستخدامه للخبرات والأحداث المرتبطة بالحاضر.",
-explanation:`
-التركيب:
-
+title:"Lesson 28 — Present Perfect",
+goal:"فهم الاستخدام الأساسي للمضارع التام.",
+explanation:`التركيب:
 have / has + past participle
 
 I have finished.
-She has finished.
+She has arrived.
 
-نستخدم Present Perfect للحديث عن خبرة أو حدث حدث في الماضي وله علاقة بالحاضر، أو عندما لا نحدد وقتًا ماضيًا معينًا.
-
-I have visited Paris.
-لقد زرت باريس.
-`,
+نستخدم Present Perfect للحديث عن تجربة أو حدث له علاقة بالحاضر.`,
 examples:[
-{english:"I have finished my homework.",arabic:"لقد أنهيت واجبي."},
-{english:"She has visited Paris.",arabic:"لقد زارت باريس."},
-{english:"We have learned a lot.",arabic:"لقد تعلمنا الكثير."},
-{english:"He has lost his phone.",arabic:"لقد فقد هاتفه."}
+{english:"I have finished my work.",arabic:"لقد أنهيت عملي."},
+{english:"She has arrived.",arabic:"لقد وصلت."},
+{english:"We have visited this place.",arabic:"لقد زرنا هذا المكان."}
 ],
-words:[
-"finish = ينهي",
-"finished = أنهى",
-"visit = يزور",
-"visited = زار",
-"learn = يتعلم",
-"lost = فقد"
-],
-practice:"اكتب ثلاث جمل باستخدام I have أو She has."
+words:["finished = أنهى","arrived = وصل","visited = زار","already = بالفعل","experience = تجربة"],
+practice:"اكتب ثلاث جمل باستخدام have أو has."
 },
 
 {
-title:"Lesson 35 — Present Perfect: Ever and Never",
-goal:"التحدث عن الخبرات باستخدام ever و never.",
-explanation:`
-نستخدم ever غالبًا في الأسئلة عن الخبرات في الحياة.
+title:"Lesson 29 — Present Perfect: Ever and Never",
+goal:"التحدث عن التجارب باستخدام ever و never.",
+explanation:`نستخدم ever غالبًا في الأسئلة عن التجارب.
+Have you ever visited Paris?
 
-Have you ever visited France?
-
-هل سبق لك أن زرت فرنسا؟
-
-ونستخدم never للتعبير عن شيء لم يحدث في حياة الشخص.
-
-I have never visited France.
-
-لم يسبق لي أن زرت فرنسا.
-`,
+ونستخدم never للقول إن شيئًا لم يحدث في حياتنا أو حتى الآن.
+I have never visited Paris.`,
 examples:[
-{english:"Have you ever traveled abroad?",arabic:"هل سبق لك أن سافرت إلى الخارج؟"},
-{english:"I have never traveled abroad.",arabic:"لم يسبق لي أن سافرت إلى الخارج."},
-{english:"Have you ever tried this food?",arabic:"هل سبق لك أن جربت هذا الطعام؟"},
-{english:"I have never tried it.",arabic:"لم أجربه من قبل."}
+{english:"Have you ever visited another country?",arabic:"هل سبق أن زرت بلدًا آخر؟"},
+{english:"I have never tried it.",arabic:"لم أجربه قط."},
+{english:"Have you ever learned English online?",arabic:"هل سبق أن تعلمت الإنجليزية عبر الإنترنت؟"}
 ],
-words:[
-"ever = هل سبق",
-"never = أبدًا / لم يسبق",
-"travel = يسافر",
-"abroad = إلى الخارج",
-"try = يجرب",
-"food = طعام"
-],
-practice:"اكتب سؤالًا باستخدام Have you ever ثم أجب عنه باستخدام never."
+words:["ever = سبق أن","never = قط / أبدًا","visited = زار","tried = جرّب","country = بلد"],
+practice:"اكتب سؤالين باستخدام ever وإجابتين باستخدام never."
 },
 
 {
-title:"Lesson 36 — Present Perfect vs Past Simple",
-goal:"فهم الفرق بين المضارع التام والماضي البسيط.",
-explanation:`
-Past Simple يستخدم عندما نذكر وقتًا ماضيًا محددًا.
+title:"Lesson 30 — Present Perfect vs Past Simple",
+goal:"التمييز بين Present Perfect و Past Simple.",
+explanation:`Past Simple يرتبط بوقت ماضٍ محدد.
+I visited him yesterday.
 
-I visited Paris last year.
+Present Perfect يركز على التجربة أو النتيجة دون وقت ماضٍ محدد.
+I have visited him.
 
-Present Perfect يستخدم عندما لا يكون الوقت المحدد مهمًا أو عندما تكون النتيجة مرتبطة بالحاضر.
-
-I have visited Paris.
-
-كلمات مثل yesterday و last year ترتبط غالبًا بالماضي البسيط.
-أما ever و never و already و yet فتستخدم كثيرًا مع المضارع التام.
-`,
+كلمات مثل yesterday و last year غالبًا تشير إلى Past Simple.`,
 examples:[
 {english:"I visited Paris last year.",arabic:"زرت باريس العام الماضي."},
 {english:"I have visited Paris.",arabic:"لقد زرت باريس."},
-{english:"She finished her work yesterday.",arabic:"أنهت عملها أمس."},
-{english:"She has finished her work.",arabic:"لقد أنهت عملها."}
+{english:"She finished her work yesterday.",arabic:"أنهت عملها أمس."}
 ],
-words:[
-"last year = العام الماضي",
-"yesterday = أمس",
-"already = بالفعل",
-"yet = بعد / حتى الآن",
-"finish = ينهي",
-"visit = يزور"
-],
+words:["yesterday = أمس","last year = العام الماضي","already = بالفعل","finished = أنهى","visited = زار"],
 practice:"اكتب جملتين في Past Simple وجملتين في Present Perfect."
 },
 
 {
-title:"Lesson 37 — Past Continuous",
-goal:"تعلم الماضي المستمر لوصف فعل كان يحدث في وقت معين في الماضي.",
-explanation:`
-التركيب:
+title:"Lesson 31 — Comparatives",
+goal:"المقارنة بين شخصين أو شيئين.",
+explanation:`نستخدم comparative للمقارنة.
 
-was / were + verb-ing
+small → smaller
+fast → faster
+beautiful → more beautiful
 
-I was studying.
-They were playing.
-
-نستخدمه لوصف فعل كان مستمرًا في لحظة أو فترة في الماضي.
-
-I was studying at 8 p.m.
-كنت أدرس الساعة الثامنة مساءً.
-`,
+غالبًا نستخدم than بعد المقارنة.
+My car is faster than yours.`,
 examples:[
-{english:"I was studying at eight.",arabic:"كنت أدرس في الساعة الثامنة."},
-{english:"She was reading a book.",arabic:"كانت تقرأ كتابًا."},
-{english:"They were playing football.",arabic:"كانوا يلعبون كرة القدم."},
-{english:"We were watching TV.",arabic:"كنا نشاهد التلفاز."}
+{english:"This book is cheaper than that one.",arabic:"هذا الكتاب أرخص من ذلك."},
+{english:"English is easier than I expected.",arabic:"الإنجليزية أسهل مما توقعت."},
+{english:"My new phone is faster than my old phone.",arabic:"هاتفي الجديد أسرع من هاتفي القديم."}
 ],
-words:[
-"was = كان",
-"were = كانوا / كنا",
-"studying = يدرس",
-"reading = يقرأ",
-"playing = يلعب",
-"watching = يشاهد"
-],
-practice:"اكتب ثلاث جمل عن أشياء كنت تفعلها في وقت محدد أمس."
+words:["smaller = أصغر","faster = أسرع","easier = أسهل","cheaper = أرخص","than = من"],
+practice:"اكتب ثلاث مقارنات باستخدام than."
 },
 
 {
-title:"Lesson 38 — Past Simple and Past Continuous",
-goal:"استخدام الماضي البسيط والماضي المستمر معًا.",
-explanation:`
-يمكن استخدام الزمنين معًا.
+title:"Lesson 32 — Superlatives",
+goal:"التعبير عن أعلى درجة بين مجموعة.",
+explanation:`نستخدم superlative عندما نقارن ثلاثة أشياء أو أكثر.
 
-الماضي المستمر يصف الفعل الذي كان يحدث.
+small → the smallest
+fast → the fastest
+beautiful → the most beautiful
 
-الماضي البسيط يصف الحدث الذي وقع أثناءه.
-
-مثال:
-
-I was studying when my friend called.
-
-كنت أدرس عندما اتصل صديقي.
-
-نستخدم when كثيرًا لربط الحدثين.
-`,
+غالبًا نستخدم the قبل صيغة التفضيل.`,
 examples:[
-{english:"I was sleeping when he called.",arabic:"كنت نائمًا عندما اتصل."},
-{english:"She was cooking when I arrived.",arabic:"كانت تطبخ عندما وصلت."},
-{english:"They were playing when it started raining.",arabic:"كانوا يلعبون عندما بدأ المطر."}
+{english:"This is the easiest lesson.",arabic:"هذا أسهل درس."},
+{english:"He is the fastest runner.",arabic:"هو أسرع عدّاء."},
+{english:"This is the most important point.",arabic:"هذه أهم نقطة."}
 ],
-words:[
-"when = عندما",
-"sleep = ينام",
-"cook = يطبخ",
-"arrive = يصل",
-"start = يبدأ",
-"rain = تمطر"
-],
-practice:"اكتب ثلاث جمل باستخدام was/were + ing مع when."
+words:["the smallest = الأصغر","the fastest = الأسرع","the easiest = الأسهل","the most important = الأهم"],
+practice:"اكتب ثلاث جمل باستخدام superlative."
 },
 
 {
-title:"Lesson 39 — First Conditional",
-goal:"تعلم الشرط الأول للتحدث عن احتمالات حقيقية في المستقبل.",
-explanation:`
-الشرط الأول يستخدم عندما يكون الشرط ممكنًا في المستقبل.
+title:"Lesson 33 — Modal Verbs: Should",
+goal:"إعطاء النصيحة بطريقة صحيحة.",
+explanation:`Should تعني ينبغي أو من الأفضل.
 
-التركيب:
-
-If + Present Simple, will + verb
-
-If I study, I will improve.
-
-إذا درست، فسأتحسن.
-
-يمكن أيضًا عكس ترتيب الجملة:
-
-I will improve if I study.
-`,
-examples:[
-{english:"If I study, I will pass.",arabic:"إذا درست فسأنجح."},
-{english:"If it rains, I will stay home.",arabic:"إذا أمطرت فسأبقى في المنزل."},
-{english:"If you practice, you will improve.",arabic:"إذا تدربت فسوف تتحسن."},
-{english:"If we leave early, we will arrive on time.",arabic:"إذا غادرنا مبكرًا فسنصل في الوقت."}
-],
-words:[
-"if = إذا",
-"pass = ينجح",
-"practice = يتدرب",
-"improve = يتحسن",
-"stay = يبقى",
-"on time = في الوقت"
-],
-practice:"اكتب ثلاث جمل شرطية عن الدراسة واللغة الإنجليزية."
-},
-
-{
-title:"Lesson 40 — Second Conditional",
-goal:"التعرف على الشرط الثاني للتحدث عن مواقف افتراضية أو غير واقعية.",
-explanation:`
-الشرط الثاني يستخدم للتحدث عن موقف افتراضي أو غير محتمل.
-
-التركيب:
-
-If + Past Simple, would + verb
-
-If I had more time, I would study more.
-
-إذا كان لدي وقت أكثر، لدرست أكثر.
-
-لا يعني الماضي هنا بالضرورة أن الأمر حدث في الماضي؛ بل يشير إلى الافتراض.
-`,
-examples:[
-{english:"If I had more time, I would read more.",arabic:"لو كان لدي وقت أكثر، لقرأت أكثر."},
-{english:"If I were rich, I would travel.",arabic:"لو كنت غنيًا، لسافرت."},
-{english:"If she studied more, she would improve.",arabic:"لو درست أكثر لتحسنت."}
-],
-words:[
-"would = سوف / لَـ في الحالة الافتراضية",
-"rich = غني",
-"travel = يسافر",
-"more = أكثر",
-"had = كان لديه",
-"were = كان"
-],
-practice:"اكتب ثلاث جمل افتراضية باستخدام If و would."
-},
-
-{
-title:"Lesson 41 — Modal Verbs: Should and Must",
-goal:"تعلم التعبير عن النصيحة والضرورة باستخدام should و must.",
-explanation:`
-should تستخدم غالبًا للنصيحة.
+Subject + should + verb
 
 You should study.
-يجب أن تدرس / من الأفضل أن تدرس.
+You should rest.
 
-must تعبر عن ضرورة أو إلزام قوي.
-
-You must follow the rules.
-يجب أن تتبع القواعد.
-
-النفي:
-
-shouldn't = لا ينبغي
-mustn't = ممنوع / يجب ألا
-`,
+بعد should يأتي الفعل الأساسي دون to.`,
 examples:[
-{english:"You should practice every day.",arabic:"ينبغي أن تتدرب كل يوم."},
-{english:"You should get enough sleep.",arabic:"ينبغي أن تحصل على نوم كافٍ."},
-{english:"You must follow the rules.",arabic:"يجب أن تتبع القواعد."},
-{english:"You mustn't be late.",arabic:"يجب ألا تتأخر."}
+{english:"You should study every day.",arabic:"ينبغي أن تدرس كل يوم."},
+{english:"You should practice speaking.",arabic:"ينبغي أن تتدرب على التحدث."},
+{english:"You should read more.",arabic:"ينبغي أن تقرأ أكثر."}
 ],
-words:[
-"should = ينبغي",
-"shouldn't = لا ينبغي",
-"must = يجب",
-"mustn't = يجب ألا / ممنوع",
-"rule = قاعدة",
-"enough = كافٍ"
-],
-practice:"اكتب ثلاث نصائح لشخص يتعلم الإنجليزية باستخدام should."
+words:["should = ينبغي","practice = يتدرب","speaking = التحدث","read = يقرأ","more = أكثر"],
+practice:"اكتب خمس نصائح لشخص يتعلم الإنجليزية."
 },
 
 {
-title:"Lesson 42 — Gerunds and Infinitives",
-goal:"التعرف على استخدام verb-ing و to + verb بعد بعض الأفعال.",
-explanation:`
-بعض الأفعال يأتي بعدها verb-ing.
+title:"Lesson 34 — Must and Have To",
+goal:"التعبير عن الضرورة والالتزام.",
+explanation:`Must و have to تستخدمان للتعبير عن الضرورة.
 
+You must study.
+You have to study.
+
+بعد must يأتي الفعل مباشرة.
+أما have to فهي تركيب يحتوي على to.`,
+examples:[
+{english:"You must follow the rules.",arabic:"يجب أن تتبع القواعد."},
+{english:"I have to study today.",arabic:"يجب أن أدرس اليوم."},
+{english:"We have to leave now.",arabic:"يجب أن نغادر الآن."}
+],
+words:["must = يجب","have to = يجب أن","rules = قواعد","follow = يتبع","leave = يغادر"],
+practice:"اكتب ثلاث جمل باستخدام must وثلاثًا باستخدام have to."
+},
+
+{
+title:"Lesson 35 — Gerunds and Infinitives",
+goal:"فهم الفرق الأساسي بين verb-ing و to + verb.",
+explanation:`بعض الأفعال يأتي بعدها verb-ing.
 I enjoy reading.
-أستمتع بالقراءة.
 
 وبعض الأفعال يأتي بعدها to + verb.
-
 I want to learn.
-أريد أن أتعلم.
 
-أمثلة مهمة:
-
-enjoy + ing
-finish + ing
-want + to
-need + to
-hope + to
-`,
+يجب تعلم الأفعال الشائعة مع تركيبها.`,
 examples:[
-{english:"I enjoy learning English.",arabic:"أستمتع بتعلم الإنجليزية."},
-{english:"She enjoys reading.",arabic:"هي تستمتع بالقراءة."},
-{english:"I want to improve.",arabic:"أريد أن أتحسن."},
-{english:"We need to practice.",arabic:"نحتاج إلى التدرب."},
-{english:"He hopes to succeed.",arabic:"يأمل أن ينجح."}
+{english:"I enjoy reading books.",arabic:"أستمتع بقراءة الكتب."},
+{english:"I want to learn English.",arabic:"أريد تعلم الإنجليزية."},
+{english:"She likes listening to music.",arabic:"هي تحب الاستماع إلى الموسيقى."}
 ],
-words:[
-"enjoy = يستمتع",
-"finish = ينهي",
-"want = يريد",
-"need = يحتاج",
-"hope = يأمل",
-"succeed = ينجح"
-],
-practice:"اكتب جملتين باستخدام enjoy + ing وثلاث جمل باستخدام want/need/hope + to."
+words:["enjoy = يستمتع","reading = القراءة","want = يريد","learn = يتعلم","listening = الاستماع"],
+practice:"اكتب جملتين مع enjoy وlike وجملتين مع want."
 },
 
 {
-title:"Lesson 43 — Relative Clauses",
-goal:"التعرف على who و which و that لربط المعلومات داخل الجملة.",
-explanation:`
-نستخدم relative clauses لإضافة معلومات عن شخص أو شيء.
+title:"Lesson 36 — Adjectives and Adverbs",
+goal:"التمييز بين الصفة والظرف.",
+explanation:`Adjective تصف الاسم.
+a slow car = سيارة بطيئة
 
-who تستخدم غالبًا للأشخاص.
+Adverb يصف الفعل غالبًا.
+He drives slowly. = هو يقود ببطء.
 
-The man who lives here is a teacher.
-
-which تستخدم للأشياء.
-
-The book which I bought is useful.
-
-that يمكن أن تستخدم للأشخاص أو الأشياء في كثير من الحالات.
-`,
+بعض الظروف تنتهي بـ ly، لكن ليس كلها.`,
 examples:[
-{english:"The man who lives here is a teacher.",arabic:"الرجل الذي يعيش هنا معلم."},
-{english:"The book that I bought is useful.",arabic:"الكتاب الذي اشتريته مفيد."},
-{english:"This is the phone which I use.",arabic:"هذا هو الهاتف الذي أستخدمه."}
+{english:"She is a careful student.",arabic:"هي طالبة حذرة."},
+{english:"She works carefully.",arabic:"هي تعمل بحذر."},
+{english:"He speaks clearly.",arabic:"هو يتحدث بوضوح."}
 ],
-words:[
-"who = الذي / التي للأشخاص",
-"which = الذي / التي للأشياء",
-"that = الذي / التي",
-"live = يعيش",
-"use = يستخدم",
-"useful = مفيد"
-],
-practice:"اكتب جملتين باستخدام who وجملتين باستخدام that."
+words:["careful = حذر","carefully = بحذر","clear = واضح","clearly = بوضوح","slowly = ببطء"],
+practice:"اكتب ثلاث جمل تحتوي على صفات وثلاثًا تحتوي على ظروف."
 },
 
 {
-title:"Lesson 44 — Passive Voice",
-goal:"التعرف على المبني للمجهول وفهم استخدامه في الإنجليزية.",
-explanation:`
-في الجملة المبنية للمعلوم يكون الفاعل مهمًا.
-
-Ahmed wrote the letter.
-
-في المبني للمجهول نركز على الشيء الذي وقع عليه الفعل.
-
-The letter was written by Ahmed.
-
-التركيب الأساسي:
-
-be + past participle
-
-يستخدم المبني للمجهول كثيرًا عندما يكون الفاعل غير معروف أو غير مهم.
-`,
-examples:[
-{english:"The book was written by him.",arabic:"كُتب الكتاب بواسطته."},
-{english:"English is spoken here.",arabic:"يتم التحدث بالإنجليزية هنا."},
-{english:"The car was repaired yesterday.",arabic:"تم إصلاح السيارة أمس."}
-],
-words:[
-"passive = مبني للمجهول",
-"written = مكتوب",
-"spoken = متحدث به",
-"repaired = تم إصلاحه",
-"by = بواسطة",
-"letter = رسالة"
-],
-practice:"حوّل جملة بسيطة من المعلوم إلى المبني للمجهول."
-},
-
-{
-title:"Lesson 45 — Reported Speech",
-goal:"التعرف على نقل كلام شخص آخر بطريقة غير مباشرة.",
-explanation:`
-Reported Speech يستخدم عندما ننقل كلام شخص دون تكرار كلامه حرفيًا.
-
-Direct:
-He said, "I am tired."
-
-Reported:
-He said that he was tired.
-
-قد تتغير الأزمنة والضمائر عند نقل الكلام حسب السياق.
-`,
-examples:[
-{english:"He said that he was tired.",arabic:"قال إنه كان متعبًا."},
-{english:"She said that she was busy.",arabic:"قالت إنها كانت مشغولة."},
-{english:"Ali said that he liked English.",arabic:"قال علي إنه يحب الإنجليزية."}
-],
-words:[
-"reported speech = الكلام المنقول",
-"say = يقول",
-"said = قال",
-"tired = متعب",
-"busy = مشغول",
-"like = يحب"
-],
-practice:"حوّل: He said, 'I am happy.' إلى Reported Speech."
-},
-
-{
-title:"Lesson 46 — Phrasal Verbs",
-goal:"فهم الأفعال المركبة الشائعة واستخدامها في المحادثة.",
-explanation:`
-Phrasal Verb يتكون عادةً من فعل وكلمة أخرى مثل حرف جر أو ظرف، ويكون له معنى خاص.
-
-أمثلة:
-
-wake up = يستيقظ
-get up = ينهض
-turn on = يشغّل
-turn off = يطفئ
-look for = يبحث عن
-find out = يكتشف
-`,
-examples:[
-{english:"I wake up at seven.",arabic:"أستيقظ في السابعة."},
-{english:"Please turn on the light.",arabic:"من فضلك شغّل الضوء."},
-{english:"Turn off your phone.",arabic:"أطفئ هاتفك."},
-{english:"I am looking for my keys.",arabic:"أنا أبحث عن مفاتيحي."},
-{english:"I want to find out the answer.",arabic:"أريد أن أعرف الإجابة."}
-],
-words:[
-"wake up = يستيقظ",
-"get up = ينهض",
-"turn on = يشغّل",
-"turn off = يطفئ",
-"look for = يبحث عن",
-"find out = يكتشف"
-],
-practice:"كوّن جملة بكل من wake up و turn on و look for."
-},
-
-{
-title:"Lesson 47 — Common Conversation Expressions",
-goal:"تعلم تعبيرات طبيعية ومفيدة في المحادثة اليومية.",
-explanation:`
-المحادثة الطبيعية لا تعتمد على القواعد فقط، بل على التعبيرات الشائعة.
-
-What do you mean?
-ماذا تقصد؟
-
-Sounds good!
-يبدو جيدًا!
-
-Give me a second.
-أعطني لحظة.
-
-Never mind.
-لا بأس / انسَ الأمر.
-
-I am on my way.
-أنا في طريقي.
-
-هذه التعبيرات تساعدك على جعل كلامك أكثر طبيعية.
-`,
-examples:[
-{english:"What do you mean?",arabic:"ماذا تقصد؟"},
-{english:"Sounds good!",arabic:"يبدو جيدًا!"},
-{english:"Give me a second.",arabic:"أعطني لحظة."},
-{english:"Never mind.",arabic:"لا بأس / انسَ الأمر."},
-{english:"I am on my way.",arabic:"أنا في طريقي."}
-],
-words:[
-"mean = يقصد",
-"sound = يبدو",
-"second = ثانية / لحظة",
-"never mind = لا بأس",
-"on my way = في طريقي"
-],
-practice:"تدرب على التعبيرات الخمسة بصوت مرتفع، ثم استخدم كل تعبير في موقف مناسب."
-},
-
-{
-title:"Lesson 48 — Connecting Ideas",
-goal:"تعلم ربط الجمل والأفكار بطريقة أكثر طبيعية.",
-explanation:`
-لجعل كلامك أكثر تنظيمًا، استخدم كلمات الربط.
-
+title:"Lesson 37 — Conjunctions",
+goal:"ربط الجمل والأفكار.",
+explanation:`أهم أدوات الربط:
 and = و
 but = لكن
 because = لأن
 so = لذلك
 although = رغم أن
-however = ومع ذلك
 
-مثال:
-
-I study English because I want to become an engineer.
-
-أدرس الإنجليزية لأنني أريد أن أصبح مهندسًا.
-
-استخدام كلمات الربط يساعدك على الانتقال من الجمل القصيرة إلى كلام أكثر تطورًا.
-`,
+تساعد أدوات الربط على بناء جمل أطول وأكثر طبيعية.`,
 examples:[
-{english:"I study English because I want to improve.",arabic:"أدرس الإنجليزية لأنني أريد أن أتحسن."},
-{english:"I was tired, but I continued studying.",arabic:"كنت متعبًا، لكنني واصلت الدراسة."},
-{english:"It was raining, so I stayed home.",arabic:"كانت السماء تمطر، لذلك بقيت في المنزل."},
-{english:"Although it was difficult, I continued.",arabic:"رغم أنه كان صعبًا، واصلت."}
+{english:"I study English because I need it.",arabic:"أدرس الإنجليزية لأنني أحتاجها."},
+{english:"I am tired, but I will study.",arabic:"أنا متعب، لكنني سأدرس."},
+{english:"It was raining, so we stayed home.",arabic:"كانت السماء تمطر، لذلك بقينا في المنزل."}
 ],
-words:[
-"and = و",
-"but = لكن",
-"because = لأن",
-"so = لذلك",
-"although = رغم أن",
-"however = ومع ذلك",
-"continue = يواصل"
-],
-practice:"اكتب فقرة قصيرة من 5 جمل، واربط بينها باستخدام because و but و so."
+words:["and = و","but = لكن","because = لأن","so = لذلك","although = رغم أن"],
+practice:"اربط خمس مجموعات من الجمل باستخدام أدوات الربط."
 },
 
 {
-title:"Lesson 49 — Advanced Sentence Structure",
-goal:"الانتقال من الجمل البسيطة إلى جمل أكثر تعقيدًا وتنظيمًا.",
-explanation:`
-في المستوى المتقدم لا يكفي أن تعرف الكلمات والقواعد منفصلة، بل يجب أن تجمعها.
+title:"Lesson 38 — Relative Clauses",
+goal:"ربط المعلومات بالأسماء باستخدام who و which و that.",
+explanation:`نستخدم who غالبًا للأشخاص.
+The man who works here is my teacher.
 
-يمكنك الجمع بين:
+ونستخدم which للأشياء.
+The book which I bought is useful.
 
-الزمن + السبب + النتيجة + الشرط + المعلومات الإضافية.
-
-مثال:
-
-If I have enough time, I will study English because I want to improve my communication skills.
-
-إذا كان لدي وقت كافٍ، فسأدرس الإنجليزية لأنني أريد تحسين مهارات التواصل لدي.
-
-الهدف هو بناء جمل واضحة وطبيعية دون جعلها معقدة بلا سبب.
-`,
+ويمكن استخدام that في حالات كثيرة.`,
 examples:[
-{english:"I study English every day because I want to communicate better.",arabic:"أدرس الإنجليزية كل يوم لأنني أريد التواصل بشكل أفضل."},
-{english:"If I have time tonight, I will practice speaking.",arabic:"إذا كان لدي وقت الليلة فسأتدرب على التحدث."},
-{english:"Although English is sometimes difficult, I enjoy learning it.",arabic:"رغم أن الإنجليزية صعبة أحيانًا، أستمتع بتعلمها."}
+{english:"The teacher who helped me is kind.",arabic:"المعلم الذي ساعدني لطيف."},
+{english:"The book that I bought is useful.",arabic:"الكتاب الذي اشتريته مفيد."},
+{english:"This is the phone which I use.",arabic:"هذا هو الهاتف الذي أستخدمه."}
 ],
-words:[
-"communication = تواصل",
-"skill = مهارة",
-"communicate = يتواصل",
-"better = بشكل أفضل",
-"difficult = صعب",
-"enjoy = يستمتع"
-],
-practice:"اكتب فقرة من 6 إلى 8 جمل عن تعلمك للإنجليزية، واستخدم because و although و if."
+words:["who = الذي / التي للأشخاص","which = الذي / التي للأشياء","that = الذي / التي","useful = مفيد","teacher = معلم"],
+practice:"اكتب ثلاث جمل باستخدام who و which و that."
 },
 
 {
-title:"Lesson 50 — English in Real Life",
-goal:"جمع أهم ما تعلمته في الدروس الخمسين واستخدام الإنجليزية في موقف واقعي.",
-explanation:`
-هذا الدرس هو مراجعة شاملة.
+title:"Lesson 39 — First Conditional",
+goal:"التعبير عن نتيجة محتملة في المستقبل.",
+explanation:`التركيب:
+If + Present Simple, will + verb
 
-يجب أن تكون قادرًا على:
+If I study, I will improve.
 
-التعريف بنفسك.
-وصف روتينك.
-التحدث عن الماضي.
-التحدث عن الحاضر.
-التحدث عن الخطط المستقبلية.
-طرح الأسئلة.
-التعبير عن الرأي.
-إعطاء النصائح.
-وصف الخبرات.
-ربط الأفكار.
-
-لا يعني إكمال هذه الدروس أنك وصلت إلى نهاية تعلم الإنجليزية؛ بل أصبحت لديك قاعدة قوية يمكن البناء عليها في المفردات والتعبيرات والاستماع والمحادثة والكتابة والقواعد المتقدمة.
-`,
+نستخدمه عندما يكون الشرط واقعيًا أو محتملًا.`,
 examples:[
-{english:"My name is Ahmed, and I am a student.",arabic:"اسمي أحمد، وأنا طالب."},
+{english:"If I study, I will improve.",arabic:"إذا درست فسوف أتحسن."},
+{english:"If it rains, we will stay home.",arabic:"إذا أمطرت فسنَبقَى في المنزل."},
+{english:"If you practice, you will become better.",arabic:"إذا تدربت فستصبح أفضل."}
+],
+words:["if = إذا","improve = يتحسن","practice = يتدرب","become = يصبح","better = أفضل"],
+practice:"اكتب خمس جمل باستخدام If + Present Simple."
+},
+
+{
+title:"Lesson 40 — Second Conditional",
+goal:"التعبير عن مواقف افتراضية أو غير واقعية.",
+explanation:`التركيب:
+If + Past Simple, would + verb
+
+If I had more time, I would study more.
+
+نتحدث هنا عن موقف افتراضي وليس بالضرورة حقيقة.`,
+examples:[
+{english:"If I had more time, I would read more.",arabic:"لو كان لدي وقت أكثر، لقرأت أكثر."},
+{english:"If I were you, I would practice every day.",arabic:"لو كنت مكانك، لتدربت كل يوم."},
+{english:"If I had a computer, I would learn programming.",arabic:"لو كان لدي حاسوب، لتعلمت البرمجة."}
+],
+words:["if = لو / إذا","would = سوف في الحالة الافتراضية","time = وقت","practice = يتدرب","programming = البرمجة"],
+practice:"اكتب ثلاث جمل افتراضية باستخدام If و would."
+},
+
+{
+title:"Lesson 41 — Passive Voice",
+goal:"فهم المبني للمجهول في الإنجليزية.",
+explanation:`في المبني للمجهول نركز على الشيء الذي وقع عليه الفعل.
+
+Active:
+People speak English.
+
+Passive:
+English is spoken.
+
+التركيب الأساسي:
+be + past participle`,
+examples:[
+{english:"English is spoken around the world.",arabic:"يتم التحدث بالإنجليزية حول العالم."},
+{english:"The door was opened.",arabic:"تم فتح الباب."},
+{english:"The work was finished yesterday.",arabic:"تم إنهاء العمل أمس."}
+],
+words:["passive = مبني للمجهول","spoken = يتم التحدث به","opened = فُتح","finished = أُنجز","around = حول"],
+practice:"حوّل ثلاث جمل من Active إلى Passive."
+},
+
+{
+title:"Lesson 42 — Reported Speech",
+goal:"فهم نقل كلام شخص آخر.",
+explanation:`نستخدم Reported Speech عندما ننقل معنى كلام شخص دون تكرار كلامه حرفيًا.
+
+Direct:
+He said, “I am tired.”
+
+Reported:
+He said that he was tired.
+
+قد تتغير الأزمنة والضمائر حسب السياق.`,
+examples:[
+{english:"She said that she was busy.",arabic:"قالت إنها كانت مشغولة."},
+{english:"He said that he liked English.",arabic:"قال إنه يحب الإنجليزية."},
+{english:"They said that they were ready.",arabic:"قالوا إنهم كانوا مستعدين."}
+],
+words:["said = قال","reported = منقول","busy = مشغول","ready = مستعد","meaning = معنى"],
+practice:"حوّل ثلاث جمل مباشرة إلى Reported Speech."
+},
+
+{
+title:"Lesson 43 — Phrasal Verbs",
+goal:"تعلم الأفعال المركبة الشائعة.",
+explanation:`Phrasal Verb يتكون غالبًا من فعل + كلمة أخرى.
+
+wake up = يستيقظ
+get up = ينهض
+look for = يبحث عن
+turn on = يشغل
+turn off = يطفئ
+
+المعنى قد يختلف عن معنى الفعل وحده.`,
+examples:[
+{english:"I wake up at eight.",arabic:"أستيقظ في الثامنة."},
+{english:"I am looking for my phone.",arabic:"أبحث عن هاتفي."},
+{english:"Please turn off the light.",arabic:"أطفئ الضوء من فضلك."}
+],
+words:["wake up = يستيقظ","get up = ينهض","look for = يبحث عن","turn on = يشغل","turn off = يطفئ"],
+practice:"اكتب جملة لكل phrasal verb."
+},
+
+{
+title:"Lesson 44 — Formal and Informal English",
+goal:"التمييز بين اللغة الرسمية واليومية.",
+explanation:`الإنجليزية تختلف حسب الموقف.
+
+في الحديث اليومي نستخدم تعبيرات مختصرة وطبيعية.
+في المواقف الرسمية نستخدم أسلوبًا أكثر احترامًا ودقة.
+
+مثال يومي:
+Can you help me?
+
+مثال أكثر رسمية:
+Could you help me, please?`,
+examples:[
+{english:"Can you help me?",arabic:"هل يمكنك مساعدتي؟"},
+{english:"Could you help me, please?",arabic:"هل يمكنك مساعدتي من فضلك؟"},
+{english:"I would like some information.",arabic:"أود بعض المعلومات."}
+],
+words:["formal = رسمي","informal = غير رسمي","could = هل يمكنك","information = معلومات","please = من فضلك"],
+practice:"اكتب طلبًا عاديًا ثم حوّله إلى طلب أكثر رسمية."
+},
+
+{
+title:"Lesson 45 — Academic English",
+goal:"تعلم أساسيات اللغة الأكاديمية.",
+explanation:`اللغة الأكاديمية تستخدم في الدراسة والبحوث.
+
+من الكلمات المهمة:
+analyze = يحلل
+evidence = دليل
+research = بحث
+result = نتيجة
+method = منهج / طريقة
+
+يجب أن تكون الجمل واضحة ودقيقة.`,
+examples:[
+{english:"This study analyzes the results.",arabic:"تحلل هذه الدراسة النتائج."},
+{english:"The evidence supports the idea.",arabic:"يدعم الدليل الفكرة."},
+{english:"The research shows an important result.",arabic:"يُظهر البحث نتيجة مهمة."}
+],
+words:["analyze = يحلل","evidence = دليل","research = بحث","result = نتيجة","method = منهج / طريقة"],
+practice:"اكتب فقرة قصيرة من ثلاث جمل بأسلوب أكاديمي."
+},
+
+{
+title:"Lesson 46 — Expressing Opinions",
+goal:"التعبير عن الرأي بطريقة طبيعية.",
+explanation:`من العبارات المهمة:
+I think = أعتقد
+I believe = أؤمن / أعتقد
+In my opinion = في رأيي
+I agree = أوافق
+I disagree = لا أوافق
+
+يمكن إضافة because لشرح سبب الرأي.`,
+examples:[
+{english:"I think English is important.",arabic:"أعتقد أن الإنجليزية مهمة."},
+{english:"In my opinion, practice is essential.",arabic:"في رأيي، التدريب ضروري."},
+{english:"I agree because the idea is useful.",arabic:"أوافق لأن الفكرة مفيدة."}
+],
+words:["think = يعتقد","believe = يعتقد / يؤمن","opinion = رأي","agree = يوافق","disagree = لا يوافق"],
+practice:"اكتب رأيك في تعلم الإنجليزية مع سببين."
+},
+
+{
+title:"Lesson 47 — Giving Reasons and Examples",
+goal:"شرح الأفكار بالأسباب والأمثلة.",
+explanation:`لشرح السبب يمكن استخدام:
+because = لأن
+The reason is = السبب هو
+
+ولإعطاء مثال:
+for example = على سبيل المثال
+such as = مثل
+
+هذه الطريقة تجعل كلامك أكثر وضوحًا.`,
+examples:[
+{english:"I study English because I need it.",arabic:"أدرس الإنجليزية لأنني أحتاجها."},
+{english:"For example, I practice speaking every day.",arabic:"على سبيل المثال، أتدرب على التحدث كل يوم."},
+{english:"I like languages such as English and French.",arabic:"أحب لغات مثل الإنجليزية والفرنسية."}
+],
+words:["because = لأن","reason = سبب","for example = على سبيل المثال","such as = مثل","clear = واضح"],
+practice:"اكتب فكرة ثم اشرح سببها وأعط مثالًا عليها."
+},
+
+{
+title:"Lesson 48 — Building a Paragraph",
+goal:"تعلم بناء فقرة إنجليزية منظمة.",
+explanation:`الفقرة الجيدة تحتوي عادةً على:
+1. Topic sentence = الجملة الرئيسية.
+2. Supporting sentences = جمل داعمة.
+3. Concluding sentence = جملة ختامية.
+
+يجب أن تكون الجمل مرتبطة بالفكرة نفسها.`,
+examples:[
+{english:"Learning English is important. It helps me communicate with people. It also gives me access to more information. For these reasons, I want to improve my English.",arabic:"تعلم الإنجليزية مهم. يساعدني على التواصل مع الناس. كما يمنحني الوصول إلى مزيد من المعلومات. لهذه الأسباب أريد تحسين لغتي الإنجليزية."},
+{english:"Reading is useful because it increases vocabulary.",arabic:"القراءة مفيدة لأنها تزيد المفردات."},
+{english:"Practice is important because it builds confidence.",arabic:"التدريب مهم لأنه يبني الثقة."}
+],
+words:["paragraph = فقرة","topic = موضوع","supporting = داعم","conclusion = خاتمة","communicate = يتواصل"],
+practice:"اكتب فقرة من أربع أو خمس جمل عن تعلم الإنجليزية."
+},
+
+{
+title:"Lesson 49 — Conversation Skills",
+goal:"بناء محادثة طبيعية والحفاظ على الحوار.",
+explanation:`المحادثة لا تعتمد على القواعد فقط.
+
+من المهم معرفة:
+How are you? = كيف حالك؟
+What do you mean? = ماذا تقصد؟
+Really? = حقًا؟
+Sounds good! = يبدو جيدًا!
+Give me a second. = أعطني لحظة.
+Never mind. = لا بأس / انس الأمر.
+
+استخدم عبارات قصيرة وطبيعية بدل ترجمة كل كلمة حرفيًا.`,
+examples:[
+{english:"How are you?",arabic:"كيف حالك؟"},
+{english:"What do you mean?",arabic:"ماذا تقصد؟"},
+{english:"Sounds good!",arabic:"يبدو جيدًا!"}
+],
+words:["mean = يعني / يقصد","really = حقًا","sounds good = يبدو جيدًا","second = لحظة","never mind = لا بأس"],
+practice:"أنشئ محادثة من ستة أسطر مستخدمًا هذه العبارات."
+},
+
+{
+title:"Lesson 50 — Master Review",
+goal:"مراجعة أهم القواعد والمهارات وبناء جمل قوية.",
+explanation:`في هذا الدرس نربط ما تعلمناه.
+
+راجع:
+Pronouns
+To Be
+Present Simple
+Present Continuous
+Past Simple
+Future
+Present Perfect
+Comparatives
+Modal Verbs
+Conditionals
+Passive Voice
+Reported Speech
+Phrasal Verbs
+Academic English
+Conversation
+
+الهدف ليس حفظ القواعد فقط، بل استخدامها في الكلام والكتابة والفهم.`,
+examples:[
 {english:"I study English every day because I want to improve.",arabic:"أدرس الإنجليزية كل يوم لأنني أريد أن أتحسن."},
-{english:"Yesterday, I studied for two hours.",arabic:"أمس، درست لمدة ساعتين."},
-{english:"I am practicing English now.",arabic:"أنا أتدرب على الإنجليزية الآن."},
-{english:"I am going to continue learning tomorrow.",arabic:"سأواصل التعلم غدًا."},
-{english:"I have learned many useful things.",arabic:"لقد تعلمت أشياء كثيرة مفيدة."},
-{english:"If I practice regularly, I will become more confident.",arabic:"إذا تدربت بانتظام، فسأصبح أكثر ثقة."}
+{english:"I have learned many new words, and I will continue practicing.",arabic:"لقد تعلمت كلمات جديدة كثيرة، وسأواصل التدريب."},
+{english:"If I practice regularly, I will become a better English speaker.",arabic:"إذا تدربت بانتظام، فسأصبح متحدثًا أفضل بالإنجليزية."}
 ],
-words:[
-"real life = الحياة الواقعية",
-"review = مراجعة",
-"practice = تدريب",
-"improve = يتحسن",
-"regularly = بانتظام",
-"confident = واثق",
-"useful = مفيد",
-"continue = يواصل"
-],
-practice:"قدّم نفسك وتحدث عن يومك ودراستك وخططك المستقبلية في فقرة من 8 إلى 10 جمل باللغة الإنجليزية."
+words:["improve = يتحسن","continue = يستمر","regularly = بانتظام","speaker = متحدث","learn = يتعلم"],
+practice:"اكتب فقرة من 8 إلى 10 جمل تستخدم فيها عدة قواعد من الدروس السابقة."
 }
 
 ];
+
+function speak(text){
+
+if(!("speechSynthesis" in window)){
+alert("متصفحك لا يدعم ميزة النطق الصوتي.");
+return;
+}
+
+window.speechSynthesis.cancel();
+
+const voiceText=new SpeechSynthesisUtterance(text);
+voiceText.lang="en-US";
+voiceText.rate=0.78;
+voiceText.pitch=1;
+
+window.speechSynthesis.speak(voiceText);
+}
+
+function displayLessons(){
+
+const container=document.getElementById("lessons");
+
+container.innerHTML="";
+
+lessons.forEach(function(lesson,index){
+
+const card=document.createElement("article");
+card.className="lesson";
+
+let examplesHTML="";
+
+lesson.examples.forEach(function(example){
+
+examplesHTML+=`
+<div class="example">
+<div class="example-en">${example.english}</div>
+<div class="example-ar">${example.arabic}</div>
+<button class="sound" onclick='speak(${JSON.stringify(example.english)})'>
+🔊 استمع إلى المثال
+</button>
+</div>
+`;
+
+});
+
+let wordsHTML="";
+
+lesson.words.forEach(function(word){
+wordsHTML+=`<div>• ${word}</div>`;
+});
+
+card.innerHTML=`
+<h2>📘 ${lesson.title}</h2>
+
+<div class="goal">
+<strong>🎯 هدف الدرس:</strong><br>
+${lesson.goal}
+</div>
+
+<div class="explanation">
+<strong>📖 الشرح:</strong><br>
+${lesson.explanation}
+</div>
+
+<div>
+<strong>💬 أمثلة:</strong>
+${examplesHTML}
+</div>
+
+<div class="words">
+<strong>🧠 المفردات:</strong>
+${wordsHTML}
+</div>
+
+<div class="practice">
+<div class="practice-title">✍️ التدريب</div>
+${lesson.practice}
+</div>
+`;
+
+container.appendChild(card);
+
+});
+
+}
+
+displayLessons();
+
+</script>
+
+</body>
+</html>
