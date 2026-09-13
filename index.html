@@ -72,11 +72,11 @@ header p{
     line-height:1.8;
 }
 
-/* عناوين الأقسام */
+/* عنوان الأقسام */
 
 .section-title{
     text-align:center;
-    margin:25px 0 20px;
+    margin:25px 0 22px;
 }
 
 .section-title h2{
@@ -90,11 +90,11 @@ header p{
     font-size:17px;
 }
 
-/* الأقسام */
+/* البطاقات */
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2, minmax(280px, 1fr));
     gap:22px;
     max-width:850px;
     margin:0 auto;
@@ -133,6 +133,7 @@ header p{
     padding:12px 20px;
     border-radius:12px;
     font-weight:bold;
+    cursor:pointer;
 }
 
 .card a:hover{
@@ -172,7 +173,7 @@ footer{
 
 <div class="container">
 
-    <!-- المقدمة فقط -->
+    <!-- المقدمة -->
 
     <section class="hero">
 
