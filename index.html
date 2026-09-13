@@ -3,17 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>My English Notebook</title>
 
 <style>
-
 *{
     box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
 }
 
 body{
@@ -23,87 +17,86 @@ body{
     color:#172033;
 }
 
-/* =========================
-   الرأس
-========================= */
-
 header{
     background:linear-gradient(135deg,#2563eb,#4f46e5);
     color:white;
     text-align:center;
-    padding:34px 18px 40px;
-    border-radius:0 0 32px 32px;
-    box-shadow:0 8px 28px rgba(37,99,235,.22);
+    padding:32px 15px;
+    border-radius:0 0 30px 30px;
+    box-shadow:0 7px 25px rgba(37,99,235,.2);
 }
 
 header h1{
     margin:0;
-    font-size:32px;
+    font-size:30px;
 }
 
 header p{
-    margin:10px 0 0;
-    font-size:16px;
+    margin:9px 0 0;
     opacity:.95;
 }
 
-/* =========================
-   الحاوية
-========================= */
-
 .container{
-    max-width:1000px;
+    max-width:950px;
     margin:auto;
-    padding:22px 16px 40px;
+    padding:20px 15px 40px;
 }
 
-/* =========================
-   المقدمة
-========================= */
+/* المقدمة */
 
 .hero{
     background:white;
-    padding:30px 24px;
-    border-radius:26px;
-    box-shadow:0 8px 28px rgba(0,0,0,.08);
+    padding:28px 22px;
+    border-radius:25px;
     text-align:center;
+    box-shadow:0 7px 24px rgba(0,0,0,.08);
     margin-bottom:25px;
-    border:1px solid #e9efff;
 }
 
 .hero h2{
-    margin:0 0 15px;
     color:#2563eb;
-    font-size:26px;
+    margin-top:0;
+    font-size:25px;
 }
 
 .hero p{
-    line-height:2;
     color:#475467;
+    line-height:2;
     font-size:17px;
-    margin:10px auto;
-    max-width:780px;
 }
 
 .hero strong{
     display:block;
-    margin-top:18px;
     color:#4f46e5;
-    font-size:17px;
+    margin-top:15px;
+    line-height:1.8;
 }
 
-/* =========================
-   المستويات
-========================= */
+/* عنوان التقدم فقط */
+
+.progress-title{
+    background:white;
+    padding:22px;
+    border-radius:22px;
+    box-shadow:0 7px 22px rgba(0,0,0,.07);
+    margin-bottom:28px;
+    text-align:center;
+}
+
+.progress-title h2{
+    margin:0;
+    font-size:23px;
+}
+
+/* عناوين الأقسام */
 
 .section-title{
     text-align:center;
-    margin:30px 0 18px;
+    margin:25px 0 18px;
 }
 
 .section-title h2{
     margin:0;
-    color:#172033;
     font-size:24px;
 }
 
@@ -112,102 +105,7 @@ header p{
     margin-top:8px;
 }
 
-.levels{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:16px;
-}
-
-.level{
-    background:white;
-    border-radius:22px;
-    padding:22px;
-    text-align:center;
-    box-shadow:0 7px 22px rgba(0,0,0,.07);
-    transition:.25s;
-}
-
-.level:hover{
-    transform:translateY(-4px);
-}
-
-.level-icon{
-    font-size:35px;
-    margin-bottom:8px;
-}
-
-.level h3{
-    margin:8px 0;
-}
-
-.level p{
-    color:#667085;
-    line-height:1.8;
-}
-
-.a1{
-    border-top:5px solid #16a34a;
-}
-
-.b1{
-    border-top:5px solid #2563eb;
-}
-
-.c1{
-    border-top:5px solid #7c3aed;
-}
-
-/* =========================
-   التقدم
-========================= */
-
-.progress-card{
-    background:white;
-    border-radius:24px;
-    padding:24px;
-    margin-top:25px;
-    box-shadow:0 7px 22px rgba(0,0,0,.07);
-}
-
-.progress-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:12px;
-}
-
-.progress-head strong{
-    font-size:19px;
-}
-
-.progress-percent{
-    color:#2563eb;
-    font-weight:bold;
-}
-
-.progress-bg{
-    width:100%;
-    height:15px;
-    background:#e5e7eb;
-    border-radius:20px;
-    overflow:hidden;
-}
-
-.progress-fill{
-    width:0%;
-    height:100%;
-    background:linear-gradient(90deg,#2563eb,#7c3aed);
-    border-radius:20px;
-}
-
-.progress-text{
-    color:#667085;
-    margin-top:12px;
-}
-
-/* =========================
-   الأقسام
-========================= */
+/* الأقسام */
 
 .cards{
     display:grid;
@@ -217,26 +115,19 @@ header p{
 
 .card{
     background:white;
-    border-radius:24px;
     padding:24px;
+    border-radius:23px;
     box-shadow:0 7px 22px rgba(0,0,0,.07);
-    transition:.25s;
     border:1px solid #edf0f5;
-}
-
-.card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 30px rgba(0,0,0,.10);
 }
 
 .card-icon{
     font-size:38px;
-    margin-bottom:8px;
 }
 
 .card h3{
-    margin:8px 0;
     font-size:21px;
+    margin:10px 0;
 }
 
 .card p{
@@ -247,223 +138,96 @@ header p{
 
 .card a{
     display:inline-block;
-    text-decoration:none;
     background:#2563eb;
     color:white;
+    text-decoration:none;
     padding:11px 17px;
     border-radius:12px;
     font-weight:bold;
-    margin-top:8px;
-    transition:.2s;
 }
 
 .card a:hover{
     background:#1d4ed8;
 }
 
-/* =========================
-   تذييل
-========================= */
-
 footer{
     text-align:center;
-    padding:25px 15px;
     color:#667085;
+    padding:25px;
 }
 
-/* =========================
-   الهاتف
-========================= */
-
 @media(max-width:700px){
+
+    .cards{
+        grid-template-columns:1fr;
+    }
 
     header h1{
         font-size:27px;
     }
 
     .hero{
-        padding:24px 17px;
+        padding:23px 17px;
     }
-
-    .hero h2{
-        font-size:22px;
-    }
-
-    .levels{
-        grid-template-columns:1fr;
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
     <h1>📘 My English Notebook</h1>
-
-    <p>
-        منصتك الشخصية لتعلم اللغة الإنجليزية خطوة بخطوة
-    </p>
-
+    <p>منصتك الشخصية لتعلم اللغة الإنجليزية خطوة بخطوة</p>
 </header>
 
 <div class="container">
 
-    <!-- =========================
-         المقدمة
-    ========================== -->
+    <!-- المقدمة فقط -->
 
     <section class="hero">
 
-        <h2>
-            🚀 ابدأ رحلتك نحو إتقان الإنجليزية
-        </h2>
+        <h2>🚀 ابدأ رحلتك نحو إتقان الإنجليزية</h2>
 
         <p>
             تعلّم الإنجليزية ليس مجرد حفظ كلمات،
-            بل رحلة متدرجة تبني فيها معرفتك وفهمك
-            وقدرتك على استخدام اللغة بثقة.
+            بل رحلة متدرجة تبني فيها فهمك ومفرداتك
+            وقواعدك وقدرتك على التواصل بثقة.
         </p>
 
         <p>
-            ابدأ من الأساسيات، ثم تطور تدريجيًا في
-            المفردات والتعبيرات والقواعد والدروس
-            حتى تصل إلى مستويات أكثر تقدمًا.
+            ابدأ من مستواك الحالي، وتقدم خطوة بخطوة،
+            واجعل كل درس فرصة جديدة لتطوير مهاراتك.
         </p>
 
         <strong>
-            🎯 تعلّم باستمرار، تقدّم خطوة بخطوة، واجعل الإنجليزية جزءًا من مهاراتك.
+            🎯 تعلّم باستمرار، تقدّم بثقة، واجعل الإنجليزية جزءًا من مهاراتك.
         </strong>
 
     </section>
 
 
-    <!-- =========================
-         المستويات
-    ========================== -->
+    <!-- شعار التقدم فقط -->
 
-    <div class="section-title">
+    <section class="progress-title">
 
-        <h2>🎯 مستويات التعلم</h2>
-
-        <p>
-            مسار متدرج من الأساسيات إلى المستوى المتقدم
-        </p>
-
-    </div>
-
-    <section class="levels">
-
-        <div class="level a1">
-
-            <div class="level-icon">🟢</div>
-
-            <h3>مبتدئ</h3>
-
-            <p>
-                أساسيات اللغة، الكلمات، الجمل
-                والقواعد الأساسية.
-            </p>
-
-            <strong>A1 – A2</strong>
-
-        </div>
-
-
-        <div class="level b1">
-
-            <div class="level-icon">🔵</div>
-
-            <h3>متوسط</h3>
-
-            <p>
-                تطوير القواعد والمحادثة وفهم النصوص
-                والتعبيرات.
-            </p>
-
-            <strong>B1 – B2</strong>
-
-        </div>
-
-
-        <div class="level c1">
-
-            <div class="level-icon">🟣</div>
-
-            <h3>متقدم</h3>
-
-            <p>
-                لغة أكثر احترافية، تعبيرات متقدمة
-                وفهم أعمق للإنجليزية.
-            </p>
-
-            <strong>C1 – C2</strong>
-
-        </div>
+        <h2>📊 تقدمي في التعلم</h2>
 
     </section>
 
 
-    <!-- =========================
-         التقدم
-    ========================== -->
-
-    <section class="progress-card">
-
-        <div class="progress-head">
-
-            <strong>📊 تقدمي في التعلم</strong>
-
-            <span
-                class="progress-percent"
-                id="progressPercent">
-                0%
-            </span>
-
-        </div>
-
-        <div class="progress-bg">
-
-            <div
-                class="progress-fill"
-                id="progressFill">
-            </div>
-
-        </div>
-
-        <div class="progress-text">
-            ابدأ أول درس لتسجيل تقدمك.
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         أقسام الموقع
-    ========================== -->
+    <!-- أقسام الموقع -->
 
     <div class="section-title">
 
         <h2>📚 أقسام الموقع</h2>
 
-        <p>
-            كل ما تحتاجه لتطوير الإنجليزية
-        </p>
+        <p>كل ما تحتاجه لتطوير الإنجليزية</p>
 
     </div>
 
 
     <section class="cards">
 
-
-        <!-- الدروس -->
 
         <div class="card">
 
@@ -472,9 +236,8 @@ footer{
             <h3>الدروس</h3>
 
             <p>
-                دروس منهجية متدرجة من المبتدئ
-                إلى المستوى المتقدم مع الشرح
-                والأمثلة والتدريب.
+                دروس منهجية من المبتدئ إلى المتقدم
+                مع الشرح والأمثلة والتدريب.
             </p>
 
             <a href="lessons.html">
@@ -483,8 +246,6 @@ footer{
 
         </div>
 
-
-        <!-- المفردات -->
 
         <div class="card">
 
@@ -504,8 +265,6 @@ footer{
         </div>
 
 
-        <!-- التعبيرات -->
-
         <div class="card">
 
             <div class="card-icon">🗣️</div>
@@ -513,8 +272,8 @@ footer{
             <h3>التعبيرات</h3>
 
             <p>
-                تعلم التعبيرات الإنجليزية من
-                المستوى المبتدئ إلى المستوى المتقدم.
+                تعلم التعبيرات اليومية من المستوى
+                المبتدئ إلى المستوى المتقدم.
             </p>
 
             <a href="expressions.html">
@@ -524,8 +283,6 @@ footer{
         </div>
 
 
-        <!-- القواعد -->
-
         <div class="card">
 
             <div class="card-icon">✍️</div>
@@ -534,7 +291,7 @@ footer{
 
             <p>
                 تعلم قواعد اللغة الإنجليزية بشكل
-                منظم مع أمثلة وتطبيقات عملية.
+                منظم مع أمثلة وتطبيقات.
             </p>
 
             <a href="grammar.html">
@@ -548,37 +305,9 @@ footer{
 
 </div>
 
-
 <footer>
-
     My English Notebook © 2026
-
 </footer>
-
-
-<script>
-
-/* =========================
-   حفظ التقدم في هذا الجهاز
-========================= */
-
-const progressKey="myEnglishNotebookProgress";
-
-let progress=
-    Number(
-        localStorage.getItem(progressKey)||0
-    );
-
-if(progress<0) progress=0;
-if(progress>100) progress=100;
-
-document.getElementById("progressPercent")
-    .textContent=progress+"%";
-
-document.getElementById("progressFill")
-    .style.width=progress+"%";
-
-</script>
 
 </body>
 </html>
