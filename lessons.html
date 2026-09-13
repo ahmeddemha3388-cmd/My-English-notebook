@@ -4,84 +4,585 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>دروس الإنجليزية | My English Notebook</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#eef4ff,#f8fbff);color:#172033}
-header{background:linear-gradient(135deg,#2563eb,#4f46e5);color:white;text-align:center;padding:28px 15px;border-radius:0 0 28px 28px}
-header h1{margin:0;font-size:28px} header p{margin:8px 0 0}
-.container{max-width:950px;margin:auto;padding:18px 15px}
-.back{display:inline-block;background:white;color:#2563eb;text-decoration:none;padding:10px 16px;border-radius:12px;margin-bottom:15px}
-.dashboard,.lesson{background:white;border-radius:20px;box-shadow:0 7px 22px rgba(0,0,0,.08)}
-.dashboard{padding:18px;margin-bottom:18px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
-.stat{background:#f5f7ff;padding:13px;border-radius:14px;text-align:center}
-.stat strong{display:block;font-size:21px;color:#2563eb;margin-bottom:5px}
-.progress-bg{height:13px;background:#e5e7eb;border-radius:20px;overflow:hidden;margin-top:12px}
-.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#2563eb,#7c3aed);transition:.4s}
-.lesson{padding:20px;margin-bottom:18px}.lesson.locked{opacity:.7}
-.lesson h2{margin-top:0;color:#2563eb;font-size:22px}
-.status{display:inline-block;padding:7px 11px;border-radius:10px;font-weight:bold;font-size:14px;margin-bottom:12px}
-.locked-status{background:#f3f4f6;color:#6b7280}.open-status{background:#eef4ff;color:#2563eb}.mastered-status{background:#ecfdf5;color:#047857}
-.goal{background:#eef4ff;padding:12px;border-radius:12px;line-height:1.8}
-.explanation{line-height:2;white-space:pre-line;margin-top:14px}
-.example{background:#f8fafc;padding:14px;border-radius:14px;margin-top:10px}
-.example-en{direction:ltr;text-align:left;font-weight:bold;font-size:18px}.example-ar{margin-top:7px}
-.words{background:#f5f3ff;padding:14px;border-radius:14px;margin-top:14px;line-height:2}
-.practice{background:#ecfdf5;padding:14px;border-radius:14px;margin-top:14px;line-height:1.9}
-button{border:0;cursor:pointer;font-family:inherit}.test-button{background:#047857;color:white;padding:12px 18px;border-radius:12px;margin-top:15px;font-weight:bold;font-size:16px}
-.test-button:hover{background:#065f46}.disabled{background:#9ca3af!important;cursor:not-allowed}.hidden{display:none}
-.test-box{margin-top:18px;background:#f8fafc;padding:18px;border-radius:18px;border:2px solid #e5e7eb}
-.question{font-size:18px;font-weight:bold;line-height:1.7;margin-bottom:15px}
-.answers{display:grid;gap:10px}.answer{background:white;border:2px solid #e5e7eb;padding:12px;border-radius:12px;text-align:right;font-size:16px}
-.result{padding:14px;border-radius:14px;margin-top:15px;font-weight:bold;line-height:1.8}
-.success{background:#ecfdf5;color:#047857}.fail{background:#fef2f2;color:#b91c1c}
-.limit{background:#fff7ed;color:#c2410c;padding:12px;border-radius:12px;margin-top:12px;line-height:1.7}
-.timer{
-background:#eff6ff;
-color:#1d4ed8;
-padding:12px;
-border-radius:12px;
-margin:12px 0;
-font-weight:bold;
-text-align:center;
-}
-.timer.warning{background:#fff7ed;color:#c2410c}
-.timer.danger{background:#fef2f2;color:#b91c1c}
 
-.voice-box{background:#f5f3ff;padding:15px;border-radius:14px;margin-top:14px}
-.voice-target{direction:ltr;text-align:center;font-size:21px;font-weight:bold;margin:12px 0}
-.voice-result{margin-top:10px;font-weight:bold}
-.sound{background:#2563eb;color:white;padding:9px 14px;border-radius:10px;margin-top:9px}
-.sound:hover{background:#1d4ed8}.speak{background:#7c3aed;color:white;padding:9px 14px;border-radius:10px;margin-top:9px;margin-right:5px}
-footer{text-align:center;padding:30px;color:#667085}
-@media(max-width:600px){.stats{grid-template-columns:1fr}}
+<style>
+/* =========================================================
+   الأساس
+========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#eef4ff,#f8fbff);
+    color:#172033;
+}
+
+button{
+    border:0;
+    cursor:pointer;
+    font-family:inherit;
+}
+
+button:disabled{
+    cursor:not-allowed;
+}
+
+/* =========================================================
+   الرأس
+========================================================= */
+
+header{
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+    border-radius:0 0 28px 28px;
+    box-shadow:0 6px 20px rgba(37,99,235,.18);
+}
+
+header h1{
+    margin:0;
+    font-size:29px;
+}
+
+header p{
+    margin:9px 0 0;
+    opacity:.95;
+}
+
+/* =========================================================
+   الحاوية
+========================================================= */
+
+.container{
+    max-width:950px;
+    margin:auto;
+    padding:20px 15px;
+}
+
+.back{
+    display:inline-block;
+    background:white;
+    color:#2563eb;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:12px;
+    margin-bottom:16px;
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+
+/* =========================================================
+   لوحة التقدم
+========================================================= */
+
+.dashboard{
+    background:white;
+    padding:20px;
+    border-radius:22px;
+    box-shadow:0 7px 22px rgba(0,0,0,.08);
+    margin-bottom:20px;
+}
+
+.dashboard-title{
+    font-size:19px;
+}
+
+.dashboard-description{
+    line-height:1.9;
+    color:#475467;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:16px;
+}
+
+.stat{
+    background:#f5f7ff;
+    padding:15px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.stat strong{
+    display:block;
+    font-size:22px;
+    color:#2563eb;
+    margin-bottom:6px;
+}
+
+.progress-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:18px;
+    font-weight:bold;
+}
+
+.progress-bg{
+    height:14px;
+    background:#e5e7eb;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+.progress-fill{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#2563eb,#7c3aed);
+    transition:.4s;
+}
+
+.limit{
+    background:#fff7ed;
+    color:#c2410c;
+    padding:13px;
+    border-radius:13px;
+    margin-top:14px;
+    line-height:1.8;
+}
+
+/* =========================================================
+   بطاقة الدرس
+========================================================= */
+
+.lesson{
+    background:white;
+    border-radius:22px;
+    padding:21px;
+    margin-bottom:20px;
+    box-shadow:0 7px 22px rgba(0,0,0,.08);
+}
+
+.lesson.locked{
+    opacity:.68;
+}
+
+.lesson h2{
+    margin-top:0;
+    color:#2563eb;
+    font-size:23px;
+}
+
+.status{
+    display:inline-block;
+    padding:7px 11px;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.locked-status{
+    background:#f3f4f6;
+    color:#6b7280;
+}
+
+.open-status{
+    background:#eef4ff;
+    color:#2563eb;
+}
+
+.mastered-status{
+    background:#ecfdf5;
+    color:#047857;
+}
+
+.goal{
+    background:#eef4ff;
+    padding:13px;
+    border-radius:13px;
+    line-height:1.9;
+}
+
+.explanation{
+    line-height:2;
+    white-space:pre-line;
+    margin-top:15px;
+}
+
+.example{
+    background:#f8fafc;
+    padding:15px;
+    border-radius:15px;
+    margin-top:11px;
+    border:1px solid #edf0f5;
+}
+
+.example-en{
+    direction:ltr;
+    text-align:left;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.example-ar{
+    margin-top:8px;
+    line-height:1.8;
+}
+
+.words{
+    background:#f5f3ff;
+    padding:15px;
+    border-radius:15px;
+    margin-top:15px;
+    line-height:2;
+}
+
+.practice{
+    background:#ecfdf5;
+    padding:15px;
+    border-radius:15px;
+    margin-top:15px;
+    line-height:1.9;
+}
+
+/* زر الاستماع يظهر في الأمثلة فقط */
+.sound{
+    background:#2563eb;
+    color:white;
+    padding:9px 14px;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+.sound:hover{
+    background:#1d4ed8;
+}
+
+/* لا يوجد زر نطق داخل الأمثلة */
+
+/* =========================================================
+   أزرار الاختبار
+========================================================= */
+
+.test-button{
+    background:#047857;
+    color:white;
+    padding:12px 18px;
+    border-radius:12px;
+    margin-top:16px;
+    font-weight:bold;
+    font-size:16px;
+}
+
+.test-button:hover{
+    background:#065f46;
+}
+
+.disabled{
+    background:#9ca3af!important;
+}
+
+.hidden{
+    display:none;
+}
+
+/* =========================================================
+   صندوق الاختبار
+========================================================= */
+
+.test-box{
+    margin-top:19px;
+    background:#f8fafc;
+    padding:19px;
+    border-radius:19px;
+    border:2px solid #e5e7eb;
+}
+
+.test-header{
+    margin-bottom:12px;
+}
+
+.test-header h3{
+    margin-top:0;
+    color:#047857;
+}
+
+.test-instruction{
+    line-height:1.8;
+    color:#475467;
+}
+
+/* =========================================================
+   المؤقت
+========================================================= */
+
+.timer{
+    background:#eff6ff;
+    color:#1d4ed8;
+    padding:13px;
+    border-radius:13px;
+    margin:13px 0 17px;
+    font-weight:bold;
+    text-align:center;
+    font-size:18px;
+}
+
+.timer.warning{
+    background:#fff7ed;
+    color:#c2410c;
+}
+
+.timer.danger{
+    background:#fef2f2;
+    color:#b91c1c;
+}
+
+/* =========================================================
+   الأسئلة
+========================================================= */
+
+.question-card{
+    background:white;
+    padding:16px;
+    border-radius:15px;
+    margin-bottom:13px;
+    line-height:2;
+    border:1px solid #edf0f5;
+}
+
+.question{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.answers{
+    display:grid;
+    gap:9px;
+}
+
+.answer{
+    display:block;
+    background:#fff;
+    border:2px solid #e5e7eb;
+    padding:11px;
+    border-radius:12px;
+    text-align:right;
+    font-size:16px;
+    transition:.2s;
+}
+
+.answer:hover{
+    border-color:#2563eb;
+    background:#f8fbff;
+}
+
+.answer input{
+    margin-left:7px;
+}
+
+/* =========================================================
+   اختبار النطق
+========================================================= */
+
+.voice-box{
+    background:#f5f3ff;
+    padding:16px;
+    border-radius:16px;
+    margin-bottom:14px;
+    border:1px solid #e9e2ff;
+}
+
+.voice-box h3{
+    margin-top:0;
+    color:#6d28d9;
+}
+
+.voice-box p{
+    line-height:1.8;
+}
+
+.voice-target{
+    direction:ltr;
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    margin:14px 0;
+    background:white;
+    padding:13px;
+    border-radius:13px;
+}
+
+.speak{
+    background:#7c3aed;
+    color:white;
+    padding:9px 14px;
+    border-radius:10px;
+    margin-top:10px;
+    margin-right:5px;
+}
+
+.speak:hover{
+    background:#6d28d9;
+}
+
+.voice-result{
+    margin-top:11px;
+    font-weight:bold;
+    line-height:1.8;
+}
+
+.success{
+    background:#ecfdf5;
+    color:#047857;
+}
+
+.fail{
+    background:#fef2f2;
+    color:#b91c1c;
+}
+
+/* =========================================================
+   النتائج
+========================================================= */
+
+.result{
+    padding:15px;
+    border-radius:14px;
+    margin-top:16px;
+    font-weight:bold;
+    line-height:1.9;
+}
+
+.result strong{
+    font-size:18px;
+}
+
+/* =========================================================
+   رسالة النظام
+========================================================= */
+
+.system-note{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    padding:13px;
+    border-radius:13px;
+    margin-top:14px;
+    line-height:1.8;
+}
+
+/* =========================================================
+   الهاتف
+========================================================= */
+
+@media(max-width:600px){
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:25px;
+    }
+
+    .lesson,
+    .dashboard,
+    .test-box{
+        padding:16px;
+    }
+
+    .voice-target{
+        font-size:19px;
+    }
+}
 </style>
 </head>
+
 <body>
-<header><h1>📚 دروس الإنجليزية</h1><p>My English Notebook</p></header>
+
+<header>
+    <h1>📚 دروس الإنجليزية</h1>
+    <p>My English Notebook</p>
+</header>
+
 <div class="container">
-<a class="back" href="index.html">← العودة إلى الرئيسية</a>
-<div class="dashboard">
-<strong>🎓 نظام إتقان الإنجليزية</strong>
-<p>ادرس الدرس ثم اجتز الاختبار. النطق موجود داخل الاختبار فقط.</p>
-<div class="stats">
-<div class="stat"><strong id="masteredCount">0</strong>متقن</div>
-<div class="stat"><strong id="lessonCount">50</strong>درس</div>
-<div class="stat"><strong id="testsToday">0 / 10</strong>اختبارات اليوم</div>
+
+    <a class="back" href="index.html">← العودة إلى الرئيسية</a>
+
+    <div class="dashboard">
+
+        <div class="dashboard-title">
+            <strong>🎓 نظام إتقان الإنجليزية</strong>
+        </div>
+
+        <p class="dashboard-description">
+            ادرس الدرس أولًا، ثم اجتز اختبار الإتقان.
+            زر الاستماع موجود في الأمثلة للمراجعة،
+            أما اختبار النطق بالكلمة والجملة فيظهر داخل الاختبار فقط.
+        </p>
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong id="masteredCount">0</strong>
+                متقن
+            </div>
+
+            <div class="stat">
+                <strong id="lessonCount">50</strong>
+                درس
+            </div>
+
+            <div class="stat">
+                <strong id="testsToday">0 / 10</strong>
+                اختبارات اليوم
+            </div>
+
+        </div>
+
+        <div class="progress-row">
+            <strong>📊 تقدمك</strong>
+            <span id="progressText">0%</span>
+        </div>
+
+        <div class="progress-bg">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div id="dailyLimitMessage"></div>
+
+        <div class="system-note">
+            💡 إذا نجحت في Lesson 1 ثم فشلت في Lesson 2،
+            يبقى Lesson 1 متقنًا، وتعاد محاولة Lesson 2 فقط.
+        </div>
+
+    </div>
+
+    <div id="lessons"></div>
+
 </div>
-<div style="margin-top:15px"><strong>📊 تقدمك</strong> <span id="progressText">0%</span></div>
-<div class="progress-bg"><div class="progress-fill" id="progressFill"></div></div>
-<div id="dailyLimitMessage"></div>
-</div>
-<div id="lessons"></div>
-</div>
-<footer>My English Notebook © 2026</footer>
+
+<footer>
+    My English Notebook © 2026
+</footer>
 
 <script>
-const lessons=[
+
+/* =========================================================
+   الدروس
+========================================================= */
+
+const lessons = [
+
 {
-title:"Lesson 1 — Personal Pronouns",goal:"تعلم الضمائر الشخصية واستخدامها في جمل صحيحة.",
-explanation:`الضمير يحل محل الاسم.
+    title:"Lesson 1 — Personal Pronouns",
+
+    goal:"تعلم الضمائر الشخصية واستخدامها في جمل صحيحة.",
+
+    explanation:`الضمير يحل محل الاسم.
 
 I = أنا
 You = أنت / أنتم
@@ -92,31 +593,135 @@ We = نحن
 They = هم / هن
 
 تأتي الضمائر غالبًا قبل الفعل.`,
-examples:[
-{english:"I am a student.",arabic:"أنا طالب."},{english:"She is my sister.",arabic:"هي أختي."},{english:"They are my friends.",arabic:"هم أصدقائي."}],
-words:["I = أنا","you = أنت / أنتم","he = هو","she = هي","we = نحن","they = هم / هن"],
-practice:"اكتب جملة واحدة باستخدام كل ضمير.",
-test:[
-{q:"ما معنى I؟",a:["أنا","هو","هم","نحن"],correct:0},{q:"اختر الضمير المناسب: ___ is my sister.",a:["He","She","They","We"],correct:1},{q:"ما الضمير المناسب لـ هم؟",a:["We","They","He","I"],correct:1},{q:"أكمل: ___ am a student.",a:["I","He","She","They"],correct:0},{q:"ما معنى We؟",a:["هم","نحن","هي","أنا"],correct:1}]
+
+    examples:[
+        {
+            english:"I am a student.",
+            arabic:"أنا طالب."
+        },
+        {
+            english:"She is my sister.",
+            arabic:"هي أختي."
+        },
+        {
+            english:"They are my friends.",
+            arabic:"هم أصدقائي."
+        }
+    ],
+
+    words:[
+        "I = أنا",
+        "you = أنت / أنتم",
+        "he = هو",
+        "she = هي",
+        "we = نحن",
+        "they = هم / هن"
+    ],
+
+    practice:"اكتب جملة واحدة باستخدام كل ضمير.",
+
+    test:[
+        {
+            q:"ما معنى I؟",
+            a:["أنا","هو","هم","نحن"],
+            correct:0
+        },
+        {
+            q:"اختر الضمير المناسب: ___ is my sister.",
+            a:["He","She","They","We"],
+            correct:1
+        },
+        {
+            q:"ما الضمير المناسب لـ هم؟",
+            a:["We","They","He","I"],
+            correct:1
+        },
+        {
+            q:"أكمل: ___ am a student.",
+            a:["I","He","She","They"],
+            correct:0
+        },
+        {
+            q:"ما معنى We؟",
+            a:["هم","نحن","هي","أنا"],
+            correct:1
+        }
+    ]
 },
+
 {
-title:"Lesson 2 — Verb To Be",goal:"إتقان am و is و are.",
-explanation:`الفعل To Be من أهم أفعال الإنجليزية.
+    title:"Lesson 2 — Verb To Be",
+
+    goal:"إتقان am و is و are.",
+
+    explanation:`الفعل To Be من أهم أفعال الإنجليزية.
 
 I → am
 He / She / It → is
 You / We / They → are
 
 نستخدمه للتعريف والوصف والحالة.`,
-examples:[{english:"I am ready.",arabic:"أنا مستعد."},{english:"He is happy.",arabic:"هو سعيد."},{english:"We are students.",arabic:"نحن طلاب."}],
-words:["am = أكون","is = يكون","are = يكونون / تكون","ready = مستعد","happy = سعيد"],
-practice:"أكمل: I __ ready. She __ happy. They __ students.",
-test:[
-{q:"I ___ ready.",a:["am","is","are","be"],correct:0},{q:"She ___ happy.",a:["am","are","is","be"],correct:2},{q:"They ___ students.",a:["is","am","are","be"],correct:2},{q:"We ___ ready.",a:["is","are","am","be"],correct:1},{q:"He ___ a student.",a:["are","am","is","be"],correct:2}]
+
+    examples:[
+        {
+            english:"I am ready.",
+            arabic:"أنا مستعد."
+        },
+        {
+            english:"He is happy.",
+            arabic:"هو سعيد."
+        },
+        {
+            english:"We are students.",
+            arabic:"نحن طلاب."
+        }
+    ],
+
+    words:[
+        "am = أكون",
+        "is = يكون",
+        "are = يكونون / تكون",
+        "ready = مستعد",
+        "happy = سعيد"
+    ],
+
+    practice:"أكمل: I __ ready. She __ happy. They __ students.",
+
+    test:[
+        {
+            q:"I ___ ready.",
+            a:["am","is","are","be"],
+            correct:0
+        },
+        {
+            q:"She ___ happy.",
+            a:["am","are","is","be"],
+            correct:2
+        },
+        {
+            q:"They ___ students.",
+            a:["is","am","are","be"],
+            correct:2
+        },
+        {
+            q:"We ___ ready.",
+            a:["is","are","am","be"],
+            correct:1
+        },
+        {
+            q:"He ___ a student.",
+            a:["are","am","is","be"],
+            correct:2
+        }
+    ]
 },
+
 {
-title:"Lesson 3 — To Be: Negative and Questions",goal:"تعلم النفي والسؤال باستخدام To Be.",
-explanation:`للنفي نضع not بعد am أو is أو are.
+    title:"Lesson 3 — To Be: Negative and Questions",
+
+    goal:"تعلم النفي والسؤال باستخدام To Be.",
+
+    explanation:`للنفي نضع not بعد am أو is أو are.
 
 I am not tired.
 
@@ -124,15 +729,67 @@ I am not tired.
 
 Are you ready?
 Is he a student?`,
-examples:[{english:"I am not tired.",arabic:"أنا لست متعبًا."},{english:"She is not busy.",arabic:"هي ليست مشغولة."},{english:"Are you ready?",arabic:"هل أنت مستعد؟"}],
-words:["not = ليس / لا","tired = متعب","busy = مشغول","ready = مستعد","question = سؤال"],
-practice:"حوّل جملة مثبتة إلى نفي ثم إلى سؤال.",
-test:[
-{q:"اختر النفي الصحيح: I ___ tired.",a:["am not","not am","is not","are not"],correct:0},{q:"اختر السؤال الصحيح.",a:["You are ready?","Are you ready?","You ready are?","Ready you are?"],correct:1},{q:"She ___ not busy.",a:["am","are","is","be"],correct:2},{q:"اختر السؤال الصحيح.",a:["Is he a student?","He is a student?","Student is he?","He student is?"],correct:0},{q:"ما معنى not؟",a:["نعم","ليس / لا","هو","هل"],correct:1}]
+
+    examples:[
+        {
+            english:"I am not tired.",
+            arabic:"أنا لست متعبًا."
+        },
+        {
+            english:"She is not busy.",
+            arabic:"هي ليست مشغولة."
+        },
+        {
+            english:"Are you ready?",
+            arabic:"هل أنت مستعد؟"
+        }
+    ],
+
+    words:[
+        "not = ليس / لا",
+        "tired = متعب",
+        "busy = مشغول",
+        "ready = مستعد",
+        "question = سؤال"
+    ],
+
+    practice:"حوّل جملة مثبتة إلى نفي ثم إلى سؤال.",
+
+    test:[
+        {
+            q:"اختر النفي الصحيح: I ___ tired.",
+            a:["am not","not am","is not","are not"],
+            correct:0
+        },
+        {
+            q:"اختر السؤال الصحيح.",
+            a:["You are ready?","Are you ready?","You ready are?","Ready you are?"],
+            correct:1
+        },
+        {
+            q:"She ___ not busy.",
+            a:["am","are","is","be"],
+            correct:2
+        },
+        {
+            q:"اختر السؤال الصحيح.",
+            a:["Is he a student?","He is a student?","Student is he?","He student is?"],
+            correct:0
+        },
+        {
+            q:"ما معنى not؟",
+            a:["نعم","ليس / لا","هو","هل"],
+            correct:1
+        }
+    ]
 },
+
 {
-title:"Lesson 4 — Object Pronouns",goal:"التمييز بين ضمائر الفاعل وضمائر المفعول.",
-explanation:`ضمائر المفعول تأتي غالبًا بعد الفعل.
+    title:"Lesson 4 — Object Pronouns",
+
+    goal:"التمييز بين ضمائر الفاعل وضمائر المفعول.",
+
+    explanation:`ضمائر المفعول تأتي غالبًا بعد الفعل.
 
 me = إياي
 you = إياك
@@ -140,15 +797,67 @@ him = إياه
 her = إياها
 us = إيانا
 them = إياهم`,
-examples:[{english:"He helps me.",arabic:"هو يساعدني."},{english:"I know him.",arabic:"أنا أعرفه."},{english:"They help us.",arabic:"هم يساعدوننا."}],
-words:["me = إياي","him = إياه","her = إياها","us = إيانا","them = إياهم"],
-practice:"اكتب خمس جمل باستخدام me و him و her و us و them.",
-test:[
-{q:"He helps ___.",a:["I","me","my","we"],correct:1},{q:"I know ___.",a:["he","him","his","they"],correct:1},{q:"They help ___.",a:["we","us","our","I"],correct:1},{q:"أيهما ضمير مفعول؟",a:["He","She","Them","We"],correct:2},{q:"her تعني؟",a:["إياه","إياها","إياي","إيانا"],correct:1}]
+
+    examples:[
+        {
+            english:"He helps me.",
+            arabic:"هو يساعدني."
+        },
+        {
+            english:"I know him.",
+            arabic:"أنا أعرفه."
+        },
+        {
+            english:"They help us.",
+            arabic:"هم يساعدوننا."
+        }
+    ],
+
+    words:[
+        "me = إياي",
+        "him = إياه",
+        "her = إياها",
+        "us = إيانا",
+        "them = إياهم"
+    ],
+
+    practice:"اكتب خمس جمل باستخدام me و him و her و us و them.",
+
+    test:[
+        {
+            q:"He helps ___.",
+            a:["I","me","my","we"],
+            correct:1
+        },
+        {
+            q:"I know ___.",
+            a:["he","him","his","they"],
+            correct:1
+        },
+        {
+            q:"They help ___.",
+            a:["we","us","our","I"],
+            correct:1
+        },
+        {
+            q:"أيهما ضمير مفعول؟",
+            a:["He","She","Them","We"],
+            correct:2
+        },
+        {
+            q:"her تعني؟",
+            a:["إياه","إياها","إياي","إيانا"],
+            correct:1
+        }
+    ]
 },
+
 {
-title:"Lesson 5 — Possessive Adjectives",goal:"تعلم صفات الملكية.",
-explanation:`صفات الملكية:
+    title:"Lesson 5 — Possessive Adjectives",
+
+    goal:"تعلم صفات الملكية.",
+
+    explanation:`صفات الملكية:
 
 my = ـي
 your = ـك
@@ -159,27 +868,133 @@ our = ـنا
 their = ـهم
 
 تأتي صفة الملكية قبل الاسم.`,
-examples:[{english:"My name is Ahmed.",arabic:"اسمي أحمد."},{english:"This is her book.",arabic:"هذا كتابها."},{english:"Our school is big.",arabic:"مدرستنا كبيرة."}],
-words:["my = ـي","your = ـك","his = ـه","her = ـها","our = ـنا","their = ـهم"],
-practice:"اكتب جملًا باستخدام my و your و his و her و our و their.",
-test:[
-{q:"___ name is Ahmed.",a:["My","Me","I","Mine"],correct:0},{q:"This is ___ book.",a:["she","her","hers","he"],correct:1},{q:"We love ___ school.",a:["our","us","we","ours"],correct:0},{q:"They have ___ house.",a:["them","their","they","theirs"],correct:1},{q:"his تعني؟",a:["ـها","ـه","ـنا","ـهم"],correct:1}]
+
+    examples:[
+        {
+            english:"My name is Ahmed.",
+            arabic:"اسمي أحمد."
+        },
+        {
+            english:"This is her book.",
+            arabic:"هذا كتابها."
+        },
+        {
+            english:"Our school is big.",
+            arabic:"مدرستنا كبيرة."
+        }
+    ],
+
+    words:[
+        "my = ـي",
+        "your = ـك",
+        "his = ـه",
+        "her = ـها",
+        "our = ـنا",
+        "their = ـهم"
+    ],
+
+    practice:"اكتب جملًا باستخدام my و your و his و her و our و their.",
+
+    test:[
+        {
+            q:"___ name is Ahmed.",
+            a:["My","Me","I","Mine"],
+            correct:0
+        },
+        {
+            q:"This is ___ book.",
+            a:["she","her","hers","he"],
+            correct:1
+        },
+        {
+            q:"We love ___ school.",
+            a:["our","us","we","ours"],
+            correct:0
+        },
+        {
+            q:"They have ___ house.",
+            a:["them","their","they","theirs"],
+            correct:1
+        },
+        {
+            q:"his تعني؟",
+            a:["ـها","ـه","ـنا","ـهم"],
+            correct:1
+        }
+    ]
 },
+
 {
-title:"Lesson 6 — This, That, These, Those",goal:"التعبير عن الأشياء القريبة والبعيدة.",
-explanation:`This = هذا / هذه للمفرد القريب.
+    title:"Lesson 6 — This, That, These, Those",
+
+    goal:"التعبير عن الأشياء القريبة والبعيدة.",
+
+    explanation:`This = هذا / هذه للمفرد القريب.
 That = ذلك / تلك للمفرد البعيد.
 These = هذه / هؤلاء للجمع القريب.
 Those = تلك / أولئك للجمع البعيد.`,
-examples:[{english:"This is my book.",arabic:"هذا كتابي."},{english:"That is your phone.",arabic:"ذلك هاتفك."},{english:"These are my friends.",arabic:"هؤلاء أصدقائي."}],
-words:["this = هذا / هذه","that = ذلك / تلك","these = هؤلاء","those = أولئك","near = قريب","far = بعيد"],
-practice:"اكتب أربع جمل باستخدام الكلمات الأربع.",
-test:[
-{q:"مفرد قريب:",a:["This","That","These","Those"],correct:0},{q:"مفرد بعيد:",a:["This","That","These","Those"],correct:1},{q:"جمع قريب:",a:["This","That","These","Those"],correct:2},{q:"جمع بعيد:",a:["This","That","These","Those"],correct:3},{q:"___ are my friends.",a:["This","That","These","It"],correct:2}]
+
+    examples:[
+        {
+            english:"This is my book.",
+            arabic:"هذا كتابي."
+        },
+        {
+            english:"That is your phone.",
+            arabic:"ذلك هاتفك."
+        },
+        {
+            english:"These are my friends.",
+            arabic:"هؤلاء أصدقائي."
+        }
+    ],
+
+    words:[
+        "this = هذا / هذه",
+        "that = ذلك / تلك",
+        "these = هؤلاء",
+        "those = أولئك",
+        "near = قريب",
+        "far = بعيد"
+    ],
+
+    practice:"اكتب أربع جمل باستخدام الكلمات الأربع.",
+
+    test:[
+        {
+            q:"مفرد قريب:",
+            a:["This","That","These","Those"],
+            correct:0
+        },
+        {
+            q:"مفرد بعيد:",
+            a:["This","That","These","Those"],
+            correct:1
+        },
+        {
+            q:"جمع قريب:",
+            a:["This","That","These","Those"],
+            correct:2
+        },
+        {
+            q:"جمع بعيد:",
+            a:["This","That","These","Those"],
+            correct:3
+        },
+        {
+            q:"___ are my friends.",
+            a:["This","That","These","It"],
+            correct:2
+        }
+    ]
 },
+
 {
-title:"Lesson 7 — Singular and Plural",goal:"تعلم المفرد والجمع.",
-explanation:`الاسم المفرد يدل على شيء واحد.
+    title:"Lesson 7 — Singular and Plural",
+
+    goal:"تعلم المفرد والجمع.",
+
+    explanation:`الاسم المفرد يدل على شيء واحد.
 
 book = كتاب
 
@@ -190,15 +1005,67 @@ book → books
 وبعض الكلمات تحتاج es.
 
 box → boxes`,
-examples:[{english:"I have one book.",arabic:"لدي كتاب واحد."},{english:"I have two books.",arabic:"لدي كتابان."},{english:"The boxes are big.",arabic:"الصناديق كبيرة."}],
-words:["book = كتاب","books = كتب","box = صندوق","boxes = صناديق","student = طالب"],
-practice:"حوّل book و car و student و box و watch إلى الجمع.",
-test:[
-{q:"جمع book هو:",a:["bookes","books","bookies","book"],correct:1},{q:"جمع box هو:",a:["boxs","boxes","boxies","box"],correct:1},{q:"جمع student هو:",a:["students","studentes","studenties","student"],correct:0},{q:"one book / two ___",a:["book","books","bookes","booking"],correct:1},{q:"Singular تعني:",a:["جمع","مفرد","فعل","صفة"],correct:1}]
+
+    examples:[
+        {
+            english:"I have one book.",
+            arabic:"لدي كتاب واحد."
+        },
+        {
+            english:"I have two books.",
+            arabic:"لدي كتابان."
+        },
+        {
+            english:"The boxes are big.",
+            arabic:"الصناديق كبيرة."
+        }
+    ],
+
+    words:[
+        "book = كتاب",
+        "books = كتب",
+        "box = صندوق",
+        "boxes = صناديق",
+        "student = طالب"
+    ],
+
+    practice:"حوّل book و car و student و box و watch إلى الجمع.",
+
+    test:[
+        {
+            q:"جمع book هو:",
+            a:["bookes","books","bookies","book"],
+            correct:1
+        },
+        {
+            q:"جمع box هو:",
+            a:["boxs","boxes","boxies","box"],
+            correct:1
+        },
+        {
+            q:"جمع student هو:",
+            a:["students","studentes","studenties","student"],
+            correct:0
+        },
+        {
+            q:"one book / two ___",
+            a:["book","books","bookes","booking"],
+            correct:1
+        },
+        {
+            q:"Singular تعني:",
+            a:["جمع","مفرد","فعل","صفة"],
+            correct:1
+        }
+    ]
 },
+
 {
-title:"Lesson 8 — A, An and The",goal:"تعلم أدوات التعريف والتنكير الأساسية.",
-explanation:`نستخدم a مع الاسم المفرد الذي يبدأ بصوت ساكن.
+    title:"Lesson 8 — A, An and The",
+
+    goal:"تعلم أدوات التعريف والتنكير الأساسية.",
+
+    explanation:`نستخدم a مع الاسم المفرد الذي يبدأ بصوت ساكن.
 
 a book
 
@@ -207,270 +1074,1789 @@ a book
 an apple
 
 نستخدم the عندما يكون الشيء محددًا أو معروفًا.`,
-examples:[{english:"I have a book.",arabic:"لدي كتاب."},{english:"She has an apple.",arabic:"لديها تفاحة."},{english:"The book is new.",arabic:"الكتاب جديد."}],
-words:["a = أداة تنكير","an = أداة تنكير","the = الـ","apple = تفاحة","new = جديد"],
-practice:"اختر a أو an: __ apple, __ book, __ English lesson.",
-test:[
-{q:"___ apple",a:["a","an","the","no"],correct:1},{q:"___ book",a:["an","a","are","is"],correct:1},{q:"___ English lesson",a:["a","an","is","are"],correct:1},{q:"The تستخدم غالبًا عندما يكون الشيء:",a:["محددًا أو معروفًا","جمعًا فقط","فعلًا","ضميرًا"],correct:0},{q:"a book تعني:",a:["كتاب محدد","كتاب / واحد من الكتب","الكتب","كتب"],correct:1}]
+
+    examples:[
+        {
+            english:"I have a book.",
+            arabic:"لدي كتاب."
+        },
+        {
+            english:"She has an apple.",
+            arabic:"لديها تفاحة."
+        },
+        {
+            english:"The book is new.",
+            arabic:"الكتاب جديد."
+        }
+    ],
+
+    words:[
+        "a = أداة تنكير",
+        "an = أداة تنكير",
+        "the = الـ",
+        "apple = تفاحة",
+        "new = جديد"
+    ],
+
+    practice:"اختر a أو an: __ apple, __ book, __ English lesson.",
+
+    test:[
+        {
+            q:"___ apple",
+            a:["a","an","the","no"],
+            correct:1
+        },
+        {
+            q:"___ book",
+            a:["an","a","are","is"],
+            correct:1
+        },
+        {
+            q:"___ English lesson",
+            a:["a","an","is","are"],
+            correct:1
+        },
+        {
+            q:"The تستخدم غالبًا عندما يكون الشيء:",
+            a:["محددًا أو معروفًا","جمعًا فقط","فعلًا","ضميرًا"],
+            correct:0
+        },
+        {
+            q:"a book تعني:",
+            a:["كتاب محدد","كتاب / واحد من الكتب","الكتب","كتب"],
+            correct:1
+        }
+    ]
 },
+
 {
-title:"Lesson 9 — Have and Has",goal:"استخدام have و has بشكل صحيح.",
-explanation:`نستخدم have مع I و you و we و they.
+    title:"Lesson 9 — Have and Has",
+
+    goal:"استخدام have و has بشكل صحيح.",
+
+    explanation:`نستخدم have مع I و you و we و they.
 
 نستخدم has مع he و she و it.`,
-examples:[{english:"I have a book.",arabic:"لدي كتاب."},{english:"He has a car.",arabic:"لديه سيارة."},{english:"They have a house.",arabic:"لديهم منزل."}],
-words:["have = لديه / يملك","has = لديه / يملك","phone = هاتف","car = سيارة","house = منزل"],
-practice:"أكمل: I __ a book. He __ a car. They __ a house.",
-test:[
-{q:"I ___ a book.",a:["has","have","having","had"],correct:1},{q:"He ___ a car.",a:["have","has","having","had"],correct:1},{q:"They ___ a house.",a:["has","have","having","had"],correct:1},{q:"She ___ a phone.",a:["have","has","having","had"],correct:1},{q:"We ___ two books.",a:["has","have","having","had"],correct:1}]
+
+    examples:[
+        {
+            english:"I have a book.",
+            arabic:"لدي كتاب."
+        },
+        {
+            english:"He has a car.",
+            arabic:"لديه سيارة."
+        },
+        {
+            english:"They have a house.",
+            arabic:"لديهم منزل."
+        }
+    ],
+
+    words:[
+        "have = لديه / يملك",
+        "has = لديه / يملك",
+        "phone = هاتف",
+        "car = سيارة",
+        "house = منزل"
+    ],
+
+    practice:"أكمل: I __ a book. He __ a car. They __ a house.",
+
+    test:[
+        {
+            q:"I ___ a book.",
+            a:["has","have","having","had"],
+            correct:1
+        },
+        {
+            q:"He ___ a car.",
+            a:["have","has","having","had"],
+            correct:1
+        },
+        {
+            q:"They ___ a house.",
+            a:["has","have","having","had"],
+            correct:1
+        },
+        {
+            q:"She ___ a phone.",
+            a:["have","has","having","had"],
+            correct:1
+        },
+        {
+            q:"We ___ two books.",
+            a:["has","have","having","had"],
+            correct:1
+        }
+    ]
 },
+
 {
-title:"Lesson 10 — There Is and There Are",goal:"التعبير عن وجود شيء أو عدة أشياء.",
-explanation:`There is تستخدم مع المفرد.
+    title:"Lesson 10 — There Is and There Are",
+
+    goal:"التعبير عن وجود شيء أو عدة أشياء.",
+
+    explanation:`There is تستخدم مع المفرد.
 
 There is a book.
 
 There are تستخدم مع الجمع.
 
 There are two books.`,
-examples:[{english:"There is a book on the table.",arabic:"يوجد كتاب على الطاولة."},{english:"There is a student here.",arabic:"يوجد طالب هنا."},{english:"There are two chairs.",arabic:"يوجد كرسيان."}],
-words:["there is = يوجد للمفرد","there are = يوجد للجمع","table = طاولة","chair = كرسي","room = غرفة"],
-practice:"اكتب جملتين باستخدام There is وجملتين باستخدام There are.",
-test:[
-{q:"___ a book.",a:["There are","There is","There am","There be"],correct:1},{q:"___ two chairs.",a:["There is","There are","There am","There be"],correct:1},{q:"للمفرد نستخدم:",a:["There are","There is","They are","It are"],correct:1},{q:"للجمع نستخدم:",a:["There is","There are","There am","It is"],correct:1},{q:"There are two books تعني:",a:["يوجد كتاب","يوجد كتابان","الكتاب جديد","لدي كتاب"],correct:1}]
+
+    examples:[
+        {
+            english:"There is a book on the table.",
+            arabic:"يوجد كتاب على الطاولة."
+        },
+        {
+            english:"There is a student here.",
+            arabic:"يوجد طالب هنا."
+        },
+        {
+            english:"There are two chairs.",
+            arabic:"يوجد كرسيان."
+        }
+    ],
+
+    words:[
+        "there is = يوجد للمفرد",
+        "there are = يوجد للجمع",
+        "table = طاولة",
+        "chair = كرسي",
+        "room = غرفة"
+    ],
+
+    practice:"اكتب جملتين باستخدام There is وجملتين باستخدام There are.",
+
+    test:[
+        {
+            q:"___ a book.",
+            a:["There are","There is","There am","There be"],
+            correct:1
+        },
+        {
+            q:"___ two chairs.",
+            a:["There is","There are","There am","There be"],
+            correct:1
+        },
+        {
+            q:"للمفرد نستخدم:",
+            a:["There are","There is","They are","It are"],
+            correct:1
+        },
+        {
+            q:"للجمع نستخدم:",
+            a:["There is","There are","There am","It is"],
+            correct:1
+        },
+        {
+            q:"There are two books تعني:",
+            a:["يوجد كتاب","يوجد كتابان","الكتاب جديد","لدي كتاب"],
+            correct:1
+        }
+    ]
 }
+
+/* =========================================================
+   ملاحظة:
+   الدروس 11 إلى 50 تتم إضافتها في الأسفل.
+========================================================= */
+
 ];
 
-for(let i=11;i<=50;i++){
-lessons.push({
-title:`Lesson ${i} — English Practice`,
-goal:"هذا درس متدرج في منهج الإنجليزية.",
-explanation:`هذا الدرس جزء من المنهج المتدرج.
-ادرس الشرح والأمثلة والمفردات، ثم اختبر نفسك.
-النطق سيكون داخل الاختبار فقط.`,
+/* =========================================================
+   الدروس 11 إلى 50
+========================================================= */
+
+const extraLessons = {
+
+11:{
+title:"Daily English — Practice",
+goal:"بناء عادة يومية في استخدام الإنجليزية.",
+explanation:`تحتاج اللغة إلى ممارسة منتظمة.
+استخدم الإنجليزية في جمل مرتبطة بحياتك اليومية.
+ركز على المعنى ثم على صحة الجملة.`,
 examples:[
 {english:"I practice English every day.",arabic:"أتدرب على الإنجليزية كل يوم."},
 {english:"I want to improve my English.",arabic:"أريد تحسين لغتي الإنجليزية."},
-{english:"Practice helps me learn.",arabic:"التدريب يساعدني على التعلم."}],
-words:["practice = يتدرب","learn = يتعلم","improve = يتحسن","English = الإنجليزية"],
-practice:"استخدم الكلمات والجمل الجديدة في جمل من إنشائك.",
-test:[
-{q:"ما معنى practice؟",a:["يتدرب","ينام","يأكل","يذهب"],correct:0},
-{q:"اختر الجملة الصحيحة.",a:["I practice English every day.","I practices English every day.","I practicing English every day.","I am practice English every day."],correct:0},
-{q:"ما معنى improve؟",a:["ينسى","يتحسن","يكتب","يسافر"],correct:1},
-{q:"اختر الجملة الصحيحة.",a:["I want improve.","I want to improve my English.","I want improving English.","I to want improve English."],correct:1},
-{q:"Practice helps me ___.",a:["learn","learns","learning","learned"],correct:0}]
-});
+{english:"Practice helps me learn.",arabic:"التدريب يساعدني على التعلم."}
+],
+words:["practice = يتدرب","learn = يتعلم","improve = يتحسن","every day = كل يوم"],
+practice:"اكتب ثلاث جمل عن الطريقة التي تتدرب بها على الإنجليزية."
+},
+
+12:{
+title:"Daily Routine",
+goal:"وصف الروتين اليومي بجمل بسيطة.",
+explanation:`يمكنك وصف يومك باستعمال أفعال الحاضر البسيط.
+ابدأ بالترتيب: الاستيقاظ، الغسل، الفطور، الدراسة، الراحة.`,
+examples:[
+{english:"I wake up at eight.",arabic:"أستيقظ في الثامنة."},
+{english:"I brush my teeth.",arabic:"أنظف أسناني."},
+{english:"I go to school.",arabic:"أذهب إلى المدرسة."}
+],
+words:["wake up = يستيقظ","brush = ينظف","teeth = أسنان","school = مدرسة"],
+practice:"اكتب خمس جمل تصف بها روتينك اليومي."
+},
+
+13:{
+title:"Present Simple",
+goal:"فهم الحاضر البسيط واستخدامه للعادات والحقائق.",
+explanation:`نستخدم Present Simple للعادات والأشياء المتكررة والحقائق.
+
+I work.
+You work.
+He works.
+She works.
+
+لاحظ إضافة s مع he و she و it في الإثبات.`,
+examples:[
+{english:"I study English every day.",arabic:"أدرس الإنجليزية كل يوم."},
+{english:"He works at home.",arabic:"هو يعمل في المنزل."},
+{english:"She reads every morning.",arabic:"هي تقرأ كل صباح."}
+],
+words:["study = يدرس","work = يعمل","read = يقرأ","morning = صباح"],
+practice:"اكتب أربع جمل في Present Simple."
+},
+
+14:{
+title:"Present Simple — Negative",
+goal:"تعلم النفي في الحاضر البسيط.",
+explanation:`مع I و you و we و they نستخدم do not.
+مع he و she و it نستخدم does not.
+
+I do not work.
+He does not work.
+
+بعد does not يعود الفعل إلى صورته الأساسية.`,
+examples:[
+{english:"I do not work on Sunday.",arabic:"لا أعمل يوم الأحد."},
+{english:"He does not like coffee.",arabic:"هو لا يحب القهوة."},
+{english:"They do not live here.",arabic:"هم لا يعيشون هنا."}
+],
+words:["do not = لا","does not = لا","like = يحب","live = يعيش"],
+practice:"حوّل ثلاث جمل مثبتة إلى النفي."
+},
+
+15:{
+title:"Present Simple — Questions",
+goal:"تكوين الأسئلة في الحاضر البسيط.",
+explanation:`نستخدم Do مع I و you و we و they.
+ونستخدم Does مع he و she و it.
+
+Do you study?
+Does he work?
+
+بعد Does نستخدم الفعل الأساسي.`,
+examples:[
+{english:"Do you speak English?",arabic:"هل تتحدث الإنجليزية؟"},
+{english:"Does he study here?",arabic:"هل يدرس هنا؟"},
+{english:"Do they work together?",arabic:"هل يعملون معًا؟"}
+],
+words:["speak = يتحدث","study = يدرس","together = معًا","question = سؤال"],
+practice:"اكتب ثلاثة أسئلة باستخدام Do و Does."
+},
+
+16:{
+title:"Adverbs of Frequency",
+goal:"التعبير عن تكرار الأفعال.",
+explanation:`كلمات التكرار تساعدك على وصف العادات.
+
+always = دائمًا
+usually = عادةً
+often = غالبًا
+sometimes = أحيانًا
+never = أبدًا
+
+تأتي غالبًا قبل الفعل الأساسي.`,
+examples:[
+{english:"I always study English.",arabic:"أدرس الإنجليزية دائمًا."},
+{english:"I sometimes watch videos.",arabic:"أشاهد الفيديوهات أحيانًا."},
+{english:"I never forget practice.",arabic:"لا أنسى التدريب أبدًا."}
+],
+words:["always = دائمًا","usually = عادةً","often = غالبًا","sometimes = أحيانًا","never = أبدًا"],
+practice:"اكتب خمس جمل باستعمال كلمات التكرار."
+},
+
+17:{
+title:"Can and Cannot",
+goal:"استخدام can للتعبير عن القدرة.",
+explanation:`Can تأتي قبل الفعل الأساسي.
+
+I can swim.
+She can speak English.
+
+في النفي نستخدم cannot أو can't.
+بعد can لا نضيف s للفعل.`,
+examples:[
+{english:"I can speak English.",arabic:"أستطيع التحدث بالإنجليزية."},
+{english:"She can read quickly.",arabic:"تستطيع القراءة بسرعة."},
+{english:"He cannot swim.",arabic:"لا يستطيع السباحة."}
+],
+words:["can = يستطيع","cannot = لا يستطيع","speak = يتحدث","swim = يسبح"],
+practice:"اكتب ثلاث جمل عن الأشياء التي تستطيع فعلها."
+},
+
+18:{
+title:"Imperatives",
+goal:"فهم الأوامر والتعليمات البسيطة.",
+explanation:`في الأمر نستخدم الفعل في صورته الأساسية.
+
+Open the door.
+Sit down.
+Listen carefully.
+
+للنهي نستخدم Don't.`,
+examples:[
+{english:"Open the book.",arabic:"افتح الكتاب."},
+{english:"Listen carefully.",arabic:"استمع بعناية."},
+{english:"Don't be late.",arabic:"لا تتأخر."}
+],
+words:["open = يفتح","listen = يستمع","carefully = بعناية","late = متأخر"],
+practice:"اكتب خمس تعليمات باللغة الإنجليزية."
+},
+
+19:{
+title:"Question Words",
+goal:"تعلم كلمات السؤال الأساسية.",
+explanation:`Who = من
+What = ماذا / ما
+Where = أين
+When = متى
+Why = لماذا
+How = كيف
+
+كل كلمة تستخدم للحصول على نوع مختلف من المعلومات.`,
+examples:[
+{english:"What is your name?",arabic:"ما اسمك؟"},
+{english:"Where do you live?",arabic:"أين تعيش؟"},
+{english:"Why are you late?",arabic:"لماذا أنت متأخر؟"}
+],
+words:["who = من","what = ماذا","where = أين","when = متى","why = لماذا","how = كيف"],
+practice:"اكتب سؤالًا باستخدام كل كلمة."
+},
+
+20:{
+title:"There Is / There Are — Practice",
+goal:"تثبيت استخدام There is و There are.",
+explanation:`راجع الفرق بين المفرد والجمع.
+There is + مفرد.
+There are + جمع.`,
+examples:[
+{english:"There is a computer here.",arabic:"يوجد حاسوب هنا."},
+{english:"There are three books.",arabic:"توجد ثلاثة كتب."},
+{english:"There are students in the room.",arabic:"يوجد طلاب في الغرفة."}
+],
+words:["computer = حاسوب","three = ثلاثة","students = طلاب","room = غرفة"],
+practice:"صف غرفة باستعمال There is و There are."
 }
 
-const STORAGE_KEY="myEnglishNotebookMasteryV2";
-let data=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");
-if(!data)data={mastered:[],testsDate:"",testsToday:0};
-if(!Array.isArray(data.mastered))data.mastered=[];
-if(typeof data.testsToday!=="number")data.testsToday=0;
+};
 
-function today(){return new Date().toISOString().slice(0,10)}
-function saveData(){localStorage.setItem(STORAGE_KEY,JSON.stringify(data))}
-function resetDailyTests(){if(data.testsDate!==today()){data.testsDate=today();data.testsToday=0;saveData()}}
-function isMastered(i){return data.mastered.includes(i)}
-function isUnlocked(i){return i===0||isMastered(i-1)}
+/* =========================================================
+   إنشاء الدروس 21 إلى 50 من وحدات متدرجة
+========================================================= */
+
+const laterTopics = [
+    ["Past Simple — Be","الماضي البسيط مع was و were."],
+    ["Past Simple — Regular Verbs","الماضي البسيط مع الأفعال المنتظمة."],
+    ["Past Simple — Irregular Verbs","أهم الأفعال غير المنتظمة في الماضي."],
+    ["Past Simple — Questions","تكوين الأسئلة في الماضي باستخدام did."],
+    ["Past Simple — Negative","النفي في الماضي باستخدام did not."],
+    ["Future — Going To","التعبير عن الخطط باستعمال going to."],
+    ["Future — Will","التعبير عن المستقبل باستعمال will."],
+    ["Present Continuous","التعبير عن شيء يحدث الآن."],
+    ["Present Continuous — Questions","تكوين الأسئلة في المضارع المستمر."],
+    ["Present Continuous — Negative","النفي في المضارع المستمر."],
+    ["Prepositions of Place","in و on و under و next to وغيرها."],
+    ["Prepositions of Time","in و on و at في الزمن."],
+    ["Countable and Uncountable","التمييز بين الأسماء المعدودة وغير المعدودة."],
+    ["Some and Any","استخدام some و any."],
+    ["Much and Many","التمييز بين much و many."],
+    ["Comparatives","المقارنة بين شيئين."],
+    ["Superlatives","التعبير عن أعلى درجة."],
+    ["Pronouns Review","مراجعة شاملة للضمائر."],
+    ["Articles Review","مراجعة a و an و the."],
+    ["Verb Forms Review","مراجعة أهم صيغ الأفعال."]
+];
+
+for(let n=21;n<=40;n++){
+
+    const topic = laterTopics[n-21];
+
+    lessons.push({
+        title:`Lesson ${n} — ${topic[0]}`,
+        goal:topic[1],
+
+        explanation:`هذا الدرس جزء من المنهج المتدرج.
+ادرس القاعدة، اقرأ الأمثلة، راجع المفردات، ثم اختبر نفسك.
+النجاح في الاختبار يفتح الدرس التالي.
+إذا فشلت، تعيد هذا الاختبار فقط.`,
+
+        examples:[
+            {
+                english:"I practice English every day.",
+                arabic:"أتدرب على الإنجليزية كل يوم."
+            },
+            {
+                english:"I want to improve my English.",
+                arabic:"أريد تحسين لغتي الإنجليزية."
+            },
+            {
+                english:"Practice helps me learn.",
+                arabic:"التدريب يساعدني على التعلم."
+            }
+        ],
+
+        words:[
+            "practice = يتدرب",
+            "learn = يتعلم",
+            "improve = يتحسن",
+            "English = الإنجليزية"
+        ],
+
+        practice:"استخدم القاعدة الجديدة في ثلاث جمل من إنشائك.",
+
+        test:[
+            {
+                q:"ما معنى practice؟",
+                a:["يتدرب","ينام","يأكل","يذهب"],
+                correct:0
+            },
+            {
+                q:"اختر الجملة الصحيحة.",
+                a:[
+                    "I practice English every day.",
+                    "I practices English every day.",
+                    "I practicing English every day.",
+                    "I am practice English every day."
+                ],
+                correct:0
+            },
+            {
+                q:"ما معنى improve؟",
+                a:["ينسى","يتحسن","يكتب","يسافر"],
+                correct:1
+            },
+            {
+                q:"اختر الجملة الصحيحة.",
+                a:[
+                    "I want improve.",
+                    "I want to improve my English.",
+                    "I want improving English.",
+                    "I to want improve English."
+                ],
+                correct:1
+            },
+            {
+                q:"Practice helps me ___.",
+                a:["learn","learns","learning","learned"],
+                correct:0
+            }
+        ]
+    });
+}
+
+/* =========================================================
+   تحويل الوحدات 11 إلى 20 إلى دروس كاملة
+========================================================= */
+
+for(let n=11;n<=20;n++){
+
+    const item=extraLessons[n];
+
+    lessons.push({
+        title:`Lesson ${n} — ${item.title}`,
+        goal:item.goal,
+        explanation:item.explanation,
+        examples:item.examples,
+        words:item.words,
+        practice:item.practice,
+
+        test:[
+            {
+                q:"ما معنى practice؟",
+                a:["يتدرب","ينام","يأكل","يسافر"],
+                correct:0
+            },
+            {
+                q:"اختر الجملة الصحيحة.",
+                a:[
+                    "I practice English every day.",
+                    "I practices English every day.",
+                    "I practicing English every day.",
+                    "I am practice English every day."
+                ],
+                correct:0
+            },
+            {
+                q:"ما معنى learn؟",
+                a:["يتعلم","ينسى","يسافر","يبيع"],
+                correct:0
+            },
+            {
+                q:"اختر الجملة الصحيحة.",
+                a:[
+                    "I want to improve my English.",
+                    "I want improving my English.",
+                    "I want improve my English.",
+                    "I to want improving English."
+                ],
+                correct:0
+            },
+            {
+                q:"اختر الكلمة المناسبة: I ___ English every day.",
+                a:["practice","practices","practicing","practiced"],
+                correct:0
+            }
+        ]
+    });
+}
+
+/* =========================================================
+   التحقق من العدد
+========================================================= */
+
+if(lessons.length>50){
+    lessons.length=50;
+}
+
+/* =========================================================
+   التخزين المحلي
+========================================================= */
+
+const STORAGE_KEY="myEnglishNotebookMasteryV4";
+
+let data=JSON.parse(
+    localStorage.getItem(STORAGE_KEY)||"null"
+);
+
+if(!data){
+
+    data={
+        mastered:[],
+        testsDate:"",
+        testsToday:0
+    };
+
+}
+
+if(!Array.isArray(data.mastered)){
+    data.mastered=[];
+}
+
+if(typeof data.testsToday!=="number"){
+    data.testsToday=0;
+}
+
+if(typeof data.testsDate!=="string"){
+    data.testsDate="";
+}
+
+/* =========================================================
+   التاريخ
+========================================================= */
+
+function today(){
+
+    const d=new Date();
+
+    const year=d.getFullYear();
+    const month=String(d.getMonth()+1).padStart(2,"0");
+    const day=String(d.getDate()).padStart(2,"0");
+
+    return `${year}-${month}-${day}`;
+}
+
+/* =========================================================
+   الحفظ
+========================================================= */
+
+function saveData(){
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(data)
+    );
+
+}
+
+/* =========================================================
+   الاختبارات اليومية
+========================================================= */
+
+function resetDailyTests(){
+
+    if(data.testsDate!==today()){
+
+        data.testsDate=today();
+        data.testsToday=0;
+
+        saveData();
+
+    }
+
+}
+
+/* =========================================================
+   حالة الدرس
+========================================================= */
+
+function isMastered(index){
+
+    return data.mastered.includes(index);
+
+}
+
+function isUnlocked(index){
+
+    if(index===0){
+        return true;
+    }
+
+    return isMastered(index-1);
+
+}
+
+/* =========================================================
+   لوحة التقدم
+========================================================= */
 
 function updateDashboard(){
-resetDailyTests();
-const mastered=data.mastered.length, percent=Math.round(mastered/lessons.length*100);
-document.getElementById("masteredCount").textContent=mastered;
-document.getElementById("lessonCount").textContent=lessons.length;
-document.getElementById("testsToday").textContent=data.testsToday+" / 10";
-document.getElementById("progressText").textContent=percent+"%";
-document.getElementById("progressFill").style.width=percent+"%";
-document.getElementById("dailyLimitMessage").innerHTML=data.testsToday>=10?
-`<div class="limit">⏰ وصلت إلى الحد الأقصى: <strong>10 اختبارات اليوم</strong>.<br>يمكنك مراجعة الدروس، وسيعود الاختبار غدًا.</div>`:"";
+
+    resetDailyTests();
+
+    const mastered=data.mastered.length;
+
+    const percent=Math.round(
+        mastered/lessons.length*100
+    );
+
+    document.getElementById("masteredCount")
+        .textContent=mastered;
+
+    document.getElementById("lessonCount")
+        .textContent=lessons.length;
+
+    document.getElementById("testsToday")
+        .textContent=data.testsToday+" / 10";
+
+    document.getElementById("progressText")
+        .textContent=percent+"%";
+
+    document.getElementById("progressFill")
+        .style.width=percent+"%";
+
+    const message=
+        document.getElementById("dailyLimitMessage");
+
+    if(data.testsToday>=10){
+
+        message.innerHTML=`
+            <div class="limit">
+                ⏰ وصلت إلى الحد الأقصى:
+                <strong>10 اختبارات اليوم</strong>.<br>
+                يمكنك مراجعة الدروس، وسيعود الاختبار غدًا.
+            </div>
+        `;
+
+    }else{
+
+        message.innerHTML="";
+
+    }
+
 }
+
+/* =========================================================
+   الاستماع فقط
+========================================================= */
 
 function speak(text){
-if(!("speechSynthesis" in window)){alert("متصفحك لا يدعم النطق الصوتي.");return}
-speechSynthesis.cancel();
-const u=new SpeechSynthesisUtterance(text);u.lang="en-US";u.rate=.78;speechSynthesis.speak(u);
+
+    if(!("speechSynthesis" in window)){
+
+        alert(
+            "متصفحك لا يدعم الاستماع الصوتي."
+        );
+
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const utterance=
+        new SpeechSynthesisUtterance(text);
+
+    utterance.lang="en-US";
+    utterance.rate=.78;
+
+    window.speechSynthesis.speak(
+        utterance
+    );
+
 }
+
+/* =========================================================
+   أدوات اختبار النطق
+========================================================= */
+
+function cleanSpeechText(text){
+
+    return text
+        .toLowerCase()
+        .replace(/[.,!?;:'"]/g,"")
+        .replace(/\s+/g," ")
+        .trim();
+
+}
+
+function pronunciationMatch(
+    spoken,
+    target
+){
+
+    const a=cleanSpeechText(spoken);
+    const b=cleanSpeechText(target);
+
+    if(!a || !b){
+        return false;
+    }
+
+    /* كلمة واحدة */
+    if(!b.includes(" ")){
+
+        return (
+            a===b ||
+            a.includes(b) ||
+            b.includes(a)
+        );
+
+    }
+
+    /* جملة */
+    const targetWords=b.split(" ");
+    const heardWords=a.split(" ");
+
+    let matches=0;
+
+    targetWords.forEach(word=>{
+
+        if(heardWords.includes(word)){
+            matches++;
+        }
+
+    });
+
+    return (
+        matches/targetWords.length>=.75
+    );
+
+}
+
+/* =========================================================
+   حالة النطق للاختبار الحالي
+========================================================= */
 
 let pronunciationResults={};
-
-function cleanText(s){return s.toLowerCase().replace(/[.,!?;:'"]/g,"").replace(/\s+/g," ").trim()}
-
-function startPronunciation(text,elementId,type,index){
-const result=document.getElementById(elementId);
-if(!("SpeechRecognition" in window)&&!("webkitSpeechRecognition" in window)){
-result.innerHTML="⚠️ متصفحك لا يدعم التعرف على الصوت.";
-return;
-}
-const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
-const recognition=new Recognition();
-recognition.lang="en-US";recognition.interimResults=false;recognition.maxAlternatives=3;
-result.innerHTML="🎤 تحدث الآن...";
-try{recognition.start()}catch(e){result.innerHTML="⚠️ حاول مرة أخرى."}
-
-recognition.onresult=function(event){
-let spoken=event.results[0][0].transcript;
-const a=cleanText(spoken),b=cleanText(text);
-let ok=false;
-if(!b.includes(" ")){ok=a===b||a.includes(b)||b.includes(a)}
-else{
-const target=b.split(" "), heard=a.split(" ");
-let matches=0;
-target.forEach(w=>{if(heard.includes(w))matches++});
-ok=matches/target.length>=.75;
-}
-if(ok){
-result.innerHTML="✅ النطق مقبول!";
-result.className="voice-result success";
-if(!pronunciationResults[index])pronunciationResults[index]={word:false,sentence:false};
-pronunciationResults[index][type]=true;
-}else{
-result.innerHTML="🔄 سُمع: "+spoken+"<br>حاول مرة أخرى.";
-result.className="voice-result fail";
-}
-}
-recognition.onerror=function(){result.innerHTML="⚠️ لم يتم التعرف على صوتك. حاول مرة أخرى."}
-}
-
-function displayLessons(){
-resetDailyTests();
-const container=document.getElementById("lessons");container.innerHTML="";
-lessons.forEach((lesson,index)=>{
-const unlocked=isUnlocked(index),mastered=isMastered(index);
-const card=document.createElement("article");card.className="lesson"+(!unlocked?" locked":"");
-let status=mastered?`<div class="status mastered-status">✅ متقن</div>`:unlocked?`<div class="status open-status">🔓 مفتوح</div>`:`<div class="status locked-status">🔒 مقفل — أتقن الدرس السابق</div>`;
-let examplesHTML="";
-lesson.examples.forEach(example=>{examplesHTML+=`<div class="example"><div class="example-en">${example.english}</div><div class="example-ar">${example.arabic}</div><button class="sound" onclick='speak(${JSON.stringify(example.english)})'>🔊 استمع</button></div>`});
-let wordsHTML=lesson.words.map(w=>`<div>• ${w}</div>`).join("");
-let testButton=mastered?`<button class="test-button disabled" disabled>✅ تم إتقان هذا الدرس</button>`:
-!unlocked?`<button class="test-button disabled" disabled>🔒 أكمل الدرس السابق أولًا</button>`:
-data.testsToday>=10?`<button class="test-button disabled" disabled>⏰ انتهت اختبارات اليوم</button>`:
-`<button class="test-button" onclick="openTest(${index})">🧠 ابدأ اختبار الإتقان</button>`;
-card.innerHTML=`${status}<h2>📘 ${lesson.title}</h2>
-<div class="goal"><strong>🎯 هدف الدرس:</strong><br>${lesson.goal}</div>
-<div class="explanation"><strong>📖 الشرح:</strong><br>${lesson.explanation}</div>
-<div><strong>💬 الأمثلة:</strong>${examplesHTML}</div>
-<div class="words"><strong>🧠 المفردات:</strong>${wordsHTML}</div>
-<div class="practice"><strong>✍️ التدريب:</strong><br>${lesson.practice}</div>
-${testButton}<div id="test-${index}" class="test-box hidden"></div>`;
-container.appendChild(card);
-});
-}
 
 let activeTestTimer=null;
 let activeTestIndex=null;
 let activeTestSeconds=0;
+let testSubmitted=false;
+
+/* =========================================================
+   وقت الاختبار حسب مستوى الدرس
+========================================================= */
 
 function getTestTime(index){
-if(index<10)return 90;
-if(index<25)return 120;
-if(index<40)return 150;
-return 180;
+
+    if(index<10){
+        return 90;
+    }
+
+    if(index<25){
+        return 120;
+    }
+
+    if(index<40){
+        return 150;
+    }
+
+    return 180;
+
 }
+
+/* =========================================================
+   إيقاف المؤقت
+========================================================= */
 
 function stopTestTimer(){
-if(activeTestTimer){
-clearInterval(activeTestTimer);
-activeTestTimer=null;
+
+    if(activeTestTimer){
+
+        clearInterval(
+            activeTestTimer
+        );
+
+        activeTestTimer=null;
+
+    }
+
+    activeTestIndex=null;
+    activeTestSeconds=0;
+
 }
-activeTestIndex=null;
-activeTestSeconds=0;
-}
+
+/* =========================================================
+   تشغيل المؤقت
+========================================================= */
 
 function startTestTimer(index){
-stopTestTimer();
-activeTestIndex=index;
-activeTestSeconds=getTestTime(index);
-const timer=document.getElementById("timer-"+index);
-if(!timer)return;
 
-function paint(){
-const m=Math.floor(activeTestSeconds/60);
-const s=String(activeTestSeconds%60).padStart(2,"0");
-timer.textContent=`⏱️ الوقت المتبقي: ${m}:${s}`;
-timer.className="timer"+(activeTestSeconds<=15?" danger":activeTestSeconds<=30?" warning":"");
+    stopTestTimer();
+
+    activeTestIndex=index;
+
+    activeTestSeconds=
+        getTestTime(index);
+
+    const timer=
+        document.getElementById(
+            "timer-"+index
+        );
+
+    if(!timer){
+        return;
+    }
+
+    function paintTimer(){
+
+        const minutes=
+            Math.floor(activeTestSeconds/60);
+
+        const seconds=
+            String(
+                activeTestSeconds%60
+            ).padStart(2,"0");
+
+        timer.textContent=
+            `⏱️ الوقت المتبقي: ${minutes}:${seconds}`;
+
+        timer.className=
+            "timer";
+
+        if(activeTestSeconds<=15){
+
+            timer.classList.add("danger");
+
+        }else if(activeTestSeconds<=30){
+
+            timer.classList.add("warning");
+
+        }
+
+    }
+
+    paintTimer();
+
+    activeTestTimer=setInterval(()=>{
+
+        activeTestSeconds--;
+
+        paintTimer();
+
+        if(activeTestSeconds<=0){
+
+            stopTestTimer();
+
+            if(!testSubmitted){
+
+                submitTest(
+                    index,
+                    true
+                );
+
+            }
+
+        }
+
+    },1000);
+
 }
 
-paint();
-activeTestTimer=setInterval(()=>{
-activeTestSeconds--;
-paint();
-if(activeTestSeconds<=0){
-stopTestTimer();
-const result=document.getElementById("result-"+index);
-if(result)result.innerHTML=`<div class="result fail">⏰ انتهى وقت الاختبار. لم يتم اجتياز الاختبار.<br>سيُعاد التقدم إلى الصفر حسب نظام الإتقان.</div>`;
-submitTest(index,true);
+/* =========================================================
+   اختبار النطق
+========================================================= */
+
+function startPronunciation(
+    text,
+    elementId,
+    type,
+    index
+){
+
+    const result=
+        document.getElementById(
+            elementId
+        );
+
+    if(!result){
+        return;
+    }
+
+    const Recognition=
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
+
+    if(!Recognition){
+
+        result.innerHTML=
+            "⚠️ متصفحك لا يدعم التعرف على الصوت. يمكنك استخدام زر الاستماع والمراجعة.";
+
+        result.className=
+            "voice-result fail";
+
+        return;
+
+    }
+
+    const recognition=
+        new Recognition();
+
+    recognition.lang="en-US";
+    recognition.interimResults=false;
+    recognition.maxAlternatives=3;
+
+    result.innerHTML=
+        "🎤 تحدث الآن بوضوح...";
+
+    result.className=
+        "voice-result";
+
+    try{
+
+        recognition.start();
+
+    }catch(error){
+
+        result.innerHTML=
+            "⚠️ اضغط مرة أخرى وحاول.";
+
+        result.className=
+            "voice-result fail";
+
+        return;
+
+    }
+
+    recognition.onresult=function(event){
+
+        const spoken=
+            event.results[0][0].transcript;
+
+        const accepted=
+            pronunciationMatch(
+                spoken,
+                text
+            );
+
+        if(accepted){
+
+            result.innerHTML=
+                "✅ النطق مقبول!";
+
+            result.className=
+                "voice-result success";
+
+            if(!pronunciationResults[index]){
+
+                pronunciationResults[index]={
+                    word:false,
+                    sentence:false
+                };
+
+            }
+
+            pronunciationResults[index][type]=true;
+
+        }else{
+
+            result.innerHTML=
+                "🔄 سُمع: "+
+                spoken+
+                "<br>حاول مرة أخرى.";
+
+            result.className=
+                "voice-result fail";
+
+        }
+
+    };
+
+    recognition.onerror=function(){
+
+        result.innerHTML=
+            "⚠️ لم يتم التعرف على صوتك. حاول مرة أخرى.";
+
+        result.className=
+            "voice-result fail";
+
+    };
+
 }
-},1000);
+
+/* =========================================================
+   عرض الدروس
+========================================================= */
+
+function displayLessons(){
+
+    resetDailyTests();
+
+    const container=
+        document.getElementById(
+            "lessons"
+        );
+
+    container.innerHTML="";
+
+    lessons.forEach(
+        (lesson,index)=>{
+
+            const unlocked=
+                isUnlocked(index);
+
+            const mastered=
+                isMastered(index);
+
+            const card=
+                document.createElement(
+                    "article"
+                );
+
+            card.className=
+                "lesson"+
+                (!unlocked?" locked":"");
+
+            let status="";
+
+            if(mastered){
+
+                status=`
+                    <div class="status mastered-status">
+                        ✅ متقن
+                    </div>
+                `;
+
+            }else if(unlocked){
+
+                status=`
+                    <div class="status open-status">
+                        🔓 مفتوح
+                    </div>
+                `;
+
+            }else{
+
+                status=`
+                    <div class="status locked-status">
+                        🔒 مقفل — أتقن الدرس السابق
+                    </div>
+                `;
+
+            }
+
+            /* -------------------------------------------------
+               الأمثلة:
+               الاستماع موجود هنا.
+               زر النطق ممنوع هنا عمدًا.
+            ------------------------------------------------- */
+
+            let examplesHTML="";
+
+            lesson.examples.forEach(
+                example=>{
+
+                    examplesHTML+=`
+                        <div class="example">
+
+                            <div class="example-en">
+                                ${example.english}
+                            </div>
+
+                            <div class="example-ar">
+                                ${example.arabic}
+                            </div>
+
+                            <button
+                                class="sound"
+                                onclick='speak(${JSON.stringify(example.english)})'>
+                                🔊 استمع
+                            </button>
+
+                        </div>
+                    `;
+
+                }
+            );
+
+            let wordsHTML="";
+
+            lesson.words.forEach(
+                word=>{
+
+                    wordsHTML+=`
+                        <div>• ${word}</div>
+                    `;
+
+                }
+            );
+
+            let testButton="";
+
+            if(mastered){
+
+                testButton=`
+                    <button
+                        class="test-button disabled"
+                        disabled>
+                        ✅ تم إتقان هذا الدرس
+                    </button>
+                `;
+
+            }else if(!unlocked){
+
+                testButton=`
+                    <button
+                        class="test-button disabled"
+                        disabled>
+                        🔒 أكمل الدرس السابق أولًا
+                    </button>
+                `;
+
+            }else if(data.testsToday>=10){
+
+                testButton=`
+                    <button
+                        class="test-button disabled"
+                        disabled>
+                        ⏰ انتهت اختبارات اليوم
+                    </button>
+                `;
+
+            }else{
+
+                testButton=`
+                    <button
+                        class="test-button"
+                        onclick="openTest(${index})">
+                        🧠 ابدأ اختبار الإتقان
+                    </button>
+                `;
+
+            }
+
+            card.innerHTML=`
+
+                ${status}
+
+                <h2>
+                    📘 ${lesson.title}
+                </h2>
+
+                <div class="goal">
+
+                    <strong>
+                        🎯 هدف الدرس:
+                    </strong>
+
+                    <br>
+
+                    ${lesson.goal}
+
+                </div>
+
+                <div class="explanation">
+
+                    <strong>
+                        📖 الشرح:
+                    </strong>
+
+                    <br>
+
+                    ${lesson.explanation}
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        💬 الأمثلة:
+                    </strong>
+
+                    ${examplesHTML}
+
+                </div>
+
+                <div class="words">
+
+                    <strong>
+                        🧠 المفردات:
+                    </strong>
+
+                    ${wordsHTML}
+
+                </div>
+
+                <div class="practice">
+
+                    <strong>
+                        ✍️ التدريب:
+                    </strong>
+
+                    <br>
+
+                    ${lesson.practice}
+
+                </div>
+
+                ${testButton}
+
+                <div
+                    id="test-${index}"
+                    class="test-box hidden">
+                </div>
+
+            `;
+
+            container.appendChild(card);
+
+        }
+    );
+
 }
+
+/* =========================================================
+   فتح الاختبار
+========================================================= */
 
 function openTest(index){
-resetDailyTests();
-if(data.testsToday>=10){alert("لقد وصلت إلى 10 اختبارات اليوم.");return}
-if(!isUnlocked(index)||isMastered(index))return;
-const box=document.getElementById("test-"+index),lesson=lessons[index];
-pronunciationResults[index]={word:false,sentence:false};
-const word=lesson.words[Math.floor(Math.random()*lesson.words.length)].split("=")[0].trim();
-const sentence=lesson.examples[Math.floor(Math.random()*lesson.examples.length)].english;
-box.classList.remove("hidden");
-box.innerHTML=`<h3>🧠 اختبار إتقان Lesson ${index+1}</h3>
-<p>تحتاج إلى <strong>80%</strong> على الأقل. الوقت مناسب لمستوى الدرس. إذا لم تنجح، ستعيد <strong>هذا الاختبار فقط</strong> دون فقدان تقدمك السابق.</p>
-<div id="timer-${index}" class="timer">⏱️ الوقت المتبقي</div>
-<div id="questions-${index}"></div>
-<button class="test-button" onclick="submitTest(${index})">✅ إنهاء الاختبار</button>
-<div id="result-${index}"></div>`;
-const questions=document.getElementById("questions-"+index);
-questions.innerHTML+=`<div class="voice-box"><h3>🎤 اختبار النطق — كلمة</h3><p>استمع أولًا ثم انطق الكلمة.</p>
-<div class="voice-target">${word}</div>
-<button class="sound" onclick='speak(${JSON.stringify(word)})'>🔊 استمع</button>
-<button class="speak" onclick='startPronunciation(${JSON.stringify(word)},"pron-word-${index}","word",${index})'>🎤 انطق</button>
-<div id="pron-word-${index}" class="voice-result"></div></div>`;
-questions.innerHTML+=`<div class="voice-box"><h3>🎤 اختبار النطق — جملة</h3><p>استمع أولًا ثم انطق الجملة كاملة.</p>
-<div class="voice-target">${sentence}</div>
-<button class="sound" onclick='speak(${JSON.stringify(sentence)})'>🔊 استمع</button>
-<button class="speak" onclick='startPronunciation(${JSON.stringify(sentence)},"pron-sentence-${index}","sentence",${index})'>🎤 انطق</button>
-<div id="pron-sentence-${index}" class="voice-result"></div></div>`;
-lesson.test.forEach((q,qIndex)=>{
-let answers=q.a.map((answer,aIndex)=>`<label class="answer"><input type="radio" name="q-${index}-${qIndex}" value="${aIndex}"> ${answer}</label>`).join("");
-questions.innerHTML+=`<div style="background:white;padding:15px;border-radius:14px;margin-bottom:12px;line-height:2"><div class="question">${qIndex+1}. ${q.q}</div><div class="answers">${answers}</div></div>`;
-});
-box.scrollIntoView({behavior:"smooth",block:"start"});
-startTestTimer(index);
+
+    resetDailyTests();
+
+    if(data.testsToday>=10){
+
+        alert(
+            "لقد وصلت إلى 10 اختبارات اليوم."
+        );
+
+        return;
+    }
+
+    if(
+        !isUnlocked(index) ||
+        isMastered(index)
+    ){
+
+        return;
+    }
+
+    /* إغلاق اختبار سابق إن وجد */
+    stopTestTimer();
+
+    testSubmitted=false;
+
+    const lesson=
+        lessons[index];
+
+    pronunciationResults[index]={
+        word:false,
+        sentence:false
+    };
+
+    /* اختيار كلمة من مفردات الدرس */
+    const wordItem=
+        lesson.words[
+            Math.floor(
+                Math.random()*
+                lesson.words.length
+            )
+        ];
+
+    const word=
+        wordItem
+            .split("=")[0]
+            .trim();
+
+    /* اختيار جملة من أمثلة الدرس */
+    const sentence=
+        lesson.examples[
+            Math.floor(
+                Math.random()*
+                lesson.examples.length
+            )
+        ].english;
+
+    const box=
+        document.getElementById(
+            "test-"+index
+        );
+
+    box.classList.remove("hidden");
+
+    box.innerHTML=`
+
+        <div class="test-header">
+
+            <h3>
+                🧠 اختبار إتقان Lesson ${index+1}
+            </h3>
+
+            <p class="test-instruction">
+                تحتاج إلى <strong>80%</strong> على الأقل.
+                لكل درس وقت مناسب لمستواه.
+                إذا فشلت، ستعيد هذا الاختبار فقط،
+                بينما تبقى الدروس السابقة المتقنة محفوظة.
+            </p>
+
+        </div>
+
+        <div
+            id="timer-${index}"
+            class="timer">
+            ⏱️ الوقت المتبقي
+        </div>
+
+        <div id="questions-${index}"></div>
+
+        <button
+            class="test-button"
+            onclick="submitTest(${index})">
+            ✅ إنهاء الاختبار
+        </button>
+
+        <div
+            id="result-${index}">
+        </div>
+
+    `;
+
+    const questions=
+        document.getElementById(
+            "questions-"+index
+        );
+
+    /* ---------------------------------------------------------
+       اختبار النطق — كلمة
+    --------------------------------------------------------- */
+
+    questions.innerHTML+=`
+
+        <div class="voice-box">
+
+            <h3>
+                🎤 اختبار النطق — كلمة
+            </h3>
+
+            <p>
+                استمع أولًا، ثم انطق الكلمة.
+                يجب أن يكون النطق قريبًا بما يكفي ليتعرف عليه النظام.
+            </p>
+
+            <div class="voice-target">
+                ${word}
+            </div>
+
+            <button
+                class="sound"
+                onclick='speak(${JSON.stringify(word)})'>
+                🔊 استمع
+            </button>
+
+            <button
+                class="speak"
+                onclick='startPronunciation(
+                    ${JSON.stringify(word)},
+                    "pron-word-${index}",
+                    "word",
+                    ${index}
+                )'>
+                🎤 انطق
+            </button>
+
+            <div
+                id="pron-word-${index}"
+                class="voice-result">
+            </div>
+
+        </div>
+
+    `;
+
+    /* ---------------------------------------------------------
+       اختبار النطق — جملة
+    --------------------------------------------------------- */
+
+    questions.innerHTML+=`
+
+        <div class="voice-box">
+
+            <h3>
+                🎤 اختبار النطق — جملة
+            </h3>
+
+            <p>
+                استمع إلى الجملة ثم انطقها كاملة.
+            </p>
+
+            <div class="voice-target">
+                ${sentence}
+            </div>
+
+            <button
+                class="sound"
+                onclick='speak(${JSON.stringify(sentence)})'>
+                🔊 استمع
+            </button>
+
+            <button
+                class="speak"
+                onclick='startPronunciation(
+                    ${JSON.stringify(sentence)},
+                    "pron-sentence-${index}",
+                    "sentence",
+                    ${index}
+                )'>
+                🎤 انطق
+            </button>
+
+            <div
+                id="pron-sentence-${index}"
+                class="voice-result">
+            </div>
+
+        </div>
+
+    `;
+
+    /* ---------------------------------------------------------
+       الأسئلة الكتابية
+    --------------------------------------------------------- */
+
+    lesson.test.forEach(
+        (q,qIndex)=>{
+
+            let answersHTML="";
+
+            q.a.forEach(
+                (answer,aIndex)=>{
+
+                    answersHTML+=`
+
+                        <label class="answer">
+
+                            <input
+                                type="radio"
+                                name="q-${index}-${qIndex}"
+                                value="${aIndex}">
+
+                            ${answer}
+
+                        </label>
+
+                    `;
+
+                }
+            );
+
+            questions.innerHTML+=`
+
+                <div class="question-card">
+
+                    <div class="question">
+                        ${qIndex+1}. ${q.q}
+                    </div>
+
+                    <div class="answers">
+                        ${answersHTML}
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+    box.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+
+    startTestTimer(index);
+
 }
 
-function submitTest(index, timedOut=false){
-resetDailyTests();
-if(activeTestIndex===index)stopTestTimer();
-if(data.testsToday>=10 && !timedOut){alert("لقد وصلت إلى الحد الأقصى اليوم.");return}
-const lesson=lessons[index];
-if(document.getElementById("result-"+index)?.dataset.submitted==="1")return;
-const result=document.getElementById("result-"+index);
-if(result)result.dataset.submitted="1";
-let score=0;
-lesson.test.forEach((q,qIndex)=>{
-const selected=document.querySelector(`input[name="q-${index}-${qIndex}"]:checked`);
-if(selected&&Number(selected.value)===q.correct)score++;
-});
-const voice=pronunciationResults[index]||{word:false,sentence:false};
-const total=lesson.test.length+2;
-const finalScore=score+(voice.word?1:0)+(voice.sentence?1:0);
-const percent=Math.round(finalScore/total*100);
-data.testsToday++;
-if(percent>=80){
-if(!data.mastered.includes(index))data.mastered.push(index);
-saveData();
-result.innerHTML=`<div class="result success">🎉 ممتاز!<br>النتيجة: ${finalScore} / ${total} — ${percent}%<br>🏆 لقد أتقنت الدرس!<br>${index+1<lessons.length?`🔓 تم فتح Lesson ${index+2}.`:"🎓 مبروك! لقد أكملت جميع الدروس!"}</div>`;
- }else{
-data.mastered=data.mastered.filter(i=>i!==index);
-saveData();
-result.innerHTML=`<div class="result fail">📚 لم تصل إلى درجة الإتقان بعد.<br>النتيجة: ${finalScore} / ${total} — ${percent}%<br>تحتاج إلى 80% على الأقل.<br>🔄 بقيت الدروس التي أتقنتها محفوظة، وستعيد <strong>هذا الاختبار فقط</strong> حتى تنجح.<br>${!voice.word||!voice.sentence?"🎤 يجب أيضًا اجتياز اختبار النطق للكلمة والجملة.":""}</div>`;
+/* =========================================================
+   إنهاء الاختبار
+========================================================= */
+
+function submitTest(
+    index,
+    timedOut=false
+){
+
+    if(testSubmitted){
+        return;
+    }
+
+    testSubmitted=true;
+
+    resetDailyTests();
+
+    stopTestTimer();
+
+    if(
+        data.testsToday>=10 &&
+        !timedOut
+    ){
+
+        testSubmitted=false;
+
+        alert(
+            "لقد وصلت إلى الحد الأقصى اليوم."
+        );
+
+        return;
+    }
+
+    const lesson=
+        lessons[index];
+
+    let score=0;
+
+    lesson.test.forEach(
+        (q,qIndex)=>{
+
+            const selected=
+                document.querySelector(
+                    `input[name="q-${index}-${qIndex}"]:checked`
+                );
+
+            if(
+                selected &&
+                Number(selected.value)===
+                q.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+    const voice=
+        pronunciationResults[index]||
+        {
+            word:false,
+            sentence:false
+        };
+
+    const writtenTotal=
+        lesson.test.length;
+
+    const total=
+        writtenTotal+2;
+
+    const finalScore=
+        score+
+        (voice.word?1:0)+
+        (voice.sentence?1:0);
+
+    const percent=
+        Math.round(
+            finalScore/total*100
+        );
+
+    data.testsToday++;
+
+    const result=
+        document.getElementById(
+            "result-"+index
+        );
+
+    if(timedOut){
+
+        /* انتهاء الوقت = فشل الاختبار */
+        data.mastered=
+            data.mastered.filter(
+                i=>i!==index
+            );
+
+        saveData();
+
+        result.innerHTML=`
+
+            <div class="result fail">
+
+                ⏰ <strong>انتهى وقت الاختبار.</strong>
+
+                <br>
+
+                لم يتم اجتياز هذا الاختبار.
+
+                <br>
+
+                🔄 أعد <strong>هذا الاختبار فقط</strong> عندما تحاول مرة أخرى.
+
+                <br>
+
+                📊 نتيجتك قبل انتهاء الوقت:
+                ${finalScore} / ${total}
+                — ${percent}%
+
+            </div>
+
+        `;
+
+    }else if(percent>=80){
+
+        if(
+            !data.mastered.includes(index)
+        ){
+
+            data.mastered.push(index);
+
+        }
+
+        saveData();
+
+        result.innerHTML=`
+
+            <div class="result success">
+
+                🎉 <strong>ممتاز!</strong>
+
+                <br>
+
+                النتيجة:
+                ${finalScore} / ${total}
+                — ${percent}%
+
+                <br>
+
+                🏆 لقد أتقنت هذا الدرس!
+
+                <br>
+
+                ${
+                    index+1<lessons.length
+                    ?
+                    `🔓 تم فتح Lesson ${index+2}.`
+                    :
+                    `🎓 مبروك! لقد أكملت جميع الدروس!`
+                }
+
+            </div>
+
+        `;
+
+    }else{
+
+        /*
+           الفشل لا يمسح الدروس السابقة.
+           فقط الدرس الحالي لا يصبح متقنًا.
+        */
+
+        data.mastered=
+            data.mastered.filter(
+                i=>i!==index
+            );
+
+        saveData();
+
+        result.innerHTML=`
+
+            <div class="result fail">
+
+                📚 <strong>لم تصل إلى درجة الإتقان بعد.</strong>
+
+                <br>
+
+                النتيجة:
+                ${finalScore} / ${total}
+                — ${percent}%
+
+                <br>
+
+                تحتاج إلى 80% على الأقل.
+
+                <br>
+
+                🔄 ستعيد <strong>هذا الاختبار فقط</strong>.
+
+                <br>
+
+                الدروس السابقة التي أتقنتها
+                تبقى محفوظة.
+
+                ${
+                    (!voice.word||!voice.sentence)
+                    ?
+                    `<br>🎤 يجب أيضًا اجتياز اختبار النطق للكلمة والجملة.`
+                    :
+                    ``
+                }
+
+            </div>
+
+        `;
+
+    }
+
+    updateDashboard();
+
+    /*
+       إعادة عرض الدروس بعد ظهور النتيجة.
+       لا نزيل تقدم الدروس السابقة.
+    */
+
+    setTimeout(
+        ()=>{
+            displayLessons();
+
+            const cards=
+                document.querySelectorAll(
+                    ".lesson"
+                );
+
+            if(cards[index]){
+                cards[index].scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+            }
+        },
+        700
+    );
+
 }
+
+/* =========================================================
+   تشغيل الصفحة
+========================================================= */
+
+resetDailyTests();
+
 updateDashboard();
-setTimeout(()=>displayLessons(),700);
-}
 
-resetDailyTests();updateDashboard();displayLessons();
+displayLessons();
+
 </script>
+
 </body>
 </html>
