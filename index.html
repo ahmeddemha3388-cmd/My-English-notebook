@@ -72,7 +72,7 @@ header p {
     line-height: 1.7;
 }
 
-/* LEVELS */
+/* SECTION TITLE */
 
 .section-title {
     text-align: center;
@@ -86,65 +86,6 @@ header p {
 .section-title p {
     margin: 0;
     color: #667085;
-}
-
-.levels {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.level {
-    background: white;
-    border-radius: 20px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 7px 22px rgba(30,60,100,0.08);
-    cursor: pointer;
-    transition: 0.25s;
-    border: 2px solid transparent;
-}
-
-.level:hover {
-    transform: translateY(-5px);
-    border-color: #2563eb;
-}
-
-.level:active {
-    transform: translateY(-2px) scale(0.99);
-}
-
-.level-icon {
-    font-size: 34px;
-}
-
-.level h3 {
-    margin: 10px 0 7px;
-}
-
-.level p {
-    margin: 0;
-    color: #667085;
-    line-height: 1.5;
-}
-
-.level small {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-.beginner small {
-    color: #16a34a;
-}
-
-.intermediate small {
-    color: #2563eb;
-}
-
-.advanced small {
-    color: #7c3aed;
 }
 
 /* PROGRESS */
@@ -275,10 +216,6 @@ footer {
         font-size: 27px;
     }
 
-    .levels {
-        grid-template-columns: 1fr;
-    }
-
     .cards {
         grid-template-columns: 1fr;
     }
@@ -321,67 +258,6 @@ footer {
 <p>
 ابدأ من مستواك، وتعلّم بطريقة منظمة من المبتدئ حتى المستوى المتقدم.
 </p>
-
-</div>
-
-
-<!-- LEVELS -->
-
-<div class="section-title">
-
-<h2>🎯 مستويات التعلم</h2>
-
-<p>اختر المسار المناسب لمستواك</p>
-
-</div>
-
-
-<div class="levels">
-
-
-<div class="level beginner" onclick="openLevel('beginner')">
-
-<div class="level-icon">🟢</div>
-
-<h3>مبتدئ</h3>
-
-<p>
-أساسيات اللغة، الكلمات، الجمل والقواعد الأساسية.
-</p>
-
-<small>A1 – A2</small>
-
-</div>
-
-
-<div class="level intermediate" onclick="openLevel('intermediate')">
-
-<div class="level-icon">🔵</div>
-
-<h3>متوسط</h3>
-
-<p>
-تطوير القواعد والمحادثة وفهم النصوص والتعبيرات.
-</p>
-
-<small>B1 – B2</small>
-
-</div>
-
-
-<div class="level advanced" onclick="openLevel('advanced')">
-
-<div class="level-icon">🟣</div>
-
-<h3>متقدم</h3>
-
-<p>
-لغة أكثر احترافية، تعبيرات متقدمة وفهم أعمق.
-</p>
-
-<small>C1 – C2</small>
-
-</div>
 
 </div>
 
@@ -541,21 +417,13 @@ My English Notebook © 2026
 
 <script>
 
-/* =========================
-   ربط مستويات التعلم
-========================= */
+/*
+نظام التقدم البسيط
 
-function openLevel(level) {
-
-    window.location.href =
-        "lessons.html?level=" + encodeURIComponent(level);
-
-}
-
-
-/* =========================
-   نظام التقدم
-========================= */
+يمكن لصفحات الدروس لاحقًا
+تحديث القيمة باستخدام:
+localStorage.setItem("englishProgress", 25);
+*/
 
 function updateProgress() {
 
