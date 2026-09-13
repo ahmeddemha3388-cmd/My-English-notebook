@@ -50,7 +50,7 @@ header p{
     border-radius:25px;
     text-align:center;
     box-shadow:0 7px 24px rgba(0,0,0,.08);
-    margin-bottom:25px;
+    margin-bottom:30px;
 }
 
 .hero h2{
@@ -72,37 +72,22 @@ header p{
     line-height:1.8;
 }
 
-/* عنوان التقدم فقط */
-
-.progress-title{
-    background:white;
-    padding:22px;
-    border-radius:22px;
-    box-shadow:0 7px 22px rgba(0,0,0,.07);
-    margin-bottom:28px;
-    text-align:center;
-}
-
-.progress-title h2{
-    margin:0;
-    font-size:23px;
-}
-
 /* عناوين الأقسام */
 
 .section-title{
     text-align:center;
-    margin:25px 0 18px;
+    margin:25px 0 20px;
 }
 
 .section-title h2{
     margin:0;
-    font-size:24px;
+    font-size:27px;
 }
 
 .section-title p{
     color:#667085;
     margin-top:8px;
+    font-size:17px;
 }
 
 /* الأقسام */
@@ -110,30 +95,34 @@ header p{
 .cards{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:18px;
+    gap:22px;
+    max-width:850px;
+    margin:0 auto;
 }
 
 .card{
     background:white;
-    padding:24px;
+    padding:28px;
     border-radius:23px;
     box-shadow:0 7px 22px rgba(0,0,0,.07);
     border:1px solid #edf0f5;
+    text-align:center;
 }
 
 .card-icon{
-    font-size:38px;
+    font-size:42px;
 }
 
 .card h3{
-    font-size:21px;
-    margin:10px 0;
+    font-size:23px;
+    margin:12px 0;
 }
 
 .card p{
     color:#667085;
     line-height:1.9;
     min-height:58px;
+    font-size:16px;
 }
 
 .card a{
@@ -141,7 +130,7 @@ header p{
     background:#2563eb;
     color:white;
     text-decoration:none;
-    padding:11px 17px;
+    padding:12px 20px;
     border-radius:12px;
     font-weight:bold;
 }
@@ -160,6 +149,7 @@ footer{
 
     .cards{
         grid-template-columns:1fr;
+        max-width:520px;
     }
 
     header h1{
@@ -206,15 +196,6 @@ footer{
     </section>
 
 
-    <!-- شعار التقدم فقط -->
-
-    <section class="progress-title">
-
-        <h2>📊 تقدمي في التعلم</h2>
-
-    </section>
-
-
     <!-- أقسام الموقع -->
 
     <div class="section-title">
@@ -227,7 +208,6 @@ footer{
 
 
     <section class="cards">
-
 
         <div class="card">
 
@@ -299,7 +279,6 @@ footer{
             </a>
 
         </div>
-
 
     </section>
 
