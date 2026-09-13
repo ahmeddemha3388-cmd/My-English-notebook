@@ -36,6 +36,18 @@ button{border:0;cursor:pointer;font-family:inherit}.test-button{background:#0478
 .result{padding:14px;border-radius:14px;margin-top:15px;font-weight:bold;line-height:1.8}
 .success{background:#ecfdf5;color:#047857}.fail{background:#fef2f2;color:#b91c1c}
 .limit{background:#fff7ed;color:#c2410c;padding:12px;border-radius:12px;margin-top:12px;line-height:1.7}
+.timer{
+background:#eff6ff;
+color:#1d4ed8;
+padding:12px;
+border-radius:12px;
+margin:12px 0;
+font-weight:bold;
+text-align:center;
+}
+.timer.warning{background:#fff7ed;color:#c2410c}
+.timer.danger{background:#fef2f2;color:#b91c1c}
+
 .voice-box{background:#f5f3ff;padding:15px;border-radius:14px;margin-top:14px}
 .voice-target{direction:ltr;text-align:center;font-size:21px;font-weight:bold;margin:12px 0}
 .voice-result{margin-top:10px;font-weight:bold}
@@ -329,7 +341,7 @@ const unlocked=isUnlocked(index),mastered=isMastered(index);
 const card=document.createElement("article");card.className="lesson"+(!unlocked?" locked":"");
 let status=mastered?`<div class="status mastered-status">✅ متقن</div>`:unlocked?`<div class="status open-status">🔓 مفتوح</div>`:`<div class="status locked-status">🔒 مقفل — أتقن الدرس السابق</div>`;
 let examplesHTML="";
-lesson.examples.forEach(example=>{examplesHTML+=`<div class="example"><div class="example-en">${example.english}</div><div class="example-ar">${example.arabic}</div></div>`});
+lesson.examples.forEach(example=>{examplesHTML+=`<div class="example"><div class="example-en">${example.english}</div><div class="example-ar">${example.arabic}</div><button class="sound" onclick='speak(${JSON.stringify(example.english)})'>🔊 استمع</button></div>`});
 let wordsHTML=lesson.words.map(w=>`<div>• ${w}</div>`).join("");
 let testButton=mastered?`<button class="test-button disabled" disabled>✅ تم إتقان هذا الدرس</button>`:
 !unlocked?`<button class="test-button disabled" disabled>🔒 أكمل الدرس السابق أولًا</button>`:
@@ -346,6 +358,53 @@ container.appendChild(card);
 });
 }
 
+let activeTestTimer=null;
+let activeTestIndex=null;
+let activeTestSeconds=0;
+
+function getTestTime(index){
+if(index<10)return 90;
+if(index<25)return 120;
+if(index<40)return 150;
+return 180;
+}
+
+function stopTestTimer(){
+if(activeTestTimer){
+clearInterval(activeTestTimer);
+activeTestTimer=null;
+}
+activeTestIndex=null;
+activeTestSeconds=0;
+}
+
+function startTestTimer(index){
+stopTestTimer();
+activeTestIndex=index;
+activeTestSeconds=getTestTime(index);
+const timer=document.getElementById("timer-"+index);
+if(!timer)return;
+
+function paint(){
+const m=Math.floor(activeTestSeconds/60);
+const s=String(activeTestSeconds%60).padStart(2,"0");
+timer.textContent=`⏱️ الوقت المتبقي: ${m}:${s}`;
+timer.className="timer"+(activeTestSeconds<=15?" danger":activeTestSeconds<=30?" warning":"");
+}
+
+paint();
+activeTestTimer=setInterval(()=>{
+activeTestSeconds--;
+paint();
+if(activeTestSeconds<=0){
+stopTestTimer();
+const result=document.getElementById("result-"+index);
+if(result)result.innerHTML=`<div class="result fail">⏰ انتهى وقت الاختبار. لم يتم اجتياز الاختبار.<br>سيُعاد التقدم إلى الصفر حسب نظام الإتقان.</div>`;
+submitTest(index,true);
+}
+},1000);
+}
+
 function openTest(index){
 resetDailyTests();
 if(data.testsToday>=10){alert("لقد وصلت إلى 10 اختبارات اليوم.");return}
@@ -356,7 +415,8 @@ const word=lesson.words[Math.floor(Math.random()*lesson.words.length)].split("="
 const sentence=lesson.examples[Math.floor(Math.random()*lesson.examples.length)].english;
 box.classList.remove("hidden");
 box.innerHTML=`<h3>🧠 اختبار إتقان Lesson ${index+1}</h3>
-<p>تحتاج إلى <strong>80%</strong> على الأقل. الاختبار يحتوي على أسئلة + نطق كلمة + نطق جملة.</p>
+<p>تحتاج إلى <strong>80%</strong> على الأقل. الوقت مناسب لمستوى الدرس. إذا لم تنجح، ستعيد <strong>هذا الاختبار فقط</strong> دون فقدان تقدمك السابق.</p>
+<div id="timer-${index}" class="timer">⏱️ الوقت المتبقي</div>
 <div id="questions-${index}"></div>
 <button class="test-button" onclick="submitTest(${index})">✅ إنهاء الاختبار</button>
 <div id="result-${index}"></div>`;
@@ -376,12 +436,17 @@ let answers=q.a.map((answer,aIndex)=>`<label class="answer"><input type="radio" 
 questions.innerHTML+=`<div style="background:white;padding:15px;border-radius:14px;margin-bottom:12px;line-height:2"><div class="question">${qIndex+1}. ${q.q}</div><div class="answers">${answers}</div></div>`;
 });
 box.scrollIntoView({behavior:"smooth",block:"start"});
+startTestTimer(index);
 }
 
-function submitTest(index){
+function submitTest(index, timedOut=false){
 resetDailyTests();
-if(data.testsToday>=10){alert("لقد وصلت إلى الحد الأقصى اليوم.");return}
+if(activeTestIndex===index)stopTestTimer();
+if(data.testsToday>=10 && !timedOut){alert("لقد وصلت إلى الحد الأقصى اليوم.");return}
 const lesson=lessons[index];
+if(document.getElementById("result-"+index)?.dataset.submitted==="1")return;
+const result=document.getElementById("result-"+index);
+if(result)result.dataset.submitted="1";
 let score=0;
 lesson.test.forEach((q,qIndex)=>{
 const selected=document.querySelector(`input[name="q-${index}-${qIndex}"]:checked`);
@@ -392,14 +457,14 @@ const total=lesson.test.length+2;
 const finalScore=score+(voice.word?1:0)+(voice.sentence?1:0);
 const percent=Math.round(finalScore/total*100);
 data.testsToday++;
-const result=document.getElementById("result-"+index);
 if(percent>=80){
 if(!data.mastered.includes(index))data.mastered.push(index);
 saveData();
 result.innerHTML=`<div class="result success">🎉 ممتاز!<br>النتيجة: ${finalScore} / ${total} — ${percent}%<br>🏆 لقد أتقنت الدرس!<br>${index+1<lessons.length?`🔓 تم فتح Lesson ${index+2}.`:"🎓 مبروك! لقد أكملت جميع الدروس!"}</div>`;
-}else{
+ }else{
+data.mastered=data.mastered.filter(i=>i!==index);
 saveData();
-result.innerHTML=`<div class="result fail">📚 لم تصل إلى درجة الإتقان بعد.<br>النتيجة: ${finalScore} / ${total} — ${percent}%<br>تحتاج إلى 80% على الأقل.<br>راجع الدرس وحاول مرة أخرى.<br>${!voice.word||!voice.sentence?"🎤 يجب أيضًا اجتياز اختبار النطق للكلمة والجملة.":""}</div>`;
+result.innerHTML=`<div class="result fail">📚 لم تصل إلى درجة الإتقان بعد.<br>النتيجة: ${finalScore} / ${total} — ${percent}%<br>تحتاج إلى 80% على الأقل.<br>🔄 بقيت الدروس التي أتقنتها محفوظة، وستعيد <strong>هذا الاختبار فقط</strong> حتى تنجح.<br>${!voice.word||!voice.sentence?"🎤 يجب أيضًا اجتياز اختبار النطق للكلمة والجملة.":""}</div>`;
 }
 updateDashboard();
 setTimeout(()=>displayLessons(),700);
