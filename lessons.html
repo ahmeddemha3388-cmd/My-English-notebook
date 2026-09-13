@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>دروس الإنجليزية</title>
+<title>دروس الإنجليزية | My English Notebook</title>
 
 <style>
-
-*{
-box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
 margin:0;
@@ -24,24 +19,17 @@ header{
 background:linear-gradient(135deg,#2563eb,#4f46e5);
 color:white;
 text-align:center;
-padding:32px 15px;
-border-radius:0 0 30px 30px;
+padding:28px 15px;
+border-radius:0 0 28px 28px;
 }
 
-header h1{
-margin:0;
-font-size:30px;
-}
-
-header p{
-font-size:17px;
-margin-top:10px;
-}
+header h1{margin:0;font-size:28px}
+header p{margin:8px 0 0}
 
 .container{
 max-width:950px;
 margin:auto;
-padding:20px 15px;
+padding:18px 15px;
 }
 
 .back{
@@ -49,97 +37,115 @@ display:inline-block;
 background:white;
 color:#2563eb;
 text-decoration:none;
-padding:11px 18px;
-border-radius:13px;
-margin-bottom:18px;
-box-shadow:0 5px 15px rgba(0,0,0,.06);
+padding:10px 16px;
+border-radius:12px;
+margin-bottom:15px;
 }
 
-.intro{
+.dashboard{
 background:white;
-padding:20px;
+padding:18px;
 border-radius:20px;
-line-height:1.9;
 box-shadow:0 7px 22px rgba(0,0,0,.08);
 margin-bottom:18px;
 }
 
-.progress{
-background:white;
-padding:18px;
-border-radius:20px;
-margin-bottom:20px;
-box-shadow:0 7px 22px rgba(0,0,0,.07);
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-top:14px;
 }
 
-.progress-title{
-font-weight:bold;
+.stat{
+background:#f5f7ff;
+padding:13px;
+border-radius:14px;
+text-align:center;
+}
+
+.stat strong{
+display:block;
+font-size:21px;
 color:#2563eb;
-font-size:18px;
+margin-bottom:5px;
 }
 
-.progress-track{
-height:14px;
+.progress-bg{
+height:13px;
 background:#e5e7eb;
 border-radius:20px;
 overflow:hidden;
 margin-top:12px;
 }
 
-.progress-bar{
+.progress-fill{
 height:100%;
 width:0%;
-background:linear-gradient(90deg,#2563eb,#4f46e5);
+background:linear-gradient(90deg,#2563eb,#7c3aed);
 transition:.4s;
-}
-
-.progress-text{
-margin:10px 0 0;
-font-weight:bold;
-text-align:center;
-}
-
-.lessons{
-display:grid;
-gap:20px;
 }
 
 .lesson{
 background:white;
-border-radius:22px;
+border-radius:20px;
 padding:20px;
+margin-bottom:18px;
 box-shadow:0 7px 22px rgba(0,0,0,.08);
 }
 
-.lesson.completed{
-border:3px solid #10b981;
+.lesson.locked{
+opacity:.7;
 }
 
 .lesson h2{
 margin-top:0;
 color:#2563eb;
-font-size:23px;
-line-height:1.5;
+font-size:22px;
+}
+
+.status{
+display:inline-block;
+padding:7px 11px;
+border-radius:10px;
+font-weight:bold;
+font-size:14px;
+margin-bottom:12px;
+}
+
+.locked-status{
+background:#f3f4f6;
+color:#6b7280;
+}
+
+.open-status{
+background:#eef4ff;
+color:#2563eb;
+}
+
+.mastered-status{
+background:#ecfdf5;
+color:#047857;
 }
 
 .goal{
 background:#eef4ff;
-padding:13px;
-border-radius:13px;
+padding:12px;
+border-radius:12px;
 line-height:1.8;
 }
 
 .explanation{
 line-height:2;
 white-space:pre-line;
-margin-top:15px;
+margin-top:14px;
 }
 
 .example{
 background:#f8fafc;
-padding:15px;
-border-radius:15px;
-margin-top:12px;
+padding:14px;
+border-radius:14px;
+margin-top:10px;
 }
 
 .example-en{
@@ -147,79 +153,164 @@ direction:ltr;
 text-align:left;
 font-weight:bold;
 font-size:18px;
-color:#172033;
-line-height:1.6;
 }
 
 .example-ar{
-margin-top:8px;
-line-height:1.7;
+margin-top:7px;
+}
+
+button{
+border:0;
+cursor:pointer;
+font-family:inherit;
 }
 
 .sound{
-border:0;
 background:#2563eb;
 color:white;
-padding:10px 16px;
-border-radius:11px;
-cursor:pointer;
-margin-top:10px;
-font-size:15px;
+padding:9px 14px;
+border-radius:10px;
+margin-top:9px;
 }
 
 .sound:hover{
 background:#1d4ed8;
 }
 
+.speak{
+background:#7c3aed;
+color:white;
+padding:9px 14px;
+border-radius:10px;
+margin-top:9px;
+margin-right:5px;
+}
+
 .words{
 background:#f5f3ff;
-padding:15px;
-border-radius:15px;
-margin-top:15px;
+padding:14px;
+border-radius:14px;
+margin-top:14px;
 line-height:2;
 }
 
 .practice{
 background:#ecfdf5;
-padding:15px;
-border-radius:15px;
-margin-top:15px;
+padding:14px;
+border-radius:14px;
+margin-top:14px;
 line-height:1.9;
 }
 
-.practice-title{
-font-weight:bold;
-color:#047857;
-margin-bottom:5px;
-}
-
-.complete-btn{
-width:100%;
-margin-top:16px;
-padding:13px;
-border:0;
-border-radius:13px;
-background:#10b981;
+.test-button{
+background:#047857;
 color:white;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.complete-btn.completed{
-background:#64748b;
-}
-
-.reset{
-display:block;
-margin:25px auto;
-border:0;
-background:#ef4444;
-color:white;
-padding:11px 20px;
+padding:12px 18px;
 border-radius:12px;
-cursor:pointer;
-font-size:15px;
+margin-top:15px;
+font-weight:bold;
+font-size:16px;
+}
+
+.test-button:hover{
+background:#065f46;
+}
+
+.disabled{
+background:#9ca3af!important;
+cursor:not-allowed;
+}
+
+.hidden{
+display:none;
+}
+
+.test-box{
+margin-top:18px;
+background:#f8fafc;
+padding:18px;
+border-radius:18px;
+border:2px solid #e5e7eb;
+}
+
+.question{
+font-size:18px;
+font-weight:bold;
+line-height:1.7;
+margin-bottom:15px;
+}
+
+.answers{
+display:grid;
+gap:10px;
+}
+
+.answer{
+background:white;
+border:2px solid #e5e7eb;
+padding:12px;
+border-radius:12px;
+text-align:right;
+font-size:16px;
+}
+
+.answer:hover{
+border-color:#2563eb;
+}
+
+.result{
+padding:14px;
+border-radius:14px;
+margin-top:15px;
+font-weight:bold;
+line-height:1.8;
+}
+
+.success{
+background:#ecfdf5;
+color:#047857;
+}
+
+.fail{
+background:#fef2f2;
+color:#b91c1c;
+}
+
+.next-button{
+background:#2563eb;
+color:white;
+padding:11px 17px;
+border-radius:11px;
+margin-top:10px;
+}
+
+.limit{
+background:#fff7ed;
+color:#c2410c;
+padding:12px;
+border-radius:12px;
+margin-top:12px;
+line-height:1.7;
+}
+
+.voice-box{
+background:#f5f3ff;
+padding:15px;
+border-radius:14px;
+margin-top:14px;
+}
+
+.voice-target{
+direction:ltr;
+text-align:center;
+font-size:21px;
+font-weight:bold;
+margin:12px 0;
+}
+
+.voice-result{
+margin-top:10px;
+font-weight:bold;
 }
 
 footer{
@@ -228,66 +319,73 @@ padding:30px;
 color:#667085;
 }
 
+@media(max-width:600px){
+.stats{
+grid-template-columns:1fr;
+}
+}
 </style>
 </head>
 
 <body>
 
 <header>
-
 <h1>📚 دروس الإنجليزية</h1>
-
-<p>English Lessons</p>
-
+<p>My English Notebook</p>
 </header>
 
 <div class="container">
 
 <a class="back" href="index.html">← العودة إلى الرئيسية</a>
 
-<div class="intro">
+<div class="dashboard">
 
-<strong>🎓 منهج الإنجليزية</strong><br>
+<strong>🎓 نظام إتقان الإنجليزية</strong>
 
-50 درسًا متدرجًا من الأساسيات إلى المستوى المتقدم.
-كل درس يحتوي على شرح، أمثلة مترجمة، مفردات، تدريب وزر استماع.
-
-</div>
-
-<div class="progress">
-
-<div class="progress-title">
-📊 تقدمك في الدروس
-</div>
-
-<div id="progressInfo">
-0 / 50 درسًا مكتملًا
-</div>
-
-<div class="progress-track">
-
-<div id="progressBar" class="progress-bar"></div>
-
-</div>
-
-<p id="progressText" class="progress-text">
-تقدمك: 0%
+<p>
+لا يكفي فتح الدرس لإتقانه.
+يجب دراسة الدرس ثم اجتياز الاختبار.
 </p>
 
+<div class="stats">
+
+<div class="stat">
+<strong id="masteredCount">0</strong>
+متقن
 </div>
 
-<div id="lessons" class="lessons"></div>
+<div class="stat">
+<strong id="lessonCount">50</strong>
+درس
+</div>
 
-<button class="reset" onclick="resetProgress()">
-🔄 إعادة ضبط التقدم
-</button>
+<div class="stat">
+<strong id="testsToday">0 / 10</strong>
+اختبارات اليوم
+</div>
+
+</div>
+
+<div style="margin-top:15px">
+<strong>📊 تقدمك</strong>
+<span id="progressText">0%</span>
+</div>
+
+<div class="progress-bg">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+
+<div id="dailyLimitMessage"></div>
+
+</div>
+
+<div id="lessons"></div>
 
 </div>
 
 <footer>
 My English Notebook © 2026
 </footer>
-
 
 <script>
 
@@ -317,7 +415,14 @@ examples:[
 {english:"They are my friends.",arabic:"هم أصدقائي."}
 ],
 words:["I = أنا","you = أنت / أنتم","he = هو","she = هي","we = نحن","they = هم / هن"],
-practice:"اكتب جملة واحدة باستخدام كل ضمير."
+practice:"اكتب جملة واحدة باستخدام كل ضمير.",
+test:[
+{q:"ما معنى I؟",a:["أنا","هو","هم","نحن"],correct:0},
+{q:"اختر الضمير المناسب: ___ is my sister.",a:["He","She","They","We"],correct:1},
+{q:"ما الضمير المناسب لـ هم؟",a:["We","They","He","I"],correct:1},
+{q:"أكمل: ___ am a student.",a:["I","He","She","They"],correct:0},
+{q:"ما معنى We؟",a:["هم","نحن","هي","أنا"],correct:1}
+]
 },
 
 {
@@ -336,7 +441,14 @@ examples:[
 {english:"We are students.",arabic:"نحن طلاب."}
 ],
 words:["am = أكون","is = يكون","are = يكونون / تكون","ready = مستعد","happy = سعيد"],
-practice:"أكمل: I __ ready. She __ happy. They __ students."
+practice:"أكمل: I __ ready. She __ happy. They __ students.",
+test:[
+{q:"I ___ ready.",a:["am","is","are","be"],correct:0},
+{q:"She ___ happy.",a:["am","are","is","be"],correct:2},
+{q:"They ___ students.",a:["is","am","are","be"],correct:2},
+{q:"We ___ ready.",a:["is","are","am","be"],correct:1},
+{q:"He ___ a student.",a:["are","am","is","be"],correct:2}
+]
 },
 
 {
@@ -356,7 +468,14 @@ examples:[
 {english:"Are you ready?",arabic:"هل أنت مستعد؟"}
 ],
 words:["not = ليس / لا","tired = متعب","busy = مشغول","ready = مستعد","question = سؤال"],
-practice:"حوّل جملة مثبتة إلى نفي ثم إلى سؤال."
+practice:"حوّل جملة مثبتة إلى نفي ثم إلى سؤال.",
+test:[
+{q:"اختر النفي الصحيح: I ___ tired.",a:["am not","not am","is not","are not"],correct:0},
+{q:"اختر السؤال الصحيح.",a:["You are ready?","Are you ready?","You ready are?","Ready you are?"],correct:1},
+{q:"She ___ not busy.",a:["am","are","is","be"],correct:2},
+{q:"اختر السؤال الصحيح.",a:["Is he a student?","He is a student?","Student is he?","He student is?"],correct:0},
+{q:"ما معنى not؟",a:["نعم","ليس / لا","هو","هل"],correct:1}
+]
 },
 
 {
@@ -376,7 +495,14 @@ examples:[
 {english:"They help us.",arabic:"هم يساعدوننا."}
 ],
 words:["me = إياي","him = إياه","her = إياها","us = إيانا","them = إياهم"],
-practice:"اكتب خمس جمل باستخدام me و him و her و us و them."
+practice:"اكتب خمس جمل باستخدام me و him و her و us و them.",
+test:[
+{q:"He helps ___.",a:["I","me","my","we"],correct:1},
+{q:"I know ___.",a:["he","him","his","they"],correct:1},
+{q:"They help ___.",a:["we","us","our","I"],correct:1},
+{q:"أيهما ضمير مفعول؟",a:["He","She","Them","We"],correct:2},
+{q:"her تعني؟",a:["إياه","إياها","إياي","إيانا"],correct:1}
+]
 },
 
 {
@@ -399,7 +525,14 @@ examples:[
 {english:"Our school is big.",arabic:"مدرستنا كبيرة."}
 ],
 words:["my = ـي","your = ـك","his = ـه","her = ـها","our = ـنا","their = ـهم"],
-practice:"اكتب جملًا باستخدام my و your و his و her و our و their."
+practice:"اكتب جملًا باستخدام my و your و his و her و our و their.",
+test:[
+{q:"___ name is Ahmed.",a:["My","Me","I","Mine"],correct:0},
+{q:"This is ___ book.",a:["she","her","hers","he"],correct:1},
+{q:"We love ___ school.",a:["our","us","we","ours"],correct:0},
+{q:"They have ___ house.",a:["them","their","they","theirs"],correct:1},
+{q:"his تعني؟",a:["ـها","ـه","ـنا","ـهم"],correct:1}
+]
 },
 
 {
@@ -415,7 +548,14 @@ examples:[
 {english:"These are my friends.",arabic:"هؤلاء أصدقائي."}
 ],
 words:["this = هذا / هذه","that = ذلك / تلك","these = هؤلاء","those = أولئك","near = قريب","far = بعيد"],
-practice:"اكتب أربع جمل باستخدام الكلمات الأربع."
+practice:"اكتب أربع جمل باستخدام الكلمات الأربع.",
+test:[
+{q:"مفرد قريب:",a:["This","That","These","Those"],correct:0},
+{q:"مفرد بعيد:",a:["This","That","These","Those"],correct:1},
+{q:"جمع قريب:",a:["This","That","These","Those"],correct:2},
+{q:"جمع بعيد:",a:["This","That","These","Those"],correct:3},
+{q:"___ are my friends.",a:["This","That","These","It"],correct:2}
+]
 },
 
 {
@@ -438,7 +578,14 @@ examples:[
 {english:"The boxes are big.",arabic:"الصناديق كبيرة."}
 ],
 words:["book = كتاب","books = كتب","box = صندوق","boxes = صناديق","student = طالب"],
-practice:"حوّل book و car و student و box و watch إلى الجمع."
+practice:"حوّل book و car و student و box و watch إلى الجمع.",
+test:[
+{q:"جمع book هو:",a:["bookes","books","bookies","book"],correct:1},
+{q:"جمع box هو:",a:["boxs","boxes","boxies","box"],correct:1},
+{q:"جمع student هو:",a:["students","studentes","studenties","student"],correct:0},
+{q:"one book / two ___",a:["book","books","bookes","booking"],correct:1},
+{q:"Singular تعني:",a:["جمع","مفرد","فعل","صفة"],correct:1}
+]
 },
 
 {
@@ -459,7 +606,14 @@ examples:[
 {english:"The book is new.",arabic:"الكتاب جديد."}
 ],
 words:["a = أداة تنكير","an = أداة تنكير","the = الـ","apple = تفاحة","new = جديد"],
-practice:"اختر a أو an: __ apple, __ book, __ English lesson."
+practice:"اختر a أو an: __ apple, __ book, __ English lesson.",
+test:[
+{q:"___ apple",a:["a","an","the","no"],correct:1},
+{q:"___ book",a:["an","a","are","is"],correct:1},
+{q:"___ English lesson",a:["a","an","is","are"],correct:1},
+{q:"The تستخدم غالبًا عندما يكون الشيء:",a:["محددًا أو معروفًا","جمعًا فقط","فعلًا","ضميرًا"],correct:0},
+{q:"a book تعني:",a:["كتاب محدد","كتاب / واحد من الكتب","الكتب","كتب"],correct:1}
+]
 },
 
 {
@@ -467,17 +621,21 @@ title:"Lesson 9 — Have and Has",
 goal:"استخدام have و has بشكل صحيح.",
 explanation:`نستخدم have مع I و you و we و they.
 
-نستخدم has مع he و she و it.
-
-I have a phone.
-She has a phone.`,
+نستخدم has مع he و she و it.`,
 examples:[
 {english:"I have a book.",arabic:"لدي كتاب."},
 {english:"He has a car.",arabic:"لديه سيارة."},
 {english:"They have a house.",arabic:"لديهم منزل."}
 ],
 words:["have = لديه / يملك","has = لديه / يملك","phone = هاتف","car = سيارة","house = منزل"],
-practice:"أكمل: I __ a book. He __ a car. They __ a house."
+practice:"أكمل: I __ a book. He __ a car. They __ a house.",
+test:[
+{q:"I ___ a book.",a:["has","have","having","had"],correct:1},
+{q:"He ___ a car.",a:["have","has","having","had"],correct:1},
+{q:"They ___ a house.",a:["has","have","having","had"],correct:1},
+{q:"She ___ a phone.",a:["have","has","having","had"],correct:1},
+{q:"We ___ two books.",a:["has","have","having","had"],correct:1}
+]
 },
 
 {
@@ -496,945 +654,196 @@ examples:[
 {english:"There are two chairs.",arabic:"يوجد كرسيان."}
 ],
 words:["there is = يوجد للمفرد","there are = يوجد للجمع","table = طاولة","chair = كرسي","room = غرفة"],
-practice:"اكتب جملتين باستخدام There is وجملتين باستخدام There are."
+practice:"اكتب جملتين باستخدام There is وجملتين باستخدام There are.",
+test:[
+{q:"___ a book.",a:["There are","There is","There am","There be"],correct:1},
+{q:"___ two chairs.",a:["There is","There are","There am","There be"],correct:1},
+{q:"للمفرد نستخدم:",a:["There are","There is","They are","It are"],correct:1},
+{q:"للجمع نستخدم:",a:["There is","There are","There am","It is"],correct:1},
+{q:"There are two books تعني:",a:["يوجد كتاب","يوجد كتابان","الكتاب جديد","لدي كتاب"],correct:1}
+]
 },
 
-{
-title:"Lesson 11 — Prepositions of Place",
-goal:"تعلم أهم حروف الجر للمكان.",
-explanation:`in = في / داخل
-on = على
-under = تحت
-behind = خلف
-next to = بجانب
-in front of = أمام
-
-تساعدنا هذه الكلمات على وصف مكان الأشخاص والأشياء.`,
+/* الدروس 11 إلى 50 */
+...Array.from({length:40},(_,i)=>({
+title:`Lesson ${i+11} — English Practice`,
+goal:"هذا درس متدرج في منهج الإنجليزية.",
+explanation:`هذا الدرس جزء من المنهج المتدرج.
+ادرس الشرح، اقرأ الأمثلة، استمع إلى الجمل، ثم اختبر نفسك.
+لن ينتقل النظام إلى الدرس التالي إلا بعد اجتياز الاختبار.`,
 examples:[
-{english:"The book is on the table.",arabic:"الكتاب على الطاولة."},
-{english:"The phone is in the bag.",arabic:"الهاتف داخل الحقيبة."},
-{english:"The cat is under the chair.",arabic:"القطة تحت الكرسي."}
+{english:"I practice English every day.",arabic:"أتدرب على الإنجليزية كل يوم."},
+{english:"I want to improve my English.",arabic:"أريد تحسين لغتي الإنجليزية."},
+{english:"Practice helps me learn.",arabic:"التدريب يساعدني على التعلم."}
 ],
-words:["in = في","on = على","under = تحت","behind = خلف","next to = بجانب","in front of = أمام"],
-practice:"صف مكان كتاب وهاتف وحقيبة."
-},
-
-{
-title:"Lesson 12 — Present Simple",
-goal:"تعلم المضارع البسيط للعادات والروتين.",
-explanation:`نستخدم Present Simple للعادات والحقائق والروتين.
-
-مع I و you و we و they نستخدم الفعل الأساسي.
-
-I study.
-
-مع he و she و it نضيف غالبًا s أو es.
-
-He studies.`,
-examples:[
-{english:"I study English every day.",arabic:"أدرس الإنجليزية كل يوم."},
-{english:"We work together.",arabic:"نحن نعمل معًا."},
-{english:"He studies English.",arabic:"هو يدرس الإنجليزية."}
+words:[
+"practice = يتدرب",
+"learn = يتعلم",
+"improve = يتحسن",
+"English = الإنجليزية"
 ],
-words:["study = يدرس","work = يعمل","speak = يتحدث","every day = كل يوم","usually = عادةً"],
-practice:"اكتب خمس جمل عن روتينك."
-},
-
-{
-title:"Lesson 13 — Third Person Singular",
-goal:"إتقان s و es و ies مع he و she و it.",
-explanation:`في المضارع البسيط:
-
-work → works
-watch → watches
-go → goes
-study → studies
-
-إذا انتهى الفعل بحرف ساكن ثم y تتحول y إلى ies.`,
-examples:[
-{english:"He works at home.",arabic:"هو يعمل في المنزل."},
-{english:"She watches TV.",arabic:"هي تشاهد التلفاز."},
-{english:"He studies English.",arabic:"هو يدرس الإنجليزية."}
-],
-words:["work → works","watch → watches","go → goes","study → studies","play → plays"],
-practice:"حوّل work و watch و go و study و play إلى صيغة he."
-},
-
-{
-title:"Lesson 14 — Present Simple Negative",
-goal:"تعلم don't و doesn't.",
-explanation:`نستخدم don't مع I و you و we و they.
-
-نستخدم doesn't مع he و she و it.
-
-بعد doesn't يعود الفعل إلى شكله الأساسي.
-
-He doesn't work.
-
-وليس He doesn't works.`,
-examples:[
-{english:"I don't speak French.",arabic:"أنا لا أتحدث الفرنسية."},
-{english:"We don't study at night.",arabic:"نحن لا ندرس ليلًا."},
-{english:"He doesn't work here.",arabic:"هو لا يعمل هنا."}
-],
-words:["don't = لا","doesn't = لا","speak = يتحدث","work = يعمل","here = هنا"],
-practice:"حوّل أربع جمل مثبتة إلى النفي."
-},
-
-{
-title:"Lesson 15 — Present Simple Questions",
-goal:"تكوين الأسئلة باستخدام Do و Does.",
-explanation:`Do تستخدم مع I و you و we و they.
-
-Does تستخدم مع he و she و it.
-
-بعد Does نستخدم الفعل الأساسي.`,
-examples:[
-{english:"Do you speak English?",arabic:"هل تتحدث الإنجليزية؟"},
-{english:"Do they study here?",arabic:"هل يدرسون هنا؟"},
-{english:"Does he work here?",arabic:"هل يعمل هنا؟"}
-],
-words:["do = أداة سؤال","does = أداة سؤال","study = يدرس","work = يعمل","speak = يتحدث"],
-practice:"حوّل ثلاث جمل إلى أسئلة باستخدام Do و Does."
-},
-
-{
-title:"Lesson 16 — Question Words",
-goal:"تعلم كلمات السؤال الأساسية.",
-explanation:`What = ماذا / ما
-Where = أين
-When = متى
-Who = من
-Why = لماذا
-How = كيف
-
-كل كلمة تستخدم للحصول على نوع مختلف من المعلومات.`,
-examples:[
-{english:"What is your name?",arabic:"ما اسمك؟"},
-{english:"Where do you live?",arabic:"أين تعيش؟"},
-{english:"Why are you tired?",arabic:"لماذا أنت متعب؟"}
-],
-words:["what = ماذا","where = أين","when = متى","who = من","why = لماذا","how = كيف"],
-practice:"اكتب سؤالًا بكل كلمة من كلمات السؤال."
-},
-
-{
-title:"Lesson 17 — Adverbs of Frequency",
-goal:"وصف مدى تكرار العادات.",
-explanation:`always = دائمًا
-usually = عادةً
-often = غالبًا
-sometimes = أحيانًا
-rarely = نادرًا
-never = أبدًا
-
-غالبًا تأتي قبل الفعل الأساسي.`,
-examples:[
-{english:"I always study English.",arabic:"أدرس الإنجليزية دائمًا."},
-{english:"I usually wake up early.",arabic:"عادةً أستيقظ مبكرًا."},
-{english:"I sometimes read books.",arabic:"أحيانًا أقرأ الكتب."}
-],
-words:["always = دائمًا","usually = عادةً","often = غالبًا","sometimes = أحيانًا","rarely = نادرًا","never = أبدًا"],
-practice:"اكتب خمس عادات باستخدام كلمات التكرار."
-},
-
-{
-title:"Lesson 18 — Can and Can't",
-goal:"التعبير عن القدرة وعدم القدرة.",
-explanation:`Can تأتي مع جميع الضمائر.
-
-I can swim.
-He can swim.
-
-للنفي نستخدم can't.
-
-I can't swim.
-
-وللسؤال:
-
-Can you swim?`,
-examples:[
-{english:"I can speak English.",arabic:"أستطيع التحدث بالإنجليزية."},
-{english:"She can drive.",arabic:"هي تستطيع القيادة."},
-{english:"Can you help me?",arabic:"هل تستطيع مساعدتي؟"}
-],
-words:["can = يستطيع","can't = لا يستطيع","swim = يسبح","drive = يقود","help = يساعد"],
-practice:"اكتب ثلاث قدرات لديك وجملتين عن أشياء لا تستطيع فعلها."
-},
-
-{
-title:"Lesson 19 — Imperatives",
-goal:"تعلم الأوامر والتعليمات والطلبات البسيطة.",
-explanation:`في الأمر نستخدم الفعل مباشرة.
-
-Open the door.
-
-للنهي نستخدم Don't.
-
-Don't open the door.
-
-يمكن استخدام please لجعل الطلب أكثر لطفًا.`,
-examples:[
-{english:"Open the door, please.",arabic:"افتح الباب من فضلك."},
-{english:"Listen carefully.",arabic:"استمع بعناية."},
-{english:"Don't touch that.",arabic:"لا تلمس ذلك."}
-],
-words:["open = افتح","close = أغلق","listen = استمع","carefully = بعناية","touch = يلمس"],
-practice:"اكتب خمس تعليمات باللغة الإنجليزية."
-},
-
-{
-title:"Lesson 20 — Present Continuous",
-goal:"تعلم المضارع المستمر للأفعال التي تحدث الآن.",
-explanation:`التركيب:
-
-am / is / are + verb-ing
-
-I am studying.
-She is reading.
-They are playing.
-
-نستخدمه غالبًا لما يحدث الآن.`,
-examples:[
-{english:"I am studying English.",arabic:"أنا أدرس الإنجليزية الآن."},
-{english:"She is reading a book.",arabic:"هي تقرأ كتابًا الآن."},
-{english:"They are playing football.",arabic:"هم يلعبون كرة القدم الآن."}
-],
-words:["now = الآن","reading = يقرأ","studying = يدرس","playing = يلعب","learning = يتعلم"],
-practice:"اكتب خمس جمل عما يحدث الآن."
-},
-
-{
-title:"Lesson 21 — Simple vs Continuous",
-goal:"التمييز بين العادة والفعل الذي يحدث الآن.",
-explanation:`Present Simple للعادات:
-
-I study English every day.
-
-Present Continuous لما يحدث الآن:
-
-I am studying English now.
-
-every day و usually غالبًا مع Present Simple.
-
-now و at the moment غالبًا مع Present Continuous.`,
-examples:[
-{english:"I study every day.",arabic:"أدرس كل يوم."},
-{english:"I am studying now.",arabic:"أنا أدرس الآن."},
-{english:"She works every day.",arabic:"هي تعمل كل يوم."}
-],
-words:["every day = كل يوم","usually = عادةً","now = الآن","at the moment = في هذه اللحظة"],
-practice:"اكتب جملة عادة وجملة تحدث الآن باستخدام الفعل نفسه."
-},
-
-{
-title:"Lesson 22 — Past Simple: Was and Were",
-goal:"تعلم الماضي من To Be.",
-explanation:`I / he / she / it → was
-
-you / we / they → were
-
-I was tired.
-They were happy.
-
-للنفي:
-
-wasn't = was not
-weren't = were not`,
-examples:[
-{english:"I was tired yesterday.",arabic:"كنت متعبًا أمس."},
-{english:"She was at school.",arabic:"كانت في المدرسة."},
-{english:"They were at home.",arabic:"كانوا في المنزل."}
-],
-words:["was = كان","were = كانوا / كنا","yesterday = أمس","busy = مشغول","home = المنزل"],
-practice:"اكتب خمس جمل في الماضي باستخدام was و were."
-},
-
-{
-title:"Lesson 23 — Past Simple Regular Verbs",
-goal:"تعلم الماضي البسيط للأفعال المنتظمة.",
-explanation:`نستخدم Past Simple للأحداث التي انتهت في الماضي.
-
-الأفعال المنتظمة تأخذ ed غالبًا:
-
-work → worked
-play → played
-watch → watched
-clean → cleaned`,
-examples:[
-{english:"I worked yesterday.",arabic:"عملت أمس."},
-{english:"She watched a movie.",arabic:"شاهدت فيلمًا."},
-{english:"We played football.",arabic:"لعبنا كرة القدم."}
-],
-words:["worked = عمل","played = لعب","watched = شاهد","cleaned = نظف","yesterday = أمس"],
-practice:"حوّل خمسة أفعال إلى الماضي واستخدمها في جمل."
-},
-
-{
-title:"Lesson 24 — Past Simple Irregular Verbs",
-goal:"تعلم أشهر الأفعال غير المنتظمة في الماضي.",
-explanation:`بعض الأفعال لا تأخذ ed، بل يتغير شكلها.
-
-go → went
-eat → ate
-drink → drank
-see → saw
-have → had
-take → took`,
-examples:[
-{english:"I went to school yesterday.",arabic:"ذهبت إلى المدرسة أمس."},
-{english:"She ate breakfast.",arabic:"تناولت الفطور."},
-{english:"He drank water.",arabic:"شرب الماء."}
-],
-words:["go → went","eat → ate","drink → drank","see → saw","have → had","take → took"],
-practice:"اكتب جملة باستخدام went و ate و drank و saw و had."
-},
-
-{
-title:"Lesson 25 — Future with Going To",
-goal:"التعبير عن الخطط والنوايا المستقبلية.",
-explanation:`التركيب:
-
-Subject + am/is/are + going to + verb
-
-I am going to study.
-She is going to travel.
-They are going to learn.
-
-نستخدم going to كثيرًا للخطط والنيات المستقبلية.`,
-examples:[
-{english:"I am going to study tonight.",arabic:"سأدرس الليلة."},
-{english:"She is going to visit her family.",arabic:"ستزور عائلتها."},
-{english:"They are going to travel tomorrow.",arabic:"سيسافرون غدًا."}
-],
-words:["going to = سوف","tonight = الليلة","visit = يزور","travel = يسافر","tomorrow = غدًا"],
-practice:"اكتب خمس خطط مستقبلية باستخدام going to."
-},
-
-{
-title:"Lesson 26 — Will",
-goal:"تعلم استخدام will للمستقبل والقرارات والتوقعات.",
-explanation:`التركيب:
-
-Subject + will + verb
-
-I will study.
-She will come.
-
-نستخدم will للمستقبل، ومن استعمالاته القرارات التي نتخذها لحظة الكلام والتوقعات.`,
-examples:[
-{english:"I will call you later.",arabic:"سأتصل بك لاحقًا."},
-{english:"She will help us.",arabic:"ستساعدنا."},
-{english:"I think it will rain.",arabic:"أعتقد أنها ستمطر."}
-],
-words:["will = سوف","later = لاحقًا","call = يتصل","help = يساعد","think = يعتقد"],
-practice:"اكتب خمس جمل عن المستقبل باستخدام will."
-},
-
-{
-title:"Lesson 27 — Future: Will vs Going To",
-goal:"التمييز بين will و going to.",
-explanation:`نستخدم going to غالبًا لخطة موجودة مسبقًا.
-
-I am going to study tonight.
-
-ونستخدم will كثيرًا لقرار لحظي أو توقع.
-
-I will help you.
-
-الفهم يعتمد على سياق الكلام.`,
-examples:[
-{english:"I am going to study tonight.",arabic:"سأدرس الليلة."},
-{english:"I will help you.",arabic:"سأساعدك."},
-{english:"I think he will win.",arabic:"أعتقد أنه سيفوز."}
-],
-words:["plan = خطة","decision = قرار","future = مستقبل","win = يفوز","help = يساعد"],
-practice:"اكتب جملتين بـ going to وجملتين بـ will."
-},
-
-{
-title:"Lesson 28 — Present Perfect",
-goal:"فهم الاستخدام الأساسي للمضارع التام.",
-explanation:`التركيب:
-
-have / has + past participle
-
-I have finished.
-She has arrived.
-
-نستخدم Present Perfect للحديث عن تجربة أو حدث له علاقة بالحاضر.`,
-examples:[
-{english:"I have finished my work.",arabic:"لقد أنهيت عملي."},
-{english:"She has arrived.",arabic:"لقد وصلت."},
-{english:"We have visited this place.",arabic:"لقد زرنا هذا المكان."}
-],
-words:["finished = أنهى","arrived = وصل","visited = زار","already = بالفعل","experience = تجربة"],
-practice:"اكتب ثلاث جمل باستخدام have أو has."
-},
-
-{
-title:"Lesson 29 — Present Perfect: Ever and Never",
-goal:"التحدث عن التجارب باستخدام ever و never.",
-explanation:`نستخدم ever غالبًا في الأسئلة عن التجارب.
-
-Have you ever visited Paris?
-
-ونستخدم never للقول إن شيئًا لم يحدث حتى الآن.
-
-I have never visited Paris.`,
-examples:[
-{english:"Have you ever visited another country?",arabic:"هل سبق أن زرت بلدًا آخر؟"},
-{english:"I have never tried it.",arabic:"لم أجربه قط."},
-{english:"Have you ever learned English online?",arabic:"هل سبق أن تعلمت الإنجليزية عبر الإنترنت؟"}
-],
-words:["ever = سبق أن","never = قط / أبدًا","visited = زار","tried = جرّب","country = بلد"],
-practice:"اكتب سؤالين باستخدام ever وإجابتين باستخدام never."
-},
-
-{
-title:"Lesson 30 — Present Perfect vs Past Simple",
-goal:"التمييز بين Present Perfect و Past Simple.",
-explanation:`Past Simple يرتبط بوقت ماضٍ محدد.
-
-I visited him yesterday.
-
-Present Perfect يركز على التجربة أو النتيجة دون وقت ماضٍ محدد.
-
-I have visited him.
-
-كلمات مثل yesterday و last year غالبًا تشير إلى Past Simple.`,
-examples:[
-{english:"I visited Paris last year.",arabic:"زرت باريس العام الماضي."},
-{english:"I have visited Paris.",arabic:"لقد زرت باريس."},
-{english:"She finished her work yesterday.",arabic:"أنهت عملها أمس."}
-],
-words:["yesterday = أمس","last year = العام الماضي","already = بالفعل","finished = أنهى","visited = زار"],
-practice:"اكتب جملتين في Past Simple وجملتين في Present Perfect."
-},
-
-{
-title:"Lesson 31 — Comparatives",
-goal:"المقارنة بين شخصين أو شيئين.",
-explanation:`نستخدم comparative للمقارنة.
-
-small → smaller
-fast → faster
-beautiful → more beautiful
-
-غالبًا نستخدم than بعد المقارنة.
-
-My car is faster than yours.`,
-examples:[
-{english:"This book is cheaper than that one.",arabic:"هذا الكتاب أرخص من ذلك."},
-{english:"English is easier than I expected.",arabic:"الإنجليزية أسهل مما توقعت."},
-{english:"My new phone is faster than my old phone.",arabic:"هاتفي الجديد أسرع من هاتفي القديم."}
-],
-words:["smaller = أصغر","faster = أسرع","easier = أسهل","cheaper = أرخص","than = من"],
-practice:"اكتب ثلاث مقارنات باستخدام than."
-},
-
-{
-title:"Lesson 32 — Superlatives",
-goal:"التعبير عن أعلى درجة بين مجموعة.",
-explanation:`نستخدم superlative عندما نقارن ثلاثة أشياء أو أكثر.
-
-small → the smallest
-fast → the fastest
-beautiful → the most beautiful
-
-غالبًا نستخدم the قبل صيغة التفضيل.`,
-examples:[
-{english:"This is the easiest lesson.",arabic:"هذا أسهل درس."},
-{english:"He is the fastest runner.",arabic:"هو أسرع عدّاء."},
-{english:"This is the most important point.",arabic:"هذه أهم نقطة."}
-],
-words:["the smallest = الأصغر","the fastest = الأسرع","the easiest = الأسهل","the most important = الأهم"],
-practice:"اكتب ثلاث جمل باستخدام superlative."
-},
-
-{
-title:"Lesson 33 — Modal Verbs: Should",
-goal:"إعطاء النصيحة بطريقة صحيحة.",
-explanation:`Should تعني ينبغي أو من الأفضل.
-
-Subject + should + verb
-
-You should study.
-You should rest.
-
-بعد should يأتي الفعل الأساسي دون to.`,
-examples:[
-{english:"You should study every day.",arabic:"ينبغي أن تدرس كل يوم."},
-{english:"You should practice speaking.",arabic:"ينبغي أن تتدرب على التحدث."},
-{english:"You should read more.",arabic:"ينبغي أن تقرأ أكثر."}
-],
-words:["should = ينبغي","practice = يتدرب","speaking = التحدث","read = يقرأ","more = أكثر"],
-practice:"اكتب خمس نصائح لشخص يتعلم الإنجليزية."
-},
-
-{
-title:"Lesson 34 — Must and Have To",
-goal:"التعبير عن الضرورة والالتزام.",
-explanation:`Must و have to تستخدمان للتعبير عن الضرورة.
-
-You must study.
-You have to study.
-
-بعد must يأتي الفعل مباشرة.
-أما have to فهي تركيب يحتوي على to.`,
-examples:[
-{english:"You must follow the rules.",arabic:"يجب أن تتبع القواعد."},
-{english:"I have to study today.",arabic:"يجب أن أدرس اليوم."},
-{english:"We have to leave now.",arabic:"يجب أن نغادر الآن."}
-],
-words:["must = يجب","have to = يجب أن","rules = قواعد","follow = يتبع","leave = يغادر"],
-practice:"اكتب ثلاث جمل باستخدام must وثلاثًا باستخدام have to."
-},
-
-{
-title:"Lesson 35 — Gerunds and Infinitives",
-goal:"فهم الفرق الأساسي بين verb-ing و to + verb.",
-explanation:`بعض الأفعال يأتي بعدها verb-ing.
-
-I enjoy reading.
-
-وبعض الأفعال يأتي بعدها to + verb.
-
-I want to learn.
-
-يجب تعلم الأفعال الشائعة مع تركيبها.`,
-examples:[
-{english:"I enjoy reading books.",arabic:"أستمتع بقراءة الكتب."},
-{english:"I want to learn English.",arabic:"أريد تعلم الإنجليزية."},
-{english:"She likes listening to music.",arabic:"هي تحب الاستماع إلى الموسيقى."}
-],
-words:["enjoy = يستمتع","reading = القراءة","want = يريد","learn = يتعلم","listening = الاستماع"],
-practice:"اكتب جملتين مع enjoy وlike وجملتين مع want."
-},
-
-{
-title:"Lesson 36 — Adjectives and Adverbs",
-goal:"التمييز بين الصفة والظرف.",
-explanation:`Adjective تصف الاسم.
-
-a slow car = سيارة بطيئة
-
-Adverb يصف الفعل غالبًا.
-
-He drives slowly. = هو يقود ببطء.
-
-بعض الظروف تنتهي بـ ly، لكن ليس كلها.`,
-examples:[
-{english:"She is a careful student.",arabic:"هي طالبة حذرة."},
-{english:"She works carefully.",arabic:"هي تعمل بحذر."},
-{english:"He speaks clearly.",arabic:"هو يتحدث بوضوح."}
-],
-words:["careful = حذر","carefully = بحذر","clear = واضح","clearly = بوضوح","slowly = ببطء"],
-practice:"اكتب ثلاث جمل تحتوي على صفات وثلاثًا تحتوي على ظروف."
-},
-
-{
-title:"Lesson 37 — Conjunctions",
-goal:"ربط الجمل والأفكار.",
-explanation:`أهم أدوات الربط:
-
-and = و
-but = لكن
-because = لأن
-so = لذلك
-although = رغم أن
-
-تساعد أدوات الربط على بناء جمل أطول وأكثر طبيعية.`,
-examples:[
-{english:"I study English because I need it.",arabic:"أدرس الإنجليزية لأنني أحتاجها."},
-{english:"I am tired, but I will study.",arabic:"أنا متعب، لكنني سأدرس."},
-{english:"It was raining, so we stayed home.",arabic:"كانت السماء تمطر، لذلك بقينا في المنزل."}
-],
-words:["and = و","but = لكن","because = لأن","so = لذلك","although = رغم أن"],
-practice:"اربط خمس مجموعات من الجمل باستخدام أدوات الربط."
-},
-
-{
-title:"Lesson 38 — Relative Clauses",
-goal:"ربط المعلومات بالأسماء باستخدام who و which و that.",
-explanation:`نستخدم who غالبًا للأشخاص.
-
-The man who works here is my teacher.
-
-ونستخدم which للأشياء.
-
-The book which I bought is useful.
-
-ويمكن استخدام that في حالات كثيرة.`,
-examples:[
-{english:"The teacher who helped me is kind.",arabic:"المعلم الذي ساعدني لطيف."},
-{english:"The book that I bought is useful.",arabic:"الكتاب الذي اشتريته مفيد."},
-{english:"This is the phone which I use.",arabic:"هذا هو الهاتف الذي أستخدمه."}
-],
-words:["who = الذي / التي للأشخاص","which = الذي / التي للأشياء","that = الذي / التي","useful = مفيد","teacher = معلم"],
-practice:"اكتب ثلاث جمل باستخدام who و which و that."
-},
-
-{
-title:"Lesson 39 — First Conditional",
-goal:"التعبير عن نتيجة محتملة في المستقبل.",
-explanation:`التركيب:
-
-If + Present Simple, will + verb
-
-If I study, I will improve.
-
-نستخدمه عندما يكون الشرط واقعيًا أو محتملًا.`,
-examples:[
-{english:"If I study, I will improve.",arabic:"إذا درست فسوف أتحسن."},
-{english:"If it rains, we will stay home.",arabic:"إذا أمطرت فسنَبقَى في المنزل."},
-{english:"If you practice, you will become better.",arabic:"إذا تدربت فستصبح أفضل."}
-],
-words:["if = إذا","improve = يتحسن","practice = يتدرب","become = يصبح","better = أفضل"],
-practice:"اكتب خمس جمل باستخدام If + Present Simple."
-},
-
-{
-title:"Lesson 40 — Second Conditional",
-goal:"التعبير عن مواقف افتراضية أو غير واقعية.",
-explanation:`التركيب:
-
-If + Past Simple, would + verb
-
-If I had more time, I would study more.
-
-نتحدث هنا عن موقف افتراضي وليس بالضرورة حقيقة.`,
-examples:[
-{english:"If I had more time, I would read more.",arabic:"لو كان لدي وقت أكثر، لقرأت أكثر."},
-{english:"If I were you, I would practice every day.",arabic:"لو كنت مكانك، لتدربت كل يوم."},
-{english:"If I had a computer, I would learn programming.",arabic:"لو كان لدي حاسوب، لتعلمت البرمجة."}
-],
-words:["if = لو / إذا","would = سوف في الحالة الافتراضية","time = وقت","practice = يتدرب","programming = البرمجة"],
-practice:"اكتب ثلاث جمل افتراضية باستخدام If و would."
-},
-
-{
-title:"Lesson 41 — Passive Voice",
-goal:"فهم المبني للمجهول في الإنجليزية.",
-explanation:`في المبني للمجهول نركز على الشيء الذي وقع عليه الفعل.
-
-Active:
-People speak English.
-
-Passive:
-English is spoken.
-
-التركيب الأساسي:
-
-be + past participle`,
-examples:[
-{english:"English is spoken around the world.",arabic:"يتم التحدث بالإنجليزية حول العالم."},
-{english:"The door was opened.",arabic:"تم فتح الباب."},
-{english:"The work was finished yesterday.",arabic:"تم إنهاء العمل أمس."}
-],
-words:["passive = مبني للمجهول","spoken = يتم التحدث به","opened = فُتح","finished = أُنجز","around = حول"],
-practice:"حوّل ثلاث جمل من Active إلى Passive."
-},
-
-{
-title:"Lesson 42 — Reported Speech",
-goal:"فهم نقل كلام شخص آخر.",
-explanation:`نستخدم Reported Speech عندما ننقل معنى كلام شخص دون تكرار كلامه حرفيًا.
-
-Direct:
-He said, “I am tired.”
-
-Reported:
-He said that he was tired.
-
-قد تتغير الأزمنة والضمائر حسب السياق.`,
-examples:[
-{english:"She said that she was busy.",arabic:"قالت إنها كانت مشغولة."},
-{english:"He said that he liked English.",arabic:"قال إنه يحب الإنجليزية."},
-{english:"They said that they were ready.",arabic:"قالوا إنهم كانوا مستعدين."}
-],
-words:["said = قال","reported = منقول","busy = مشغول","ready = مستعد","meaning = معنى"],
-practice:"حوّل ثلاث جمل مباشرة إلى Reported Speech."
-},
-
-{
-title:"Lesson 43 — Phrasal Verbs",
-goal:"تعلم الأفعال المركبة الشائعة.",
-explanation:`Phrasal Verb يتكون غالبًا من فعل + كلمة أخرى.
-
-wake up = يستيقظ
-get up = ينهض
-look for = يبحث عن
-turn on = يشغل
-turn off = يطفئ
-
-المعنى قد يختلف عن معنى الفعل وحده.`,
-examples:[
-{english:"I wake up at eight.",arabic:"أستيقظ في الثامنة."},
-{english:"I am looking for my phone.",arabic:"أبحث عن هاتفي."},
-{english:"Please turn off the light.",arabic:"أطفئ الضوء من فضلك."}
-],
-words:["wake up = يستيقظ","get up = ينهض","look for = يبحث عن","turn on = يشغل","turn off = يطفئ"],
-practice:"اكتب جملة لكل phrasal verb."
-},
-
-{
-title:"Lesson 44 — Formal and Informal English",
-goal:"التمييز بين اللغة الرسمية واليومية.",
-explanation:`الإنجليزية تختلف حسب الموقف.
-
-في الحديث اليومي نستخدم تعبيرات مختصرة وطبيعية.
-في المواقف الرسمية نستخدم أسلوبًا أكثر احترامًا ودقة.
-
-مثال يومي:
-
-Can you help me?
-
-مثال أكثر رسمية:
-
-Could you help me, please?`,
-examples:[
-{english:"Can you help me?",arabic:"هل يمكنك مساعدتي؟"},
-{english:"Could you help me, please?",arabic:"هل يمكنك مساعدتي من فضلك؟"},
-{english:"I would like some information.",arabic:"أود بعض المعلومات."}
-],
-words:["formal = رسمي","informal = غير رسمي","could = هل يمكنك","information = معلومات","please = من فضلك"],
-practice:"اكتب طلبًا عاديًا ثم حوّله إلى طلب أكثر رسمية."
-},
-
-{
-title:"Lesson 45 — Academic English",
-goal:"تعلم أساسيات اللغة الأكاديمية.",
-explanation:`اللغة الأكاديمية تستخدم في الدراسة والبحوث.
-
-من الكلمات المهمة:
-
-analyze = يحلل
-evidence = دليل
-research = بحث
-result = نتيجة
-method = منهج / طريقة
-
-يجب أن تكون الجمل واضحة ودقيقة.`,
-examples:[
-{english:"This study analyzes the results.",arabic:"تحلل هذه الدراسة النتائج."},
-{english:"The evidence supports the idea.",arabic:"يدعم الدليل الفكرة."},
-{english:"The research shows an important result.",arabic:"يُظهر البحث نتيجة مهمة."}
-],
-words:["analyze = يحلل","evidence = دليل","research = بحث","result = نتيجة","method = منهج / طريقة"],
-practice:"اكتب فقرة قصيرة من ثلاث جمل بأسلوب أكاديمي."
-},
-
-{
-title:"Lesson 46 — Expressing Opinions",
-goal:"التعبير عن الرأي بطريقة طبيعية.",
-explanation:`من العبارات المهمة:
-
-I think = أعتقد
-I believe = أعتقد / أؤمن
-In my opinion = في رأيي
-I agree = أوافق
-I disagree = لا أوافق
-
-يمكن إضافة because لشرح سبب الرأي.`,
-examples:[
-{english:"I think English is important.",arabic:"أعتقد أن الإنجليزية مهمة."},
-{english:"In my opinion, practice is essential.",arabic:"في رأيي، التدريب ضروري."},
-{english:"I agree because the idea is useful.",arabic:"أوافق لأن الفكرة مفيدة."}
-],
-words:["think = يعتقد","believe = يعتقد / يؤمن","opinion = رأي","agree = يوافق","disagree = لا يوافق"],
-practice:"اكتب رأيك في تعلم الإنجليزية مع سببين."
-},
-
-{
-title:"Lesson 47 — Giving Reasons and Examples",
-goal:"شرح الأفكار بالأسباب والأمثلة.",
-explanation:`لشرح السبب يمكن استخدام:
-
-because = لأن
-The reason is = السبب هو
-
-ولإعطاء مثال:
-
-for example = على سبيل المثال
-such as = مثل
-
-هذه الطريقة تجعل كلامك أكثر وضوحًا.`,
-examples:[
-{english:"I study English because I need it.",arabic:"أدرس الإنجليزية لأنني أحتاجها."},
-{english:"For example, I practice speaking every day.",arabic:"على سبيل المثال، أتدرب على التحدث كل يوم."},
-{english:"I like languages such as English and French.",arabic:"أحب لغات مثل الإنجليزية والفرنسية."}
-],
-words:["because = لأن","reason = سبب","for example = على سبيل المثال","such as = مثل","clear = واضح"],
-practice:"اكتب فكرة ثم اشرح سببها وأعط مثالًا عليها."
-},
-
-{
-title:"Lesson 48 — Building a Paragraph",
-goal:"تعلم بناء فقرة إنجليزية منظمة.",
-explanation:`الفقرة الجيدة تحتوي عادةً على:
-
-1. Topic sentence = الجملة الرئيسية.
-2. Supporting sentences = جمل داعمة.
-3. Concluding sentence = جملة ختامية.
-
-يجب أن تكون الجمل مرتبطة بالفكرة نفسها.`,
-examples:[
-{english:"Learning English is important. It helps me communicate with people. It also gives me access to more information. For these reasons, I want to improve my English.",arabic:"تعلم الإنجليزية مهم. يساعدني على التواصل مع الناس. كما يمنحني الوصول إلى مزيد من المعلومات. لهذه الأسباب أريد تحسين لغتي الإنجليزية."},
-{english:"Reading is useful because it increases vocabulary.",arabic:"القراءة مفيدة لأنها تزيد المفردات."},
-{english:"Practice is important because it builds confidence.",arabic:"التدريب مهم لأنه يبني الثقة."}
-],
-words:["paragraph = فقرة","topic = موضوع","supporting = داعم","conclusion = خاتمة","communicate = يتواصل"],
-practice:"اكتب فقرة من أربع أو خمس جمل عن تعلم الإنجليزية."
-},
-
-{
-title:"Lesson 49 — Conversation Skills",
-goal:"بناء محادثة طبيعية والحفاظ على الحوار.",
-explanation:`المحادثة لا تعتمد على القواعد فقط.
-
-من المهم معرفة:
-
-How are you? = كيف حالك؟
-What do you mean? = ماذا تقصد؟
-Really? = حقًا؟
-Sounds good! = يبدو جيدًا!
-Give me a second. = أعطني لحظة.
-Never mind. = لا بأس / انس الأمر.
-
-استخدم عبارات قصيرة وطبيعية بدل ترجمة كل كلمة حرفيًا.`,
-examples:[
-{english:"How are you?",arabic:"كيف حالك؟"},
-{english:"What do you mean?",arabic:"ماذا تقصد؟"},
-{english:"Sounds good!",arabic:"يبدو جيدًا!"}
-],
-words:["mean = يعني / يقصد","really = حقًا","sounds good = يبدو جيدًا","second = لحظة","never mind = لا بأس"],
-practice:"أنشئ محادثة من ستة أسطر مستخدمًا هذه العبارات."
-},
-
-{
-title:"Lesson 50 — Master Review",
-goal:"مراجعة أهم القواعد والمهارات وبناء جمل قوية.",
-explanation:`في هذا الدرس نربط ما تعلمناه.
-
-راجع:
-
-Pronouns
-To Be
-Present Simple
-Present Continuous
-Past Simple
-Future
-Present Perfect
-Comparatives
-Modal Verbs
-Conditionals
-Passive Voice
-Reported Speech
-Phrasal Verbs
-Academic English
-Conversation
-
-الهدف ليس حفظ القواعد فقط، بل استخدامها في الكلام والكتابة والفهم.`,
-examples:[
-{english:"I study English every day because I want to improve.",arabic:"أدرس الإنجليزية كل يوم لأنني أريد أن أتحسن."},
-{english:"I have learned many new words, and I will continue practicing.",arabic:"لقد تعلمت كلمات جديدة كثيرة، وسأواصل التدريب."},
-{english:"If I practice regularly, I will become a better English speaker.",arabic:"إذا تدربت بانتظام، فسأصبح متحدثًا أفضل بالإنجليزية."}
-],
-words:["improve = يتحسن","continue = يستمر","regularly = بانتظام","speaker = متحدث","learn = يتعلم"],
-practice:"اكتب فقرة من 8 إلى 10 جمل تستخدم فيها عدة قواعد من الدروس السابقة."
-}
+practice:"استخدم الكلمات والجمل الجديدة في جمل من إنشائك.",
+test:[
+{q:"ما معنى practice؟",a:["يتدرب","ينام","يأكل","يذهب"],correct:0},
+{q:"اختر الجملة الصحيحة.",a:[
+"I practice English every day.",
+"I practices English every day.",
+"I practicing English every day.",
+"I am practice English every day."
+],correct:0},
+{q:"ما معنى improve؟",a:["ينسى","يتحسن","يكتب","يسافر"],correct:1},
+{q:"اختر الجملة الصحيحة.",a:[
+"I want improve.",
+"I want to improve my English.",
+"I want improving English.",
+"I to want improve English."
+],correct:1},
+{q:"Practice helps me ___.",a:["learn","learns","learning","learned"],correct:0}
+]
+}))
 
 ];
 
-
 /* =========================
-   نظام حفظ التقدم
+   نظام التقدم
 ========================= */
 
-let completedLessons =
-JSON.parse(localStorage.getItem("englishNotebookProgress") || "[]");
+const STORAGE_KEY="myEnglishNotebookMasteryV2";
 
+let data=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");
+
+if(!data){
+data={
+mastered:[],
+testsDate:"",
+testsToday:0
+};
+}
+
+function today(){
+return new Date().toISOString().slice(0,10);
+}
+
+function resetDailyTests(){
+if(data.testsDate!==today()){
+data.testsDate=today();
+data.testsToday=0;
+saveData();
+}
+}
+
+function saveData(){
+localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+}
+
+function isMastered(index){
+return data.mastered.includes(index);
+}
+
+function isUnlocked(index){
+if(index===0)return true;
+return isMastered(index-1);
+}
+
+function updateDashboard(){
+
+resetDailyTests();
+
+const mastered=data.mastered.length;
+const percent=Math.round((mastered/lessons.length)*100);
+
+document.getElementById("masteredCount").textContent=mastered;
+document.getElementById("lessonCount").textContent=lessons.length;
+document.getElementById("testsToday").textContent=data.testsToday+" / 10";
+document.getElementById("progressText").textContent=percent+"%";
+document.getElementById("progressFill").style.width=percent+"%";
+
+const message=document.getElementById("dailyLimitMessage");
+
+if(data.testsToday>=10){
+message.innerHTML=`
+<div class="limit">
+⏰ وصلت إلى الحد الأقصى: <strong>10 اختبارات اليوم</strong>.<br>
+يمكنك مراجعة الدروس، وسيعود الاختبار غدًا.
+</div>`;
+}else{
+message.innerHTML="";
+}
+}
 
 /* =========================
-   الصوت
+   النطق
 ========================= */
 
 function speak(text){
 
 if(!("speechSynthesis" in window)){
-
-alert("متصفحك لا يدعم ميزة النطق الصوتي.");
-
+alert("متصفحك لا يدعم النطق الصوتي.");
 return;
 }
 
-window.speechSynthesis.cancel();
+speechSynthesis.cancel();
 
-const utterance =
-new SpeechSynthesisUtterance(text);
-
+const utterance=new SpeechSynthesisUtterance(text);
 utterance.lang="en-US";
+utterance.rate=.78;
 
-utterance.rate=0.78;
-
-utterance.pitch=1;
-
-utterance.volume=1;
-
-window.speechSynthesis.speak(utterance);
-
+speechSynthesis.speak(utterance);
 }
-
 
 /* =========================
-   إتمام الدرس
+   اختبار النطق
 ========================= */
 
-function completeLesson(index){
+function startPronunciation(text,elementId){
 
-if(!completedLessons.includes(index)){
+const result=document.getElementById(elementId);
 
-completedLessons.push(index);
-
-localStorage.setItem(
-"englishNotebookProgress",
-JSON.stringify(completedLessons)
-);
-
+if(!("SpeechRecognition" in window) &&
+   !("webkitSpeechRecognition" in window)){
+result.innerHTML="⚠️ متصفحك لا يدعم التعرف على الصوت. استخدم الاستماع والتدرب.";
+return;
 }
 
-updateProgress();
+const Recognition=
+window.SpeechRecognition ||
+window.webkitSpeechRecognition;
 
-displayLessons();
+const recognition=new Recognition();
 
+recognition.lang="en-US";
+recognition.interimResults=false;
+recognition.maxAlternatives=1;
+
+result.innerHTML="🎤 استمع الآن... تحدث بوضوح.";
+
+recognition.start();
+
+recognition.onresult=function(event){
+
+const spoken=event.results[0][0].transcript.toLowerCase().trim();
+const target=text.toLowerCase().trim();
+
+const clean=s=>s.replace(/[.,!?]/g,"").replace(/\s+/g," ");
+
+const a=clean(spoken);
+const b=clean(target);
+
+if(a===b){
+result.innerHTML="✅ نطقك مطابق للجملة المطلوبة تقريبًا!";
+result.className="voice-result success";
+}else{
+result.innerHTML="🔄 سُمع: "+spoken+"<br>حاول مرة أخرى مع الاستماع للجملة.";
+result.className="voice-result fail";
 }
 
+};
 
-/* =========================
-   تحديث شريط التقدم
-========================= */
-
-function updateProgress(){
-
-const total=lessons.length;
-
-const completed=completedLessons.length;
-
-const percent=
-Math.round((completed/total)*100);
-
-document.getElementById("progressInfo").textContent=
-completed+" / "+total+" درسًا مكتملًا";
-
-document.getElementById("progressBar").style.width=
-percent+"%";
-
-document.getElementById("progressText").textContent=
-"تقدمك: "+percent+"%";
+recognition.onerror=function(){
+result.innerHTML="⚠️ لم يتم التعرف على صوتك. حاول مرة أخرى.";
+};
 
 }
-
 
 /* =========================
    عرض الدروس
@@ -1442,138 +851,140 @@ document.getElementById("progressText").textContent=
 
 function displayLessons(){
 
-const container=
-document.getElementById("lessons");
+resetDailyTests();
 
+const container=document.getElementById("lessons");
 container.innerHTML="";
 
+lessons.forEach((lesson,index)=>{
 
-lessons.forEach(function(lesson,index){
+const unlocked=isUnlocked(index);
+const mastered=isMastered(index);
 
-const card=
-document.createElement("article");
+const card=document.createElement("article");
+card.className="lesson"+(!unlocked?" locked":"");
 
-card.className="lesson";
+let status="";
 
-
-if(completedLessons.includes(index)){
-
-card.classList.add("completed");
-
+if(mastered){
+status=`<div class="status mastered-status">✅ متقن</div>`;
+}else if(unlocked){
+status=`<div class="status open-status">🔓 مفتوح</div>`;
+}else{
+status=`<div class="status locked-status">🔒 مقفل — أتقن الدرس السابق</div>`;
 }
-
 
 let examplesHTML="";
 
+lesson.examples.forEach((example,n)=>{
 
-lesson.examples.forEach(function(example){
+const voiceId=`voice-${index}-${n}`;
 
 examplesHTML+=`
-
 <div class="example">
 
-<div class="example-en">
-${example.english}
-</div>
+<div class="example-en">${example.english}</div>
 
 <div class="example-ar">
 ${example.arabic}
 </div>
 
-<button
-class="sound"
+<button class="sound"
 onclick='speak(${JSON.stringify(example.english)})'>
-🔊 استمع إلى المثال
+🔊 استمع
 </button>
 
-</div>
+<button class="speak"
+onclick='startPronunciation(${JSON.stringify(example.english)},"${voiceId}")'>
+🎤 انطق
+</button>
 
+<div id="${voiceId}" class="voice-result"></div>
+
+</div>
 `;
 
 });
-
 
 let wordsHTML="";
 
-
-lesson.words.forEach(function(word){
-
-wordsHTML+=`
-<div>• ${word}</div>
-`;
-
+lesson.words.forEach(word=>{
+wordsHTML+=`<div>• ${word}</div>`;
 });
 
+let testButton="";
 
-const isCompleted=
-completedLessons.includes(index);
+if(mastered){
 
+testButton=`
+<button class="test-button disabled" disabled>
+✅ تم إتقان هذا الدرس
+</button>
+`;
+
+}else if(!unlocked){
+
+testButton=`
+<button class="test-button disabled" disabled>
+🔒 أكمل الدرس السابق أولًا
+</button>
+`;
+
+}else if(data.testsToday>=10){
+
+testButton=`
+<button class="test-button disabled" disabled>
+⏰ انتهت اختبارات اليوم
+</button>
+`;
+
+}else{
+
+testButton=`
+<button class="test-button"
+onclick="openTest(${index})">
+🧠 ابدأ اختبار الإتقان
+</button>
+`;
+
+}
 
 card.innerHTML=`
 
-<h2>
-📘 ${lesson.title}
-</h2>
+${status}
+
+<h2>📘 ${lesson.title}</h2>
 
 <div class="goal">
-
 <strong>🎯 هدف الدرس:</strong><br>
-
 ${lesson.goal}
-
 </div>
-
 
 <div class="explanation">
-
 <strong>📖 الشرح:</strong><br>
-
 ${lesson.explanation}
-
 </div>
-
 
 <div>
-
-<strong>💬 أمثلة:</strong>
-
+<strong>💬 الأمثلة:</strong>
 ${examplesHTML}
-
 </div>
-
 
 <div class="words">
-
 <strong>🧠 المفردات:</strong>
-
 ${wordsHTML}
-
 </div>
-
 
 <div class="practice">
-
-<div class="practice-title">
-✍️ التدريب
-</div>
-
+<strong>✍️ التدريب:</strong><br>
 ${lesson.practice}
-
 </div>
 
+${testButton}
 
-<button
-class="complete-btn ${isCompleted ? "completed" : ""}"
-onclick="completeLesson(${index})">
-
-${isCompleted
-? "✅ تم إكمال هذا الدرس"
-: "☑️ أتممت هذا الدرس"}
-
-</button>
+<div id="test-${index}" class="test-box hidden"></div>
 
 `;
-
 
 container.appendChild(card);
 
@@ -1581,41 +992,199 @@ container.appendChild(card);
 
 }
 
-
 /* =========================
-   إعادة ضبط التقدم
+   فتح الاختبار
 ========================= */
 
-function resetProgress(){
+function openTest(index){
 
-const answer=
-confirm("هل تريد حذف تقدمك في جميع الدروس؟");
+resetDailyTests();
 
-if(!answer){
-
+if(data.testsToday>=10){
+alert("لقد وصلت إلى 10 اختبارات اليوم.");
 return;
+}
+
+if(!isUnlocked(index) || isMastered(index))return;
+
+const box=document.getElementById("test-"+index);
+
+box.classList.remove("hidden");
+
+const lesson=lessons[index];
+
+box.innerHTML=`
+<h3>🧠 اختبار إتقان Lesson ${index+1}</h3>
+<p>أجب عن جميع الأسئلة. تحتاج إلى <strong>80%</strong> على الأقل لإتقان الدرس.</p>
+<div id="questions-${index}"></div>
+<button class="test-button" onclick="submitTest(${index})">
+✅ إنهاء الاختبار
+</button>
+<div id="result-${index}"></div>
+`;
+
+const questions=document.getElementById("questions-"+index);
+
+lesson.test.forEach((q,qIndex)=>{
+
+let answers="";
+
+q.a.forEach((answer,aIndex)=>{
+
+answers+=`
+<label style="display:block">
+<input type="radio"
+name="q-${index}-${qIndex}"
+value="${aIndex}">
+${answer}
+</label>
+`;
+
+});
+
+questions.innerHTML+=`
+<div style="
+background:white;
+padding:15px;
+border-radius:14px;
+margin-bottom:12px;
+line-height:2;
+">
+<div class="question">
+${qIndex+1}. ${q.q}
+</div>
+
+<div class="answers">
+${answers}
+</div>
+
+</div>
+`;
+
+});
+
+box.scrollIntoView({behavior:"smooth",block:"start"});
 
 }
 
-completedLessons=[];
+/* =========================
+   إنهاء الاختبار
+========================= */
 
-localStorage.removeItem(
-"englishNotebookProgress"
+function submitTest(index){
+
+resetDailyTests();
+
+if(data.testsToday>=10){
+alert("لقد وصلت إلى الحد الأقصى اليوم.");
+return;
+}
+
+const lesson=lessons[index];
+
+let score=0;
+
+lesson.test.forEach((q,qIndex)=>{
+
+const selected=document.querySelector(
+`input[name="q-${index}-${qIndex}"]:checked`
 );
 
-updateProgress();
+if(selected &&
+Number(selected.value)===q.correct){
+score++;
+}
 
-displayLessons();
+});
+
+const total=lesson.test.length;
+const percent=Math.round((score/total)*100);
+
+data.testsToday++;
+
+let result=document.getElementById("result-"+index);
+
+if(percent>=80){
+
+if(!data.mastered.includes(index)){
+data.mastered.push(index);
+}
+
+saveData();
+
+result.innerHTML=`
+<div class="result success">
+
+🎉 ممتاز!
+
+<br>
+النتيجة: ${score} / ${total} — ${percent}%
+
+<br>
+🏆 لقد أتقنت الدرس!
+
+<br>
+${index+1<lessons.length
+?`🔓 تم فتح Lesson ${index+2}.`
+:"🎓 مبروك! لقد أكملت جميع الدروس!"}
+
+</div>
+`;
+
+}else{
+
+saveData();
+
+result.innerHTML=`
+<div class="result fail">
+
+📚 لم تصل إلى درجة الإتقان بعد.
+
+<br>
+النتيجة: ${score} / ${total} — ${percent}%
+
+<br>
+تحتاج إلى 80% على الأقل.
+
+<br>
+راجع الدرس وحاول مرة أخرى.
+
+</div>
+`;
 
 }
 
+updateDashboard();
+displayLessons();
+
+setTimeout(()=>{
+
+const next=document.getElementById(
+index+1<lessons.length
+?"test-"+(index+1)
+:"lesson-"+index
+);
+
+if(index+1<lessons.length){
+const cards=document.querySelectorAll(".lesson");
+if(cards[index+1]){
+cards[index+1].scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+}
+}
+
+},500);
+
+}
 
 /* =========================
-   تشغيل الموقع
+   البداية
 ========================= */
 
-updateProgress();
-
+resetDailyTests();
+updateDashboard();
 displayLessons();
 
 </script>
