@@ -1,36 +1,60 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>دروس الإنجليزية</title>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+box-sizing:border-box;
+}
+
 body{
 margin:0;
 font-family:Arial,sans-serif;
 background:linear-gradient(135deg,#eef4ff,#f8fbff);
 color:#172033;
 }
+
 header{
 background:linear-gradient(135deg,#2563eb,#4f46e5);
 color:white;
 text-align:center;
-padding:30px 15px;
-border-radius:0 0 28px 28px;
+padding:32px 15px;
+border-radius:0 0 30px 30px;
 }
-header h1{margin:0;font-size:29px}
-.container{max-width:950px;margin:auto;padding:20px 15px}
+
+header h1{
+margin:0;
+font-size:30px;
+}
+
+header p{
+font-size:17px;
+margin-top:10px;
+}
+
+.container{
+max-width:950px;
+margin:auto;
+padding:20px 15px;
+}
+
 .back{
 display:inline-block;
 background:white;
 color:#2563eb;
 text-decoration:none;
-padding:10px 17px;
-border-radius:12px;
+padding:11px 18px;
+border-radius:13px;
 margin-bottom:18px;
+box-shadow:0 5px 15px rgba(0,0,0,.06);
 }
+
 .intro{
 background:white;
 padding:20px;
@@ -39,89 +63,182 @@ line-height:1.9;
 box-shadow:0 7px 22px rgba(0,0,0,.08);
 margin-bottom:18px;
 }
+
 .progress{
 background:white;
-padding:15px;
-border-radius:16px;
-margin-bottom:18px;
+padding:18px;
+border-radius:20px;
+margin-bottom:20px;
+box-shadow:0 7px 22px rgba(0,0,0,.07);
+}
+
+.progress-title{
 font-weight:bold;
 color:#2563eb;
+font-size:18px;
 }
-.lessons{display:grid;gap:18px}
+
+.progress-track{
+height:14px;
+background:#e5e7eb;
+border-radius:20px;
+overflow:hidden;
+margin-top:12px;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#2563eb,#4f46e5);
+transition:.4s;
+}
+
+.progress-text{
+margin:10px 0 0;
+font-weight:bold;
+text-align:center;
+}
+
+.lessons{
+display:grid;
+gap:20px;
+}
+
 .lesson{
 background:white;
-border-radius:20px;
+border-radius:22px;
 padding:20px;
 box-shadow:0 7px 22px rgba(0,0,0,.08);
 }
+
+.lesson.completed{
+border:3px solid #10b981;
+}
+
 .lesson h2{
 margin-top:0;
 color:#2563eb;
 font-size:23px;
+line-height:1.5;
 }
+
 .goal{
 background:#eef4ff;
-padding:12px;
-border-radius:12px;
+padding:13px;
+border-radius:13px;
 line-height:1.8;
 }
+
 .explanation{
 line-height:2;
 white-space:pre-line;
-margin-top:14px;
+margin-top:15px;
 }
+
 .example{
 background:#f8fafc;
-padding:14px;
-border-radius:14px;
-margin-top:10px;
+padding:15px;
+border-radius:15px;
+margin-top:12px;
 }
+
 .example-en{
 direction:ltr;
 text-align:left;
 font-weight:bold;
 font-size:18px;
 color:#172033;
+line-height:1.6;
 }
-.example-ar{margin-top:7px}
+
+.example-ar{
+margin-top:8px;
+line-height:1.7;
+}
+
 .sound{
 border:0;
 background:#2563eb;
 color:white;
-padding:9px 15px;
-border-radius:10px;
+padding:10px 16px;
+border-radius:11px;
 cursor:pointer;
-margin-top:9px;
+margin-top:10px;
+font-size:15px;
 }
-.sound:hover{background:#1d4ed8}
+
+.sound:hover{
+background:#1d4ed8;
+}
+
 .words{
 background:#f5f3ff;
-padding:14px;
-border-radius:14px;
-margin-top:14px;
+padding:15px;
+border-radius:15px;
+margin-top:15px;
 line-height:2;
 }
+
 .practice{
 background:#ecfdf5;
-padding:14px;
-border-radius:14px;
-margin-top:14px;
+padding:15px;
+border-radius:15px;
+margin-top:15px;
 line-height:1.9;
 }
-.practice-title{font-weight:bold;color:#047857}
+
+.practice-title{
+font-weight:bold;
+color:#047857;
+margin-bottom:5px;
+}
+
+.complete-btn{
+width:100%;
+margin-top:16px;
+padding:13px;
+border:0;
+border-radius:13px;
+background:#10b981;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.complete-btn.completed{
+background:#64748b;
+}
+
+.reset{
+display:block;
+margin:25px auto;
+border:0;
+background:#ef4444;
+color:white;
+padding:11px 20px;
+border-radius:12px;
+cursor:pointer;
+font-size:15px;
+}
+
 footer{
 text-align:center;
 padding:30px;
 color:#667085;
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
+
 <h1>📚 دروس الإنجليزية</h1>
+
 <p>English Lessons</p>
+
 </header>
 
 <div class="container">
@@ -129,22 +246,54 @@ color:#667085;
 <a class="back" href="index.html">← العودة إلى الرئيسية</a>
 
 <div class="intro">
+
 <strong>🎓 منهج الإنجليزية</strong><br>
-دروس متدرجة من الأساسيات إلى المستوى المتقدم.
+
+50 درسًا متدرجًا من الأساسيات إلى المستوى المتقدم.
 كل درس يحتوي على شرح، أمثلة مترجمة، مفردات، تدريب وزر استماع.
+
 </div>
 
 <div class="progress">
-📖 عدد الدروس: 50 درسًا — القسم الأول: 1 إلى 25
+
+<div class="progress-title">
+📊 تقدمك في الدروس
+</div>
+
+<div id="progressInfo">
+0 / 50 درسًا مكتملًا
+</div>
+
+<div class="progress-track">
+
+<div id="progressBar" class="progress-bar"></div>
+
+</div>
+
+<p id="progressText" class="progress-text">
+تقدمك: 0%
+</p>
+
 </div>
 
 <div id="lessons" class="lessons"></div>
 
+<button class="reset" onclick="resetProgress()">
+🔄 إعادة ضبط التقدم
+</button>
+
 </div>
 
-<footer>My English Notebook © 2026</footer>
+<footer>
+My English Notebook © 2026
+</footer>
+
 
 <script>
+
+/* =========================
+   الدروس
+========================= */
 
 const lessons = [
 
@@ -152,6 +301,7 @@ const lessons = [
 title:"Lesson 1 — Personal Pronouns",
 goal:"تعلم الضمائر الشخصية واستخدامها في جمل صحيحة.",
 explanation:`الضمير يحل محل الاسم.
+
 I = أنا
 You = أنت / أنتم
 He = هو
@@ -174,6 +324,7 @@ practice:"اكتب جملة واحدة باستخدام كل ضمير."
 title:"Lesson 2 — Verb To Be",
 goal:"إتقان am و is و are.",
 explanation:`الفعل To Be من أهم أفعال الإنجليزية.
+
 I → am
 He / She / It → is
 You / We / They → are
@@ -192,9 +343,11 @@ practice:"أكمل: I __ ready. She __ happy. They __ students."
 title:"Lesson 3 — To Be: Negative and Questions",
 goal:"تعلم النفي والسؤال باستخدام To Be.",
 explanation:`للنفي نضع not بعد am أو is أو are.
+
 I am not tired.
 
 وللسؤال نقدم am أو is أو are على الفاعل.
+
 Are you ready?
 Is he a student?`,
 examples:[
@@ -210,6 +363,7 @@ practice:"حوّل جملة مثبتة إلى نفي ثم إلى سؤال."
 title:"Lesson 4 — Object Pronouns",
 goal:"التمييز بين ضمائر الفاعل وضمائر المفعول.",
 explanation:`ضمائر المفعول تأتي غالبًا بعد الفعل.
+
 me = إياي
 you = إياك
 him = إياه
@@ -229,6 +383,7 @@ practice:"اكتب خمس جمل باستخدام me و him و her و us و them
 title:"Lesson 5 — Possessive Adjectives",
 goal:"تعلم صفات الملكية.",
 explanation:`صفات الملكية:
+
 my = ـي
 your = ـك
 his = ـه
@@ -267,12 +422,15 @@ practice:"اكتب أربع جمل باستخدام الكلمات الأربع.
 title:"Lesson 7 — Singular and Plural",
 goal:"تعلم المفرد والجمع.",
 explanation:`الاسم المفرد يدل على شيء واحد.
+
 book = كتاب
 
 غالبًا نضيف s لصنع الجمع.
+
 book → books
 
 وبعض الكلمات تحتاج es.
+
 box → boxes`,
 examples:[
 {english:"I have one book.",arabic:"لدي كتاب واحد."},
@@ -287,9 +445,11 @@ practice:"حوّل book و car و student و box و watch إلى الجمع."
 title:"Lesson 8 — A, An and The",
 goal:"تعلم أدوات التعريف والتنكير الأساسية.",
 explanation:`نستخدم a مع الاسم المفرد الذي يبدأ بصوت ساكن.
+
 a book
 
 نستخدم an قبل صوت العلة.
+
 an apple
 
 نستخدم the عندما يكون الشيء محددًا أو معروفًا.`,
@@ -306,6 +466,7 @@ practice:"اختر a أو an: __ apple, __ book, __ English lesson."
 title:"Lesson 9 — Have and Has",
 goal:"استخدام have و has بشكل صحيح.",
 explanation:`نستخدم have مع I و you و we و they.
+
 نستخدم has مع he و she و it.
 
 I have a phone.
@@ -323,9 +484,11 @@ practice:"أكمل: I __ a book. He __ a car. They __ a house."
 title:"Lesson 10 — There Is and There Are",
 goal:"التعبير عن وجود شيء أو عدة أشياء.",
 explanation:`There is تستخدم مع المفرد.
+
 There is a book.
 
 There are تستخدم مع الجمع.
+
 There are two books.`,
 examples:[
 {english:"There is a book on the table.",arabic:"يوجد كتاب على الطاولة."},
@@ -360,10 +523,13 @@ practice:"صف مكان كتاب وهاتف وحقيبة."
 title:"Lesson 12 — Present Simple",
 goal:"تعلم المضارع البسيط للعادات والروتين.",
 explanation:`نستخدم Present Simple للعادات والحقائق والروتين.
+
 مع I و you و we و they نستخدم الفعل الأساسي.
+
 I study.
 
 مع he و she و it نضيف غالبًا s أو es.
+
 He studies.`,
 examples:[
 {english:"I study English every day.",arabic:"أدرس الإنجليزية كل يوم."},
@@ -378,6 +544,7 @@ practice:"اكتب خمس جمل عن روتينك."
 title:"Lesson 13 — Third Person Singular",
 goal:"إتقان s و es و ies مع he و she و it.",
 explanation:`في المضارع البسيط:
+
 work → works
 watch → watches
 go → goes
@@ -397,10 +564,13 @@ practice:"حوّل work و watch و go و study و play إلى صيغة he."
 title:"Lesson 14 — Present Simple Negative",
 goal:"تعلم don't و doesn't.",
 explanation:`نستخدم don't مع I و you و we و they.
+
 نستخدم doesn't مع he و she و it.
 
 بعد doesn't يعود الفعل إلى شكله الأساسي.
+
 He doesn't work.
+
 وليس He doesn't works.`,
 examples:[
 {english:"I don't speak French.",arabic:"أنا لا أتحدث الفرنسية."},
@@ -415,6 +585,7 @@ practice:"حوّل أربع جمل مثبتة إلى النفي."
 title:"Lesson 15 — Present Simple Questions",
 goal:"تكوين الأسئلة باستخدام Do و Does.",
 explanation:`Do تستخدم مع I و you و we و they.
+
 Does تستخدم مع he و she و it.
 
 بعد Does نستخدم الفعل الأساسي.`,
@@ -471,13 +642,16 @@ practice:"اكتب خمس عادات باستخدام كلمات التكرار.
 title:"Lesson 18 — Can and Can't",
 goal:"التعبير عن القدرة وعدم القدرة.",
 explanation:`Can تأتي مع جميع الضمائر.
+
 I can swim.
 He can swim.
 
 للنفي نستخدم can't.
+
 I can't swim.
 
 وللسؤال:
+
 Can you swim?`,
 examples:[
 {english:"I can speak English.",arabic:"أستطيع التحدث بالإنجليزية."},
@@ -492,9 +666,11 @@ practice:"اكتب ثلاث قدرات لديك وجملتين عن أشياء �
 title:"Lesson 19 — Imperatives",
 goal:"تعلم الأوامر والتعليمات والطلبات البسيطة.",
 explanation:`في الأمر نستخدم الفعل مباشرة.
+
 Open the door.
 
 للنهي نستخدم Don't.
+
 Don't open the door.
 
 يمكن استخدام please لجعل الطلب أكثر لطفًا.`,
@@ -511,6 +687,7 @@ practice:"اكتب خمس تعليمات باللغة الإنجليزية."
 title:"Lesson 20 — Present Continuous",
 goal:"تعلم المضارع المستمر للأفعال التي تحدث الآن.",
 explanation:`التركيب:
+
 am / is / are + verb-ing
 
 I am studying.
@@ -531,12 +708,15 @@ practice:"اكتب خمس جمل عما يحدث الآن."
 title:"Lesson 21 — Simple vs Continuous",
 goal:"التمييز بين العادة والفعل الذي يحدث الآن.",
 explanation:`Present Simple للعادات:
+
 I study English every day.
 
 Present Continuous لما يحدث الآن:
+
 I am studying English now.
 
 every day و usually غالبًا مع Present Simple.
+
 now و at the moment غالبًا مع Present Continuous.`,
 examples:[
 {english:"I study every day.",arabic:"أدرس كل يوم."},
@@ -551,12 +731,14 @@ practice:"اكتب جملة عادة وجملة تحدث الآن باستخدا
 title:"Lesson 22 — Past Simple: Was and Were",
 goal:"تعلم الماضي من To Be.",
 explanation:`I / he / she / it → was
+
 you / we / they → were
 
 I was tired.
 They were happy.
 
 للنفي:
+
 wasn't = was not
 weren't = were not`,
 examples:[
@@ -574,6 +756,7 @@ goal:"تعلم الماضي البسيط للأفعال المنتظمة.",
 explanation:`نستخدم Past Simple للأحداث التي انتهت في الماضي.
 
 الأفعال المنتظمة تأخذ ed غالبًا:
+
 work → worked
 play → played
 watch → watched
@@ -611,6 +794,7 @@ practice:"اكتب جملة باستخدام went و ate و drank و saw و had.
 title:"Lesson 25 — Future with Going To",
 goal:"التعبير عن الخطط والنوايا المستقبلية.",
 explanation:`التركيب:
+
 Subject + am/is/are + going to + verb
 
 I am going to study.
@@ -625,10 +809,13 @@ examples:[
 ],
 words:["going to = سوف","tonight = الليلة","visit = يزور","travel = يسافر","tomorrow = غدًا"],
 practice:"اكتب خمس خطط مستقبلية باستخدام going to."
-},{
+},
+
+{
 title:"Lesson 26 — Will",
 goal:"تعلم استخدام will للمستقبل والقرارات والتوقعات.",
 explanation:`التركيب:
+
 Subject + will + verb
 
 I will study.
@@ -648,9 +835,11 @@ practice:"اكتب خمس جمل عن المستقبل باستخدام will."
 title:"Lesson 27 — Future: Will vs Going To",
 goal:"التمييز بين will و going to.",
 explanation:`نستخدم going to غالبًا لخطة موجودة مسبقًا.
+
 I am going to study tonight.
 
 ونستخدم will كثيرًا لقرار لحظي أو توقع.
+
 I will help you.
 
 الفهم يعتمد على سياق الكلام.`,
@@ -667,6 +856,7 @@ practice:"اكتب جملتين بـ going to وجملتين بـ will."
 title:"Lesson 28 — Present Perfect",
 goal:"فهم الاستخدام الأساسي للمضارع التام.",
 explanation:`التركيب:
+
 have / has + past participle
 
 I have finished.
@@ -686,9 +876,11 @@ practice:"اكتب ثلاث جمل باستخدام have أو has."
 title:"Lesson 29 — Present Perfect: Ever and Never",
 goal:"التحدث عن التجارب باستخدام ever و never.",
 explanation:`نستخدم ever غالبًا في الأسئلة عن التجارب.
+
 Have you ever visited Paris?
 
-ونستخدم never للقول إن شيئًا لم يحدث في حياتنا أو حتى الآن.
+ونستخدم never للقول إن شيئًا لم يحدث حتى الآن.
+
 I have never visited Paris.`,
 examples:[
 {english:"Have you ever visited another country?",arabic:"هل سبق أن زرت بلدًا آخر؟"},
@@ -703,9 +895,11 @@ practice:"اكتب سؤالين باستخدام ever وإجابتين باست�
 title:"Lesson 30 — Present Perfect vs Past Simple",
 goal:"التمييز بين Present Perfect و Past Simple.",
 explanation:`Past Simple يرتبط بوقت ماضٍ محدد.
+
 I visited him yesterday.
 
 Present Perfect يركز على التجربة أو النتيجة دون وقت ماضٍ محدد.
+
 I have visited him.
 
 كلمات مثل yesterday و last year غالبًا تشير إلى Past Simple.`,
@@ -728,6 +922,7 @@ fast → faster
 beautiful → more beautiful
 
 غالبًا نستخدم than بعد المقارنة.
+
 My car is faster than yours.`,
 examples:[
 {english:"This book is cheaper than that one.",arabic:"هذا الكتاب أرخص من ذلك."},
@@ -800,9 +995,11 @@ practice:"اكتب ثلاث جمل باستخدام must وثلاثًا باست
 title:"Lesson 35 — Gerunds and Infinitives",
 goal:"فهم الفرق الأساسي بين verb-ing و to + verb.",
 explanation:`بعض الأفعال يأتي بعدها verb-ing.
+
 I enjoy reading.
 
 وبعض الأفعال يأتي بعدها to + verb.
+
 I want to learn.
 
 يجب تعلم الأفعال الشائعة مع تركيبها.`,
@@ -819,9 +1016,11 @@ practice:"اكتب جملتين مع enjoy وlike وجملتين مع want."
 title:"Lesson 36 — Adjectives and Adverbs",
 goal:"التمييز بين الصفة والظرف.",
 explanation:`Adjective تصف الاسم.
+
 a slow car = سيارة بطيئة
 
 Adverb يصف الفعل غالبًا.
+
 He drives slowly. = هو يقود ببطء.
 
 بعض الظروف تنتهي بـ ly، لكن ليس كلها.`,
@@ -838,6 +1037,7 @@ practice:"اكتب ثلاث جمل تحتوي على صفات وثلاثًا ت�
 title:"Lesson 37 — Conjunctions",
 goal:"ربط الجمل والأفكار.",
 explanation:`أهم أدوات الربط:
+
 and = و
 but = لكن
 because = لأن
@@ -858,9 +1058,11 @@ practice:"اربط خمس مجموعات من الجمل باستخدام أدو
 title:"Lesson 38 — Relative Clauses",
 goal:"ربط المعلومات بالأسماء باستخدام who و which و that.",
 explanation:`نستخدم who غالبًا للأشخاص.
+
 The man who works here is my teacher.
 
 ونستخدم which للأشياء.
+
 The book which I bought is useful.
 
 ويمكن استخدام that في حالات كثيرة.`,
@@ -877,6 +1079,7 @@ practice:"اكتب ثلاث جمل باستخدام who و which و that."
 title:"Lesson 39 — First Conditional",
 goal:"التعبير عن نتيجة محتملة في المستقبل.",
 explanation:`التركيب:
+
 If + Present Simple, will + verb
 
 If I study, I will improve.
@@ -895,6 +1098,7 @@ practice:"اكتب خمس جمل باستخدام If + Present Simple."
 title:"Lesson 40 — Second Conditional",
 goal:"التعبير عن مواقف افتراضية أو غير واقعية.",
 explanation:`التركيب:
+
 If + Past Simple, would + verb
 
 If I had more time, I would study more.
@@ -921,6 +1125,7 @@ Passive:
 English is spoken.
 
 التركيب الأساسي:
+
 be + past participle`,
 examples:[
 {english:"English is spoken around the world.",arabic:"يتم التحدث بالإنجليزية حول العالم."},
@@ -982,9 +1187,11 @@ explanation:`الإنجليزية تختلف حسب الموقف.
 في المواقف الرسمية نستخدم أسلوبًا أكثر احترامًا ودقة.
 
 مثال يومي:
+
 Can you help me?
 
 مثال أكثر رسمية:
+
 Could you help me, please?`,
 examples:[
 {english:"Can you help me?",arabic:"هل يمكنك مساعدتي؟"},
@@ -1001,6 +1208,7 @@ goal:"تعلم أساسيات اللغة الأكاديمية.",
 explanation:`اللغة الأكاديمية تستخدم في الدراسة والبحوث.
 
 من الكلمات المهمة:
+
 analyze = يحلل
 evidence = دليل
 research = بحث
@@ -1021,8 +1229,9 @@ practice:"اكتب فقرة قصيرة من ثلاث جمل بأسلوب أكا�
 title:"Lesson 46 — Expressing Opinions",
 goal:"التعبير عن الرأي بطريقة طبيعية.",
 explanation:`من العبارات المهمة:
+
 I think = أعتقد
-I believe = أؤمن / أعتقد
+I believe = أعتقد / أؤمن
 In my opinion = في رأيي
 I agree = أوافق
 I disagree = لا أوافق
@@ -1041,10 +1250,12 @@ practice:"اكتب رأيك في تعلم الإنجليزية مع سببين."
 title:"Lesson 47 — Giving Reasons and Examples",
 goal:"شرح الأفكار بالأسباب والأمثلة.",
 explanation:`لشرح السبب يمكن استخدام:
+
 because = لأن
 The reason is = السبب هو
 
 ولإعطاء مثال:
+
 for example = على سبيل المثال
 such as = مثل
 
@@ -1062,6 +1273,7 @@ practice:"اكتب فكرة ثم اشرح سببها وأعط مثالًا عل�
 title:"Lesson 48 — Building a Paragraph",
 goal:"تعلم بناء فقرة إنجليزية منظمة.",
 explanation:`الفقرة الجيدة تحتوي عادةً على:
+
 1. Topic sentence = الجملة الرئيسية.
 2. Supporting sentences = جمل داعمة.
 3. Concluding sentence = جملة ختامية.
@@ -1082,6 +1294,7 @@ goal:"بناء محادثة طبيعية والحفاظ على الحوار.",
 explanation:`المحادثة لا تعتمد على القواعد فقط.
 
 من المهم معرفة:
+
 How are you? = كيف حالك؟
 What do you mean? = ماذا تقصد؟
 Really? = حقًا؟
@@ -1105,6 +1318,7 @@ goal:"مراجعة أهم القواعد والمهارات وبناء جمل ق
 explanation:`في هذا الدرس نربط ما تعلمناه.
 
 راجع:
+
 Pronouns
 To Be
 Present Simple
@@ -1133,90 +1347,274 @@ practice:"اكتب فقرة من 8 إلى 10 جمل تستخدم فيها عدة
 
 ];
 
+
+/* =========================
+   نظام حفظ التقدم
+========================= */
+
+let completedLessons =
+JSON.parse(localStorage.getItem("englishNotebookProgress") || "[]");
+
+
+/* =========================
+   الصوت
+========================= */
+
 function speak(text){
 
 if(!("speechSynthesis" in window)){
+
 alert("متصفحك لا يدعم ميزة النطق الصوتي.");
+
 return;
 }
 
 window.speechSynthesis.cancel();
 
-const voiceText=new SpeechSynthesisUtterance(text);
-voiceText.lang="en-US";
-voiceText.rate=0.78;
-voiceText.pitch=1;
+const utterance =
+new SpeechSynthesisUtterance(text);
 
-window.speechSynthesis.speak(voiceText);
+utterance.lang="en-US";
+
+utterance.rate=0.78;
+
+utterance.pitch=1;
+
+utterance.volume=1;
+
+window.speechSynthesis.speak(utterance);
+
 }
+
+
+/* =========================
+   إتمام الدرس
+========================= */
+
+function completeLesson(index){
+
+if(!completedLessons.includes(index)){
+
+completedLessons.push(index);
+
+localStorage.setItem(
+"englishNotebookProgress",
+JSON.stringify(completedLessons)
+);
+
+}
+
+updateProgress();
+
+displayLessons();
+
+}
+
+
+/* =========================
+   تحديث شريط التقدم
+========================= */
+
+function updateProgress(){
+
+const total=lessons.length;
+
+const completed=completedLessons.length;
+
+const percent=
+Math.round((completed/total)*100);
+
+document.getElementById("progressInfo").textContent=
+completed+" / "+total+" درسًا مكتملًا";
+
+document.getElementById("progressBar").style.width=
+percent+"%";
+
+document.getElementById("progressText").textContent=
+"تقدمك: "+percent+"%";
+
+}
+
+
+/* =========================
+   عرض الدروس
+========================= */
 
 function displayLessons(){
 
-const container=document.getElementById("lessons");
+const container=
+document.getElementById("lessons");
 
 container.innerHTML="";
 
+
 lessons.forEach(function(lesson,index){
 
-const card=document.createElement("article");
+const card=
+document.createElement("article");
+
 card.className="lesson";
 
+
+if(completedLessons.includes(index)){
+
+card.classList.add("completed");
+
+}
+
+
 let examplesHTML="";
+
 
 lesson.examples.forEach(function(example){
 
 examplesHTML+=`
+
 <div class="example">
-<div class="example-en">${example.english}</div>
-<div class="example-ar">${example.arabic}</div>
-<button class="sound" onclick='speak(${JSON.stringify(example.english)})'>
+
+<div class="example-en">
+${example.english}
+</div>
+
+<div class="example-ar">
+${example.arabic}
+</div>
+
+<button
+class="sound"
+onclick='speak(${JSON.stringify(example.english)})'>
 🔊 استمع إلى المثال
 </button>
+
 </div>
+
 `;
 
 });
+
 
 let wordsHTML="";
 
+
 lesson.words.forEach(function(word){
-wordsHTML+=`<div>• ${word}</div>`;
+
+wordsHTML+=`
+<div>• ${word}</div>
+`;
+
 });
 
+
+const isCompleted=
+completedLessons.includes(index);
+
+
 card.innerHTML=`
-<h2>📘 ${lesson.title}</h2>
+
+<h2>
+📘 ${lesson.title}
+</h2>
 
 <div class="goal">
+
 <strong>🎯 هدف الدرس:</strong><br>
+
 ${lesson.goal}
+
 </div>
+
 
 <div class="explanation">
+
 <strong>📖 الشرح:</strong><br>
+
 ${lesson.explanation}
+
 </div>
+
 
 <div>
+
 <strong>💬 أمثلة:</strong>
+
 ${examplesHTML}
+
 </div>
+
 
 <div class="words">
+
 <strong>🧠 المفردات:</strong>
+
 ${wordsHTML}
+
 </div>
 
+
 <div class="practice">
-<div class="practice-title">✍️ التدريب</div>
-${lesson.practice}
+
+<div class="practice-title">
+✍️ التدريب
 </div>
+
+${lesson.practice}
+
+</div>
+
+
+<button
+class="complete-btn ${isCompleted ? "completed" : ""}"
+onclick="completeLesson(${index})">
+
+${isCompleted
+? "✅ تم إكمال هذا الدرس"
+: "☑️ أتممت هذا الدرس"}
+
+</button>
+
 `;
+
 
 container.appendChild(card);
 
 });
 
 }
+
+
+/* =========================
+   إعادة ضبط التقدم
+========================= */
+
+function resetProgress(){
+
+const answer=
+confirm("هل تريد حذف تقدمك في جميع الدروس؟");
+
+if(!answer){
+
+return;
+
+}
+
+completedLessons=[];
+
+localStorage.removeItem(
+"englishNotebookProgress"
+);
+
+updateProgress();
+
+displayLessons();
+
+}
+
+
+/* =========================
+   تشغيل الموقع
+========================= */
+
+updateProgress();
 
 displayLessons();
 
