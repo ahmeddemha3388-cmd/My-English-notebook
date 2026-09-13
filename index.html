@@ -1,233 +1,380 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My English Notebook</title>
+<title>Ahmed's English Academy</title>
 
 <style>
 
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #eef4ff, #f8fbff);
-    color: #172033;
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:
+        radial-gradient(circle at top left,#dbeafe,transparent 35%),
+        radial-gradient(circle at bottom right,#ede9fe,transparent 35%),
+        #f7f9ff;
+    color:#172033;
 }
 
-/* HEADER */
+/* =========================
+   HERO
+========================= */
 
-header {
-    background: linear-gradient(135deg, #2563eb, #4f46e5);
-    color: white;
-    padding: 38px 20px;
-    text-align: center;
-    border-radius: 0 0 32px 32px;
-    box-shadow: 0 8px 25px rgba(37,99,235,0.20);
+.hero{
+    position:relative;
+    overflow:hidden;
+    padding:42px 22px 55px;
+    color:white;
+    background:
+        linear-gradient(135deg,#172554,#2563eb 55%,#6d28d9);
+    border-radius:0 0 40px 40px;
+    box-shadow:0 12px 35px rgba(37,99,235,.25);
 }
 
-header h1 {
-    margin: 0;
-    font-size: 34px;
+.hero:before,
+.hero:after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
 }
 
-header p {
-    margin: 10px 0 0;
-    font-size: 16px;
-    opacity: 0.95;
+.hero:before{
+    width:220px;
+    height:220px;
+    top:-100px;
+    left:-70px;
 }
 
-/* MAIN */
-
-.container {
-    max-width: 1050px;
-    margin: auto;
-    padding: 25px 18px 10px;
+.hero:after{
+    width:280px;
+    height:280px;
+    bottom:-170px;
+    right:-80px;
 }
 
-/* WELCOME */
-
-.welcome {
-    background: white;
-    border-radius: 24px;
-    padding: 25px 20px;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(30,60,100,0.08);
-    margin-bottom: 22px;
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    margin:auto;
 }
 
-.welcome h2 {
-    margin: 0 0 8px;
-    font-size: 25px;
+.small-title{
+    font-size:14px;
+    opacity:.85;
+    margin-bottom:12px;
 }
 
-.welcome p {
-    margin: 0;
-    color: #667085;
-    line-height: 1.7;
+.hero h1{
+    margin:0;
+    font-size:34px;
+    line-height:1.35;
 }
 
-/* SECTION TITLE */
-
-.section-title {
-    text-align: center;
-    margin: 28px 0 15px;
+.hero h1 span{
+    color:#bfdbfe;
 }
 
-.section-title h2 {
-    margin: 0 0 6px;
+.hero p{
+    max-width:700px;
+    font-size:17px;
+    line-height:2;
+    opacity:.95;
+    margin:15px 0 0;
 }
 
-.section-title p {
-    margin: 0;
-    color: #667085;
+.welcome{
+    margin-top:25px;
+    display:inline-block;
+    background:rgba(255,255,255,.13);
+    border:1px solid rgba(255,255,255,.22);
+    padding:13px 18px;
+    border-radius:16px;
+    backdrop-filter:blur(10px);
+    font-weight:bold;
 }
 
-/* PROGRESS */
+/* =========================
+   CONTAINER
+========================= */
 
-.progress-box {
-    background: white;
-    border-radius: 24px;
-    padding: 22px;
-    margin-bottom: 28px;
-    box-shadow: 0 8px 25px rgba(30,60,100,0.08);
+.container{
+    max-width:950px;
+    margin:auto;
+    padding:25px 15px 50px;
 }
 
-.progress-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
+/* =========================
+   MOTIVATION
+========================= */
+
+.motivation{
+    background:white;
+    border-radius:25px;
+    padding:24px;
+    margin-top:-5px;
+    box-shadow:0 10px 30px rgba(15,23,42,.08);
+    border:1px solid #eef2ff;
 }
 
-.progress-header h2 {
-    margin: 0;
-    font-size: 20px;
+.motivation-title{
+    font-size:21px;
+    font-weight:bold;
+    color:#2563eb;
+    margin-bottom:10px;
 }
 
-.progress-number {
-    font-weight: bold;
-    color: #2563eb;
+.motivation p{
+    line-height:2;
+    color:#475467;
+    margin:0;
 }
 
-.progress-bar {
-    width: 100%;
-    height: 14px;
-    background: #e8eef8;
-    border-radius: 20px;
-    overflow: hidden;
+.quote{
+    margin-top:16px;
+    padding:15px;
+    border-radius:15px;
+    background:linear-gradient(135deg,#eff6ff,#f5f3ff);
+    color:#3730a3;
+    font-weight:bold;
+    line-height:1.8;
 }
 
-.progress-fill {
-    width: 0%;
-    height: 100%;
-    background: linear-gradient(90deg, #2563eb, #4f46e5);
-    border-radius: 20px;
-    transition: width 0.5s ease;
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+    margin:32px 5px 16px;
 }
 
-.progress-info {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    color: #667085;
-    font-size: 14px;
+.section-title h2{
+    margin:0;
+    font-size:24px;
 }
 
-/* CARDS */
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+.section-title p{
+    margin:7px 0;
+    color:#667085;
 }
 
-.card {
-    background: white;
-    border-radius: 22px;
-    padding: 25px 20px;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(30,60,100,0.09);
-    transition: 0.25s;
+/* =========================
+   LEVELS
+========================= */
+
+.levels{
+    display:grid;
+    gap:18px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.level{
+    position:relative;
+    overflow:hidden;
+    background:white;
+    border-radius:26px;
+    padding:25px;
+    text-decoration:none;
+    color:#172033;
+    box-shadow:0 9px 28px rgba(15,23,42,.08);
+    border:1px solid #edf1f7;
+    transition:.25s;
 }
 
-.icon {
-    font-size: 45px;
+.level:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(15,23,42,.12);
 }
 
-.card h3 {
-    margin: 12px 0 8px;
-    font-size: 21px;
+.level-top{
+    display:flex;
+    align-items:center;
+    gap:16px;
 }
 
-.card p {
-    color: #667085;
-    line-height: 1.7;
-    min-height: 48px;
+.icon{
+    width:62px;
+    height:62px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    flex-shrink:0;
 }
 
-.card a {
-    text-decoration: none;
+.beginner .icon{
+    background:#dcfce7;
 }
 
-.card button {
-    border: none;
-    background: #2563eb;
-    color: white;
-    padding: 11px 25px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: bold;
-    transition: 0.2s;
+.intermediate .icon{
+    background:#dbeafe;
 }
 
-.card button:hover {
-    background: #1d4ed8;
+.advanced .icon{
+    background:#ede9fe;
 }
 
-/* FOOTER */
-
-footer {
-    text-align: center;
-    padding: 32px 20px;
-    color: #667085;
-    font-size: 14px;
+.level h3{
+    margin:0 0 6px;
+    font-size:22px;
 }
 
-/* MOBILE */
+.level small{
+    font-weight:bold;
+}
 
-@media (max-width: 700px) {
+.beginner small{
+    color:#16a34a;
+}
 
-    header {
-        padding: 30px 15px;
+.intermediate small{
+    color:#2563eb;
+}
+
+.advanced small{
+    color:#7c3aed;
+}
+
+.level p{
+    color:#667085;
+    line-height:1.8;
+    margin:16px 0 0;
+}
+
+.arrow{
+    position:absolute;
+    left:22px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:25px;
+    color:#98a2b3;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    margin-top:18px;
+}
+
+.feature{
+    background:white;
+    padding:19px;
+    border-radius:20px;
+    box-shadow:0 7px 22px rgba(15,23,42,.06);
+    border:1px solid #edf1f7;
+}
+
+.feature-icon{
+    font-size:25px;
+}
+
+.feature strong{
+    display:block;
+    margin-top:8px;
+}
+
+.feature span{
+    display:block;
+    color:#667085;
+    font-size:14px;
+    margin-top:5px;
+    line-height:1.7;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile{
+    margin-top:25px;
+    background:linear-gradient(135deg,#111827,#312e81);
+    color:white;
+    border-radius:26px;
+    padding:23px;
+    display:flex;
+    align-items:center;
+    gap:17px;
+    box-shadow:0 12px 30px rgba(30,41,59,.18);
+}
+
+.avatar{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#60a5fa,#a78bfa);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.profile strong{
+    font-size:19px;
+}
+
+.profile p{
+    margin:6px 0 0;
+    opacity:.8;
+    line-height:1.6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#667085;
+    font-size:14px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .hero{
+        padding:35px 18px 48px;
+        border-radius:0 0 32px 32px;
     }
 
-    header h1 {
-        font-size: 27px;
+    .hero h1{
+        font-size:29px;
     }
 
-    .cards {
-        grid-template-columns: 1fr;
+    .hero p{
+        font-size:15px;
     }
 
-    .welcome h2 {
-        font-size: 22px;
+    .container{
+        padding:20px 13px 40px;
     }
 
-    .progress-header {
-        flex-direction: column;
-        gap: 8px;
-        align-items: flex-start;
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .level{
+        padding:21px;
+    }
+
+    .arrow{
+        left:16px;
     }
 
 }
@@ -237,251 +384,299 @@ footer {
 
 <body>
 
-<header>
+<!-- =========================
+     HERO
+========================= -->
 
-<h1>📘 My English Notebook</h1>
+<header class="hero">
 
-<p>منصتك الشخصية لتعلم اللغة الإنجليزية خطوة بخطوة</p>
+    <div class="hero-content">
+
+        <div class="small-title">
+            ✦ MY ENGLISH NOTEBOOK
+        </div>
+
+        <h1>
+            مرحبًا بك يا <span>أحمد</span> 👋
+        </h1>
+
+        <p>
+            هذه ليست مجرد صفحة لتعلم الكلمات،
+            بل رحلتك لبناء إنجليزية قوية خطوة بخطوة.
+            تعلّم، مارس، اختبر نفسك، وشاهد تقدمك بنفسك.
+        </p>
+
+        <div class="welcome">
+            🚀 مستعد لبدء رحلتك في الإنجليزية؟
+        </div>
+
+    </div>
 
 </header>
 
 
-<div class="container">
+<main class="container">
 
+    <!-- MOTIVATION -->
 
-<!-- WELCOME -->
+    <section class="motivation">
 
-<div class="welcome">
+        <div class="motivation-title">
+            🎯 رحلة أحمد في الإنجليزية
+        </div>
 
-<h2>مرحبًا بك في دفتر الإنجليزية 👋</h2>
+        <p>
+            لا تحتاج إلى أن تصبح ممتازًا في يوم واحد.
+            كل درس تتقنه اليوم سيجعل الدرس التالي أسهل.
+            هدفك ليس حفظ الإنجليزية فقط، بل أن تفهمها،
+            تقرأها، تسمعها، وتستخدمها بثقة.
+        </p>
 
-<p>
-ابدأ من مستواك، وتعلّم بطريقة منظمة من المبتدئ حتى المستوى المتقدم.
-</p>
+        <div class="quote">
+            💡 خطوة صغيرة كل يوم = فرق كبير مع الوقت.
+        </div>
 
-</div>
+    </section>
 
 
-<!-- PROGRESS -->
+    <!-- LEVELS -->
 
-<div class="progress-box">
+    <div class="section-title">
 
-<div class="progress-header">
+        <h2>اختر مستواك</h2>
 
-<h2>📊 تقدمي في التعلم</h2>
+        <p>
+            ابدأ من المستوى المناسب لك وتقدم تدريجيًا.
+        </p>
 
-<div class="progress-number" id="progressNumber">
-0%
-</div>
+    </div>
 
-</div>
 
-<div class="progress-bar">
+    <section class="levels">
 
-<div class="progress-fill" id="progressFill"></div>
+        <!-- BEGINNER -->
 
-</div>
+        <a href="lessons.html?level=A1" class="level beginner">
 
-<div class="progress-info">
+            <div class="level-top">
 
-<span id="progressText">
-ابدأ أول درس لتسجيل تقدمك.
-</span>
+                <div class="icon">
+                    🌱
+                </div>
 
-<span>
-My English Notebook
-</span>
+                <div>
 
-</div>
+                    <h3>
+                        المبتدئ
+                    </h3>
 
-</div>
+                    <small>
+                        A1 — A2
+                    </small>
 
+                </div>
 
-<!-- SECTIONS -->
+            </div>
 
-<div class="section-title">
+            <p>
+                أساسيات اللغة، الكلمات المهمة،
+                الجمل اليومية والقواعد الأساسية.
+            </p>
 
-<h2>📚 أقسام الموقع</h2>
+            <div class="arrow">
+                ←
+            </div>
 
-<p>كل ما تحتاجه لتطوير الإنجليزية</p>
+        </a>
 
-</div>
 
+        <!-- INTERMEDIATE -->
 
-<div class="cards">
+        <a href="lessons.html?level=B1" class="level intermediate">
 
+            <div class="level-top">
 
-<!-- LESSONS -->
+                <div class="icon">
+                    🚀
+                </div>
 
-<div class="card">
+                <div>
 
-<div class="icon">📚</div>
+                    <h3>
+                        المتوسط
+                    </h3>
 
-<h3>الدروس</h3>
+                    <small>
+                        B1 — B2
+                    </small>
 
-<p>
-دروس منهجية من المبتدئ إلى المتقدم مع الشرح والأمثلة والتدريب.
-</p>
+                </div>
 
-<a href="lessons.html">
+            </div>
 
-<button>
-الدخول إلى الدروس
-</button>
+            <p>
+                تطوير القواعد والمحادثة،
+                فهم النصوص والتعبيرات واستعمال اللغة بثقة.
+            </p>
 
-</a>
+            <div class="arrow">
+                ←
+            </div>
 
-</div>
+        </a>
 
 
-<!-- VOCABULARY -->
+        <!-- ADVANCED -->
 
-<div class="card">
+        <a href="lessons.html?level=C1" class="level advanced">
 
-<div class="icon">🧠</div>
+            <div class="level-top">
 
-<h3>المفردات</h3>
+                <div class="icon">
+                    👑
+                </div>
 
-<p>
-تعلم الكلمات الإنجليزية ومعانيها واستخدامها في جمل مفيدة.
-</p>
+                <div>
 
-<a href="vocabulary.html">
+                    <h3>
+                        المتقدم
+                    </h3>
 
-<button>
-الدخول إلى المفردات
-</button>
+                    <small>
+                        C1 — C2
+                    </small>
 
-</a>
+                </div>
 
-</div>
+            </div>
 
+            <p>
+                لغة أكثر احترافية،
+                تعبيرات متقدمة وفهم أعمق للإنجليزية.
+            </p>
 
-<!-- EXPRESSIONS -->
+            <div class="arrow">
+                ←
+            </div>
 
-<div class="card">
+        </a>
 
-<div class="icon">🗣️</div>
+    </section>
 
-<h3>التعبيرات</h3>
 
-<p>
-تعلم التعبيرات اليومية من المستوى المبتدئ إلى المستوى المتقدم.
-</p>
+    <!-- FEATURES -->
 
-<a href="expressions.html">
+    <div class="section-title">
 
-<button>
-الدخول إلى التعبيرات
-</button>
+        <h2>ماذا ستجد هنا؟</h2>
 
-</a>
+        <p>
+            أدوات تساعدك على تحويل الدراسة إلى ممارسة حقيقية.
+        </p>
 
-</div>
+    </div>
 
 
-<!-- GRAMMAR -->
+    <section class="features">
 
-<div class="card">
+        <div class="feature">
 
-<div class="icon">✍️</div>
+            <div class="feature-icon">
+                📚
+            </div>
 
-<h3>القواعد</h3>
+            <strong>
+                دروس متدرجة
+            </strong>
 
-<p>
-تعلم قواعد اللغة الإنجليزية بشكل منظم مع أمثلة وترجمة واستماع.
-</p>
+            <span>
+                من الأساسيات إلى المستويات المتقدمة.
+            </span>
 
-<a href="grammar.html">
+        </div>
 
-<button>
-الدخول إلى القواعد
-</button>
 
-</a>
+        <div class="feature">
 
-</div>
+            <div class="feature-icon">
+                🎧
+            </div>
 
+            <strong>
+                الاستماع
+            </strong>
 
-</div>
+            <span>
+                استمع إلى الأمثلة وتدرب على فهم الإنجليزية.
+            </span>
 
-</div>
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🧠
+            </div>
+
+            <strong>
+                اختبارات
+            </strong>
+
+            <span>
+                اختبر فهمك بدل الاكتفاء بالقراءة والحفظ.
+            </span>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                📈
+            </div>
+
+            <strong>
+                تقدمك
+            </strong>
+
+            <span>
+                تقدمك يُحفظ على هذا الهاتف باستخدام التخزين المحلي.
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROFILE -->
+
+    <section class="profile">
+
+        <div class="avatar">
+            أ
+        </div>
+
+        <div>
+
+            <strong>
+                Ahmed's English Journey
+            </strong>
+
+            <p>
+                ابنِ مستواك درسًا بعد درس، ولا تتوقف عن التطور.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
 
 
 <footer>
-
-My English Notebook © 2026
-
+    My English Notebook © 2026
 </footer>
 
-
-<script>
-
-/*
-نظام التقدم البسيط
-
-يمكن لصفحات الدروس لاحقًا
-تحديث القيمة باستخدام:
-localStorage.setItem("englishProgress", 25);
-*/
-
-function updateProgress() {
-
-    let progress = localStorage.getItem("englishProgress");
-
-    if (progress === null) {
-        progress = 0;
-    }
-
-    progress = Number(progress);
-
-    if (progress < 0) {
-        progress = 0;
-    }
-
-    if (progress > 100) {
-        progress = 100;
-    }
-
-    document.getElementById("progressFill").style.width =
-        progress + "%";
-
-    document.getElementById("progressNumber").textContent =
-        progress + "%";
-
-    if (progress === 0) {
-
-        document.getElementById("progressText").textContent =
-            "ابدأ أول درس لتسجيل تقدمك.";
-
-    } else if (progress < 40) {
-
-        document.getElementById("progressText").textContent =
-            "بداية جيدة، استمر في التعلم!";
-
-    } else if (progress < 70) {
-
-        document.getElementById("progressText").textContent =
-            "تقدم ممتاز، واصل التقدم!";
-
-    } else if (progress < 100) {
-
-        document.getElementById("progressText").textContent =
-            "أنت قريب جدًا من إكمال المسار!";
-
-    } else {
-
-        document.getElementById("progressText").textContent =
-            "🎉 أكملت المسار بالكامل!";
-
-    }
-
-}
-
-updateProgress();
-
-</script>
-
 </body>
-
 </html>
