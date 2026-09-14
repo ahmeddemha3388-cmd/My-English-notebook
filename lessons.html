@@ -3,96 +3,2716 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>دروس الإنجليزية | My English Notebook</title>
+<title>My English Notebook | 50 Lessons</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,"Segoe UI",sans-serif;background:linear-gradient(135deg,#eef4ff,#f8fbff);color:#172033}
-button{font:inherit;border:0;cursor:pointer}.top{background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;text-align:center;padding:30px 15px;border-radius:0 0 28px 28px}.top h1{margin:0}.wrap{max-width:950px;margin:auto;padding:18px 14px}
-.back{display:inline-block;background:#fff;color:#2563eb;text-decoration:none;padding:10px 15px;border-radius:12px;margin-bottom:15px}
-.panel,.lesson{background:#fff;padding:20px;border-radius:22px;box-shadow:0 7px 22px #0001;margin-bottom:20px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:#f5f7ff;padding:14px;border-radius:14px;text-align:center}.stat b{display:block;font-size:22px;color:#2563eb}
-.desc,.explain{line-height:2;color:#475467}.progress{height:14px;background:#e5e7eb;border-radius:20px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#2563eb,#7c3aed);transition:.4s}
-.status{display:inline-block;padding:7px 11px;border-radius:10px;font-weight:bold;margin-bottom:10px}.open{background:#eef4ff;color:#2563eb}.locked{background:#f3f4f6;color:#6b7280}.done{background:#ecfdf5;color:#047857}
-.goal{background:#eef4ff;padding:13px;border-radius:13px;line-height:1.9}.explain{white-space:pre-line;margin-top:15px}.example{background:#f8fafc;border:1px solid #edf0f5;padding:15px;border-radius:15px;margin-top:10px}
-.en{direction:ltr;text-align:left;font-weight:bold;font-size:19px}.ar{margin-top:7px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.btn{color:#fff;padding:10px 14px;border-radius:10px;font-weight:bold}.listen{background:#2563eb}.image{background:#0891b2}.speak{background:#7c3aed}.test{background:#047857}.disabled{background:#9ca3af!important;cursor:not-allowed}
-.words{background:#f5f3ff;padding:15px;border-radius:15px;line-height:2;margin-top:15px}.practice{background:#ecfdf5;padding:15px;border-radius:15px;line-height:1.9;margin-top:15px}
-.testbox{margin-top:18px;background:#f8fafc;padding:18px;border-radius:18px;border:2px solid #e5e7eb}.hidden{display:none}.timer{background:#eff6ff;color:#1d4ed8;padding:12px;border-radius:12px;text-align:center;font-weight:bold}.warn{background:#fff7ed;color:#c2410c}.danger{background:#fef2f2;color:#b91c1c}
-.q{background:#fff;padding:14px;border-radius:14px;margin:10px 0;border:1px solid #edf0f5;line-height:1.9}.ans{display:block;padding:9px;border:2px solid #e5e7eb;border-radius:10px;margin-top:7px}
-.voice{background:#f5f3ff;padding:15px;border-radius:15px;margin:10px 0}.target{direction:ltr;text-align:center;font-weight:bold;font-size:20px;background:#fff;padding:12px;border-radius:12px;margin:10px 0}.result{padding:14px;border-radius:12px;margin-top:12px;line-height:1.9;font-weight:bold}.ok{background:#ecfdf5;color:#047857}.bad{background:#fef2f2;color:#b91c1c}
-.modal{position:fixed;inset:0;background:#0008;display:flex;align-items:center;justify-content:center;padding:18px;z-index:20}.modal.hide{display:none}.modalcard{background:#fff;width:min(560px,100%);border-radius:22px;padding:18px;text-align:center}.modalcard svg{width:100%;max-width:400px;height:230px}.close{background:#172033;color:#fff;padding:10px 18px;border-radius:10px}
-@media(max-width:600px){.stats{grid-template-columns:1fr}.panel,.lesson,.testbox{padding:16px}.actions .btn{flex:1}}
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,"Segoe UI",sans-serif;
+ background:linear-gradient(135deg,#eef4ff,#f8faff);
+ color:#172033;
+}
+button{font:inherit;border:0;cursor:pointer}
+.top{
+ background:linear-gradient(135deg,#2563eb,#4f46e5);
+ color:white;text-align:center;
+ padding:30px 15px;
+ border-radius:0 0 30px 30px;
+ box-shadow:0 5px 20px #0002;
+}
+.top h1{margin:0;font-size:30px}
+.top p{margin:8px 0 0;opacity:.9}
+.wrap{max-width:950px;margin:auto;padding:18px 14px}
+.panel,.lesson{
+ background:white;
+ padding:20px;
+ border-radius:22px;
+ box-shadow:0 7px 22px #0001;
+ margin-bottom:20px;
+}
+.stats{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:10px;
+}
+.stat{
+ background:#f5f7ff;
+ padding:14px;
+ border-radius:15px;
+ text-align:center;
+}
+.stat b{
+ display:block;
+ font-size:23px;
+ color:#2563eb;
+ margin-bottom:4px;
+}
+.desc{line-height:1.9;color:#475467}
+.progress{
+ height:14px;
+ background:#e5e7eb;
+ border-radius:20px;
+ overflow:hidden;
+}
+.fill{
+ height:100%;
+ width:0;
+ background:linear-gradient(90deg,#2563eb,#7c3aed);
+ transition:.4s;
+}
+.status{
+ display:inline-block;
+ padding:7px 11px;
+ border-radius:10px;
+ font-weight:bold;
+ margin-bottom:8px;
+}
+.open{background:#eef4ff;color:#2563eb}
+.locked{background:#f3f4f6;color:#6b7280}
+.done{background:#ecfdf5;color:#047857}
+.goal{
+ background:#eef4ff;
+ padding:14px;
+ border-radius:14px;
+ line-height:1.9;
+}
+.explain{
+ line-height:2;
+ margin-top:15px;
+ color:#344054;
+ white-space:pre-line;
+}
+.example{
+ background:#f8fafc;
+ border:1px solid #edf0f5;
+ padding:15px;
+ border-radius:15px;
+ margin-top:10px;
+}
+.en{
+ direction:ltr;
+ text-align:left;
+ font-weight:bold;
+ font-size:19px;
+}
+.ar{margin-top:7px;color:#475467}
+.actions{
+ display:flex;
+ gap:8px;
+ flex-wrap:wrap;
+ margin-top:10px;
+}
+.btn{
+ color:white;
+ padding:10px 14px;
+ border-radius:10px;
+ font-weight:bold;
+}
+.listen{background:#2563eb}
+.speak{background:#7c3aed}
+.test{background:#047857}
+.disabled{
+ background:#9ca3af!important;
+ cursor:not-allowed;
+}
+.words{
+ background:#f5f3ff;
+ padding:15px;
+ border-radius:15px;
+ line-height:2;
+ margin-top:15px;
+}
+.practice{
+ background:#ecfdf5;
+ padding:15px;
+ border-radius:15px;
+ line-height:1.9;
+ margin-top:15px;
+}
+.testbox{
+ margin-top:18px;
+ background:#f8fafc;
+ padding:18px;
+ border-radius:18px;
+ border:2px solid #e5e7eb;
+}
+.hidden{display:none}
+.timer{
+ background:#eff6ff;
+ color:#1d4ed8;
+ padding:12px;
+ border-radius:12px;
+ text-align:center;
+ font-weight:bold;
+ margin-bottom:15px;
+}
+.warn{background:#fff7ed;color:#c2410c}
+.danger{background:#fef2f2;color:#b91c1c}
+.q{
+ background:white;
+ padding:14px;
+ border-radius:14px;
+ margin:10px 0;
+ border:1px solid #edf0f5;
+ line-height:1.9;
+}
+.option{
+ display:block;
+ width:100%;
+ padding:10px;
+ margin-top:7px;
+ border:2px solid #e5e7eb;
+ border-radius:10px;
+ background:white;
+ text-align:right;
+}
+.option:hover{background:#f5f7ff}
+.fillinput{
+ width:100%;
+ padding:11px;
+ border:2px solid #d0d5dd;
+ border-radius:10px;
+ direction:ltr;
+ text-align:left;
+ margin-top:8px;
+}
+.result{
+ padding:14px;
+ border-radius:12px;
+ margin-top:12px;
+ line-height:1.9;
+ font-weight:bold;
+}
+.ok{background:#ecfdf5;color:#047857}
+.bad{background:#fef2f2;color:#b91c1c}
+.closeTest{
+ background:#172033;
+ color:white;
+ padding:10px 16px;
+ border-radius:10px;
+ margin-top:10px;
+}
+@media(max-width:600px){
+ .stats{grid-template-columns:1fr}
+ .panel,.lesson,.testbox{padding:16px}
+ .actions .btn{flex:1}
+}
 </style>
 </head>
-<body>
-<header class="top"><h1>📚 دروس الإنجليزية</h1><p>My English Notebook</p></header>
-<main class="wrap">
-<a class="back" href="index.html">← العودة إلى الرئيسية</a>
-<section class="panel">
-<b>🎓 نظام إتقان الإنجليزية</b>
-<p class="desc">50 درسًا بتدرج من الأساسيات إلى المستوى المتوسط. الدرس التالي لا يفتح إلا بعد إتقان السابق. التقدم محفوظ على هذا الجهاز فقط، دون تسجيل.</p>
-<div class="stats"><div class="stat"><b id="mc">0</b>متقن</div><div class="stat"><b>50</b>درس</div><div class="stat"><b id="tc">0 / 5</b>اختبارات اليوم</div></div>
-<p><b>📊 التقدم: <span id="pt">0%</span></b></p><div class="progress"><div id="pf" class="fill"></div></div><div id="limit"></div>
-<p class="desc">الاختبار مرتبط بالدرس نفسه، والإنجليزية هي الأساس. توجد أسئلة اختيار وتطبيق واستماع ونطق. النجاح من 80%. الحد الأقصى 5 محاولات اختبار في اليوم.</p>
-</section>
-<div id="lessons"></div>
-</main>
-<footer style="text-align:center;padding:20px;color:#667085">My English Notebook © 2026 — صاحب الموقع: أحمد عالي همد</footer>
 
-<div id="modal" class="modal hide" onclick="closeModal()"><div class="modalcard" onclick="event.stopPropagation()"><h2>🖼️ صورة توضيحية</h2><div id="art"></div><p id="mt"></p><button class="close" onclick="closeModal()">إغلاق</button></div></div>
+<body>
+
+<header class="top">
+<h1>📚 My English Notebook</h1>
+<p>50 English Lessons — From Beginner to Intermediate</p>
+</header>
+
+<main class="wrap">
+
+<section class="panel">
+
+<h2>🎓 نظام التعلم</h2>
+
+<p class="desc">
+تعلم الإنجليزية خطوة بخطوة. كل درس يعتمد على الدرس السابق، ولا يفتح الدرس التالي إلا بعد إتقان الدرس الحالي.
+</p>
+
+<div class="stats">
+<div class="stat">
+<b id="masteredCount">0</b>
+درس متقن
+</div>
+
+<div class="stat">
+<b>50</b>
+درس كامل
+</div>
+
+<div class="stat">
+<b id="testsCount">0 / 5</b>
+اختبارات اليوم
+</div>
+</div>
+
+<br>
+
+<b>📊 التقدم: <span id="percent">0%</span></b>
+
+<div class="progress">
+<div class="fill" id="progressFill"></div>
+</div>
+
+<p class="desc">
+النجاح في الاختبار من 80%. توجد أسئلة اختيار، وملء فراغات، وتصحيح جمل وفهم للدرس.
+</p>
+
+<div id="dailyMessage"></div>
+
+</section>
+
+<div id="lessons"></div>
+
+</main>
+
+<footer style="text-align:center;padding:25px;color:#667085">
+My English Notebook © 2026
+</footer>
 
 <script>
-const LESSONS=[{"title": "Lesson 1 — Personal Pronouns", "explanation": "تعلم I, you, he, she, it, we, they واستخدامها كفاعل.", "examples": [["I am a student.", "أنا طالب."], ["She is happy.", "هي سعيدة."], ["They are friends.", "هم أصدقاء."]], "words": ["I", "you", "he", "she", "we", "they"], "questions": [["Choose the correct subject pronoun: ___ am ready.", ["I", "He", "They"], 0], ["___ is my sister.", ["He", "She", "We"], 1], ["___ are my friends.", ["It", "They", "He"], 1], ["Choose the correct sentence:", ["I am ready.", "I is ready.", "I are ready."], 0], ["For a group of people, use:", ["they", "he", "it"], 0]], "time": 90}, {"title": "Lesson 2 — To Be: am, is, are", "explanation": "تعلم القاعدة الأساسية: I مع am، وhe/she/it مع is، وyou/we/they مع are.", "examples": [["I am ready.", "أنا مستعد."], ["He is tired.", "هو متعب."], ["We are students.", "نحن طلاب."]], "words": ["am", "is", "are", "ready", "tired"], "questions": [["I ___ ready.", ["am", "is", "are"], 0], ["She ___ happy.", ["am", "is", "are"], 1], ["They ___ students.", ["am", "is", "are"], 2], ["He ___ tired.", ["are", "am", "is"], 2], ["Choose:", ["We is students.", "We are students.", "We am students."], 1]], "time": 95}, {"title": "Lesson 3 — To Be: Negatives", "explanation": "تعلم النفي باستعمال not بعد am/is/are.", "examples": [["I am not tired.", "أنا لست متعبًا."], ["She is not busy.", "هي ليست مشغولة."], ["They are not late.", "هم ليسوا متأخرين."]], "words": ["not", "tired", "busy", "late"], "questions": [["I am ___ tired.", ["not", "no", "don't"], 0], ["She is ___ busy.", ["not", "no", "doesn't"], 0], ["They are ___ late.", ["not", "no", "don't"], 0], ["Choose:", ["He is not ready.", "He not is ready.", "He does not is ready."], 0], ["Put not after:", ["am/is/are", "only nouns", "every adjective"], 0]], "time": 100}, {"title": "Lesson 4 — To Be: Questions", "explanation": "تعلم تكوين الأسئلة بتقديم am/is/are.", "examples": [["Are you ready?", "هل أنت مستعد؟"], ["Is he a student?", "هل هو طالب؟"], ["Are they happy?", "هل هم سعداء؟"]], "words": ["are", "is", "ready", "student", "happy"], "questions": [["___ you ready?", ["Are", "Is", "Am"], 0], ["___ he a student?", ["Are", "Is", "Am"], 1], ["___ they happy?", ["Is", "Are", "Am"], 1], ["Choose:", ["Is she ready?", "She is ready?", "She ready is?"], 0], ["For a question with we, use:", ["are", "is", "am"], 0]], "time": 105}, {"title": "Lesson 5 — Object Pronouns", "explanation": "تعلم me, you, him, her, us, them بعد الأفعال.", "examples": [["He helps me.", "هو يساعدني."], ["I know him.", "أنا أعرفه."], ["They help us.", "هم يساعدوننا."]], "words": ["me", "him", "her", "us", "them"], "questions": [["He helps ___.", ["I", "me", "my"], 1], ["I know ___.", ["he", "him", "his"], 1], ["They help ___.", ["we", "us", "our"], 1], ["She calls ___.", ["they", "them", "their"], 1], ["Object pronoun of he:", ["him", "his", "he"], 0]], "time": 110}, {"title": "Lesson 6 — Possessive Adjectives", "explanation": "تعلم my, your, his, her, its, our, their قبل الاسم.", "examples": [["My name is Ahmed.", "اسمي أحمد."], ["This is her book.", "هذا كتابها."], ["Our school is big.", "مدرستنا كبيرة."]], "words": ["my", "your", "his", "her", "our", "their"], "questions": [["This is ___ book.", ["my", "me", "I"], 0], ["He has ___ phone.", ["his", "him", "he"], 0], ["She likes ___ school.", ["her", "she", "hers"], 0], ["We love ___ teacher.", ["our", "us", "we"], 0], ["They have ___ books.", ["their", "them", "they"], 0]], "time": 115}, {"title": "Lesson 7 — This, That, These, Those", "explanation": "التمييز بين المفرد والجمع والقريب والبعيد.", "examples": [["This is my book.", "هذا كتابي."], ["That is your phone.", "ذلك هاتفك."], ["These are my friends.", "هؤلاء أصدقائي."]], "words": ["this", "that", "these", "those", "near", "far"], "questions": [["___ is my book.", ["This", "These", "Those"], 0], ["___ are my friends.", ["That", "This", "These"], 2], ["___ is your car over there.", ["That", "These", "Those"], 0], ["Plural near:", ["this", "these", "that"], 1], ["Plural far:", ["those", "that", "this"], 0]], "time": 120}, {"title": "Lesson 8 — Singular and Plural", "explanation": "تعلم المفرد والجمع، وخصوصًا s وes.", "examples": [["one book", "كتاب واحد"], ["two books", "كتابان"], ["two boxes", "صندوقان"]], "words": ["book", "books", "box", "boxes", "chair"], "questions": [["book →", ["books", "bookes", "book"], 0], ["box →", ["boxs", "boxes", "box"], 1], ["two ___", ["book", "books", "booking"], 1], ["one ___", ["chairs", "chair", "chairing"], 1], ["boxes is:", ["singular", "plural", "verb"], 1]], "time": 125}, {"title": "Lesson 9 — A, An, The", "explanation": "تعلم أدوات التنكير والتعريف حسب الصوت والمعنى.", "examples": [["I have a book.", "لدي كتاب."], ["She has an apple.", "لديها تفاحة."], ["The book is new.", "الكتاب جديد."]], "words": ["a", "an", "the", "apple", "book"], "questions": [["___ apple", ["a", "an", "the"], 1], ["___ book", ["a", "an", "books"], 0], ["___ sun", ["A", "An", "The"], 2], ["___ orange", ["a", "an", "are"], 1], ["Use the for something:", ["specific/known", "always plural", "only a verb"], 0]], "time": 130}, {"title": "Lesson 10 — Have and Has", "explanation": "استخدام have مع I/you/we/they وhas مع he/she/it.", "examples": [["I have a book.", "لدي كتاب."], ["He has a car.", "لديه سيارة."], ["They have a house.", "لديهم منزل."]], "words": ["have", "has", "book", "car", "house"], "questions": [["She ___ a phone.", ["have", "has", "having"], 1], ["They ___ a house.", ["has", "have", "having"], 1], ["I ___ two books.", ["has", "have", "having"], 1], ["He ___ a car.", ["have", "has", "had"], 1], ["We ___ a class.", ["has", "have", "having"], 1]], "time": 135}, {"title": "Lesson 11 — There Is and There Are", "explanation": "التعبير عن وجود مفرد أو جمع.", "examples": [["There is a book on the table.", "يوجد كتاب على الطاولة."], ["There are two chairs.", "يوجد كرسيان."], ["There is a student here.", "يوجد طالب هنا."]], "words": ["there is", "there are", "table", "chair", "room"], "questions": [["___ a book.", ["There is", "There are", "There am"], 0], ["___ two chairs.", ["There is", "There are", "There be"], 1], ["There ___ a student.", ["is", "are", "am"], 0], ["There ___ three books.", ["is", "are", "am"], 1], ["Choose:", ["There are a book.", "There is a book.", "There am a book."], 1]], "time": 140}, {"title": "Lesson 12 — Present Simple: Affirmative", "explanation": "الحاضر البسيط للعادات والحقائق، مع s غالبًا مع he/she/it.", "examples": [["I study English every day.", "أدرس الإنجليزية كل يوم."], ["He works at home.", "هو يعمل في المنزل."], ["She reads every morning.", "هي تقرأ كل صباح."]], "words": ["study", "work", "read", "every day", "morning"], "questions": [["He ___ every day.", ["work", "works", "working"], 1], ["I ___ English.", ["study", "studies", "studying"], 0], ["She ___ books.", ["read", "reads", "reading"], 1], ["They ___ football.", ["play", "plays", "playing"], 0], ["Choose:", ["He study.", "He studies.", "He studying."], 1]], "time": 145}, {"title": "Lesson 13 — Present Simple: Negative", "explanation": "النفي في الحاضر البسيط باستخدام don't وdoesn't.", "examples": [["I don't work on Sunday.", "لا أعمل يوم الأحد."], ["He doesn't like coffee.", "هو لا يحب القهوة."], ["They don't live here.", "هم لا يعيشون هنا."]], "words": ["don't", "doesn't", "like", "live", "Sunday"], "questions": [["He ___ work.", ["don't", "doesn't", "isn't"], 1], ["They ___ live here.", ["doesn't", "don't", "aren't"], 1], ["She doesn't ___ coffee.", ["likes", "like", "liking"], 1], ["I ___ play tennis.", ["doesn't", "don't", "am not"], 1], ["Choose:", ["He doesn't works.", "He doesn't work.", "He don't work."], 1]], "time": 150}, {"title": "Lesson 14 — Present Simple: Questions", "explanation": "تكوين الأسئلة في الحاضر البسيط باستعمال Do وDoes.", "examples": [["Do you speak English?", "هل تتحدث الإنجليزية؟"], ["Does he study here?", "هل يدرس هنا؟"], ["Do they work together?", "هل يعملون معًا؟"]], "words": ["do", "does", "speak", "study", "together"], "questions": [["___ you speak English?", ["Do", "Does", "Are"], 0], ["___ he study here?", ["Do", "Does", "Is"], 1], ["Do they ___ together?", ["work", "works", "working"], 0], ["Does she ___ English?", ["speaks", "speak", "speaking"], 1], ["Choose:", ["Does he works?", "Does he work?", "Do he work?"], 1]], "time": 155}, {"title": "Lesson 15 — Adverbs of Frequency", "explanation": "استخدام always, usually, often, sometimes, never للتعبير عن التكرار.", "examples": [["I always study English.", "أدرس الإنجليزية دائمًا."], ["I sometimes watch videos.", "أشاهد الفيديوهات أحيانًا."], ["She is always ready.", "هي دائمًا مستعدة."]], "words": ["always", "usually", "often", "sometimes", "never"], "questions": [["I ___ study.", ["always", "am always", "always am"], 0], ["She is ___ ready.", ["always", "ready always", "always is"], 0], ["He ___ watches TV.", ["never", "is never", "never is"], 0], ["We ___ practice.", ["sometimes", "are sometimes", "sometimes are"], 0], ["0% means:", ["never", "often", "always"], 0]], "time": 160}, {"title": "Lesson 16 — Can and Cannot", "explanation": "التعبير عن القدرة: can + base verb، والنفي cannot/can't.", "examples": [["I can speak English.", "أستطيع التحدث بالإنجليزية."], ["She can read quickly.", "تستطيع القراءة بسرعة."], ["He cannot swim.", "لا يستطيع السباحة."]], "words": ["can", "cannot", "speak", "swim", "quickly"], "questions": [["I ___ swim.", ["can", "can to", "cans"], 0], ["She can ___ English.", ["speaks", "speak", "speaking"], 1], ["He ___ swim.", ["cannot", "can not to", "doesn't can"], 0], ["Choose:", ["I can to read.", "I can read.", "I can reading."], 1], ["Can they ___?", ["come", "comes", "coming"], 0]], "time": 165}, {"title": "Lesson 17 — Question Words", "explanation": "تعلم who, what, where, when, why, how.", "examples": [["What is your name?", "ما اسمك؟"], ["Where do you live?", "أين تعيش؟"], ["Why are you late?", "لماذا أنت متأخر؟"]], "words": ["who", "what", "where", "when", "why", "how"], "questions": [["___ do you live?", ["Who", "Where", "Why"], 1], ["___ is your teacher?", ["Who", "Where", "When"], 0], ["___ do you study?", ["Why", "Who", "Where"], 0], ["___ is your birthday?", ["When", "Who", "Why"], 0], ["___ are you?", ["How", "Who", "Where"], 0]], "time": 170}, {"title": "Lesson 18 — Imperatives", "explanation": "الأوامر والتعليمات باستعمال الفعل الأساسي، والنهي مع Don't.", "examples": [["Open the book.", "افتح الكتاب."], ["Listen carefully.", "استمع بعناية."], ["Don't be late.", "لا تتأخر."]], "words": ["open", "listen", "carefully", "late", "close"], "questions": [["Choose the command:", ["Open the book.", "Opens the book.", "Opening the book."], 0], ["___ be late.", ["Don't", "Not", "Doesn't"], 0], ["___ carefully.", ["Listen", "Listens", "Listening"], 0], ["Choose:", ["Close the door.", "Closes the door.", "Closing the door."], 0], ["Don't ___ noise.", ["make", "makes", "making"], 0]], "time": 175}, {"title": "Lesson 19 — Prepositions of Place", "explanation": "وصف المكان باستعمال in, on, under, behind, next to, in front of.", "examples": [["The book is on the table.", "الكتاب على الطاولة."], ["The bag is under the chair.", "الحقيبة تحت الكرسي."], ["The school is next to the bank.", "المدرسة بجانب البنك."]], "words": ["in", "on", "under", "behind", "next to"], "questions": [["The book is ___ the table.", ["on", "at", "to"], 0], ["The bag is ___ the chair.", ["under", "in", "at"], 0], ["The bank is ___ the school.", ["next to", "at", "on"], 0], ["The car is ___ the house.", ["in front of", "at", "to"], 0], ["The picture is ___ the wall.", ["on", "under", "to"], 0]], "time": 180}, {"title": "Lesson 20 — Prepositions of Time", "explanation": "استخدام in مع الفترات، on مع الأيام، at مع الوقت المحدد.", "examples": [["I study in the morning.", "أدرس في الصباح."], ["I go to school on Monday.", "أذهب إلى المدرسة يوم الاثنين."], ["I wake up at eight.", "أستيقظ في الثامنة."]], "words": ["morning", "Monday", "at", "on", "in"], "questions": [["at ___ eight", ["in", "on", "at"], 2], ["___ the morning", ["in", "on", "at"], 0], ["___ Monday", ["in", "on", "at"], 1], ["___ 2026", ["in", "on", "at"], 0], ["___ 9:00", ["in", "on", "at"], 2]], "time": 185}, {"title": "Lesson 21 — Daily Routine", "explanation": "وصف الروتين اليومي بترتيب منطقي باستخدام الحاضر البسيط.", "examples": [["I wake up at eight.", "أستيقظ في الثامنة."], ["I brush my teeth.", "أنظف أسناني."], ["I go to school.", "أذهب إلى المدرسة."]], "words": ["wake up", "brush", "teeth", "school", "finally"], "questions": [["I ___ up at eight.", ["wake", "wakes", "waking"], 0], ["She ___ her teeth.", ["brush", "brushes", "brushing"], 1], ["They ___ to school.", ["go", "goes", "going"], 0], ["A routine normally uses:", ["Present Simple", "Past Perfect", "Future Perfect"], 0], ["Which can end a sequence?", ["Finally", "First", "Yesterday"], 0]], "time": 190}, {"title": "Lesson 22 — Past Simple: Was and Were", "explanation": "الحديث عن الحالات والمواقع في الماضي باستعمال was وwere.", "examples": [["I was tired yesterday.", "كنت متعبًا أمس."], ["She was at home.", "كانت في المنزل."], ["They were happy.", "كانوا سعداء."]], "words": ["was", "were", "yesterday", "happy", "tired"], "questions": [["I ___ tired.", ["was", "were", "am"], 0], ["They ___ happy.", ["was", "were", "are"], 1], ["She ___ at home.", ["was", "were", "is"], 0], ["We ___ busy.", ["was", "were", "are"], 1], ["You ___ late.", ["was", "were", "are"], 1]], "time": 190}, {"title": "Lesson 23 — Past Simple: Regular Verbs", "explanation": "تكوين الماضي للأفعال المنتظمة غالبًا بإضافة -ed.", "examples": [["I worked yesterday.", "عملت أمس."], ["She watched a movie.", "شاهدت فيلمًا."], ["We played football.", "لعبنا كرة القدم."]], "words": ["worked", "watched", "played", "yesterday", "movie"], "questions": [["work →", ["worked", "workd", "works"], 0], ["play →", ["played", "plaied", "plays"], 0], ["watch →", ["watched", "watchs", "watching"], 0], ["Yesterday I ___.", ["work", "worked", "working"], 1], ["She ___ a movie.", ["watch", "watched", "watches"], 1]], "time": 190}, {"title": "Lesson 24 — Past Simple: Irregular Verbs", "explanation": "تعلم أفعال شائعة غير منتظمة مثل go→went وeat→ate.", "examples": [["I went to school.", "ذهبت إلى المدرسة."], ["He ate breakfast.", "تناول الفطور."], ["We saw a friend.", "رأينا صديقًا."]], "words": ["went", "ate", "saw", "had", "breakfast"], "questions": [["go →", ["went", "goed", "goes"], 0], ["eat →", ["ate", "eated", "eats"], 0], ["see →", ["saw", "seed", "sees"], 0], ["have →", ["had", "haved", "has"], 0], ["Yesterday I ___ home.", ["go", "went", "going"], 1]], "time": 190}, {"title": "Lesson 25 — Past Simple: Negative", "explanation": "النفي في الماضي باستعمال didn't + base verb.", "examples": [["I didn't go.", "لم أذهب."], ["She didn't watch TV.", "لم تشاهد التلفاز."], ["They didn't work.", "لم يعملوا."]], "words": ["didn't", "go", "watch", "work", "yesterday"], "questions": [["I ___ go.", ["didn't", "don't", "doesn't"], 0], ["She didn't ___ TV.", ["watch", "watched", "watches"], 0], ["They didn't ___ work.", ["do", "did", "doing"], 0], ["Choose:", ["I didn't went.", "I didn't go.", "I don't went."], 1], ["He ___ eat.", ["didn't", "doesn't", "isn't"], 0]], "time": 190}, {"title": "Lesson 26 — Past Simple: Questions", "explanation": "تكوين الأسئلة في الماضي باستخدام Did + base verb.", "examples": [["Did you go to school?", "هل ذهبت إلى المدرسة؟"], ["Did he study yesterday?", "هل درس أمس؟"], ["Did they watch the movie?", "هل شاهدوا الفيلم؟"]], "words": ["did", "yesterday", "study", "watch", "go"], "questions": [["___ you go yesterday?", ["Do", "Does", "Did"], 2], ["Did he ___?", ["study", "studied", "studies"], 0], ["Did they ___ the movie?", ["watch", "watched", "watches"], 0], ["Choose:", ["Did she went?", "Did she go?", "Does she went?"], 1], ["Did you ___ breakfast?", ["eat", "ate", "eats"], 0]], "time": 190}, {"title": "Lesson 27 — Future with Going To", "explanation": "التحدث عن الخطط باستخدام am/is/are + going to + verb.", "examples": [["I am going to study tonight.", "سأدرس الليلة."], ["She is going to travel.", "ستسافر."], ["We are going to learn English.", "سنتعلم الإنجليزية."]], "words": ["going to", "tonight", "travel", "learn", "plan"], "questions": [["I am going to ___.", ["study", "studied", "studying"], 0], ["She is going to ___.", ["travel", "travels", "traveling"], 0], ["They are going to ___.", ["work", "works", "worked"], 0], ["Choose:", ["He is going to study.", "He going to study.", "He is go to study."], 0], ["We ___ going to learn.", ["am", "is", "are"], 2]], "time": 190}, {"title": "Lesson 28 — Future with Will", "explanation": "التحدث عن المستقبل بالـwill للتنبؤ أو القرار أو الوعد.", "examples": [["I will help you.", "سأساعدك."], ["She will call tomorrow.", "ستتصل غدًا."], ["They will arrive soon.", "سيصلون قريبًا."]], "words": ["will", "help", "tomorrow", "soon", "arrive"], "questions": [["I ___ help you.", ["will", "am", "did"], 0], ["She will ___ tomorrow.", ["call", "calls", "called"], 0], ["They will ___ soon.", ["arrive", "arrives", "arrived"], 0], ["Choose:", ["He will goes.", "He will go.", "He will going."], 1], ["Will you ___ me?", ["help", "helps", "helped"], 0]], "time": 190}, {"title": "Lesson 29 — Present Continuous", "explanation": "التحدث عما يحدث الآن باستخدام am/is/are + ing.", "examples": [["I am studying now.", "أنا أدرس الآن."], ["He is working.", "هو يعمل الآن."], ["They are playing.", "هم يلعبون."]], "words": ["now", "studying", "working", "playing"], "questions": [["I am ___.", ["study", "studying", "studied"], 1], ["He is ___.", ["work", "working", "worked"], 1], ["They are ___.", ["play", "playing", "played"], 1], ["She is ___.", ["read", "reading", "reads"], 1], ["We are ___ English.", ["learn", "learning", "learned"], 1]], "time": 190}, {"title": "Lesson 30 — Present Continuous: Questions", "explanation": "تكوين أسئلة المضارع المستمر بتقديم am/is/are.", "examples": [["Are you studying?", "هل تدرس؟"], ["Is she reading?", "هل هي تقرأ؟"], ["Are they playing?", "هل هم يلعبون؟"]], "words": ["studying", "reading", "playing", "now"], "questions": [["___ you studying?", ["Do", "Are", "Did"], 1], ["___ she reading?", ["Is", "Does", "Are"], 0], ["Are they ___?", ["play", "playing", "played"], 1], ["Is he ___?", ["work", "working", "worked"], 1], ["Choose:", ["Do you studying?", "Are you studying?", "Did you studying?"], 1]], "time": 190}, {"title": "Lesson 31 — Present Continuous: Negative", "explanation": "النفي في المضارع المستمر بوضع not بعد am/is/are.", "examples": [["I am not sleeping.", "أنا لا أنام الآن."], ["He is not working.", "هو لا يعمل الآن."], ["They are not playing.", "هم لا يلعبون."]], "words": ["sleeping", "working", "playing", "not"], "questions": [["I am ___ sleeping.", ["not", "no", "don't"], 0], ["He is not ___.", ["work", "working", "worked"], 1], ["They are not ___.", ["play", "playing", "played"], 1], ["Choose:", ["She isn't reading.", "She doesn't reading.", "She not reading."], 0], ["We are ___ watching TV.", ["not", "don't", "no"], 0]], "time": 190}, {"title": "Lesson 32 — Countable and Uncountable Nouns", "explanation": "التمييز بين الأسماء المعدودة مثل book وغير المعدودة مثل water.", "examples": [["I have two books.", "لدي كتابان."], ["I drink water.", "أشرب الماء."], ["She needs information.", "تحتاج معلومات."]], "words": ["countable", "uncountable", "water", "information", "books"], "questions": [["Which is countable?", ["water", "book", "information"], 1], ["Which is uncountable?", ["chair", "apple", "water"], 2], ["two ___", ["book", "books", "water"], 1], ["some ___", ["information", "informations", "book"], 0], ["Which is normally uncountable?", ["milk", "chairs", "students"], 0]], "time": 190}, {"title": "Lesson 33 — Some and Any", "explanation": "استخدام some غالبًا في الإثبات وany في النفي والأسئلة.", "examples": [["I have some money.", "لدي بعض المال."], ["I don't have any money.", "ليس لدي أي مال."], ["Do you have any questions?", "هل لديك أي أسئلة؟"]], "words": ["some", "any", "money", "questions", "water"], "questions": [["I have ___ money.", ["some", "any", "many"], 0], ["I don't have ___ money.", ["some", "any", "a"], 1], ["Do you have ___ questions?", ["some", "any", "much"], 1], ["She bought ___ apples.", ["some", "any", "much"], 0], ["Choose:", ["I don't need some.", "I don't need any.", "I don't need many."], 1]], "time": 190}, {"title": "Lesson 34 — Much and Many", "explanation": "many مع المعدود وmuch مع غير المعدود.", "examples": [["I have many books.", "لدي كتب كثيرة."], ["I don't have much time.", "ليس لدي وقت كثير."], ["How many students are there?", "كم عدد الطلاب؟"]], "words": ["many", "much", "time", "students", "water"], "questions": [["I have ___ books.", ["many", "much", "a"], 0], ["I don't have ___ time.", ["many", "much", "an"], 1], ["How ___ students?", ["much", "many", "any"], 1], ["How ___ water?", ["much", "many", "few"], 0], ["Choose:", ["much books", "many books", "many water"], 1]], "time": 190}, {"title": "Lesson 35 — Comparatives", "explanation": "المقارنة بين شيئين باستعمال -er أو more مع than.", "examples": [["Ahmed is taller than Ali.", "أحمد أطول من علي."], ["This book is cheaper.", "هذا الكتاب أرخص."], ["English is easier than before.", "الإنجليزية أسهل من قبل."]], "words": ["taller", "cheaper", "easier", "than", "more"], "questions": [["fast →", ["faster", "fastest", "more fast"], 0], ["tall →", ["taller", "tallest", "more tall"], 0], ["This is ___ than that.", ["cheap", "cheaper", "cheapest"], 1], ["English is ___ than before.", ["easier", "easiest", "easy"], 0], ["Long adjective: ___ interesting.", ["more", "most", "many"], 0]], "time": 190}, {"title": "Lesson 36 — Superlatives", "explanation": "التعبير عن أعلى درجة داخل مجموعة باستعمال -est أو most.", "examples": [["He is the tallest student.", "هو أطول طالب."], ["This is the biggest room.", "هذه أكبر غرفة."], ["It is the best choice.", "إنه أفضل اختيار."]], "words": ["tallest", "biggest", "best", "choice", "most"], "questions": [["He is the ___ student.", ["tall", "taller", "tallest"], 2], ["This is the ___ room.", ["biggest", "bigger", "big"], 0], ["It is the ___ choice.", ["best", "better", "good"], 0], ["the ___ interesting", ["most", "more", "many"], 0], ["Superlatives compare:", ["a group", "two only", "one word"], 0]], "time": 190}, {"title": "Lesson 37 — Adjectives", "explanation": "استخدام الصفات لوصف الأشخاص والأشياء.", "examples": [["She is smart.", "هي ذكية."], ["It is an interesting book.", "إنه كتاب ممتع."], ["He has a new phone.", "لديه هاتف جديد."]], "words": ["smart", "interesting", "new", "good", "beautiful"], "questions": [["She is very ___.", ["smart", "smartly", "smarts"], 0], ["a ___ phone", ["new", "newly", "news"], 0], ["an ___ book", ["interesting", "interestingly", "interests"], 0], ["The house is ___.", ["big", "bigly", "bigs"], 0], ["Adjectives describe:", ["nouns", "only verbs", "only questions"], 0]], "time": 190}, {"title": "Lesson 38 — Adverbs", "explanation": "استخدام الظروف لوصف كيفية حدوث الفعل.", "examples": [["She speaks slowly.", "هي تتحدث ببطء."], ["He works carefully.", "هو يعمل بعناية."], ["I speak English well.", "أتحدث الإنجليزية جيدًا."]], "words": ["quickly", "slowly", "carefully", "well", "speak"], "questions": [["He works ___.", ["careful", "carefully", "care"], 1], ["She speaks ___.", ["slowly", "slow", "slows"], 0], ["I speak English ___.", ["good", "well", "best"], 1], ["They run ___.", ["quickly", "quick", "quicks"], 0], ["An adverb can describe:", ["how an action happens", "a noun only", "a person only"], 0]], "time": 190}, {"title": "Lesson 39 — Conjunctions", "explanation": "ربط الأفكار باستعمال and, but, because, so, or.", "examples": [["I study English because I need it.", "أدرس الإنجليزية لأنني أحتاجها."], ["I am tired but I continue.", "أنا متعب لكنني أستمر."], ["I study and I practice.", "أدرس وأتدرب."]], "words": ["and", "but", "because", "so", "or"], "questions": [["I study ___ I practice.", ["and", "but", "or"], 0], ["I am tired ___ I continue.", ["but", "because", "or"], 0], ["I study ___ I need English.", ["because", "so", "or"], 0], ["It is raining, ___ we stay home.", ["so", "because", "or"], 0], ["Tea ___ coffee?", ["and", "but", "or"], 2]], "time": 190}, {"title": "Lesson 40 — Subject and Object Review", "explanation": "مراجعة الفرق بين الفاعل والمفعول واختيار الضمير الصحيح.", "examples": [["She helps me.", "هي تساعدني."], ["I know him.", "أنا أعرفه."], ["They call us.", "هم يتصلون بنا."]], "words": ["subject", "object", "help", "call", "know"], "questions": [["In “She helps me”, subject:", ["She", "me", "helps"], 0], ["Object in “I know him”:", ["I", "know", "him"], 2], ["Choose:", ["They help we.", "They help us.", "Them help us."], 1], ["Choose:", ["He sees I.", "He sees me.", "Him sees me."], 1], ["Object pronoun of they:", ["them", "their", "they"], 0]], "time": 190}, {"title": "Lesson 41 — Articles Review", "explanation": "مراجعة a/an/the مع أمثلة في سياقات مختلفة.", "examples": [["I bought a book.", "اشتريت كتابًا."], ["I ate an apple.", "أكلت تفاحة."], ["The book is interesting.", "الكتاب ممتع."]], "words": ["bought", "apple", "interesting", "specific"], "questions": [["I bought ___ book.", ["a", "an", "are"], 0], ["She ate ___ apple.", ["a", "an", "the"], 1], ["___ book on my desk is new.", ["A", "An", "The"], 2], ["Water is important.", ["Correct", "a water", "an water"], 0], ["Choose:", ["an car", "a car", "a apple"], 1]], "time": 190}, {"title": "Lesson 42 — Present Perfect", "explanation": "التعرف على have/has + past participle وربطه بالحاضر.", "examples": [["I have finished my work.", "لقد أنهيت عملي."], ["She has arrived.", "لقد وصلت."], ["They have learned English.", "لقد تعلموا الإنجليزية."]], "words": ["finished", "arrived", "learned", "already", "work"], "questions": [["I ___ finished.", ["have", "has", "am"], 0], ["She ___ arrived.", ["have", "has", "is"], 1], ["They have ___.", ["learned", "learn", "learning"], 0], ["He has ___ his work.", ["finish", "finished", "finishing"], 1], ["Present perfect uses:", ["have/has + past participle", "did + base", "will + verb"], 0]], "time": 190}, {"title": "Lesson 43 — Present Perfect: Ever and Never", "explanation": "التحدث عن التجارب باستعمال ever في الأسئلة وnever للنفي.", "examples": [["Have you ever visited another country?", "هل سبق أن زرت بلدًا آخر؟"], ["I have never tried it.", "لم أجربه قط."], ["She has never been there.", "لم تذهب إلى هناك قط."]], "words": ["ever", "never", "visited", "tried", "been"], "questions": [["Have you ___ visited?", ["ever", "never", "yesterday"], 0], ["I have ___ tried it.", ["ever", "never", "did"], 1], ["She has ___ been there.", ["never", "yesterday", "did"], 0], ["Ever is common in:", ["questions", "commands", "places"], 0], ["Choose:", ["Have you ever been there?", "Did you ever been there?", "Have you ever went there?"], 0]], "time": 190}, {"title": "Lesson 44 — Past Continuous", "explanation": "وصف حدث كان مستمرًا في الماضي باستعمال was/were + ing.", "examples": [["I was studying at eight.", "كنت أدرس في الثامنة."], ["She was sleeping.", "كانت نائمة."], ["They were playing football.", "كانوا يلعبون كرة القدم."]], "words": ["was studying", "sleeping", "playing", "eight"], "questions": [["I was ___.", ["study", "studying", "studied"], 1], ["They were ___.", ["playing", "play", "played"], 0], ["She was ___.", ["sleeping", "sleep", "slept"], 0], ["He ___ working.", ["was", "were", "is"], 0], ["We ___ studying.", ["was", "were", "are"], 1]], "time": 190}, {"title": "Lesson 45 — When and While", "explanation": "ربط حدث مستمر بحدث آخر في الماضي.", "examples": [["I was studying when he called.", "كنت أدرس عندما اتصل."], ["While I was sleeping, it rained.", "بينما كنت نائمًا، هطل المطر."], ["She called while I was working.", "اتصلت بينما كنت أعمل."]], "words": ["when", "while", "called", "rained", "working"], "questions": [["I was studying ___ he called.", ["when", "because", "than"], 0], ["___ I was sleeping, it rained.", ["While", "Because", "Or"], 0], ["She called ___ I was working.", ["while", "than", "so"], 0], ["While often introduces:", ["an ongoing action", "a noun only", "a future promise"], 0], ["Choose:", ["I was sleeping when he called.", "I was sleep when he called.", "I sleeping when he called."], 0]], "time": 190}, {"title": "Lesson 46 — First Conditional", "explanation": "التحدث عن احتمال مستقبلي ونتيجته باستخدام If + present, will + verb.", "examples": [["If I study, I will improve.", "إذا درست، فسأتحسن."], ["If it rains, we will stay home.", "إذا أمطرت، فسنبقى في المنزل."], ["If you practice, you will learn.", "إذا تدربت، ستتعلم."]], "words": ["if", "improve", "rain", "stay", "practice"], "questions": [["If I study, I ___ improve.", ["will", "would", "am"], 0], ["If it rains, we ___ stay home.", ["will", "would", "are"], 0], ["If you practice, you ___ learn.", ["will", "did", "are"], 0], ["First conditional uses:", ["present + will", "past + would", "will + will"], 0], ["Choose:", ["If I will study, I improve.", "If I study, I will improve.", "If I studied, I will improve."], 1]], "time": 190}, {"title": "Lesson 47 — Should and Must", "explanation": "التعبير عن النصيحة والضرورة باستخدام should وmust.", "examples": [["You should study every day.", "ينبغي أن تدرس كل يوم."], ["You must be careful.", "يجب أن تكون حذرًا."], ["We should practice more.", "ينبغي أن نتدرب أكثر."]], "words": ["should", "must", "careful", "practice", "more"], "questions": [["You ___ study more.", ["should", "should to", "shoulds"], 0], ["You ___ be careful.", ["must", "must to", "musts"], 0], ["We should ___ more.", ["practice", "practices", "practicing"], 0], ["After must use:", ["base verb", "to + verb", "verb-ing"], 0], ["Choose:", ["You must to study.", "You must study.", "You must studying."], 1]], "time": 190}, {"title": "Lesson 48 — Gerunds and Infinitives", "explanation": "التعرف على want to + verb وenjoy + ing وأنماط شائعة.", "examples": [["I want to learn English.", "أريد تعلم الإنجليزية."], ["I enjoy reading.", "أستمتع بالقراءة."], ["She likes studying.", "تحب الدراسة."]], "words": ["want", "enjoy", "like", "reading", "learn"], "questions": [["I want ___ English.", ["to learn", "learned", "learning to"], 0], ["I enjoy ___.", ["reading", "to reading", "readed"], 0], ["She likes ___.", ["studying", "studyed", "to studying"], 0], ["Choose:", ["I want to learn.", "I want learning to.", "I want to learned."], 0], ["Enjoy is commonly followed by:", ["-ing", "to + base", "will"], 0]], "time": 190}, {"title": "Lesson 49 — Relative Clauses", "explanation": "ربط المعلومات باستخدام who للأشخاص وwhich للأشياء وthat في حالات كثيرة.", "examples": [["The man who works here is kind.", "الرجل الذي يعمل هنا لطيف."], ["The book which I bought is useful.", "الكتاب الذي اشتريته مفيد."], ["The phone that I use is new.", "الهاتف الذي أستخدمه جديد."]], "words": ["who", "which", "that", "useful", "work"], "questions": [["The man ___ works here.", ["who", "which", "where"], 0], ["The book ___ I bought.", ["which", "who", "when"], 0], ["The phone ___ I use.", ["that", "where", "when"], 0], ["Who refers to:", ["people", "places", "times"], 0], ["Which normally refers to:", ["things", "people only", "days"], 0]], "time": 190}, {"title": "Lesson 50 — Connectors for Longer Sentences", "explanation": "تكوين جمل أطول باستعمال although, however, therefore وغيرها.", "examples": [["I study because I want to improve.", "أدرس لأنني أريد أن أتحسن."], ["Although it is difficult, I continue.", "رغم أنه صعب، أستمر."], ["It was difficult; however, I finished.", "كان صعبًا، ومع ذلك أنهيته."]], "words": ["although", "however", "therefore", "communicate", "continue"], "questions": [["I study ___ I need English.", ["because", "however", "or"], 0], ["___ it is difficult, I continue.", ["Although", "Because", "Therefore"], 0], ["It was difficult; ___, I finished.", ["however", "because", "if"], 0], ["Therefore introduces:", ["a result", "a person", "a question"], 0], ["A connector helps:", ["connect ideas", "remove verbs", "change spelling"], 0]], "time": 190}];
-const KEY="myEnglishNotebookMasteryV9";
-let data=JSON.parse(localStorage.getItem(KEY)||"null")||{mastered:[],date:"",tests:0};
+
+/* =========================================================
+   LESSON DATA
+   ========================================================= */
+
+const LESSONS = [
+
+{
+title:"Lesson 1 — Personal Pronouns",
+level:"Beginner",
+explanation:
+"ضمائر الفاعل هي كلمات نستخدمها بدل الاسم عندما يكون الشخص أو الشيء هو الفاعل في الجملة.\n\nI للشخص المتكلم، you للمخاطب، he للذكر، she للأنثى، it للشيء أو الحيوان، we لمجموعة فيها المتكلم، و they لمجموعة من الأشخاص أو الأشياء.",
+words:["I","you","he","she","it","we","they"],
+examples:[
+["I am a student.","أنا طالب."],
+["She is happy.","هي سعيدة."],
+["They are friends.","هم أصدقاء."]
+],
+questions:[
+["Choose the correct pronoun: ___ am ready.",["I","He","They"],0],
+["___ is my sister.",["He","She","It"],1],
+["___ are my friends.",["It","They","He"],1],
+["Choose the correct sentence.",["I am ready.","I is ready.","I are ready."],0],
+["A group of people can be called:",["they","he","it"],0]
+],
+fills:[
+["___ am a student.","I"],
+["She is my ___.","friend"]
+],
+time:90
+},
+
+{
+title:"Lesson 2 — To Be: am, is, are",
+level:"Beginner",
+explanation:
+"الفعل to be من أهم الأفعال في الإنجليزية.\n\nنستخدم am مع I، ونستخدم is مع he وshe وit، ونستخدم are مع you وwe وthey.",
+words:["am","is","are","ready","student","happy"],
+examples:[
+["I am ready.","أنا مستعد."],
+["He is tired.","هو متعب."],
+["We are students.","نحن طلاب."]
+],
+questions:[
+["I ___ ready.",["am","is","are"],0],
+["She ___ happy.",["am","is","are"],1],
+["They ___ students.",["am","is","are"],2],
+["He ___ tired.",["are","am","is"],2],
+["Choose the correct sentence.",["We is students.","We are students.","We am students."],1]
+],
+fills:[
+["I ___ ready.","am"],
+["They ___ students.","are"]
+],
+time:95
+},
+
+{
+title:"Lesson 3 — To Be: Negative",
+level:"Beginner",
+explanation:
+"للنفي مع am وis وare نضع not بعدها.\n\nI am not، he is not، she is not، we are not، they are not.",
+words:["not","tired","busy","late","ready"],
+examples:[
+["I am not tired.","أنا لست متعبًا."],
+["She is not busy.","هي ليست مشغولة."],
+["They are not late.","هم ليسوا متأخرين."]
+],
+questions:[
+["I am ___ tired.",["not","no","don't"],0],
+["She is ___ busy.",["not","no","doesn't"],0],
+["They are ___ late.",["not","no","don't"],0],
+["Choose the correct sentence.",["He is not ready.","He not is ready.","He does not is ready."],0],
+["Where do we put not?",["after am/is/are","before every noun","after every noun"],0]
+],
+fills:[
+["I am ___ tired.","not"],
+["He is ___ ready.","not"]
+],
+time:100
+},
+
+{
+title:"Lesson 4 — To Be: Questions",
+level:"Beginner",
+explanation:
+"عند تكوين سؤال باستعمال am أو is أو are، نضع الفعل في بداية الجملة.\n\nAre you ready? Is he a student? Are they happy?",
+words:["are","is","ready","student","happy"],
+examples:[
+["Are you ready?","هل أنت مستعد؟"],
+["Is he a student?","هل هو طالب؟"],
+["Are they happy?","هل هم سعداء؟"]
+],
+questions:[
+["___ you ready?",["Are","Is","Am"],0],
+["___ he a student?",["Are","Is","Am"],1],
+["___ they happy?",["Is","Are","Am"],1],
+["Choose the correct question.",["Is she ready?","She is ready?","She ready is?"],0],
+["With we, use:",["are","is","am"],0]
+],
+fills:[
+["___ you ready?","Are"],
+["___ she a student?","Is"]
+],
+time:105
+},
+
+{
+title:"Lesson 5 — Object Pronouns",
+level:"Beginner",
+explanation:
+"ضمائر المفعول تأتي عادة بعد الفعل.\n\nنقول me وyou وhim وher وus وthem عندما يكون الشخص أو الشيء مفعولًا به.",
+words:["me","you","him","her","us","them"],
+examples:[
+["He helps me.","هو يساعدني."],
+["I know him.","أنا أعرفه."],
+["They help us.","هم يساعدوننا."]
+],
+questions:[
+["He helps ___.",["I","me","my"],1],
+["I know ___.",["he","him","his"],1],
+["They help ___.",["we","us","our"],1],
+["She calls ___.",["they","them","their"],1],
+["Object pronoun of he:",["him","his","he"],0]
+],
+fills:[
+["He helps ___.","me"],
+["I know ___.","him"]
+],
+time:110
+},
+
+{
+title:"Lesson 6 — Possessive Adjectives",
+level:"Beginner",
+explanation:
+"صفات الملكية تأتي قبل الاسم لتوضح لمن ينتمي الشيء.\n\nmy, your, his, her, its, our, their.",
+words:["my","your","his","her","our","their"],
+examples:[
+["My name is Ahmed.","اسمي أحمد."],
+["This is her book.","هذا كتابها."],
+["Our school is big.","مدرستنا كبيرة."]
+],
+questions:[
+["This is ___ book.",["my","me","I"],0],
+["He has ___ phone.",["his","him","he"],0],
+["She likes ___ school.",["her","she","hers"],0],
+["We love ___ teacher.",["our","us","we"],0],
+["They have ___ books.",["their","them","they"],0]
+],
+fills:[
+["This is ___ book.","my"],
+["We love ___ school.","our"]
+],
+time:115
+},
+
+{
+title:"Lesson 7 — This, That, These, Those",
+level:"Beginner",
+explanation:
+"نستخدم this للمفرد القريب، that للمفرد البعيد، these للجمع القريب، وthose للجمع البعيد.",
+words:["this","that","these","those","near","far"],
+examples:[
+["This is my book.","هذا كتابي."],
+["That is your phone.","ذلك هاتفك."],
+["These are my friends.","هؤلاء أصدقائي."]
+],
+questions:[
+["___ is my book.",["This","These","Those"],0],
+["___ are my friends.",["That","This","These"],2],
+["___ is your car over there.",["That","These","Those"],0],
+["Plural and near:",["this","these","that"],1],
+["Plural and far:",["those","that","this"],0]
+],
+fills:[
+["___ is my book.","This"],
+["___ are my friends.","These"]
+],
+time:120
+},
+
+{
+title:"Lesson 8 — Singular and Plural",
+level:"Beginner",
+explanation:
+"المفرد يعني شيئًا واحدًا، والجمع يعني أكثر من واحد. كثير من الأسماء تأخذ s في الجمع، وبعضها يأخذ es.",
+words:["book","books","box","boxes","chair","chairs"],
+examples:[
+["one book","كتاب واحد"],
+["two books","كتابان"],
+["two boxes","صندوقان"]
+],
+questions:[
+["book →",["books","bookes","book"],0],
+["box →",["boxs","boxes","box"],1],
+["two ___",["book","books","booking"],1],
+["one ___",["chairs","chair","chairing"],1],
+["boxes is:",["singular","plural","verb"],1]
+],
+fills:[
+["one ___","book"],
+["two ___","books"]
+],
+time:125
+},
+
+{
+title:"Lesson 9 — A, An, The",
+level:"Beginner",
+explanation:
+"نستخدم a وan غالبًا مع اسم مفرد غير محدد. نستخدم an قبل صوت علّة مثل apple، ونستخدم the عندما يكون الشيء محددًا أو معروفًا.",
+words:["a","an","the","apple","book","sun"],
+examples:[
+["I have a book.","لدي كتاب."],
+["She has an apple.","لديها تفاحة."],
+["The book is new.","الكتاب جديد."]
+],
+questions:[
+["___ apple",["a","an","the"],1],
+["___ book",["a","an","books"],0],
+["___ sun",["A","An","The"],2],
+["___ orange",["a","an","are"],1],
+["The is often used for something:",["specific","always plural","a verb"],0]
+],
+fills:[
+["I have ___ book.","a"],
+["She has ___ apple.","an"]
+],
+time:130
+},
+
+{
+title:"Lesson 10 — Have and Has",
+level:"Beginner",
+explanation:
+"نستخدم have مع I وyou وwe وthey، ونستخدم has مع he وshe وit.",
+words:["have","has","book","car","house"],
+examples:[
+["I have a book.","لدي كتاب."],
+["He has a car.","لديه سيارة."],
+["They have a house.","لديهم منزل."]
+],
+questions:[
+["She ___ a phone.",["have","has","having"],1],
+["They ___ a house.",["has","have","having"],1],
+["I ___ two books.",["has","have","having"],1],
+["He ___ a car.",["have","has","had"],1],
+["We ___ a class.",["has","have","having"],1]
+],
+fills:[
+["She ___ a phone.","has"],
+["They ___ a house.","have"]
+],
+time:135
+},
+
+{
+title:"Lesson 11 — There Is and There Are",
+level:"Beginner",
+explanation:
+"نستخدم There is عندما يوجد شيء مفرد، وThere are عندما توجد أشياء متعددة.",
+words:["there is","there are","table","chair","room"],
+examples:[
+["There is a book on the table.","يوجد كتاب على الطاولة."],
+["There are two chairs.","يوجد كرسيان."],
+["There is a student here.","يوجد طالب هنا."]
+],
+questions:[
+["___ a book.",["There is","There are","There am"],0],
+["___ two chairs.",["There is","There are","There be"],1],
+["There ___ a student.",["is","are","am"],0],
+["There ___ three books.",["is","are","am"],1],
+["Choose the correct sentence.",["There are a book.","There is a book.","There am a book."],1]
+],
+fills:[
+["There ___ a book.","is"],
+["There ___ two chairs.","are"]
+],
+time:140
+},
+
+{
+title:"Lesson 12 — Present Simple: Affirmative",
+level:"Beginner",
+explanation:
+"نستخدم المضارع البسيط للعادات والحقائق والأشياء التي تحدث بشكل متكرر.\n\nمع he وshe وit نضيف غالبًا s أو es إلى الفعل.",
+words:["study","work","read","play","every day"],
+examples:[
+["I study English every day.","أدرس الإنجليزية كل يوم."],
+["He works at home.","هو يعمل في المنزل."],
+["She reads every morning.","هي تقرأ كل صباح."]
+],
+questions:[
+["He ___ every day.",["work","works","working"],1],
+["I ___ English.",["study","studies","studying"],0],
+["She ___ books.",["read","reads","reading"],1],
+["They ___ football.",["play","plays","playing"],0],
+["Choose:",["He study.","He studies.","He studying."],1]
+],
+fills:[
+["I ___ English every day.","study"],
+["He ___ at home.","works"]
+],
+time:145
+},
+
+{
+title:"Lesson 13 — Present Simple: Negative",
+level:"Beginner",
+explanation:
+"في النفي نستخدم don't مع I وyou وwe وthey، ونستخدم doesn't مع he وshe وit.\n\nبعد doesn't يعود الفعل إلى شكله الأساسي.",
+words:["don't","doesn't","like","live","work"],
+examples:[
+["I don't work on Sunday.","لا أعمل يوم الأحد."],
+["He doesn't like coffee.","هو لا يحب القهوة."],
+["They don't live here.","هم لا يعيشون هنا."]
+],
+questions:[
+["He ___ work.",["don't","doesn't","isn't"],1],
+["They ___ live here.",["doesn't","don't","aren't"],1],
+["She doesn't ___ coffee.",["likes","like","liking"],1],
+["I ___ play tennis.",["doesn't","don't","am not"],1],
+["Choose:",["He doesn't works.","He doesn't work.","He don't work."],1]
+],
+fills:[
+["I ___ work here.","don't"],
+["She ___ like coffee.","doesn't"]
+],
+time:150
+},
+
+{
+title:"Lesson 14 — Present Simple: Questions",
+level:"Beginner",
+explanation:
+"نستخدم Do مع I وyou وwe وthey، ونستخدم Does مع he وshe وit.\n\nبعد Does يعود الفعل إلى شكله الأساسي.",
+words:["do","does","speak","study","work"],
+examples:[
+["Do you speak English?","هل تتحدث الإنجليزية؟"],
+["Does he study here?","هل يدرس هنا؟"],
+["Do they work together?","هل يعملون معًا؟"]
+],
+questions:[
+["___ you speak English?",["Do","Does","Are"],0],
+["___ he study here?",["Do","Does","Is"],1],
+["Do they ___ together?",["work","works","working"],0],
+["Does she ___ English?",["speaks","speak","speaking"],1],
+["Choose:",["Does he works?","Does he work?","Do he work?"],1]
+],
+fills:[
+["___ you speak English?","Do"],
+["Does he ___ here?","study"]
+],
+time:155
+},
+
+{
+title:"Lesson 15 — Adverbs of Frequency",
+level:"Beginner",
+explanation:
+"كلمات التكرار تساعدنا على وصف عدد مرات حدوث الفعل: always, usually, often, sometimes, never.",
+words:["always","usually","often","sometimes","never"],
+examples:[
+["I always study English.","أدرس الإنجليزية دائمًا."],
+["I sometimes watch videos.","أشاهد الفيديوهات أحيانًا."],
+["She is always ready.","هي دائمًا مستعدة."]
+],
+questions:[
+["I ___ study.",["always","am always","always am"],0],
+["She is ___ ready.",["always","ready always","always is"],0],
+["He ___ watches TV.",["never","is never","never is"],0],
+["We ___ practice.",["sometimes","are sometimes","sometimes are"],0],
+["0% means:",["never","often","always"],0]
+],
+fills:[
+["I ___ study English.","always"],
+["She is ___ ready.","always"]
+],
+time:160
+},
+
+{
+title:"Lesson 16 — Can and Cannot",
+level:"Beginner",
+explanation:
+"نستخدم can للتعبير عن القدرة. بعد can يأتي الفعل في شكله الأساسي بدون to.\n\nالنفي يكون cannot أو can't.",
+words:["can","cannot","speak","swim","read"],
+examples:[
+["I can speak English.","أستطيع التحدث بالإنجليزية."],
+["She can read quickly.","تستطيع القراءة بسرعة."],
+["He cannot swim.","لا يستطيع السباحة."]
+],
+questions:[
+["I ___ swim.",["can","can to","cans"],0],
+["She can ___ English.",["speaks","speak","speaking"],1],
+["He ___ swim.",["cannot","can not to","doesn't can"],0],
+["Choose:",["I can to read.","I can read.","I can reading."],1],
+["Can they ___?",["come","comes","coming"],0]
+],
+fills:[
+["I can ___ English.","speak"],
+["He cannot ___.","swim"]
+],
+time:165
+},
+
+{
+title:"Lesson 17 — Question Words",
+level:"Beginner",
+explanation:
+"كلمات السؤال الأساسية هي who وwhat وwhere وwhen وwhy وhow.\n\nكل كلمة لها وظيفة مختلفة حسب نوع المعلومة التي نريدها.",
+words:["who","what","where","when","why","how"],
+examples:[
+["What is your name?","ما اسمك؟"],
+["Where do you live?","أين تعيش؟"],
+["Why are you late?","لماذا أنت متأخر؟"]
+],
+questions:[
+["___ do you live?",["Who","Where","Why"],1],
+["___ is your teacher?",["Who","Where","When"],0],
+["___ is your birthday?",["When","Who","Why"],0],
+["___ are you?",["How","Who","Where"],0],
+["___ is this?",["What","Where","Who"],0]
+],
+fills:[
+["___ do you live?","Where"],
+["___ is your name?","What"]
+],
+time:170
+},
+
+{
+title:"Lesson 18 — Imperatives",
+level:"Beginner",
+explanation:
+"نستخدم الفعل الأساسي في بداية الجملة لإعطاء أمر أو تعليمات.\n\nللنهي نستخدم Don't + base verb.",
+words:["open","listen","close","carefully","late"],
+examples:[
+["Open the book.","افتح الكتاب."],
+["Listen carefully.","استمع بعناية."],
+["Don't be late.","لا تتأخر."]
+],
+questions:[
+["Choose the command.",["Open the book.","Opens the book.","Opening the book."],0],
+["___ be late.",["Don't","Not","Doesn't"],0],
+["___ carefully.",["Listen","Listens","Listening"],0],
+["Choose:",["Close the door.","Closes the door.","Closing the door."],0],
+["Don't ___ noise.",["make","makes","making"],0]
+],
+fills:[
+["___ the book.","Open"],
+["Don't ___ late.","be"]
+],
+time:175
+},
+
+{
+title:"Lesson 19 — Prepositions of Place",
+level:"Beginner",
+explanation:
+"حروف الجر تساعدنا على تحديد مكان الأشياء.\n\nin = داخل، on = على، under = تحت، behind = خلف، next to = بجانب.",
+words:["in","on","under","behind","next to"],
+examples:[
+["The book is on the table.","الكتاب على الطاولة."],
+["The bag is under the chair.","الحقيبة تحت الكرسي."],
+["The school is next to the bank.","المدرسة بجانب البنك."]
+],
+questions:[
+["The book is ___ the table.",["on","at","to"],0],
+["The bag is ___ the chair.",["under","in","at"],0],
+["The bank is ___ the school.",["next to","at","on"],0],
+["The car is ___ the house.",["in front of","at","to"],0],
+["The picture is ___ the wall.",["on","under","to"],0]
+],
+fills:[
+["The book is ___ the table.","on"],
+["The bag is ___ the chair.","under"]
+],
+time:180
+},
+
+{
+title:"Lesson 20 — Prepositions of Time",
+level:"Beginner",
+explanation:
+"نستخدم in مع الفترات مثل السنوات وأجزاء اليوم، on مع الأيام والتواريخ، وat مع الوقت المحدد.",
+words:["in","on","at","morning","Monday"],
+examples:[
+["I study in the morning.","أدرس في الصباح."],
+["I go to school on Monday.","أذهب إلى المدرسة يوم الاثنين."],
+["I wake up at eight.","أستيقظ في الثامنة."]
+],
+questions:[
+["___ eight",["in","on","at"],2],
+["___ the morning",["in","on","at"],0],
+["___ Monday",["in","on","at"],1],
+["___ 2026",["in","on","at"],0],
+["___ 9:00",["in","on","at"],2]
+],
+fills:[
+["I wake up ___ eight.","at"],
+["I study ___ the morning.","in"]
+],
+time:185
+},
+
+{
+title:"Lesson 21 — Daily Routine",
+level:"Beginner",
+explanation:
+"يمكننا وصف يومنا باستعمال المضارع البسيط وترتيب الأحداث بكلمات مثل first, then, after that, finally.",
+words:["wake up","brush","breakfast","school","finally"],
+examples:[
+["I wake up at eight.","أستيقظ في الثامنة."],
+["I brush my teeth.","أنظف أسناني."],
+["I go to school.","أذهب إلى المدرسة."]
+],
+questions:[
+["I ___ up at eight.",["wake","wakes","waking"],0],
+["She ___ her teeth.",["brush","brushes","brushing"],1],
+["They ___ to school.",["go","goes","going"],0],
+["A daily routine normally uses:",["Present Simple","Past Perfect","Future Perfect"],0],
+["Which can end a sequence?",["Finally","First","Yesterday"],0]
+],
+fills:[
+["I ___ up at eight.","wake"],
+["I ___ to school.","go"]
+],
+time:190
+},
+
+{
+title:"Lesson 22 — Past Simple: Was and Were",
+level:"Elementary",
+explanation:
+"في الماضي نستخدم was مع I وhe وshe وit، ونستخدم were مع you وwe وthey.",
+words:["was","were","yesterday","happy","tired"],
+examples:[
+["I was tired yesterday.","كنت متعبًا أمس."],
+["She was at home.","كانت في المنزل."],
+["They were happy.","كانوا سعداء."]
+],
+questions:[
+["I ___ tired.",["was","were","am"],0],
+["They ___ happy.",["was","were","are"],1],
+["She ___ at home.",["was","were","is"],0],
+["We ___ busy.",["was","were","are"],1],
+["You ___ late.",["was","were","are"],1]
+],
+fills:[
+["I ___ tired yesterday.","was"],
+["They ___ happy.","were"]
+],
+time:190
+},
+
+{
+title:"Lesson 23 — Past Simple: Regular Verbs",
+level:"Elementary",
+explanation:
+"الأفعال المنتظمة في الماضي تأخذ غالبًا -ed، مثل work → worked وplay → played وwatch → watched.",
+words:["worked","watched","played","yesterday","movie"],
+examples:[
+["I worked yesterday.","عملت أمس."],
+["She watched a movie.","شاهدت فيلمًا."],
+["We played football.","لعبنا كرة القدم."]
+],
+questions:[
+["work →",["worked","workd","works"],0],
+["play →",["played","plaied","plays"],0],
+["watch →",["watched","watchs","watching"],0],
+["Yesterday I ___.",["work","worked","working"],1],
+["She ___ a movie.",["watch","watched","watches"],1]
+],
+fills:[
+["I ___ yesterday.","worked"],
+["She ___ a movie.","watched"]
+],
+time:190
+},
+
+{
+title:"Lesson 24 — Past Simple: Irregular Verbs",
+level:"Elementary",
+explanation:
+"بعض الأفعال لا تأخذ -ed في الماضي، بل تتغير إلى شكل مختلف. هذه الأفعال تسمى irregular verbs.",
+words:["went","ate","saw","had","breakfast"],
+examples:[
+["I went to school.","ذهبت إلى المدرسة."],
+["He ate breakfast.","تناول الفطور."],
+["We saw a friend.","رأينا صديقًا."]
+],
+questions:[
+["go →",["went","goed","goes"],0],
+["eat →",["ate","eated","eats"],0],
+["see →",["saw","seed","sees"],0],
+["have →",["had","haved","has"],0],
+["Yesterday I ___ home.",["go","went","going"],1]
+],
+fills:[
+["I ___ to school.","went"],
+["He ___ breakfast.","ate"]
+],
+time:190
+},
+
+{
+title:"Lesson 25 — Past Simple: Negative",
+level:"Elementary",
+explanation:
+"لنفي الماضي نستخدم didn't ثم الفعل في شكله الأساسي.\n\nنقول didn't go وليس didn't went.",
+words:["didn't","go","watch","work","yesterday"],
+examples:[
+["I didn't go.","لم أذهب."],
+["She didn't watch TV.","لم تشاهد التلفاز."],
+["They didn't work.","لم يعملوا."]
+],
+questions:[
+["I ___ go.",["didn't","don't","doesn't"],0],
+["She didn't ___ TV.",["watch","watched","watches"],0],
+["They didn't ___ work.",["do","did","doing"],0],
+["Choose:",["I didn't went.","I didn't go.","I don't went."],1],
+["He ___ eat.",["didn't","doesn't","isn't"],0]
+],
+fills:[
+["I didn't ___.","go"],
+["She didn't ___.","watch"]
+],
+time:190
+},
+
+{
+title:"Lesson 26 — Past Simple: Questions",
+level:"Elementary",
+explanation:
+"لتكوين سؤال في الماضي نستخدم Did + subject + base verb.\n\nبعد Did نستخدم الفعل الأساسي، وليس الماضي.",
+words:["did","yesterday","study","watch","go"],
+examples:[
+["Did you go to school?","هل ذهبت إلى المدرسة؟"],
+["Did he study yesterday?","هل درس أمس؟"],
+["Did they watch the movie?","هل شاهدوا الفيلم؟"]
+],
+questions:[
+["___ you go yesterday?",["Do","Does","Did"],2],
+["Did he ___?",["study","studied","studies"],0],
+["Did they ___ the movie?",["watch","watched","watches"],0],
+["Choose:",["Did she went?","Did she go?","Does she went?"],1],
+["Did you ___ breakfast?",["eat","ate","eats"],0]
+],
+fills:[
+["___ you go yesterday?","Did"],
+["Did he ___ yesterday?","study"]
+],
+time:190
+},
+
+{
+title:"Lesson 27 — Future with Going To",
+level:"Elementary",
+explanation:
+"نستخدم be + going to + base verb للحديث عن الخطط أو النوايا المستقبلية.",
+words:["going to","tonight","travel","learn","plan"],
+examples:[
+["I am going to study tonight.","سأدرس الليلة."],
+["She is going to travel.","ستسافر."],
+["We are going to learn English.","سنتعلم الإنجليزية."]
+],
+questions:[
+["I am going to ___.",["study","studied","studying"],0],
+["She is going to ___.",["travel","travels","traveling"],0],
+["They are going to ___.",["work","works","worked"],0],
+["Choose:",["He is going to study.","He going to study.","He is go to study."],0],
+["We ___ going to learn.",["am","is","are"],2]
+],
+fills:[
+["I am going to ___.","study"],
+["We are going to ___.","learn"]
+],
+time:190
+},
+
+{
+title:"Lesson 28 — Future with Will",
+level:"Elementary",
+explanation:
+"نستخدم will + base verb للتحدث عن المستقبل، مثل التنبؤ أو القرار أو الوعد.",
+words:["will","help","tomorrow","soon","arrive"],
+examples:[
+["I will help you.","سأساعدك."],
+["She will call tomorrow.","ستتصل غدًا."],
+["They will arrive soon.","سيصلون قريبًا."]
+],
+questions:[
+["I ___ help you.",["will","am","did"],0],
+["She will ___ tomorrow.",["call","calls","called"],0],
+["They will ___ soon.",["arrive","arrives","arrived"],0],
+["Choose:",["He will goes.","He will go.","He will going."],1],
+["Will you ___ me?",["help","helps","helped"],0]
+],
+fills:[
+["I ___ help you.","will"],
+["She will ___.","call"]
+],
+time:190
+},
+
+{
+title:"Lesson 29 — Present Continuous",
+level:"Elementary",
+explanation:
+"المضارع المستمر يصف شيئًا يحدث الآن أو حول وقت الكلام.\n\nالصيغة: am/is/are + verb-ing.",
+words:["now","studying","working","playing","reading"],
+examples:[
+["I am studying now.","أنا أدرس الآن."],
+["He is working.","هو يعمل الآن."],
+["They are playing.","هم يلعبون."]
+],
+questions:[
+["I am ___.",["study","studying","studied"],1],
+["He is ___.",["work","working","worked"],1],
+["They are ___.",["play","playing","played"],1],
+["She is ___.",["read","reading","reads"],1],
+["We are ___ English.",["learn","learning","learned"],1]
+],
+fills:[
+["I am ___ now.","studying"],
+["They are ___.","playing"]
+],
+time:190
+},
+
+{
+title:"Lesson 30 — Present Continuous Questions",
+level:"Elementary",
+explanation:
+"لتكوين سؤال في المضارع المستمر نضع am أو is أو are في بداية الجملة.",
+words:["studying","reading","playing","working","now"],
+examples:[
+["Are you studying?","هل تدرس الآن؟"],
+["Is she reading?","هل هي تقرأ؟"],
+["Are they playing?","هل هم يلعبون؟"]
+],
+questions:[
+["___ you studying?",["Do","Are","Did"],1],
+["___ she reading?",["Is","Does","Are"],0],
+["Are they ___?",["play","playing","played"],1],
+["Is he ___?",["work","working","worked"],1],
+["Choose:",["Do you studying?","Are you studying?","Did you studying?"],1]
+],
+fills:[
+["___ you studying?","Are"],
+["Is she ___?","reading"]
+],
+time:190
+},
+
+{
+title:"Lesson 31 — Present Continuous Negative",
+level:"Elementary",
+explanation:
+"في النفي مع المضارع المستمر نضع not بعد am/is/are.",
+words:["sleeping","working","playing","not"],
+examples:[
+["I am not sleeping.","أنا لا أنام الآن."],
+["He is not working.","هو لا يعمل الآن."],
+["They are not playing.","هم لا يلعبون."]
+],
+questions:[
+["I am ___ sleeping.",["not","no","don't"],0],
+["He is not ___.",["work","working","worked"],1],
+["They are not ___.",["play","playing","played"],1],
+["Choose:",["She isn't reading.","She doesn't reading.","She not reading."],0],
+["We are ___ watching TV.",["not","don't","no"],0]
+],
+fills:[
+["I am ___ sleeping.","not"],
+["He is not ___.","working"]
+],
+time:190
+},
+
+{
+title:"Lesson 32 — Countable and Uncountable Nouns",
+level:"Elementary",
+explanation:
+"الأسماء المعدودة يمكن عدها، مثل book وchair. الأسماء غير المعدودة لا نستخدمها عادة كأشياء منفردة معدودة، مثل water وinformation.",
+words:["countable","uncountable","water","information","books"],
+examples:[
+["I have two books.","لدي كتابان."],
+["I drink water.","أشرب الماء."],
+["She needs information.","تحتاج معلومات."]
+],
+questions:[
+["Which is countable?",["water","book","information"],1],
+["Which is uncountable?",["chair","apple","water"],2],
+["two ___",["book","books","water"],1],
+["some ___",["information","informations","book"],0],
+["Which is normally uncountable?",["milk","chairs","students"],0]
+],
+fills:[
+["I have two ___.","books"],
+["I drink ___.","water"]
+],
+time:190
+},
+
+{
+title:"Lesson 33 — Some and Any",
+level:"Elementary",
+explanation:
+"نستخدم some كثيرًا في الجمل المثبتة، وany كثيرًا في النفي والأسئلة.",
+words:["some","any","money","questions","water"],
+examples:[
+["I have some money.","لدي بعض المال."],
+["I don't have any money.","ليس لدي أي مال."],
+["Do you have any questions?","هل لديك أي أسئلة؟"]
+],
+questions:[
+["I have ___ money.",["some","any","many"],0],
+["I don't have ___ money.",["some","any","a"],1],
+["Do you have ___ questions?",["some","any","much"],1],
+["She bought ___ apples.",["some","any","much"],0],
+["Choose:",["I don't need some.","I don't need any.","I don't need many."],1]
+],
+fills:[
+["I have ___ water.","some"],
+["I don't have ___ money.","any"]
+],
+time:190
+},
+
+{
+title:"Lesson 34 — Much and Many",
+level:"Elementary",
+explanation:
+"نستخدم many مع الأسماء المعدودة الجمع، وmuch مع الأسماء غير المعدودة.",
+words:["many","much","time","students","water"],
+examples:[
+["I have many books.","لدي كتب كثيرة."],
+["I don't have much time.","ليس لدي وقت كثير."],
+["How many students are there?","كم عدد الطلاب؟"]
+],
+questions:[
+["I have ___ books.",["many","much","a"],0],
+["I don't have ___ time.",["many","much","an"],1],
+["How ___ students?",["much","many","any"],1],
+["How ___ water?",["much","many","few"],0],
+["Choose:",["much books","many books","many water"],1]
+],
+fills:[
+["I have ___ books.","many"],
+["I don't have ___ time.","much"]
+],
+time:190
+},
+
+{
+title:"Lesson 35 — Comparatives",
+level:"Elementary",
+explanation:
+"نستخدم صيغة المقارنة للمقارنة بين شيئين. كثير من الصفات القصيرة تأخذ -er، والصفات الطويلة تستخدم more.",
+words:["taller","cheaper","easier","than","more"],
+examples:[
+["Ahmed is taller than Ali.","أحمد أطول من علي."],
+["This book is cheaper.","هذا الكتاب أرخص."],
+["English is easier than before.","الإنجليزية أسهل من قبل."]
+],
+questions:[
+["fast →",["faster","fastest","more fast"],0],
+["tall →",["taller","tallest","more tall"],0],
+["This is ___ than that.",["cheap","cheaper","cheapest"],1],
+["English is ___ than before.",["easier","easiest","easy"],0],
+["Long adjective: ___ interesting.",["more","most","many"],0]
+],
+fills:[
+["Ahmed is ___ than Ali.","taller"],
+["This book is ___ than that one.","cheaper"]
+],
+time:190
+},
+
+{
+title:"Lesson 36 — Superlatives",
+level:"Elementary",
+explanation:
+"نستخدم صيغة التفضيل عندما نقارن شيئًا بمجموعة كاملة. الصفات القصيرة تأخذ غالبًا -est، والصفات الطويلة تستخدم most.",
+words:["tallest","biggest","best","choice","most"],
+examples:[
+["He is the tallest student.","هو أطول طالب."],
+["This is the biggest room.","هذه أكبر غرفة."],
+["It is the best choice.","إنه أفضل اختيار."]
+],
+questions:[
+["He is the ___ student.",["tall","taller","tallest"],2],
+["This is the ___ room.",["biggest","bigger","big"],0],
+["It is the ___ choice.",["best","better","good"],0],
+["the ___ interesting",["most","more","many"],0],
+["Superlatives compare:",["a group","two only","one word"],0]
+],
+fills:[
+["He is the ___ student.","tallest"],
+["This is the ___ room.","biggest"]
+],
+time:190
+},
+
+{
+title:"Lesson 37 — Adjectives",
+level:"Elementary",
+explanation:
+"الصفات تصف الأشخاص أو الأشياء. يمكن أن تأتي بعد be أو قبل الاسم.",
+words:["smart","interesting","new","good","beautiful"],
+examples:[
+["She is smart.","هي ذكية."],
+["It is an interesting book.","إنه كتاب ممتع."],
+["He has a new phone.","لديه هاتف جديد."]
+],
+questions:[
+["She is very ___.",["smart","smartly","smarts"],0],
+["a ___ phone",["new","newly","news"],0],
+["an ___ book",["interesting","interestingly","interests"],0],
+["The house is ___.",["big","bigly","bigs"],0],
+["Adjectives describe:",["nouns","only verbs","only questions"],0]
+],
+fills:[
+["She is ___.","smart"],
+["a ___ phone","new"]
+],
+time:190
+},
+
+{
+title:"Lesson 38 — Adverbs",
+level:"Elementary",
+explanation:
+"الظروف تصف غالبًا كيفية حدوث الفعل. كثير من الظروف تنتهي بـ -ly، لكن توجد كلمات شائعة مثل well.",
+words:["quickly","slowly","carefully","well","speak"],
+examples:[
+["She speaks slowly.","هي تتحدث ببطء."],
+["He works carefully.","هو يعمل بعناية."],
+["I speak English well.","أتحدث الإنجليزية جيدًا."]
+],
+questions:[
+["He works ___.",["careful","carefully","care"],1],
+["She speaks ___.",["slowly","slow","slows"],0],
+["I speak English ___.",["good","well","best"],1],
+["They run ___.",["quickly","quick","quicks"],0],
+["An adverb can describe:",["how an action happens","a noun only","a person only"],0]
+],
+fills:[
+["She speaks ___.","slowly"],
+["He works ___.","carefully"]
+],
+time:190
+},
+
+{
+title:"Lesson 39 — Conjunctions",
+level:"Elementary",
+explanation:
+"أدوات الربط تربط الكلمات والجمل والأفكار. من أهمها and وbut وbecause وso وor.",
+words:["and","but","because","so","or"],
+examples:[
+["I study English because I need it.","أدرس الإنجليزية لأنني أحتاجها."],
+["I am tired but I continue.","أنا متعب لكنني أستمر."],
+["I study and I practice.","أدرس وأتدرب."]
+],
+questions:[
+["I study ___ I practice.",["and","but","or"],0],
+["I am tired ___ I continue.",["but","because","or"],0],
+["I study ___ I need English.",["because","so","or"],0],
+["It is raining, ___ we stay home.",["so","because","or"],0],
+["Tea ___ coffee?",["and","but","or"],2]
+],
+fills:[
+["I study ___ I practice.","and"],
+["I study ___ I need English.","because"]
+],
+time:190
+},
+
+{
+title:"Lesson 40 — Subject and Object Review",
+level:"Elementary",
+explanation:
+"الفاعل هو من يقوم بالفعل، والمفعول هو من يقع عليه الفعل. اختيار الضمير الصحيح يعتمد على موقعه في الجملة.",
+words:["subject","object","help","call","know"],
+examples:[
+["She helps me.","هي تساعدني."],
+["I know him.","أنا أعرفه."],
+["They call us.","هم يتصلون بنا."]
+],
+questions:[
+["In “She helps me”, subject:",["She","me","helps"],0],
+["Object in “I know him”:",["I","know","him"],2],
+["Choose:",["They help we.","They help us.","Them help us."],1],
+["Choose:",["He sees I.","He sees me.","Him sees me."],1],
+["Object pronoun of they:",["them","their","they"],0]
+],
+fills:[
+["She helps ___.","me"],
+["They call ___.","us"]
+],
+time:190
+},
+
+{
+title:"Lesson 41 — Articles Review",
+level:"Elementary",
+explanation:
+"مراجعة a وan وthe في سياقات مختلفة، مع الانتباه إلى الفرق بين شيء غير محدد وشيء محدد.",
+words:["a","an","the","specific","apple"],
+examples:[
+["I bought a book.","اشتريت كتابًا."],
+["I ate an apple.","أكلت تفاحة."],
+["The book is interesting.","الكتاب ممتع."]
+],
+questions:[
+["I bought ___ book.",["a","an","are"],0],
+["She ate ___ apple.",["a","an","the"],1],
+["___ book on my desk is new.",["A","An","The"],2],
+["Water is important.",["Correct","a water","an water"],0],
+["Choose:",["an car","a car","a apple"],1]
+],
+fills:[
+["I bought ___ book.","a"],
+["I ate ___ apple.","an"]
+],
+time:190
+},
+
+{
+title:"Lesson 42 — Present Perfect",
+level:"Intermediate",
+explanation:
+"المضارع التام يتكون من have/has + past participle. نستخدمه عندما يكون للماضي علاقة بالحاضر، مثل خبرة أو نتيجة حاضرة.",
+words:["finished","arrived","learned","already","work"],
+examples:[
+["I have finished my work.","لقد أنهيت عملي."],
+["She has arrived.","لقد وصلت."],
+["They have learned English.","لقد تعلموا الإنجليزية."]
+],
+questions:[
+["I ___ finished.",["have","has","am"],0],
+["She ___ arrived.",["have","has","is"],1],
+["They have ___.",["learned","learn","learning"],0],
+["He has ___ his work.",["finish","finished","finishing"],1],
+["Present perfect uses:",["have/has + past participle","did + base","will + verb"],0]
+],
+fills:[
+["I have ___.","finished"],
+["She has ___.","arrived"]
+],
+time:200
+},
+
+{
+title:"Lesson 43 — Ever and Never",
+level:"Intermediate",
+explanation:
+"نستخدم ever كثيرًا في الأسئلة عن التجارب، ونستخدم never للتعبير عن أن شيئًا لم يحدث في أي وقت حتى الآن.",
+words:["ever","never","visited","tried","been"],
+examples:[
+["Have you ever visited another country?","هل سبق أن زرت بلدًا آخر؟"],
+["I have never tried it.","لم أجربه قط."],
+["She has never been there.","لم تذهب إلى هناك قط."]
+],
+questions:[
+["Have you ___ visited?",["ever","never","yesterday"],0],
+["I have ___ tried it.",["ever","never","did"],1],
+["She has ___ been there.",["never","yesterday","did"],0],
+["Ever is common in:",["questions","commands","places"],0],
+["Choose:",["Have you ever been there?","Did you ever been there?","Have you ever went there?"],0]
+],
+fills:[
+["Have you ___ visited another country?","ever"],
+["I have ___ tried it.","never"]
+],
+time:200
+},
+
+{
+title:"Lesson 44 — Past Continuous",
+level:"Intermediate",
+explanation:
+"الماضي المستمر يصف حدثًا كان مستمرًا في وقت معين في الماضي.\n\nالصيغة: was/were + verb-ing.",
+words:["was studying","sleeping","playing","working"],
+examples:[
+["I was studying at eight.","كنت أدرس في الثامنة."],
+["She was sleeping.","كانت نائمة."],
+["They were playing football.","كانوا يلعبون كرة القدم."]
+],
+questions:[
+["I was ___.",["study","studying","studied"],1],
+["They were ___.",["playing","play","played"],0],
+["She was ___.",["sleeping","sleep","slept"],0],
+["He ___ working.",["was","were","is"],0],
+["We ___ studying.",["was","were","are"],1]
+],
+fills:[
+["I was ___.","studying"],
+["They were ___.","playing"]
+],
+time:200
+},
+
+{
+title:"Lesson 45 — When and While",
+level:"Intermediate",
+explanation:
+"نستخدم when وwhile لربط الأحداث في الماضي. while ترتبط كثيرًا بحدث مستمر، وwhen يمكن أن تقدم حدثًا وقع أثناء الحدث المستمر.",
+words:["when","while","called","rained","working"],
+examples:[
+["I was studying when he called.","كنت أدرس عندما اتصل."],
+["While I was sleeping, it rained.","بينما كنت نائمًا، هطل المطر."],
+["She called while I was working.","اتصلت بينما كنت أعمل."]
+],
+questions:[
+["I was studying ___ he called.",["when","because","than"],0],
+["___ I was sleeping, it rained.",["While","Because","Or"],0],
+["She called ___ I was working.",["while","than","so"],0],
+["While often introduces:",["an ongoing action","a noun only","a future promise"],0],
+["Choose:",["I was sleeping when he called.","I was sleep when he called.","I sleeping when he called."],0]
+],
+fills:[
+["I was studying ___ he called.","when"],
+["___ I was sleeping, it rained.","While"]
+],
+time:200
+},
+
+{
+title:"Lesson 46 — First Conditional",
+level:"Intermediate",
+explanation:
+"نستخدم الشرط الأول للحديث عن احتمال مستقبلي ونتيجته.\n\nالصيغة الأساسية: If + present simple, will + base verb.",
+words:["if","improve","rain","stay","practice"],
+examples:[
+["If I study, I will improve.","إذا درست، فسأتحسن."],
+["If it rains, we will stay home.","إذا أمطرت، فسنبقى في المنزل."],
+["If you practice, you will learn.","إذا تدربت، ستتعلم."]
+],
+questions:[
+["If I study, I ___ improve.",["will","would","am"],0],
+["If it rains, we ___ stay home.",["will","would","are"],0],
+["If you practice, you ___ learn.",["will","did","are"],0],
+["First conditional uses:",["present + will","past + would","will + will"],0],
+["Choose:",["If I will study, I improve.","If I study, I will improve.","If I studied, I will improve."],1]
+],
+fills:[
+["If I study, I ___ improve.","will"],
+["If you practice, you ___ learn.","will"]
+],
+time:200
+},
+
+{
+title:"Lesson 47 — Should and Must",
+level:"Intermediate",
+explanation:
+"should تستخدم غالبًا للنصيحة، بينما must تعبر عن ضرورة أو إلزام قوي. بعد كلتيهما يأتي الفعل الأساسي.",
+words:["should","must","careful","practice","more"],
+examples:[
+["You should study every day.","ينبغي أن تدرس كل يوم."],
+["You must be careful.","يجب أن تكون حذرًا."],
+["We should practice more.","ينبغي أن نتدرب أكثر."]
+],
+questions:[
+["You ___ study more.",["should","should to","shoulds"],0],
+["You ___ be careful.",["must","must to","musts"],0],
+["We should ___ more.",["practice","practices","practicing"],0],
+["After must use:",["base verb","to + verb","verb-ing"],0],
+["Choose:",["You must to study.","You must study.","You must studying."],1]
+],
+fills:[
+["You ___ study more.","should"],
+["You ___ be careful.","must"]
+],
+time:200
+},
+
+{
+title:"Lesson 48 — Gerunds and Infinitives",
+level:"Intermediate",
+explanation:
+"بعض الأفعال تتبعها to + verb، وبعضها يتبعها verb-ing. من الأنماط المهمة: want to learn وenjoy reading.",
+words:["want","enjoy","like","reading","learn"],
+examples:[
+["I want to learn English.","أريد تعلم الإنجليزية."],
+["I enjoy reading.","أستمتع بالقراءة."],
+["She likes studying.","تحب الدراسة."]
+],
+questions:[
+["I want ___ English.",["to learn","learned","learning to"],0],
+["I enjoy ___.",["reading","to reading","readed"],0],
+["She likes ___.",["studying","studyed","to studying"],0],
+["Choose:",["I want to learn.","I want learning to.","I want to learned."],0],
+["Enjoy is commonly followed by:",["-ing","to + base","will"],0]
+],
+fills:[
+["I want ___ English.","to learn"],
+["I enjoy ___.","reading"]
+],
+time:200
+},
+
+{
+title:"Lesson 49 — Relative Clauses",
+level:"Intermediate",
+explanation:
+"الجمل الموصولة تضيف معلومات عن اسم سبق ذكره. who تستخدم غالبًا للأشخاص، وwhich للأشياء، وthat يمكن أن تستخدم في حالات كثيرة.",
+words:["who","which","that","useful","work"],
+examples:[
+["The man who works here is kind.","الرجل الذي يعمل هنا لطيف."],
+["The book which I bought is useful.","الكتاب الذي اشتريته مفيد."],
+["The phone that I use is new.","الهاتف الذي أستخدمه جديد."]
+],
+questions:[
+["The man ___ works here.",["who","which","where"],0],
+["The book ___ I bought.",["which","who","when"],0],
+["The phone ___ I use.",["that","where","when"],0],
+["Who refers to:",["people","places","times"],0],
+["Which normally refers to:",["things","people only","days"],0]
+],
+fills:[
+["The man ___ works here is kind.","who"],
+["The book ___ I bought is useful.","which"]
+],
+time:210
+},
+
+{
+title:"Lesson 50 — Connectors for Longer Sentences",
+level:"Intermediate",
+explanation:
+"في المستوى الأعلى نحتاج إلى ربط الأفكار بطريقة أكثر طبيعية. although تعني رغم أن، however تعني مع ذلك، وtherefore تعني لذلك أو وبالتالي.",
+words:["although","however","therefore","because","continue"],
+examples:[
+["I study because I want to improve.","أدرس لأنني أريد أن أتحسن."],
+["Although it is difficult, I continue.","رغم أنه صعب، أستمر."],
+["It was difficult; however, I finished.","كان صعبًا، ومع ذلك أنهيته."]
+],
+questions:[
+["I study ___ I need English.",["because","however","or"],0],
+["___ it is difficult, I continue.",["Although","Because","Therefore"],0],
+["It was difficult; ___, I finished.",["however","because","if"],0],
+["Therefore introduces:",["a result","a person","a question"],0],
+["A connector helps:",["connect ideas","remove verbs","change spelling"],0]
+],
+fills:[
+["I study ___ I need English.","because"],
+["___ it is difficult, I continue.","Although"]
+],
+time:210
+}
+
+];
+
+/* =========================================================
+   STORAGE
+   ========================================================= */
+
+const STORAGE_KEY="myEnglishNotebook_50Lessons_V1";
+
+let data;
+
+try{
+ data=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");
+}catch(e){
+ data=null;
+}
+
+if(!data || typeof data!=="object"){
+ data={
+  mastered:[],
+  date:"",
+  tests:0,
+  attempts:{}
+ };
+}
+
 if(!Array.isArray(data.mastered))data.mastered=[];
-let timer=null,active=-1,submitted=false,voice={};
+if(!data.attempts || typeof data.attempts!=="object")data.attempts={};
 
-function save(){localStorage.setItem(KEY,JSON.stringify(data))}
-function today(){let d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
-function day(){if(data.date!==today()){data.date=today();data.tests=0;save()}}
-function done(i){return data.mastered.includes(i)} function unlocked(i){return i===0||done(i-1)}
-function update(){day();let n=data.mastered.length,p=Math.round(n/50*100);document.getElementById("mc").textContent=n;document.getElementById("tc").textContent=data.tests+" / 5";document.getElementById("pt").textContent=p+"%";document.getElementById("pf").style.width=p+"%";document.getElementById("limit").innerHTML=data.tests>=5?'<div class="result bad">⏰ وصلت إلى 5 اختبارات اليوم. يمكنك مراجعة الدروس، ويعود الاختبار غدًا.</div>':""}
+let timer=null;
+let currentLesson=-1;
 
-function speak(t){
- if(!("speechSynthesis" in window)){alert("هذا المتصفح لا يدعم النطق الآلي. جرّب Chrome أو Edge أو Safari.");return}
- speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.82;speechSynthesis.speak(u)
-}
-function clean(t){return t.toLowerCase().replace(/[^a-z0-9' ]/g,"").replace(/\s+/g," ").trim()}
-function match(a,b){a=clean(a);b=clean(b);if(!a||!b)return false;if(a===b)return true;let bw=b.split(" "),aw=a.split(" ");return bw.filter(x=>aw.includes(x)).length/bw.length>=.75}
-function pronounce(text,id,key,i){
- let el=document.getElementById(id),R=window.SpeechRecognition||window.webkitSpeechRecognition;
- if(!R){el.textContent="⚠️ التعرف على النطق غير متاح في هذا المتصفح. استخدم زر الاستماع وكرر بصوتك، ثم أكمل الاختبار.";el.className="result bad";return}
- let r=new R();r.lang="en-US";r.interimResults=false;r.maxAlternatives=3;el.textContent="🎤 تحدث الآن...";el.className="result";
- try{r.start()}catch(e){el.textContent="اضغط مرة أخرى.";return}
- r.onresult=e=>{let heard=e.results[0][0].transcript;voice[i]=voice[i]||{};voice[i][key]=match(heard,text);if(voice[i][key]){el.textContent="✅ النطق مقبول";el.className="result ok"}else{el.innerHTML="🔄 سُمع: "+heard+"<br>حاول مرة أخرى.";el.className="result bad"}};
- r.onerror=()=>{el.textContent="⚠️ لم يتم التعرف على الصوت. حاول مرة أخرى.";el.className="result bad"}
-}
-function picture(i){
- let icons=["📚","🗣️","💬","🧑","🏫","📱","📍","🔢","📝","⏰","📅","✍️","❓","⭐","💪","🎯"];
- document.getElementById("art").innerHTML='<svg viewBox="0 0 400 230"><rect x="20" y="20" width="360" height="190" rx="28" fill="#eef4ff"/><circle cx="200" cy="115" r="65" fill="#dbeafe"/><text x="200" y="137" text-anchor="middle" font-size="60">'+icons[i%icons.length]+'</text></svg>';
- document.getElementById("mt").textContent="صورة توضيحية مرتبطة بالدرس: "+LESSONS[i].title;document.getElementById("modal").classList.remove("hide")
-}
-function closeModal(){document.getElementById("modal").classList.add("hide")}
+/* =========================================================
+   DATE
+   ========================================================= */
 
-function display(){
- day();let c=document.getElementById("lessons");c.innerHTML="";
- LESSONS.forEach((l,i)=>{
-  let o=unlocked(i),d=done(i);
-  let s=d?'<span class="status done">✅ متقن</span>':o?'<span class="status open">🔓 مفتوح</span>':'<span class="status locked">🔒 مقفل — أتقن الدرس السابق</span>';
-  let ex=l.examples.map((e,j)=>'<div class="example"><div class="en">'+e[0]+'</div><div class="ar">'+e[1]+'</div><div class="actions"><button class="btn listen" onclick="speak('+JSON.stringify(e[0])+')">🔊 استماع</button><button class="btn image" onclick="picture('+i+')">🖼️ صورة</button></div></div>').join("");
-  let ws=l.words.map(x=>"<div>• "+x+"</div>").join("");
-  let b=d?'<button class="btn disabled" disabled>✅ تم إتقان هذا الدرس</button>':!o?'<button class="btn disabled" disabled>🔒 أكمل الدرس السابق أولًا</button>':data.tests>=5?'<button class="btn disabled" disabled>⏰ انتهت اختبارات اليوم</button>':'<button class="btn test" onclick="openTest('+i+')">🧠 اختبار الإتقان</button>';
-  c.innerHTML+='<article class="lesson">'+s+'<h2>📘 '+l.title+'</h2><div class="goal"><b>🎯 هدف الدرس</b><br>'+l.explanation+'</div><div class="explain"><b>📖 الشرح</b><br>'+l.explanation+'</div><div><b>💬 الأمثلة</b>'+ex+'</div><div class="words"><b>🧠 المفردات في السياق</b>'+ws+'</div><div class="practice"><b>✍️ تدريب</b><br>اكتب جملًا من عندك مستخدمًا ما تعلمته.</div>'+b+'<div id="tb-'+i+'" class="testbox hidden"></div></article>';
- })
+function today(){
+
+ const d=new Date();
+
+ return d.getFullYear()+"-"+
+ String(d.getMonth()+1).padStart(2,"0")+"-"+
+ String(d.getDate()).padStart(2,"0");
+
 }
 
-function stop(){if(timer){clearInterval(timer);timer=null}}
-function start(i){
- stop();let sec=LESSONS[i].time,e=document.getElementById("tm-"+i);
- function paint(){let m=Math.floor(sec/60),s=String(sec%60).padStart(2,"0");e.textContent="⏱️ الوقت المتبقي: "+m+":"+s;e.className="timer"+(sec<=15?" danger":sec<=30?" warn":"")}
- paint();timer=setInterval(()=>{sec--;paint();if(sec<=0){stop();submit(i,true)}},1000)
+function refreshDay(){
+
+ const t=today();
+
+ if(data.date!==t){
+
+  data.date=t;
+  data.tests=0;
+
+  save();
+
+ }
+
 }
+
+function save(){
+
+ localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+
+}
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+function isMastered(i){
+
+ return data.mastered.includes(i);
+
+}
+
+function isUnlocked(i){
+
+ return i===0 || isMastered(i-1);
+
+}
+
+function updateStats(){
+
+ refreshDay();
+
+ const count=data.mastered.length;
+ const percent=Math.round(count/50*100);
+
+ document.getElementById("masteredCount").textContent=count;
+ document.getElementById("testsCount").textContent=data.tests+" / 5";
+ document.getElementById("percent").textContent=percent+"%";
+ document.getElementById("progressFill").style.width=percent+"%";
+
+ const box=document.getElementById("dailyMessage");
+
+ if(data.tests>=5){
+
+  box.innerHTML=
+  '<div class="result bad">⏰ وصلت إلى الحد الأقصى: 5 اختبارات اليوم. يمكنك مراجعة الدروس، وتعود الاختبارات غدًا.</div>';
+
+ }else{
+
+  box.innerHTML="";
+
+ }
+
+}
+
+/* =========================================================
+   SPEECH
+   ========================================================= */
+
+function speak(text){
+
+ if(!("speechSynthesis" in window)){
+
+  alert(
+   "النطق الآلي غير متاح في هذا المتصفح. يمكنك استخدام متصفح يدعم Speech Synthesis مثل Chrome أو Edge أو Safari."
+  );
+
+  return;
+
+ }
+
+ window.speechSynthesis.cancel();
+
+ const u=new SpeechSynthesisUtterance(text);
+
+ u.lang="en-US";
+ u.rate=.82;
+
+ window.speechSynthesis.speak(u);
+
+}
+
+/* =========================================================
+   RENDER LESSONS
+   ========================================================= */
+
+function renderLessons(){
+
+ refreshDay();
+
+ const container=document.getElementById("lessons");
+
+ container.innerHTML="";
+
+ LESSONS.forEach((lesson,i)=>{
+
+  const mastered=isMastered(i);
+  const unlocked=isUnlocked(i);
+
+  let status;
+
+  if(mastered){
+
+   status='<span class="status done">✅ متقن</span>';
+
+  }else if(unlocked){
+
+   status='<span class="status open">🔓 مفتوح</span>';
+
+  }else{
+
+   status='<span class="status locked">🔒 مقفل — أتقن الدرس السابق</span>';
+
+  }
+
+  const examples=lesson.examples.map((example)=>{
+
+   return `
+   <div class="example">
+
+    <div class="en">${example[0]}</div>
+
+    <div class="ar">${example[1]}</div>
+
+    <div class="actions">
+
+     <button
+      class="btn listen"
+      onclick='speak(${JSON.stringify(example[0])})'>
+      🔊 Listen
+     </button>
+
+    </div>
+
+   </div>
+   `;
+
+  }).join("");
+
+  const words=lesson.words.map(word=>{
+
+   return `<div>• <span dir="ltr">${word}</span></div>`;
+
+  }).join("");
+
+  let testButton="";
+
+  if(mastered){
+
+   testButton=
+   '<button class="btn disabled" disabled>✅ تم إتقان الدرس</button>';
+
+  }else if(!unlocked){
+
+   testButton=
+   '<button class="btn disabled" disabled>🔒 أكمل الدرس السابق أولًا</button>';
+
+  }else if(data.tests>=5){
+
+   testButton=
+   '<button class="btn disabled" disabled>⏰ انتهت اختبارات اليوم</button>';
+
+  }else{
+
+   testButton=
+   `<button class="btn test" onclick="openTest(${i})">🧠 اختبار الإتقان</button>`;
+
+  }
+
+  container.innerHTML+=`
+
+  <article class="lesson">
+
+   ${status}
+
+   <h2>📘 ${lesson.title}</h2>
+
+   <div class="goal">
+
+    <b>🎯 هدف الدرس</b><br>
+
+    ${lesson.explanation}
+
+   </div>
+
+   <div class="explain">
+
+    <b>📖 الشرح</b><br>
+
+    ${lesson.explanation}
+
+   </div>
+
+   <h3>💬 أمثلة</h3>
+
+   ${examples}
+
+   <div class="words">
+
+    <b>🧠 مفردات الدرس</b>
+
+    ${words}
+
+   </div>
+
+   <div class="practice">
+
+    <b>✍️ تدريب إضافي</b><br>
+
+    حاول تكوين جملتين أو ثلاث جمل من عندك باستعمال مفردات هذا الدرس.
+
+   </div>
+
+   <br>
+
+   ${testButton}
+
+   <div id="test-${i}" class="testbox hidden"></div>
+
+  </article>
+
+  `;
+
+ });
+
+ updateStats();
+
+}
+
+/* =========================================================
+   TEST
+   ========================================================= */
+
+function closeTest(i){
+
+ const box=document.getElementById("test-"+i);
+
+ if(box){
+
+  box.classList.add("hidden");
+
+ }
+
+ stopTimer();
+
+}
+
+function stopTimer(){
+
+ if(timer){
+
+  clearInterval(timer);
+
+  timer=null;
+
+ }
+
+}
+
 function openTest(i){
- day();if(data.tests>=5){alert("لقد وصلت إلى 5 اختبارات اليوم.");return}if(!unlocked(i)||done(i))return;
- active=i;submitted=false;voice[i]={word:false,sentence:false};let l=LESSONS[i];
- let word=l.words[Math.floor(Math.random()*l.words.length)].split("=")[0].trim();
- let sentence=l.examples[Math.floor(Math.random()*l.examples.length)][0];
- let b=docume
+
+ refreshDay();
+
+ if(data.tests>=5){
+
+  alert("وصلت إلى 5 اختبارات اليوم.");
+
+  return;
+
+ }
+
+ if(!isUnlocked(i) || isMastered(i))return;
+
+ currentLesson=i;
+
+ const lesson=LESSONS[i];
+
+ const box=document.getElementById("test-"+i);
+
+ box.classList.remove("hidden");
+
+ const randomQuestions=[...lesson.questions]
+  .sort(()=>Math.random()-.5);
+
+ const selected=randomQuestions.slice(0,5);
+
+ const fillQuestions=[...lesson.fills]
+  .sort(()=>Math.random()-.5)
+  .slice(0,2);
+
+ let html=`
+
+ <div id="timer-${i}" class="timer">
+
+ ⏱️ الوقت المتبقي: ${formatTime(lesson.time)}
+
+ </div>
+
+ <h3>🧠 اختبار إتقان ${lesson.title}</h3>
+
+ <p class="desc">
+ أجب عن الأسئلة باللغة الإنجليزية قدر الإمكان. العربية موجودة للمساعدة فقط.
+ النجاح من 80%.
+ </p>
+
+ `;
+
+ selected.forEach((q,index)=>{
+
+  html+=`
+
+  <div class="q">
+
+   <b>${index+1}. ${q[0]}</b>
+
+  `;
+
+  q[1].forEach((option,optIndex)=>{
+
+   html+=`
+
+   <button
+    class="option"
+    data-q="${index}"
+    data-answer="${optIndex}">
+
+    ${option}
+
+   </button>
+
+   `;
+
+  });
+
+  html+=`</div>`;
+
+ });
+
+ html+=`<h3>✍️ Fill in the blanks</h3>`;
+
+ fillQuestions.forEach((q,index)=>{
+
+  html+=`
+
+  <div class="q">
+
+   <b>${index+6}. ${q[0]}</b>
+
+   <input
+    class="fillinput"
+    data-fill="${index}"
+    autocomplete="off"
+    placeholder="Write your answer in English">
+
+  </div>
+
+  `;
+
+ });
+
+ html+=`
+
+ <button class="btn test" onclick="submitTest(${i})">
+
+ ✅ Submit Test
+
+ </button>
+
+ <button class="closeTest" onclick="closeTest(${i})">
+
+ إغلاق الاختبار
+
+ </button>
+
+ <div id="testResult-${i}"></div>
+
+ `;
+
+ box.innerHTML=html;
+
+ box.dataset.questions=JSON.stringify(selected);
+ box.dataset.fills=JSON.stringify(fillQuestions);
+ box.scrollIntoView({behavior:"smooth",block:"center"});
+
+ startTimer(i,lesson.time);
+
+}
+
+/* =========================================================
+   TIMER
+   ========================================================= */
+
+function formatTime(seconds){
+
+ const m=Math.floor(seconds/60);
+ const s=String(seconds%60).padStart(2,"0");
+
+ return m+":"+s;
+
+}
+
+function startTimer(i,seconds){
+
+ stopTimer();
+
+ const element=document.getElementById("timer-"+i);
+
+ if(!element)return;
+
+ let remaining=seconds;
+
+ element.textContent="⏱️ الوقت المتبقي: "+formatTime(remaining);
+
+ timer=setInterval(()=>{
+
+  remaining--;
+
+  element.textContent=
+   "⏱️ الوقت المتبقي: "+formatTime(Math.max(remaining,0));
+
+  if(remaining<=30){
+
+   element.className="timer warn";
+
+  }
+
+  if(remaining<=10){
+
+   element.className="timer danger";
+
+  }
+
+  if(remaining<=0){
+
+   stopTimer();
+
+   submitTest(i,true);
+
+  }
+
+ },1000);
+
+}
+
+/* =========================================================
+   ANSWER NORMALIZATION
+   ========================================================= */
+
+function normalize(text){
+
+ return String(text)
+  .toLowerCase()
+  .trim()
+  .replace(/[.,!?;:"']/g,"")
+  .replace(/\s+/g," ");
+
+}
+
+/* =========================================================
+   SUBMIT TEST
+   ========================================================= */
+
+function submitTest(i,timeUp=false){
+
+ const box=document.getElementById("test-"+i);
+
+ if(!box || box.classList.contains("hidden"))return;
+
+ stopTimer();
+
+ if(box.dataset.submitted==="true")return;
+
+ box.dataset.submitted="true";
+
+ const questions=JSON.parse(box.dataset.questions||"[]");
+ const fills=JSON.parse(box.dataset.fills||"[]");
+
+ let score=0;
+ let total=questions.length+fills.length;
+
+ questions.forEach((q,index)=>{
+
+  const chosen=box.querySelector(
+   `[data-q="${index}"].selected`
+  );
+
+  if(chosen && Number(chosen.dataset.answer)===q[2]){
+
+   score++;
+
+   chosen.style.borderColor="#10b981";
+   chosen.style.background="#ecfdf5";
+
+  }else{
+
+   if(chosen){
+
+    chosen.style.borderColor="#ef4444";
+    chosen.style.background="#fef2f2";
+
+   }
+
+  }
+
+ });
+
+ fills.forEach((q,index)=>{
+
+  const input=box.querySelector(`[data-fill="${index}"]`);
+
+  if(input){
+
+   const user=normalize(input.value);
+   const correct=normalize(q[1]);
+
+   if(user===correct){
+
+    score++;
+
+    input.style.borderColor="#10b981";
+    input.style.background="#ecfdf5";
+
+   }else{
+
+    input.style.borderColor="#ef4444";
+    input.style.background="#fef2f2";
+
+   }
+
+  }
+
+ });
+
+ const percent=Math.round(score/total*100);
+
+ data.tests++;
+
+ const result=document.getElementById("testResult-"+i);
+
+ if(percent>=80){
+
+  if(!data.mastered.includes(i)){
+
+   data.mastered.push(i);
+
+   data.mastered.sort((a,b)=>a-b);
+
+  }
+
+  save();
+
+  result.innerHTML=`
+
+  <div class="result ok">
+
+   🎉 ممتاز! لقد أتقنت الدرس.<br>
+
+   نتيجتك: ${score}/${total} — ${percent}%<br>
+
+   ${timeUp?"انتهى الوقت، لكن نتيجتك كانت ناجحة.":"أحسنت، يمكنك الآن الانتقال إلى الدرس التالي."}
+
+  </div>
+
+  `;
+
+ }else{
+
+  save();
+
+  result.innerHTML=`
+
+  <div class="result bad">
+
+   ${timeUp?"⏰ انتهى الوقت.":"❌ لم تصل إلى درجة الإتقان."}<br>
+
+   نتيجتك: ${score}/${total} — ${percent}%<br>
+
+   تحتاج إلى 80% على الأقل لفتح الدرس التالي.<br>
+
+   راجع الدرس وحاول الاختبار مرة أخرى.
+
+  </div>
+
+  `;
+
+ }
+
+ updateStats();
+
+ renderLessonsAfterTest();
+
+}
+
+/* =========================================================
+   KEEP TEST OPEN AFTER RENDER
+   ========================================================= */
+
+function renderLessonsAfterTest(){
+
+ const old=document.getElementById("lessons");
+
+ /*
+   لا نعيد بناء الصفحة أثناء ظهور نتيجة الاختبار،
+   حتى لا تختفي النتيجة.
+ */
+
+ updateStats();
+
+}
+
+document.addEventListener("click",function(e){
+
+ const option=e.target.closest(".option");
+
+ if(!option)return;
+
+ const question=option.dataset.q;
+
+ document
+  .querySelectorAll(`.option[data-q="${question}"]`)
+  .forEach(btn=>{
+
+   btn.classList.remove("selected");
+
+   btn.style.background="white";
+   btn.style.borderColor="#e5e7eb";
+
+  });
+
+ option.classList.add("selected");
+
+ option.style.background="#eef4ff";
+ option.style.borderColor="#2563eb";
+
+});
+
+/* =========================================================
+   INITIALIZE
+   ========================================================= */
+
+refreshDay();
+renderLessons();
+updateStats();
+
+</script><!-- =========================================================
+     CONTINUATION — PART 2
+     Paste directly after the final </script> of Part 1
+     ========================================================= -->
+
+<script>
+
+/* =========================================================
+   EXTRA LEARNING FEATURES
+   ========================================================= */
+
+/*
+   This section adds:
+   1. Lesson navigation
+   2. Search through lessons
+   3. Vocabulary review
+   4. Quick speaking practice
+   5. Better lesson controls
+*/
+
+/* =========================================================
+   ADD LEARNING CONTROL PANEL
+   ========================================================= */
+
+function addLearningTools(){
+
+ const wrap=document.querySelector(".wrap");
+
+ const panel=document.createElement("section");
+
+ panel.className="panel";
+
+ panel.innerHTML=`
+
+ <h2>🧭 أدوات التعلم</h2>
+
+ <p class="desc">
+ استخدم هذه الأدوات للمراجعة والتدرب، وليس فقط لقراءة الدروس.
+ </p>
+
+ <div class="actions">
+
+   <button class="btn listen"
+     onclick="showAllWords()">
+     📚 مراجعة المفردات
+   </button>
+
+   <button class="btn speak"
+     onclick="startSpeakingPractice()">
+     🗣️ تدريب التحدث
+   </button>
+
+   <button class="btn test"
+     onclick="goToCurrentLesson()">
+     🎯 الدرس الحالي
+   </button>
+
+ </div>
+
+ <div id="extraLearningArea"></div>
+
+ `;
+
+ wrap.insertBefore(panel,document.getElementById("lessons"));
+
+}
+
+
+/* =========================================================
+   CURRENT LESSON
+   ========================================================= */
+
+function getCurrentLesson(){
+
+ for(let i=0;i<LESSONS.length;i++){
+
+  if(!isMastered(i)){
+
+   return i;
+
+  }
+
+ }
+
+ return 49;
+
+}
+
+
+function goToCurrentLesson(){
+
+ const i=getCurrentLesson();
+
+ const lessons=document.querySelectorAll(".lesson");
+
+ if(lessons[i]){
+
+  lessons[i].scrollIntoView({
+   behavior:"smooth",
+   block:"center"
+  });
+
+ }
+
+}
+
+
+/* =========================================================
+   ALL WORDS REVIEW
+   ========================================================= */
+
+function showAllWords(){
+
+ const area=document.getElementById("extraLearningArea");
+
+ if(!area)return;
+
+ const words=[];
+
+ LESSONS.forEach((lesson,index)=>{
+
+  lesson.words.forEach(word=>{
+
+   words.push({
+    word:word,
+    lesson:index+1
+   });
+
+  });
+
+ });
+
+ area.innerHTML=`
+
+ <div class="testbox">
+
+  <h3>📚 مراجعة المفردات</h3>
+
+  <p class="desc">
+  هذه الكلمات مأخوذة من الدروس الخمسين. حاول قراءة الكلمات
+  وفهمها ثم استخدمها في جمل من عندك.
+  </p>
+
+  <div class="words">
+
+   ${words.map(item=>`
+
+    <div style="margin:6px 0">
+
+      <span dir="ltr"><b>${item.word}</b></span>
+
+      <small>
+       — Lesson ${item.lesson}
+      </small>
+
+      <button
+       class="btn listen"
+       style="padding:5px 9px;margin-right:6px"
+       onclick='speak(${JSON.stringify(item.word)})'>
+
+       🔊
+
+      </button>
+
+    </div>
+
+   `).join("")}
+
+  </div>
+
+ </div>
+
+ `;
+
+ area.scrollIntoView({
+  behavior:"smooth",
+  block:"center"
+ });
+
+}
+
+
+/* =========================================================
+   SPEAKING PRACTICE
+   ========================================================= */
+
+function startSpeakingPractice(){
+
+ const i=getCurrentLesson();
+
+ const lesson=LESSONS[i];
+
+ const area=document.getElementById("extraLearningArea");
+
+ if(!area)return;
+
+ const examples=lesson.examples;
+
+ area.innerHTML=`
+
+ <div class="testbox">
+
+  <h3>🗣️ تدريب التحدث</h3>
+
+  <p class="desc">
+
+   اقرأ الجملة بصوت مرتفع أولًا.
+   بعد ذلك اضغط على زر الصوت واستمع إلى النطق.
+   حاول تقليد النطق والإيقاع.
+
+  </p>
+
+  ${examples.map((example,index)=>`
+
+   <div class="q">
+
+    <b>${index+1}. </b>
+
+    <span dir="ltr">
+     ${example[0]}
+    </span>
+
+    <div class="actions">
+
+      <button
+       class="btn listen"
+       onclick='speak(${JSON.stringify(example[0])})'>
+
+       🔊 Listen
+
+      </button>
+
+    </div>
+
+   </div>
+
+  `).join("")}
+
+ </div>
+
+ `;
+
+ area.scrollIntoView({
+  behavior:"smooth",
+  block:"center"
+ });
+
+}
+
+
+/* =========================================================
+   LESSON SEARCH
+   ========================================================= */
+
+function addSearchBox(){
+
+ const panel=document.querySelector(".panel");
+
+ if(!panel)return;
+
+ const search=document.createElement("div");
+
+ search.style.marginTop="18px";
+
+ search.innerHTML=`
+
+ <label>
+
+  <b>🔎 البحث عن درس</b>
+
+  <input
+   id="lessonSearch"
+   class="fillinput"
+   placeholder="اكتب رقم الدرس أو كلمة..."
+   oninput="searchLessons(this.value)">
+
+ </label>
+
+ `;
+
+ panel.appendChild(search);
+
+}
+
+
+function searchLessons(value){
+
+ const query=String(value)
+  .toLowerCase()
+  .trim();
+
+ const lessons=document.querySelectorAll(".lesson");
+
+ lessons.forEach((element,index)=>{
+
+  if(!query){
+
+   element.style.display="";
+
+   return;
+
+  }
+
+  const lesson=LESSONS[index];
+
+  const text=(
+   lesson.title+" "+
+   lesson.level+" "+
+   lesson.explanation+" "+
+   lesson.words.join(" ")
+  ).toLowerCase();
+
+  element.style.display=
+   text.includes(query) ? "" : "none";
+
+ });
+
+}
+
+
+/* =========================================================
+   LESSON COMPLETION MESSAGE
+   ========================================================= */
+
+function addCompletionMessage(){
+
+ const mastered=data.mastered.length;
+
+ if(mastered!==50)return;
+
+ const wrap=document.querySelector(".wrap");
+
+ const message=document.createElement("section");
+
+ message.className="panel";
+
+ message.innerHTML=`
+
+ <div class="result ok">
+
+  🏆 مبروك!
+
+  <br><br>
+
+  لقد أتقنت الدروس الخمسين كاملة.
+
+  <br>
+
+  هذا لا يعني أن التعلم انتهى؛ بل أصبحت لديك قاعدة جيدة
+  للانتقال إلى القراءة والاستماع والكتابة والمحادثة بمستوى أعلى.
+
+ </div>
+
+ `;
+
+ wrap.insertBefore(
+  message,
+  document.getElementById("lessons")
+ );
+
+}
+
+
+/* =========================================================
+   PROGRESS NAVIGATION
+   ========================================================= */
+
+function addProgressSummary(){
+
+ const panel=document.querySelector(".panel");
+
+ if(!panel)return;
+
+ const summary=document.createElement("div");
+
+ summary.className="goal";
+
+ summary.style.marginTop="15px";
+
+ summary.innerHTML=`
+
+ <b>🗺️ خريطة المستوى</b><br><br>
+
+ <span dir="ltr">
+
+ Lessons 1–21 → Beginner<br>
+
+ Lessons 22–41 → Elementary<br>
+
+ Lessons 42–50 → Intermediate
+
+ </span>
+
+ <br><br>
+
+ <span class="desc">
+
+ النظام يفتح الدروس بالتدريج حتى لا تنتقل إلى قاعدة جديدة
+ قبل إتقان القاعدة السابقة.
+
+ </span>
+
+ `;
+
+ panel.appendChild(summary);
+
+}
+
+
+/* =========================================================
+   REVIEW COMPLETED LESSON
+   ========================================================= */
+
+function reviewLesson(i){
+
+ if(i<0 || i>=LESSONS.length)return;
+
+ const element=document.querySelectorAll(".lesson")[i];
+
+ if(element){
+
+  element.scrollIntoView({
+   behavior:"smooth",
+   block:"center"
+  });
+
+ }
+
+}
+
+
+/* =========================================================
+   ADD REVIEW BUTTONS TO MASTERED LESSONS
+   ========================================================= */
+
+function addReviewButtons(){
+
+ const lessons=document.querySelectorAll(".lesson");
+
+ lessons.forEach((element,index)=>{
+
+  if(!isMastered(index))return;
+
+  const buttons=element.querySelector(".actions");
+
+  const button=document.createElement("button");
+
+  button.className="btn listen";
+
+  button.textContent="🔄 مراجعة الدرس";
+
+  button.onclick=function(){
+
+   reviewLesson(index);
+
+  };
+
+  if(buttons){
+
+   buttons.appendChild(button);
+
+  }
+
+ });
+
+}
+
+
+/* =========================================================
+   PREVENT MULTIPLE INITIALIZATION
+   ========================================================= */
+
+let extraFeaturesInitialized=false;
+
+function initializeExtraFeatures(){
+
+ if(extraFeaturesInitialized)return;
+
+ extraFeaturesInitialized=true;
+
+ addLearningTools();
+ addSearchBox();
+ addProgressSummary();
+
+ setTimeout(()=>{
+
+  addReviewButtons();
+  addCompletionMessage();
+
+ },100);
+
+}
+
+
+/* =========================================================
+   START EXTRA FEATURES
+   ========================================================= */
+
+initializeExtraFeatures();
+
+</script>
